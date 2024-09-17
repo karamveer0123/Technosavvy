@@ -1,0 +1,196 @@
+﻿@model vmWithdraw
+@{
+    ViewData["Title"] = "Withdrawal Fiat Summary | TechnoApp";
+}
+
+@section Header {
+    <meta name="description" content="Explore your fiat withdrawal summary on TechnoApp  . View transaction details and manage your funds efficiently. Experience seamless financial control." />
+}
+
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Withdraw-Summary </span>
+            </span>
+
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">
+                            <div class="acoun-box authenti-box">
+                               <form novalidate class="was-validated" autocomplete="off" asp-action="@Model.ActionMethod" asp-controller="Withdraw" id="frmWithdraw" enctype="multipart/form-data">
+                                    @Html.HiddenFor(x=>x.inforBag)
+                                    @Html.HiddenFor(x=>x.isBack)
+                                    @Html.HiddenFor(x=>x.selectedCoin)
+                                    @Html.HiddenFor(x=>x.selectedNetwork)
+                                    @Html.HiddenFor(x=>x.Amount)
+                                    @Html.HiddenFor(x=>x.AddBalance)
+                                    @Html.HiddenFor(x=>x.WBalance)
+                                    @Html.HiddenFor(x=>x.IsAll)
+                                    @Html.HiddenFor(x=>x.ReceiverAddr)
+                                    @Html.HiddenFor(x=>x.IsToken)
+                                    @Html.HiddenFor(x=>x.IsBankDeposits)
+                                    @Html.HiddenFor(x=>x.IsUPI)
+                                    @Html.HiddenFor(x=>x.RefNarration)
+                                    <div class="shadow_TechnoSavvy">
+                                        <ol class="progressdiv">
+                                            <li class="step is-complete" data-step="1">  Enter Details</li>
+                                            <li class="step  is-active" data-step="2"> Summary </li>
+                                            <li class="step" data-step="3"> 2F Verification </li>
+                                            <li class="step" data-step="4"> Confirmation </li>
+                                        </ol>                                        
+                                    </div>
+                                    <!---------------------------------------------->
+                                    <!-- fieldsets -->
+                                    <div class="row">                                     
+                                        <div class="form-card">
+                                            <div class="css77buy-box">
+                                                <h5>Withdraw Summary</h5>
+                                                <div class="css77withdrawl-box">
+                                                   
+                                                    @if (Model.IsToken)
+                                                    {
+                                                        <div class="css77-withdrawlS">
+                                                            <div class="csssum-title55"> Coin</div>
+                                                            <div class="csssum-detail55">
+                                                                <span><img src="~/images/coin/coin/@string.Concat(Model.Token.Code.ToUpper(),".png")"></span><span> @Model.Token.Code</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="css77-withdrawlS">
+                                                            <div class="csssum-title55">Wallet address</div>
+                                                            <div class="csssum-detail55"> @Model.ReceiverAddr </div>
+                                                        </div>
+
+                                                        <div class="css77-withdrawlS">
+                                                            <div class="csssum-title55">Network</div>
+                                                            <div class="csssum-detail55">@Model.SupportedNetwork.First(x=>x.SupportedNetworkId==Model.selectedNetwork).Name</div>
+                                                        </div>
+
+                                                        <div class="css77-withdrawlS">
+                                                            <div class="csssum-title55"> Amount</div>
+                                                            <div class="csssum-detail55">@Model.Amount.ToString("##.00####") @Model.Token.Code</div>
+                                                        </div>
+
+
+                                                        <div class="css77-withdrawlS">
+                                                            <div class="csssum-title55">Network Fees</div>
+                                                            <div class="csssum-detail55">@Model.IB.NetFee.WithdrawalFee.ToString("##.00####")</div>
+                                                        </div>
+                                                        <div class="css77-ordersucc text-center">
+                                                            <span class="css77-payno">
+                                                                <span>
+                                                                    <h4>You Receive</h4>
+                                                                </span> <span class="orange">@(
+                                                                (Model.Amount - Model.IB.NetFee.WithdrawalFee).ToString("##.00####")
+                                                                ) @Model.Token.Code </span>
+                                                            </span>
+                                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="css77-withdrawlS">
+                                                            <div class="csssum-title55"> Currency</div>
+                                                            <div class="csssum-detail55">
+                                                                <span>₹</span><span> @Model.Token.Code</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="css77-withdrawlS">
+                                                            @if(Model.IsUPI)
+                                                            {
+                                                                <div class="csssum-title55">UPI Id </div>
+                                                                <div class="csssum-detail55">  @Model.IB.INRUserOptions.selUPI.UPIid </div>
+                                                            }
+                                                            else
+                                                            {
+                                                                <div class="csssum-title55">Bank Account Number </div>
+                                                                <div class="csssum-detail55"> @Model.IB.INRUserOptions.selBankDeposits.AccountNumber    </div>
+                                                            }
+
+                                                        </div>
+                                                        @if (Model.IsBankDeposits)
+                                                        {
+                                                            <div class="css77-withdrawlS">
+                                                                <div class="csssum-title55"> Narration</div>
+                                                                <div class="csssum-detail55">@Model.RefNarration</div>
+                                                            </div>
+                                                        }
+                                                        <div class="css77-withdrawlS">
+                                                            <div class="csssum-title55"> Withdrawl Amt.</div>
+                                                            <div class="csssum-detail55">@Model.Amount.ToString("##.00####") ₹</div>
+                                                        </div>
+
+                                                        <div class="css77-withdrawlS">
+                                                            <div class="csssum-title55"> Transction Fees</div>
+                                                            <div class="csssum-detail55">@Model.FiatWithdrawFee.ToString("##.00####") ₹</div>
+                                                        </div>
+
+
+                                                        <div class="css77-ordersucc text-center">
+                                                            <span class="css77-payno">
+                                                                <span>
+                                                                    <h4>You Receive</h4>
+                                                                </span> <span class="orange">
+                                                                    @(
+                                                                        (Model.Amount - Model.FiatWithdrawFee).ToString("##.00####")
+                                                                        ) ₹
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    }
+                                                </div>
+
+                                                <!-----============================================================================--------->
+                                            </div>
+                                            <span class="dflexdiv">
+                                                <input type="button" name="previous" class="d-dark action-button" value="Previous">
+                                                <input type="submit" class=" d-orange action-button float-right" value="Continue">
+                                            </span>
+                                        </div>                                                                             
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+
+            </div>
+
+        </div>
+
+        <!----------------------------------------------->
+
+    </div>
+</section>
+@section Scripts{
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/minjs/mutiselect.js"></script>
+        <script src="~/minjs/with.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+        <script src="~/js/mutiselect.js"></script>
+        <script src="~/js/with.js"></script>
+    }
+
+
+    <script type="text/javascript">
+
+        $(".my-select").chosen({ width: "100%" });
+    </script>
+       }

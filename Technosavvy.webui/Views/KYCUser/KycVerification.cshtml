@@ -1,0 +1,271 @@
+﻿@using TechnoApp.Ext.Web.UI.Model;
+@model vmProfile
+@{
+    ViewData["Title"] = "Initiate KYC Verification with TechnoApp";
+}
+
+@section Header {
+    <meta name="description" content=" Click to start KYC verification and embark on a streamlined user onboarding process." />
+}
+<!---------------------------------------------------------------------->
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="login-box" id="login-tab">
+            <div class="row">
+                <div class="person-ver">
+                    <h1 class="heading divenity44">
+                        <a asp-controller="kycuser" asp-action="index">
+                            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                        </a>
+                        <span>
+                            Personal Identity Verification
+                        </span>
+                    </h1>
+                    <ol class="steps">
+                        <li class="step is-active" data-step="1">Basic Information </li>
+                        <li class="step " data-step="2">Upload KYC Documents</li>
+                        <li class="step" data-step="3">Submit</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="person-ver">
+
+                        <h3 class="title"> 1. Basic Information </h3>
+                        <div class="css7-kycver mt-3">
+                            <!----------------------------------------->
+                            <form class="was-validated" novalidate asp-action="Start-KYC" asp-controller="KYCUser" autocomplete="off" enctype="multipart/form-data" method="post">
+                                @Html.AntiForgeryToken()
+                                @Html.HiddenFor(x=>x._Theme)
+                                @Html.HiddenFor(x=>x._CookieConsent)
+                                @Html.HiddenFor(x=>x.UserAccountId)
+                                @Html.HiddenFor(x=>x.TaxResidencyId)
+                                @Html.HiddenFor(x=>x.CitizenshipId)
+                                @Html.HiddenFor(x=>x.NickName)
+                                @Html.HiddenFor(x=>x.DateOfBirth)
+                                @Html.HiddenFor(x=>x.selectedTaxResidency.countryId)
+                                @Html.HiddenFor(x=>x.selectedTaxResidency.Abbri)
+                                @Html.HiddenFor(x=>x.selectedTaxResidency.countryName)
+                                @if (Model.ProfileId != Guid.Empty)
+                                    @Html.HiddenFor(x=>x.ProfileId)
+                                    <div class="row">
+                                        <div asp-validation-summary="All" class="text-danger"></div>
+
+                                        <div class="col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label class="form-label">First Name <span class="commcss4">*</span></label>
+                                                <div id="mrdiv" class="input-group ">
+                                                    <select asp-for=Title class="form-select css7-select">
+                                                        <option selected>Mr.</option>
+                                                        <option value="2">Mrs.</option>
+                                                        <option value="3">Ms.</option>
+                                                        <option value="4">Mx.</option>
+                                                    </select>
+                                                    <div class="css7-kyc-btn pt-0 pb-0">
+                                                        <input type="text" asp-for=FirstName class="form-control" placeholder="First Name ">
+                                                        <input type="text" asp-for=LastName class="form-control" placeholder="Last Name ">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label class="form-label">Date of Birth  </label>
+                                                <input type="date" asp-for="DateOfBirth" class="form-control"   disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label class="form-label">Gender<span class="commcss4">*</span></label>
+                                                <select class="form-select mb-0" asp-for="gender">
+                                                    @foreach (var item in System.Enum.GetNames(typeof(Gender)))
+                                                {
+                                                    @if (Model.gender.ToString() == item)
+                                                    {
+                                                        <option selected="selected" value="@item">@item</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@item">@item</option>
+                                                    }
+                                                }
+                                                @* <option value="1">Male</option>
+                                                <option value="2">Female</option>
+                                                <option value="3">Other</option>*@
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Apartment, Suite etc.  </label>
+                                            <input type="text" class="form-control" asp-for="Address.UnitNo" placeholder=" Unit or Appartment No">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label class="form-label"> Street Address<span class="commcss4">*</span></label>
+                                            <input type="text" class="form-control" asp-for="Address.StreetAdd" placeholder=" Street Address">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4 col-12">
+                                        <div class="form-group">
+                                            <label class="form-label">City<span class="commcss4">*</span></label>
+                                            <input type="text" asp-for=Address.City class="form-control" placeholder=" City/Town ">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <div class="form-group">
+                                            <label class="form-label">State<span class="commcss4">*</span></label>
+                                            <input type="text" asp-for=Address.State class="form-control" placeholder=" State Full Name ">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Postal Code<span class="commcss4">*</span></label>
+                                            <input type="text" asp-for=Address.PostCode class="form-control" placeholder="Zip / Post Code " required="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Country of Tax Residency <span class="commcss4">*</span></label>
+                                            <input type="text" class="form-control" placeholder=" " value="@Model.selectedTaxResidency.countryName" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="css7-kyc-btn">
+                                        <button class="btn gent-btn mt-3" type="Submit">Save & Continue </button>
+                                    </div>
+
+                                </div>
+                            </form>
+
+                            <!----------------------------------------->
+                            <!----------------------------------------->
+                        </div>
+                       
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xs-12">
+                    <div class="login-img"> <img src="/images/kycver.png"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@* <section class="section-login bg2">
+    <div class="container">
+        <div class="login-box" id="login-tab">
+            <div class="row">
+
+                <div class="col-md-6 col-xs-12">
+                    <div class="person-ver">
+                        <h1 class="heading ">Personal Identity Verifcation</h1>
+                        <h5> Details you enter here should match as per your Govenrment-Issued ID.</h5>
+
+                        <h3> 1 Upload KYC Documents</h3>
+                        <div class="css7-kycver">
+                            <!----------------------------------------->
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-4 col-12">
+
+                                        <div class="input-group mb-3">
+
+                                            <select class="form-select css7-select" >
+                                                <option selected>Mr.</option>
+                                                <option value="2">Mrs.</option>
+                                                <option value="3">Miss</option>
+                                            </select>
+                                            <input type="text" class="form-control" placeholder="First Name*">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-12">
+                                        <input type="text" class="form-control" placeholder="Middle Name">
+                                    </div>
+
+                                    <div class="col-md-4 col-12">
+                                        <input type="text" class="form-control" placeholder="Last Name*">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <label  class="form-label">Date of Birth*</label>
+                                        <input type="date" class="form-control" placeholder="Date of Birth">
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <label  class="form-label">Gender*</label>
+                                        <select class="form-select" >
+                                            <option selected>Male</option>
+                                            <option value="1">Male</option>
+                                            <option value="2">Female</option>
+                                            <option value="3">Other</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <input type="test" class="form-control" placeholder="Residency*">
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <input type="text" class="form-control" placeholder="Residential Address*">
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-12">
+                                        <input type="test" class="form-control" placeholder="City">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <input type="test" class="form-control" placeholder="State">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <input type="test" class="form-control" placeholder="Zip Code">
+                                    </div>
+                                </div>
+                            </form>
+
+                            <!----------------------------------------->
+                            <!----------------------------------------->
+                        </div>
+                        <div class="css7-kyc-btn">
+                            <button class="btn gent-btn mt-3" type="button" onclick="location.href='kyc-personal-verification-upload.html'">Continue </button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xs-12">
+                    <div class="login-img"> <img src="~/images/login-img.png"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section> *@
+
+
+

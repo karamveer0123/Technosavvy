@@ -1,0 +1,66 @@
+﻿@model vmSettingsMultiFactorMain
+<div class="row">
+    <div class="css55-security-div">
+        <div class="css55-heading">Two Factor Authentication (2FA) </div>
+        <!----------------------------->
+@*         <div class="css55-security-box">
+            <div class="css55-security-left">
+                <span><i class="fa fa-id-card-o" aria-hidden="true"></i> </span>
+                <span>
+                    <div class="css55-security-title">
+                        Phone Number Verifcation
+                        <p>Secure Your Account and Transactions</p>
+                    </div>
+                </span>
+
+            </div>
+            <div class="css55-security-center">
+                <span> <i class="fa fa-times-circle-o" aria-hidden="true"></i> Not Linked</span>
+            </div>
+            <div class="css55-security-right">
+                <span>
+                    <a href="#" class="css55-enable-btn">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+
+                        </div>
+                    </a>
+                </span>
+            </div>
+        </div> *@
+        <!----------------------------->
+
+     @*    <div class="css55-security-box">
+            <div class="css55-security-left">
+                <span><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                <span>
+                    <div class="css55-security-title">
+                        Email Address Verifcation
+                        <p>Secure Your Account and Transactions</p>
+                    </div>
+                </span>
+
+            </div>
+            <div class="css55-security-center"> <span> <i class="fa fa-check-circle-o" aria-hidden="true"></i>@Model.Email.Substring(0,3)***</span></div>
+            <div class="css55-security-right"><span> <a href="#" class="css55-change-btn">Change </a></span> </div>
+        </div> *@
+
+        @if (!Model.IsMultiFactorEnabled && !Model.IsAuthenticator)
+        {
+            @await Html.PartialAsync("partial/_EnableMultiFactor",Model)
+        }
+        else
+        {
+            if (Model.IsSetUPAuthenticator)
+            {
+                @await Html.PartialAsync("partial/_SetUPAuthenticator",Model)
+            }
+            else // if (Model.IsAuthenticator)
+            {
+               @await Html.PartialAsync("partial/_DisableMultiFactor",Model)
+            }
+        }
+    </div>
+
+</div>
+

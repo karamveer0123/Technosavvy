@@ -1,0 +1,21 @@
+﻿@model vmSettingsMultiFactorMain 
+<form asp-action="TwoFactorAuthenticate" asp-controller="Settings" data-ajax="true" data-ajax-method="POST" data-ajax-update="#gauth">
+                    <div class="css55-security-box2">
+                        <div class="css55-google-down">
+                            <span class="css5-downloadG-text">
+                                <ul>
+                                    <li>1. Download the Google Authenticator</li>
+                                    <li>2.  Scan the QR Code</li>
+                                    <li>3.  Enter the Code</li>
+                                    <li>4.   Submit the Code</li>
+                                </ul>
+                            </span>
+                            <span class="css5-downloadG-qr"><img src="@Model.SetUPAuthenticator.QRImg"> </span>
+                            <input type="hidden" asp-for="SetUPAuthenticator.Code" />
+                            <input type="hidden" asp-for="Email" />
+                            <input type="hidden" asp-for="IsMultiFactorEnabled" />
+                            <span class="css55-security-center">  <input type="password" asp-for="SetUPAuthenticator.OTP" class="form-control" placeholder="Enter Code"></span>
+            <span> <button type="submit" class="css55-change-btn">Submit</button></span>
+                        </div>
+                    </div>
+                </form>

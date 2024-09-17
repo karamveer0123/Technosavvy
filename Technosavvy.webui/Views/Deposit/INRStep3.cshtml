@@ -1,0 +1,128 @@
+﻿@model vmDeposit
+@{
+    ViewData["Title"] = "Choose Your Fiat Withdrawal Account";
+}
+@section Header {
+    <meta name="description" content="Explore seamless fiat withdrawal options. Select your preferred account for hassle-free transactions. Experience secure and efficient financial management." />
+
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+
+                <span>Deposit </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">
+                            <div class="acoun-box authenti-box">
+                                <!-- progressbar -->
+                                @if (Model.ActionMethod == "Currency")
+                                {
+                                    <div class="shadow_TechnoSavvy">
+                                        <ol class="progressdiv">
+                                            <li class="step  is-complete" data-step="1">                                              
+                                                    Enter Details                                              
+                                            </li>
+                                            <li class="step is-active" data-step="2">                                              
+                                                    Confirmation                                               
+                                            </li>
+                                        </ol>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="shadow_TechnoSavvy">
+                                        <ol class="progressdiv">
+                                            <li class="step  is-complete" data-step="1">                                    
+                                                    Choose Asset                                               
+                                            </li>
+                                            <li class="step is-active" data-step="2">
+                                                Enter <br> Deposit Form                                              
+                                            </li>
+                                            <li class="step" data-step="3">
+                                                Verify  <br> Information
+                                            </li>
+                                            <li class="step" data-step="4">                                       
+                                                    Completed                                              
+                                            </li>
+                                        </ol>
+                                        <!---------------------------------------------->
+
+                                    </div>
+                                }
+
+<form novalidate class="was-validated" autocomplete="off" asp-action="@Model.ActionMethod" asp-controller="deposit" id="frmDeposit" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x=>x._Theme)
+                                    @Html.HiddenFor(x=>x.isBack)
+                                    @Html.HiddenFor(x=>x._CookieConsent)
+                                    @Html.HiddenFor(x=>x.inforBag)
+                                    @Html.HiddenFor(x=>x.selectedCoin)
+                                    @Html.HiddenFor(x=>x.IsBankDeposits)
+                                    @Html.HiddenFor(x=>x.IsUPI)
+                                    @Html.HiddenFor(x=>x.Amount)
+    <div asp-validation-summary=All class="text-danger"></div>
+    <div id="Msg" class="text-danger"></div>
+    <div id="dStep3" class="form-card">
+        <div class="form-group mt-3">
+            <label for="exampleInputSpend" class="lable-name22"> Amount</label>
+            <input type="text" class="form-control" asp-for=Amount readonly>
+            <span class="sell-coin11"> @Model.Symbole</span>
+        </div>
+        @if (Model.IsUPI)
+        {
+            <div id="dupi">
+                @await Html.PartialAsync("partial/_myUPI",Model)
+            </div>
+        }
+        else if (Model.IsBankDeposits)
+        {
+            <div id="dBank">
+                @await Html.PartialAsync("partial/_myBank",Model)
+            </div>
+        }
+    </div>
+    <span class="dflexdiv">
+        <input type="button" name="previous" class="d-dark action-button" value="Previous">
+        <input type="submit" name="next" class=" d-orange action-button float-right" value="Continue">
+    </span>
+</form>
+ </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/clipboard.min.js"></script>
+        <script src="~/minjs/qrcode.min.js"></script>
+        <script src="~/minjs/dep.min.js"></script>
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/clipboard.js"></script>
+        <script src="~/js/qrcode.min.js"></script>
+        <script src="~/js/dep.js"></script>
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+    }
+
+
+}

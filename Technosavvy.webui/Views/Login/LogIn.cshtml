@@ -1,0 +1,81 @@
+﻿@model vmUserLogin
+@{
+    ViewData["Title"] = "TechnoApp Login | Access Your Account Safely";
+}
+@section Header {
+    <meta name="description" content="Securely access your TechnoApp account with confidence. Streamline navigation and manage your account effortlessly. Experience safe and efficient login today." />
+}
+@{
+     if (ConfigEx.VersionType == versionType.PreBeta)
+        Layout = "_LayoutPre";
+
+    ViewData["Title"] = "Log In";
+}
+
+@if (ViewBag.Status == null || !ViewBag.Status)
+{
+
+    <section class="section-login bg2">
+        <div class="container">
+            <div class="login-box" id="login-tab">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="login-img"> <img src="~/images/login-img.png"> </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="login-form">
+                            <h1> Account Log In</h1>
+                               <div id="email" class="tab-pane  active">
+                                        <div class="acc-log-box">
+                                    <form class="was-validated" id="loginform" asp-action="Login" asp-controller="LogIn" autocomplete="off">
+                                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                <div class="form-group " style="position:relative">
+                                                    <input id="uName" type="email" asp-for="UserName" class="form-control" placeholder="Email"  required>
+                                                    <div class="invalidError text-danger">
+                                                        <span asp-validation-for="UserName" >
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group " style="position:relative">
+                                                    <input id="pwd" type="password" asp-for="Password" class="form-control changePwd" placeholder="Password" id="id_password" required/>
+                                            <span class="eye112  convertPwd"><i class="fa fa-eye" id="togglePassword" aria-hidden="true"></i></span>
+                                                    <div class="invalidEroor text-danger">
+                                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                @*<a class="eye112"><i id="togglePassword" class="fa fa-eye fa-eye-slash"></i></a>*@
+                                                <button id="btnlogin" class="btn gent-btn" onclick="return CheckFormValid('loginform')" type="submit">Login </button>
+                                                @*<p class="text-center"> or </p>
+                                                <button class="btn google-btn" type="button" onclick="location.href='security-verificationgoogle.html'"><img class="" src="~/images/google-logo.png"> Continue With Google </button>*@
+                                                <div class="row">
+                                                <div class="acc-forget"><span> <a asp-action="ForgetPassword" asp-controller="SignUp">Forgot Password?</a></span><span> <a asp-controller="signup" asp-action="RegisterUser"> Register Now</a></span> </div></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+else
+{
+    <div>@ViewBag.Message</div>
+    <div>
+        <img src="@ViewBag.BarcodeImageUrl" />
+    </div>
+    <div>
+        Manual Setup Code : @ViewBag.SetupCode
+    </div>
+    <div>
+        @using (Html.BeginForm("TwoFactorAuthenticate", "Home", FormMethod.Post))
+        {
+            <input type="text" name="CodeDigit" />
+            <input type="submit" class="btn btn-success" />
+        }
+    </div>
+}

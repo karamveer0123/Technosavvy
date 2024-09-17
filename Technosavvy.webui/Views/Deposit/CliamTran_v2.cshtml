@@ -1,0 +1,108 @@
+﻿@model vmClaimTranDeposit
+@{
+    ViewData["Title"] = "TechnoApp  Deposit Claim: Retrieve Your Digital Assets with Ease";
+}
+
+@section Header {
+    <meta name="description" content="Experience a seamless process for retrieving your digital assets. Explore hassle-free claims for a streamlined financial experience." />
+
+}
+
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Deposit </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+
+                @*---- Transaction Hash Form ----*@
+                @if (Model.Msg.IsNullOrEmpty() )
+                {
+                    <div class="css77-buyc-outer">
+                        <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                            <div class="css77buy-box">
+                                <!---===================================================-->
+                                <form asp-action="ClaimTran" asp-controller="deposit" autocomplete="off"  class="was-validated" novalidate>
+                                    <div class="form-group mt-3">
+                                        <label for="exampleInputSpend" class="lable-name22">
+                                            Network
+                                        </label>
+                                        <div class="form-select3">
+                                            <select class="my-select " asp-for=NetworkId>
+                                                <option>Select Network</option>
+                                                @foreach (var item in Model.NetworkList)
+                                                {
+                                                    <option data-img-src="/images/coin/coin/@string.Concat(item.NativeCurrencyCode.ToUpper(),".png")" value="@item.SupportedNetworkId">  @item.Name </option>
+                                                }
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-3">
+                                        <label for="exampleInputSpend" class="lable-name22 pb-1">Enter Transaction Hash</label>
+                                        <input type="text" class="form-control" asp-for="TranHash" placeholder="0x..."   aria-describedby="spndHelp">
+                                    </div>
+
+                                    <div class="dflexdiv mt-3">
+                                        <input type="submit" name="Submit" class=" d-orange  gent-btn float-right" value="Confirm">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+                else
+                {
+                    @*---- Message View of this Page ----*@
+                    <div class="css77-buyc-outer">
+                        <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                            <div class="summarydiv">
+                                            <div class="confpenddiv">
+                                                <div class="modegred34">
+                                                    <div class="vericond432"> <i class="fa fa-check d-green" aria-hidden="true"></i></div>
+                                                    <div class="csstime55-text mt-2">
+                                                        @Model.Msg
+                                                    </div>
+                                                </div>
+                                     
+                                            <span class="dflexdiv">
+                                                <a asp-action="claimTran" asp-controller="deposit" class="withsumm-btn  d-dark">New Claim</a>
+                                                <a asp-action="Index" asp-controller="wallet" class="withsumm-btn ">Go To Wallet</a>
+                                           </span>
+                                        </div>                                                        
+                            </div>
+                        </div>
+
+                    </div>
+                }
+            </div>
+
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    
+    @if (ConfigEx.ShouldMini)
+    {
+         <script src="~/minjs/dep.min.js"></script>
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {
+         <script src="~/js/dep.js"></script>
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script> 
+    }
+   
+ 
+}

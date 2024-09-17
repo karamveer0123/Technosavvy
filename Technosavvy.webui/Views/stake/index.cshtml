@@ -1,0 +1,216 @@
+﻿@model vmMyStaking
+@{
+    ViewData["Title"] = " Maximize Your Returns with Secure and Easy Stake Management";
+}
+@section Header {
+    <meta name="description" content="Unlock the potential for impressive returns with TechnoApp  Staking. Seamlessly manage your stakes in a secure environment." />
+
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span> Staking </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">
+                            <!--==============================================-->
+                            <!--==============================================-->
+                            <form novalidate class="was-validated" autocomplete="off" asp-action="Summary" asp-controller="Stake" id="frmStaking" enctype="multipart/form-data">
+                                @Html.AntiForgeryToken()
+                                <div asp-validation-summary=All class="text-danger"></div>
+
+                                <!--==============================================-->
+                                <div id="select100per" class="form-group mt-3">
+                                    <label class="form-label">Token1</label>
+
+                                    <div class=" form-select3 ">
+                                        <select class="my-select" asp-for="Token.TokenId" aria-label="Token" onchange="AssetSelected()">
+                                            @if (Model.Token?.TokenId == null)
+                                            {
+                                                <option selected="selected">Select Token</option>
+                                            }
+                                            else
+                                            {
+                                                <option>Select Token</option>
+                                            }
+                                            @foreach (var m in Model.TokenList)
+                                            {
+                                                @if (Model.Token != null && Model.Token.TokenId == m.TokenId)
+                                                {
+                                                    <option data-img-src="@string.Concat("../../images/coin/coin/",@m.Code.ToUpper(),".png")" abb="@m.Code" value="@m.TokenId" selected="">@m.Code.ToUpper() </option>
+                                                }
+                                                else
+                                                {
+                                                    <option data-img-src="@string.Concat("../../images/coin/coin/",@m.Code.ToUpper(),".png")" abb="@m.Code" value="@m.TokenId">@m.Code.ToUpper() </option>
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--==============================================-->
+                                <div id="select100per" class="form-group mt-3">
+                                    <label class="form-label">Amount</label>
+                                    <div class="input-group mb-1">
+                                        <input type="text" step="0.01" class="form-control" placeholder="Enter Min Amount" aria-describedby="spndHelp">
+                                        <div class="form-select3">
+                                            <select class="my-select" asp-for="selectedStakingSlot.StakingOpportunityId" aria-label="APY%">
+                                                @if(Model.RelatedStakingSlot!=null){
+                                                @foreach (var m in Model.RelatedStakingSlot)
+                                                {
+                                                    @if (Model.selectedStakingSlot != null && Model.selectedStakingSlot.StakingOpportunityId == m.StakingOpportunityId)
+                                                    {
+                                                        <option selected="selected" value="@m.StakingOpportunityId">@m.Duration Days <span> APY: @m.AYPOffered %</span></option>
+
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@m.StakingOpportunityId">@m.Duration Days <span> APY: @m.AYPOffered %</span></option>
+                                                    }
+                                                }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    @if (Model.Token != null && Model.Token.Code.IsNOT_NullorEmpty())
+                                    {
+                                        <span class="sleft432 float-right"> Available Balance: @Model.wBalance @Model.Token.Code</span>
+
+                                    }
+                                </div>
+                                <!--==============================================-->
+
+                                <div class="form-group dflexright orange">
+                                    <a class="withdrlink float-right" asp-controller="buy" asp-action="index" type="button">Buy Now  </a>
+                                    | <a class="withdrlink float-right" asp-controller="convert" asp-action="index" type="button">Convert </a>
+                                </div>
+
+                                <!--==============================================-->
+
+                                @if (Model.otherBalance > 0)
+                                {
+                                    <div class="form-group mt-4 dflexdiv">
+                                        <span class="csstime55-text text-left">You have additional <span class="orange">@(Model.otherBalance.ToString("#,##0.###0")) @Model.Token.Code</span> in your other wallets. Do you want to include them also? </span>
+
+                                        <span>
+                                            <div class="form-check form-switch">
+                                                <input asp-for="IsIncludeOtherBalance" class="form-check-input" type="checkbox" role="switch" data-bs-toggle="collapse" data-bs-target="#wallet3288" aria-expanded="true">
+                                            </div>
+                                        </span>
+                                    </div>
+                                }
+                                <!--==============================================-->
+                                <div id="wallet3288" class="collapse mb-2">
+                                    <div class="selord43ews">
+                                        <div class="methdiv432 active">
+                                            <div class="form-check dflex20div">
+                                                <input class="form-check-input" type="checkbox" value="" id="spotwallet">
+                                                <label class="form-check-label" for="spotwallet">
+                                                    Spot Wallet
+                                                    <span>Include 300 ETH balance of spot wallet.</span>
+                                                </label>
+                                            </div>
+                                            <div class="metfee">Avl bal: 3000 ETH </div>
+                                        </div>
+
+                                        <div class="methdiv432">
+                                            <div class="form-check dflex20div">
+                                                <input class="form-check-input" type="checkbox" value="" id="earnwallet">
+                                                <label class="form-check-label" for="earnwallet">
+                                                    Earn Wallet
+                                                    <span>Include 300 ETH balance of spot wallet.</span>
+                                                </label>
+                                            </div>
+                                            <div class="metfee">Avl bal: 3000 ETH </div>
+                                        </div>
+
+                                        <div class="methdiv432">
+                                            <div class="form-check dflex20div">
+                                                <input class="form-check-input" type="checkbox" value="" id="fundwallet">
+                                                <label class="form-check-label" for="fundwallet">
+                                                    Fund Wallet
+                                                    <span>Include 300 ETH balance of spot wallet.</span>
+                                                </label>
+                                            </div>
+                                            <div class="metfee">Avl bal: 3000 ETH </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--==============================================-->
+
+                                <div class="form-group width100  mt-4">
+                                    <div class="form-label">Amounts Limits</div>
+                                    <div class="avb543"><span>Minimum: 500 TechnoSavvy</span> <span> Available Quota: 50,000 TechnoSavvy</span>   </div>
+
+                                    <div class="form-check mt-2">
+                                        <input class="form-check-input" type="checkbox" value="" id=" ">
+                                        <label class="form-check-label" for=" ">
+                                            Auto-Stake
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                                <!--==============================================-->
+
+                                <span class="dflexdiv">
+                                    <a type="button" name="previous" class="d-dark action-button" asp-controller="stake" asp-action="index">Cancel</a>
+                                    <a type="button" name="next" class=" d-orange action-button float-right" asp-controller="stake" asp-action="stakesummary">Continue</a>
+                                </span>
+                                <!--==============================================-->
+                            </form>
+                            <!--==============================================-->
+                            <!--==============================================-->
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+
+            </div>
+
+        </div>
+        <!----------------------------------------------->
+    </div>
+</section>
+@section Scripts{
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+    }
+
+    <script>
+        function AssetSelected() {
+            $('#frmStaking').prop('action', '/stake');
+                    $('#frmStaking').submit();
+
+        }
+        </script>
+    <script type="text/javascript">
+       
+        $(document).ready(function () {
+            LoadCurrIfNot();
+            formateAll();
+            $(".my-select").chosen({ width: "100%" });
+        });
+    </script>
+}

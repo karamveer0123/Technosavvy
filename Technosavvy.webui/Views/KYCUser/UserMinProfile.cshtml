@@ -1,0 +1,157 @@
+﻿@model vmProfile
+
+@{
+    ViewData["Title"] = "Explore Your Profile | Personalize Settings";
+}
+@section Header {
+    <meta name="description" content="Enhance your experience with a personalized user profile. Tailor settings, manage preferences, and make the most of your journey effortlessly." />
+}
+<!---------------------------------------------------------------------->
+<section class="section-login bg2">
+    <div class="container">
+        <div class="login-box" id="login-tab">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="login-img"> <img src="~/images/login-img.png"> </div>
+                </div>
+                <div class="col-md-6 col-xs-12 pt-3">
+
+                    <div class="login-form">
+
+                        <h1>User Profile</h1>
+                        <form class="was-validated" novalidate asp-action="User-Profile" asp-controller="KYCUser" autocomplete="off" enctype="multipart/form-data" method="post">
+                            @Html.AntiForgeryToken()
+                            @Html.HiddenFor(x=>x._Theme)
+                            @Html.HiddenFor(x=>x._CookieConsent)
+                            @Html.HiddenFor(x=>x.UserAccountId)
+                            @if (Model.ProfileId != Guid.Empty)
+                                @Html.HiddenFor(x=>x.ProfileId)
+
+                            <div class="row">
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+                                    <div class="col-md-6">
+                                        <div class="form-group" style="position:relative">
+                                            <label asp-for="FirstName" class="form-label">First Name <span class="commcss4">*</span></label>
+                                            <input type="text" asp-for="FirstName" class="form-control" placeholder="First Name" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group col-md-6" style="position:relative">
+                                            <label asp-for="LastName" class="form-label">Last Name <span class="commcss4">*</span></label>
+                                            <input type="text" asp-for="LastName" class="form-control" placeholder="Last Name" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                <div class="form-group" style="position:relative">
+                                        <label asp-for="NickName" class="form-label">Nick Name<span class="commcss4">*</span></label>
+                                    <input type="text" asp-for="NickName" class="form-control" placeholder="Nick Name" required>
+                                    </div>
+
+                                <div class="form-group col-md-6" style="position:relative">
+                                    <label class="lable-name22"> Date of Birth</label>
+                                    <input type="date" class="form-control" placeholder="dd-MMM-yyyy" asp-for="DateOfBirth" required>
+                                    <div class="invalidEroor">  <span asp-validation-for="DateOfBirth"></span>  </div>
+                                </div>
+                                </div>
+
+                                <div class="row">
+                                <div class="form-group col-md-6" style="position:relative">
+                                    <label asp-for="selectedCitizenOf.countryId" class="form-label">Country of Citizenship <span class="commcss4">*</span></label>
+                                        <div class="form-control foconselect2" >
+                                    <select asp-for=selectedCitizenOf.countryId class="my-select" placeholder="Country of Tax Residency" required>
+                                        @if (Model.CitizenshipId.HasValue == false)
+                                    {
+                                        <option data-img-src="/images/coun-flags/globe.png" selected="">Citizenship Country</option>
+
+                                    }
+                                    else
+                                    {
+                                                <option data-img-src="/images/coun-flags/globe.png">Citizenship Country</option>
+                                    }
+                                    @foreach (var item in Model.lstCountries)
+                                    {
+                                        if (Model.CitizenshipId.HasValue && Model.CitizenshipId == @item.countryId)
+                                        {
+                                            <option selected="" data-img-src="/images/coun-flags/@string.Concat(item.Abbri.ToLower(),".png")" value="@item.countryId"> @item.countryName</option>
+                                        }
+                                        else
+                                        {
+                                            <option data-img-src="/images/coun-flags/@string.Concat(item.Abbri.ToLower(),".png")" value="@item.countryId"> @item.countryName</option>
+
+                                        }
+                                    }
+                                </select>
+                                <div class="invalidEroor">  <span asp-validation-for="CitizenshipId"></span>   </div>
+
+                                    </div>
+                                </div>
+                            <div class="form-group col-md-6 " style="position:relative">
+                                <label asp-for="selectedTaxResidency.countryId" class="form-label">Country of Residency <span class="commcss4">*</span></label>
+                                    <div class="form-control foconselect2" >
+                                        <select asp-for=selectedTaxResidency.countryId class="my-select" placeholder="Country of Tax Residency" required>
+                                    @if (Model.TaxResidencyId.HasValue == false)
+                                    {
+                                                <option data-img-src="/images/coun-flags/globe.png" selected="">Tax Resident Country</option>
+
+                                            }
+                                            else
+                                            {
+                                                <option data-img-src="/images/coun-flags/globe.png">Tax Resident Country</option>
+                                            }
+                                            @foreach (var item in Model.lstCountries)
+                                    {
+                                        if (Model.TaxResidencyId.HasValue && Model.TaxResidencyId == @item.countryId)
+                                        {
+
+                                            <option selected="" data-img-src="/images/coun-flags/@string.Concat(item.Abbri.ToLower(),".png")" value="@item.countryId"> @item.countryName</option>
+                                        }
+                                        else
+                                        {
+                                            <option data-img-src="/images/coun-flags/@string.Concat(item.Abbri.ToLower(),".png")" value="@item.countryId"> @item.countryName</option>
+
+                                        }
+                                    }
+                                </select>
+                                <div class="invalidEroor">  <span asp-validation-for="TaxResidencyId"></span>   </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            @* <div class="form-group" style="position:relative">
+                            <input type="tel" id="mobile-number" class="form-control input_flag-l" placeholder="e.g. +1 702 123 4567">
+                            <div class="invalid-tooltip">
+                            Please choose a unique and valid username.
+                            </div>
+                            </div>*@
+                            <button class="btn gent-btn" type="submit"> Submit </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+     
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {          
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+    }
+   
+   <script>
+        $('my-select').chosen({ width: "100%" });
+    </script>
+    }
+<!---------------------------------------------------------------------->

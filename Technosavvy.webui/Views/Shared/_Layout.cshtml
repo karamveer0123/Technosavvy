@@ -1,0 +1,1083 @@
+﻿@using TechnoApp.Ext.Web.UI.Static;
+@model vmBase
+@{
+    var vmCurrOptions = new vmCurrencyOptions { CurrencyNames = Model._CurrencyList, SelectedCurrency = Model._Curr };
+    var mktVal = $"{ConfigEx.Config.GetSection("DataStream").Value}/Stream/";
+    var mktAPI = $"{ConfigEx.Config.GetSection("DataStream").Value}/Market/";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TechnoApp </title>
+
+    @await RenderSectionAsync("Header",required:false)
+
+    <link rel="icon" href="~/images/TechnoSavvy-token.png" type="image/png">
+    <link href="~/css/intlTelInput.css" rel="stylesheet">
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/fonts/fontfamilystyle.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/trade.css">
+    <link rel="stylesheet" href="~/css/css.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/dashboard.css">
+    <link rel="stylesheet" href="~/css/toastr.css">
+    <link rel="stylesheet" href="~/css/select-1.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    @*<link rel="stylesheet" href="~/css/academy-page.css">*@
+    @*<link rel="stylesheet" href="~/css/media-library.css">*@
+    @await RenderSectionAsync("Styles", required: false)
+
+    @*ToDo: Arjun, This should be moved to our server using npm*@
+    @* <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />*@
+
+    @if (Model._Theme == eThemeName.Dark.ToString())
+    {
+        @*My-Style-CSS Light*@
+        <link rel="stylesheet" id="themeChange" href="~/css/dark-theme-root.css">
+    }
+    else
+    {
+        @*My-Style-CSS Dark*@
+        <link rel="stylesheet" id="themeChange" href="~/css/light-theme-root.css">
+    }
+
+    @*<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0&appId=849080016719281" nonce="TechnoApp"></script>*@
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+</head>
+<body>
+
+
+
+    @if (!Model._CookieConsent)
+    {
+
+        <div class="modal bottom token  fade show" id="TechnoSavvy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body cookie-text">
+                        <p> "TechnoApp and selected third parties use cookies or similar technologies for technical purposes, to enhance site navigation, analyze site usage, assist in all marketing efforts, and for other purposes as specified in the <a id="btnAcceptAll" asp-controller="policy" asp-action="privacy-policy"> Privacy Policy" </a>  <a class="default-btn_all-cookies forward-btn" data-ajax="true" data-ajax-method="POST" asp-action="AcceptCookie" asp-controller="Home" data-bs-dismiss="modal" aria-label="Close">Accept all cookies <i class="fa fa-arrow-circle-right"></i><span></span> </a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <section id="myHeader" class="menu-section placeholder-glow">
+        @*   @if (Model._SessionHash.IsNullOrEmpty())
+        {
+
+        <section class="top-section">
+        <div class="container-fluid">
+        <div class="row">
+        <div class="reward-div">
+        <a asp-controller="signup" asp-action="RegisterUser">
+        <i class="fa fa-gift" aria-hidden="true"></i>  Register now - Enjoy Welcome Rewards
+        @Model._Theme|@Model._Page|@Model._Curr|@Model._Lang|@Model._Country|@Model._CookieConsent
+        </a><span class="css44-cross close-cb"> <i class="fa fa-times" aria-hidden="true"></i></span>
+        </div>
+        </div>
+        </div>
+        </section>
+
+        } *@
+
+        <div class="container-fluid  d-none d-lg-block">
+            <div class="row">
+                <div class="top-meu-box">
+                    <div class="top-menu-left">
+                        @if (Model._Theme == eThemeName.Light.ToString())
+                        {
+                            <div class="logo-top "> <a class="navbar-brand" href="/"><img id="mlogo" src="../images/blogo.png"></a></div>
+                        }
+                        else
+                        {
+                            <div class="logo-top "> <a class="navbar-brand" href="/"><img id="mlogo" src="../images/wlogo.png"></a></div>
+                        }
+                        <div class="menu-top">
+                            <nav class="navbar navbar-expand-lg navbar-light">
+                                <div class="menu">
+                                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse menu-collapse" id="navbarSupportedContent">
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                            @*<li class="nav-item">
+                                            <a class="nav-link" href="https://demo.TechnoApp.com/"> Demo</a>
+                                            </li>*@
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="about-TechnoSavvy" asp-action="index">About TechnoSavvy</a>
+                                            </li>
+                                            <li class="nav-item wallet-top  dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Buy </a>
+                                                <ul class="dropdown-menu dropdown-menu-css44 top-navbar css-inline" data-popper-placement="bottom-start">
+                                                    <li><a class="dropdown-item   dropdown-item-css44" asp-controller="Buy" asp-action="Index" asp-route-code="TechnoSavvy"><img src="../images/buynav-icon1.png" class="head-icon fa"> Buy TechnoSavvy</a></li>
+                                                    <li><a class="dropdown-item" asp-controller="Buy" asp-action="Index"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy </a></li>
+                                                    <li><a class="dropdown-item" asp-controller="Convert" asp-action="Index"><i class="fa fa-exchange" aria-hidden="true"></i> Convert </a></li>
+                                                    <li><a class="dropdown-item" asp-controller="Deposit" asp-action="Index"> <i class="fa fa-briefcase" aria-hidden="true"></i> Deposit</a></li>
+                                                    <li>
+                                                        <a class="dropdown-item" asp-controller="Withdraw" asp-action="index">
+                                                            <i class="fa fa-money" aria-hidden="true"></i>
+                                                            Withdraw
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="academy" asp-action="Index">Academy</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link " asp-controller="Market" asp-action="index">Market</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link " asp-controller="trade" asp-action="index">Trade</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="cashback" asp-action="index">Cashback</a>
+                                            </li>
+                                            @*<li class="nav-item wallet-top  dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fa fa-indent" aria-hidden="true"></i> </a>
+                                            <ul class="dropdown-menu dropdown-menu-css44 top-navbar css-inline" data-popper-placement="bottom-start">
+                                            <li><a class="dropdown-item   dropdown-item-css44" asp-controller="institutional-services" asp-action="index" ><i class="fa fa-credit-card" aria-hidden="true"></i> Institutional Services</a></li>
+
+                                            </ul>
+                                            </li>*@
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="top-menu-right">
+
+                        <div id="top-navbar" class="top-navbar">
+                            <div class="top-navbar">
+                                @if (Model._SessionHash.IsNullOrEmpty())
+                                {
+                                    <span class="login-top"><a id="tpLogin" asp-action="LogIn" asp-controller="Login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login </a></span>
+                                    <span class="login-top"><a asp-action="RegisterUser" asp-controller="Signup"><i class="fa fa-file-text-o" aria-hidden="true"></i> Signup </a></span>
+                                }
+                                else
+                                {
+                                    @* <span class="login-top"><a asp-action="LogOut" asp-controller="Login"><i class="fa fa-sign-in" aria-hidden="true"></i> LogOut </a></span>
+                                *@
+                                    <span class="wallet-top">
+                                        <div id="wallet-top" class="dropdown">
+                                            <a class="btn  dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="true">
+                                                <i class="fa fa-credit-card" aria-hidden="true"></i>    Wallet
+                                            </a>
+
+                                            <ul class="dropdown-menu dropdown-content css-inline " data-popper-placement="bottom-end" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(-43px, 28px);">
+                                                <li><a class="dropdown-item   dropdown-item-css44" href="@Url.Action("Index","Wallet")"><i class="fa fa-search" aria-hidden="true"></i> Overview</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("SpotWallet","Wallet")"><i class="fa fa-credit-card" aria-hidden="true"></i> Spot Wallet</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("FundingWallet","Wallet")"> <i class="fa fa-inbox" aria-hidden="true"></i> Funding Wallet</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("EarnWallet","Wallet")"><i class="fa fa-database" aria-hidden="true"></i> Earn Wallet</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("RequestHistory","Wallet")"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i> Request History</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("Transaction","Wallet")"><i class="fa fa-table" aria-hidden="true"></i> Transactional History</a></li>
+                                                @*<li><a class="dropdown-item" href="@Url.Action("AccountStatement","Wallet")"> <i class="fa fa-file-text-o" aria-hidden="true"></i> Account Statement</a></li>*@
+                                            </ul>
+                                        </div>
+                                    </span>
+                                    <span class="wallet-top">
+                                        <div class="dropdown">
+                                            <a class="btn  dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="true">
+                                                <i class="fa fa-first-order" aria-hidden="true"></i>  Order
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-content css-inline " data-popper-placement="bottom-end" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(-43px, 28px);">
+                                                <li><a class="dropdown-item" href="@Url.Action("Open-Orders","Wallet")"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> Open Order</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("Orders-History","Wallet")"><i class="fa fa-history" aria-hidden="true"></i> Order History</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("Trades","Wallet")"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Trade History </a></li>
+                                            </ul>
+                                        </div>
+                                    </span>
+                                    <span class="wallet-top">
+                                        <div id="wallet-top" class="dropdown">
+                                            <a class="btn  dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="true">
+                                                <i class="fa fa-user-circle" aria-hidden="true"></i> @string.Concat(" ",Model._NickName)
+                                            </a>
+                                            <ul class="dropdown-menu css-inline dropdown-menuuser33  " data-popper-placement="bottom-end">
+                                                @*@Url.Action("User-Profile","kycuser")*@
+                                                <li>
+                                                    <span class="dropdown-item comsmaldiv dropdown-item-css44 orange">
+                                                        <span><i class="fa fa-user" aria-hidden="true"></i> @string.Concat($"{Model._UserName.Substring(0,2)}","***@",$"{Model._UserName.Split('@')[1]}")</span>
+                                                   
+                                                        <span class="orange comsmal33">
+                                                        <i class="fa fa-users" aria-hidden="true"></i>Community </span>                                                    
+                                                    </span>
+                                                </li>
+
+                                                <li>
+                                                    <a class="dropdown-item   userflex33    " href="@Url.Action("index","kycuser")">
+                                                        <i class="fa fa-id-card" aria-hidden="true"></i> Identification
+                                                        <span class="css44-protic teal">
+                                                            @await Html.PartialAsync("partial/_kycStatus",Model._IsKYCStatus)
+                                                        </span>
+                                                    </a>
+                                                </li>
+
+
+                                                <li><a class="dropdown-item" href="@Url.Action("index","Settings")"> <i class="fa fa-cogs" aria-hidden="true"></i> Setting & Security</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("reward","referral")"> <i class="fa fa-gift" aria-hidden="true"></i> Reward center<span class="css44-protic"><i class="fa fa-check" aria-hidden="true"></i></span></a></li>
+                                                @* <li><a class="dropdown-item" asp-controller="policy" asp-action="referral-policy"> <i class="fa fa-user-plus" aria-hidden="true"></i> Referral</a></li>*@
+                                                <li><a class="dropdown-item" asp-action="LogOut" asp-controller="Login"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                                            </ul>
+                                        </div>
+                                    </span>
+                                    <span class="profile-top">
+                                        <div class="noti-message">
+                                            <a href="#" class="link22 noti-btn"><i class="fa fa-bell-o" aria-hidden="true"></i> <span class="btn__badge pulse-button d-none" data-count="0" id="NotifyCount"></span></a>
+                                            <div class="popup" tabindex="-1" id="notificationMsgBody-Main">
+                                                <div class="not-title">
+                                                    <span class="placeholder" style="width:100px;height:5px;"></span> <span> <a href="javascript:void(0)" class="placeholder" style="width:80px;height:5px;"></a></span>
+                                                </div>
+                                                <ul id="notificationMsgBody">
+                                                    <li>
+                                                        <div class="notidiv33">
+                                                            <div class="noitileft44 w-100">
+                                                                <span class="not-head3 placeholder col-12 mb-1" style="width:100%;height:5px;"> </span>
+                                                                <span class="note-text2 placeholder col-12  mb-1" style="width:80%;height:5px;"> </span>
+                                                                <span class="note-text2 placeholder col-12 mb-1" style="width:60%;height:5px;"> </span>
+                                                            </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="notidiv33">
+                                                            <div class="noitileft44 w-100">
+                                                                <span class="not-head3 placeholder col-12 mb-1" style="width:100%;height:5px;"> </span>
+                                                                <span class="note-text2 placeholder col-12  mb-1" style="width:80%;height:5px;"> </span>
+                                                                <span class="note-text2 placeholder col-12 mb-1" style="width:60%;height:5px;"> </span>
+                                                            </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="notidiv33">
+                                                            <div class="noitileft44 w-100">
+                                                                <span class="not-head3 placeholder col-12 mb-1" style="width:100%;height:5px;"> </span>
+                                                                <span class="note-text2 placeholder col-12  mb-1" style="width:80%;height:5px;"> </span>
+                                                                <span class="note-text2 placeholder col-12 mb-1" style="width:60%;height:5px;"> </span>
+                                                            </div>
+                                                    </li>
+                                                   
+
+                                                </ul>
+                                                @*<div class="mesdiv43"> <span> <strong>34</strong> pending notification</span>  <a asp-controller="Notification" asp-action="index" class="btn-view23"> View All</a> </div>*@
+                                                <div class="mesdiv43"> <span class="placeholder " style="width:150px;height:5px;"> <strong></strong> </span>  <a href="javascript:void(0)" class="btn-view23 placeholder" style="width:150px;height:5px;"> </a> </div>
+                                                <!-- <a class="close" href="#">Close</a> -->
+                                            </div>
+                                        </div>
+                                    </span>
+
+                                }
+                                <span>
+                                    <div class="dropdown" style="width:79px;">
+                                        <a class=" dropdown-toggle" type="button" id="drpCountry" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <img src="../images/coun-flags/@string.Concat(Model._Country.ToLowerCaseTrimWhiteSpace(),".png")" class="topflag"> <span id="countryTxt" class="ms-1 text-uppercase">@Model._Country</span>
+                                        </a>
+                                        @if (Model._SessionHash.IsNullOrEmpty())
+                                        {
+                                            <div id="curCuntry">
+                                            </div>
+                                        }
+                                    </div>
+                                </span>
+
+                                <span>
+                                    <div class="dropdown">
+                                        <span class="dropdown-toggle ms-0" type="button" id="ddmbCurr" data-bs-toggle="dropdown" aria-expanded="false">
+                                            @Model._Curr
+                                        </span>
+                                        <div id="curOp">
+                                            @*@await Html.PartialAsync("_CurrOption",vmCurrOptions)*@
+                                        </div>
+
+
+                                    </div>
+                                </span>
+
+                                <span>
+
+                                    <a data-ajax="true" data-ajax-method="POST" data-ajax-success="Themechange" asp-action="ThemeChange" asp-controller="Home">
+                                        @if (Model._Theme == eThemeName.Dark.ToString())
+                                        {
+                                            <i id="chMoon" class="fa fa-moon-o d-none" aria-hidden="true"></i>
+                                            <i id="chSun" class="fa fa-sun-o" aria-hidden="true"></i>
+                                        }
+                                        @if (Model._Theme == eThemeName.Light.ToString())
+                                        {
+                                            <i id="chMoon" class="fa fa-moon-o" aria-hidden="true"></i>
+                                            <i id="chSun" class="fa fa-sun-o d-none" aria-hidden="true"></i>
+                                        }
+
+
+                                    </a>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="container-fluid d-block d-lg-none">
+            <div class="row">
+                <div class="col-4">
+                    @if (Model._Theme == eThemeName.Light.ToString())
+                    {
+                        <div class="logo-top "> <a class="navbar-brand" href="/"><img id="mlogo" src="../images/blogo.png"></a></div>
+                    }
+                    else
+                    {
+                        <div class="logo-top "> <a class="navbar-brand" href="/"><img id="mlogo" src="../images/wlogo.png"></a></div>
+                    }
+                </div>
+
+                <div class="col-8">
+                    <div class="d-flex justify-content-end authorized-user">
+                        @if (Model._SessionHash.IsNullOrEmpty())
+                        {
+                            <span class="user-mobile">
+                                <div class="d-flex gap-2 align-items-center">
+                                    <span class="login-top">
+                                        <a asp-action="LogIn" asp-controller="Login">
+                                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                            Login
+                                        </a>
+                                    </span>
+                                    <span class="login-top">
+                                        <a asp-action="RegisterUser" asp-controller="Signup">
+                                            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                            Signup
+                                        </a>
+                                    </span>
+                                    <div>
+                            </span>
+
+                        }
+                        else
+                        {
+
+                            <span class="user-mobile user-mobile-sec d-flex g-2">
+                                <div class="btn-group me-3">
+                                    <div role="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <!-- <i class="fa fa-user-circle" aria-hidden="true"></i> -->
+                                        <img src="~/images/user.png" alt="" width="27" height="27" class="rounded-circle">
+                                    </div>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li>
+                                            <span class="dropdown-item">
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                                @await Html.PartialAsync("partial/_userNameMasked",Model)
+
+                                            </span>
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item  kyc-menu" href="@Url.Action("index","kycuser")">
+                                                <i class="fa fa-id-card" aria-hidden="true"></i>
+                                                Identification
+                                                @if (Model._IsKYC)
+                                                {
+                                                    <span class="css44-protic teal"> <i class="fa fa-check teal " aria-hidden="true"></i> Verified</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="css44-protic basered"><i class="fa fa-times basered" aria-hidden="true"></i> Unverified</span>
+                                                }
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("index","Settings")">
+                                                <i class="fa fa-lock" aria-hidden="true"></i>
+                                                Settings &amp; Security
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("reward","referral")">
+                                                <i class="fa fa-user-plus"
+                                               aria-hidden="true"></i> Referral
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-action="LogOut" asp-controller="Login"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                @*<div class="btn-group">
+                            <div class="mobile-notify dropListMob"  data-country="NotificationMobile"  data-bs-toggle="modal" data-bs-target="#currencyMobileList">
+                            <i class="fa fa-bell-o" aria-hidden="true"></i>
+                            <span class="notify-count d-none"></span>
+                            </div>
+
+                            </div>*@
+                            </span>
+                        }
+                        <div class="nav-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="d-block d-lg-none">
+            <div id="mobile-blkdrop">
+                <div class="TechnoSavvy-mobile-menu">
+                    <div class="nav-icon mb-3">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="row g-2">
+                        @if (Model._SessionHash.IsNullOrEmpty())
+                        {
+
+                            <div class="col-6">
+                                <span class="login-top">
+                                    <a asp-action="LogIn" asp-controller="Login">
+                                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                        Login
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="col-6">
+                                <span class="login-top">
+                                    <a asp-action="RegisterUser" asp-controller="Signup">
+                                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                        Signup
+                                    </a>
+                                </span>
+                            </div>
+                        }
+                        else
+                        {
+                        }
+                    </div>
+                    <nav id="menu-mobile" class="left">
+                        <ul>
+                            <li>
+                                <a asp-controller="about-TechnoSavvy" asp-action="index">
+                                    About TechnoSavvy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Buy <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a asp-controller="Buy" asp-action="Index" asp-route-token="TechnoSavvy">
+                                            <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                            Buy
+                                            TechnoSavvy
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Buy" asp-action="Index">
+                                            <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                            Buy
+                                        </a>
+                                    </li>
+                                    <li><a class="dropdown-item" asp-controller="Convert" asp-action="Index"><i class="fa fa-exchange" aria-hidden="true"></i> Convert </a></li>
+                                    <li>
+                                        <a asp-controller="Deposit" asp-action="Index">
+                                            <i class="fa fa-search" aria-hidden="true"></i> Deposit
+                                           
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Withdraw" asp-action="Index">
+                                            <i class="fa fa-money" aria-hidden="true"></i>
+                                            Withdraw
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li><a asp-controller="academy" asp-action="Index">Academy</a></li>
+                            <li><a asp-controller="Market" asp-action="index">Market</a></li>
+                            <li><a asp-controller="trade" asp-action="index">Trade</a></li>
+                            <li><a asp-controller="cashback" asp-action="index">Cashback</a></li>
+                            @if (Model._SessionHash.IsNullOrEmpty())
+                            {
+
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="#">
+                                        Wallet <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    </a>
+
+                                    <ul>
+                                        <li>
+                                            <a href="@Url.Action("Index","Wallet")">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                                Overview
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("SpotWallet","Wallet")">
+                                                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                                Spot
+                                                Wallet
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("FundingWallet","Wallet")">
+                                                <i class="fa fa-money" aria-hidden="true"></i>
+                                                Funding
+                                                Wallet
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("EarnWallet","Wallet")">
+                                                <i class="fa fa-folder-open" aria-hidden="true"></i>
+                                                Earn
+                                                Wallet
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Transaction","Wallet")">
+                                                <i class="fa fa-table" aria-hidden="true"></i>
+                                                Transaction
+                                                History
+                                            </a>
+                                        </li>
+                                        @*<li><a href="@Url.Action("AccountStatement","Wallet")"> <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                    Account
+                                    Statement</a></li>*@
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Order <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("Open-Orders","Wallet")"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> Open Order</a></li>
+                                        <li><a href="@Url.Action("Orders-History","Wallet")"><i class="fa fa-history" aria-hidden="true"></i> Order History</a></li>
+                                        <li><a href="@Url.Action("Trades","Wallet")"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Trade History</a></li>
+
+                                    </ul>
+                                </li>
+                            }
+
+                            <li>
+
+                                <a class="d-flex align-items-center justify-content-between" data-ajax="true" data-ajax-method="POST" data-ajax-success="Themechange" asp-action="ThemeChange" asp-controller="Home">
+                                    Theme
+                                    @if (Model._Theme == eThemeName.Dark.ToString())
+                                    {
+
+                                        <i id="chMoon2" class="fa fa-moon-o d-none" aria-hidden="true"></i>
+                                        <i id="chSun2" class="fa fa-sun-o" aria-hidden="true"></i>
+                                    }
+                                    @if (Model._Theme == eThemeName.Light.ToString())
+                                    {
+
+                                        <i id="chMoon2" class="fa fa-moon-o" aria-hidden="true"></i>
+                                        <i id="chSun2" class="fa fa-sun-o d-none" aria-hidden="true"></i>
+                                    }
+
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="dropListMob" id="CountryMobileRes" data-country="Country" data-bs-toggle="modal" data-bs-target="#currencyMobileList">
+                                    <img src="../images/coun-flags/@string.Concat(Model._Country.ToLowerCaseTrimWhiteSpace(),".png")" class="topflag"> <span id="countryTxt2" class="ms-1 text-uppercase">@Model._Country</span>
+                                </a>
+                            </li>
+
+                            <li><a href="javascript:void(0)" class="dropListMob" data-country="Currency" data-bs-toggle="modal" data-bs-target="#currencyMobileList" id="CurrMobileRes">Currency (@Model._Curr)</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="TechnoSavvy-mobile-blkdrop"></div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+
+    </section>
+    <!----------------------menu section---------------------------->
+    @RenderBody()
+
+    @*<div id="backdrop" class="d-none">
+    <div class="load-center loading">
+    <div class="spinner-border" role="status">
+    <span class="sr-only"></span>
+    </div>
+    </div>
+    </div>*@
+    <div id="backdrop" class="d-none">
+        <div class="ring">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+            <div class="loadlogo">
+                <img src="../images/b-logo.png" width="60px">
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------------------------------------->
+    <section class="section-footer bg1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 co-xs-12  d-none d-lg-block">
+                    <div class="footer-box">
+                        <div class="footer-list">
+                            <div class="footer-title"> TechnoApp Community</div>
+                            <ul>
+                                @*  <li><a asp-controller="webinar" asp-action="index"> TechnoApp Webinars</a></li> *@
+                                <li><a asp-controller="Library" asp-action="index">Media Library </a></li>
+                                @*<li><a asp-controller="airdrop-program" asp-action="index"> Airdrop </a></li>*@
+                                <li><a asp-controller="referral-program" asp-action="index">Referral </a></li>
+                                <li><a asp-controller="press-release" asp-action="index">Press Release</a></li>
+                                <li><a asp-controller="notification" asp-action="announcement">Announcement</a></li>
+                                @* <li><a asp-controller="career" asp-action="index">Career</a></li> *@
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3 co-xs-12  d-none d-lg-block">
+                    <div class="footer-box">
+                        <div class="footer-list">
+                            <div class="footer-title">Products & Services</div>
+                            <ul>
+                                @if (Model._SessionHash.IsNullOrEmpty())
+                                {
+                                    <li> <a asp-controller="staking" asp-action="index"> Staking </a></li>
+                                } else {
+
+                                <li> <a asp-controller="stake" asp-action="stakeopportunities"> Staking </a></li>
+                                }
+                                <li> <a asp-controller="Institutional" asp-action="Index"> Institutional Services </a></li>
+                                <li> <a asp-controller="Institutional" asp-action="tokenlist"> List Your Token</a></li>
+                                <li> <a asp-controller="academy" asp-action="Index"> TechnoApp Academy</a></li>
+                                @*<li><a href="#" data-bs-toggle="modal" data-bs-target="#commingsoon">TechnoApp Labs</a></li>
+                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#commingsoon">TechnoApp API</a></li>*@
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-2 co-xs-12  d-none d-lg-block">
+                    <div class="footer-box">
+                        <div class="footer-list">
+                            <div class="footer-title">Policies</div>
+                            <ul>
+                                <li><a asp-controller="Policy" asp-action="terms-of-use"> Terms of use </a></li>
+                                <li><a asp-controller="Policy" asp-action="Privacy-Policy">Privacy Policy</a></li>
+                                <li><a asp-controller="Policy" asp-action="aml-policy"> AML/KYC Policy </a></li>
+                                <li><a asp-controller="Policy" asp-action="Referral-policy">Referral Policy</a></li>
+                                <li><a asp-controller="Policy" asp-action="Licences">Licences</a></li>
+                                <li><a asp-controller="Policy" asp-action="disclaimer">Disclaimer</a></li>
+                                @*<li><a asp-controller="Policy" asp-action="Risk-Disclosure">Disclaimer</a></li>*@
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-2 co-xs-12  d-none d-lg-block">
+                    <div class="footer-box">
+                        <div class="footer-list">
+                            <div class="footer-title"> Support</div>
+                            <ul>
+
+                                <li><a asp-controller="policy" asp-action="trading-rules"> Trading Rules </a></li>
+                                <li><a asp-controller="Fees-Charges" asp-action="index">Fees & Charges</a></li>
+
+                                <li><a asp-controller="library" asp-action="faq">FAQs</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <!--MOBILE-->
+                <div class="col-12 d-block d-lg-none">
+                    <div id="footer-tab" class="footer-section">
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        TechnoApp Community
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                                     data-bs-parent="#accordionFlushExample" style="">
+                                    <div class="accordion-body">
+                                        <div class="footer-box">
+                                            <ul>
+                                                @*  <li><a asp-controller="webinar" asp-action="index"> TechnoApp Webinars</a></li> *@
+                                                <li><a asp-controller="Library" asp-action="index">Media Library </a></li>
+                                                @*<li><a asp-controller="airdrop-program" asp-action="index"> Airdrop </a></li>*@
+                                                <li><a asp-controller="referral-program" asp-action="index">Referral </a></li>
+                                                <li><a asp-controller="press-release" asp-action="index">Press Release</a></li>
+                                                <li><a asp-controller="notification" asp-action="announcement">Announcement</a></li>
+                                                @* <li><a asp-controller="career" asp-action="index">Career</a></li> *@
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        Products &amp; Services
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                                     data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="footer-box">
+                                            <ul>
+                                                 @if (Model._SessionHash.IsNullOrEmpty())
+                                                {
+                                                    <li> <a asp-controller="stake" asp-action="index"> Staking </a></li>
+                                                } else {
+
+                                                <li> <a asp-controller="staking" asp-action="index"> Staking </a></li>
+                                                }                                                
+                                                <li> <a asp-controller="Institutional" asp-action="Index"> Institutional Services </a></li>
+                                                <li> <a asp-controller="Institutional" asp-action="tokenlist"> List Your Token</a></li>
+                                                <li> <a asp-controller="academy" asp-action="Index"> TechnoApp Academy</a></li>
+                                                @*<li><a href="#" data-bs-toggle="modal" data-bs-target="#commingsoon">TechnoApp Labs</a></li>
+                                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#commingsoon">TechnoApp API</a></li>*@
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                        Policies
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                                     data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="footer-box">
+                                            <ul>
+                                                <li><a asp-controller="Policy" asp-action="terms-of-use"> Terms of use </a></li>
+                                                <li><a asp-controller="Policy" asp-action="Privacy-Policy">Privacy Policy</a></li>
+                                                <li><a asp-controller="Policy" asp-action="aml-policy"> AML/KYC Policy </a></li>
+                                                <li><a asp-controller="Policy" asp-action="Referral-policy">Referral Policy</a></li>
+                                                <li><a asp-controller="Policy" asp-action="Licences">Licences</a></li>
+                                                <li><a asp-controller="Policy" asp-action="disclaimer">Disclaimer</a></li>
+                                                @*<li><a asp-controller="Policy" asp-action="Risk-Disclosure">Disclaimer</a></li>*@
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                        Support
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                                     data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="footer-box">
+                                            <ul>
+                                                <li><a asp-controller="policy" asp-action="trading-rules"> Trading Rules </a></li>
+                                                <li><a asp-controller="Fees-Charges" asp-action="index">Fees & Charges</a></li>
+
+                                                <li><a asp-controller="library" asp-action="faq">FAQs</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!---->
+                <div class="col-md-12 col-lg-2 co-xs-12">
+                    <div class="footer-box">
+                        <div class="footer-list">
+                            <div class="footer-title mob-social44"> Follow Us</div>
+                            <div class="social-link">
+                                <span><a href="https://www.facebook.com/TechnoApp " target="_blank"> <i class="fa fa-facebook" aria-hidden="true"></i></a></span>
+                                <span><a href="https://www.twitter.com/TechnoApp" target="_blank"><svg width="24" height="17" fill="currentColor" class="bi" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" /></svg> </a> </span>
+                                <span><a href="https://www.linkedin.com/company/TechnoApp/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i> </a></span>
+                                <span><a href="https://www.youtube.com/channel/UCT0rYEpfAv-xZJDtxRBDE-Q" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i>  </a></span>
+
+                                <span>
+                                    <a href="https://t.me/TechnoAppExchange" target="_blank">
+                                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                    </a>
+                                </span>
+
+                                <span>
+                                    <a href="https://www.medium.com/@string.Concat("@","TechnoApp")" target="_blank">
+                                        <i class="fa fa-medium" aria-hidden="true"></i>
+                                    </a>
+                                </span>
+
+
+                                <span>
+                                    <a href="https://www.reddit.com/r/TechnoAppCommunity/" target="_blank">
+                                        <i class="fa fa-reddit-alien" aria-hidden="true"></i>
+                                    </a>
+                                </span>
+
+
+                                <span>
+                                    <a href="https://www.quora.com/profile/TechnoApp" target="_blank">
+                                        <i class="fa fa-quora" aria-hidden="true"></i>
+                                    </a>
+                                </span>
+
+
+                                <span>
+                                    <a href="https://instagram.com/TechnoApp" target="_blank">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                </span>
+
+                                <span>
+                                    <a href="https://discord.gg/BYzBsw74kj" target="_blank">
+                                        <svg width="30" height="22" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+                                            <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"></path>
+                                        </svg>
+                                    </a>
+                                </span>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-------------------------------------------------->
+            @* <button class="open-button" onclick="openForm()"><i class="fa fa-commenting-o" aria-hidden="true"></i> Support</button>
+
+            <div class="chat-popup" id="myForm">
+            <form action="" class="form-container">
+            <div class="chat-box">
+            <div class="chat-top"> <span class="chat-title">TechnoApp Support box </span> <span><button type="button" class="btn cancel" onclick="closeForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button> </span></div>
+
+            </div>
+
+            <label for="msg"><b>Message</b></label>
+            <textarea placeholder="Type message.." name="msg" required></textarea>
+
+            <button type="submit" class="btn">Send</button>
+
+            </form>
+            </div>*@
+            <!-------------------------------------------------->
+        </div>
+        <div class="container">
+            <div class="x__footer__content-center row">
+                <div class="col col-md-12 col-12">
+                    <div class="x__copyright">
+                        <!--        <div class="x__copyright__logo"> <img src="~/images/logo.svg" alt="Exodus Logo"> </div>-->
+                        <div class="x__copyright__copy">Copyright ©@DateTime.UtcNow.ToString("yyyy") <a asp-controller="home" asp-action="index"> TechnoApp</a>.  All rights reserved. </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="commingsoon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div id="csssdilog33" class="modal-dialog">
+                <div class="modal-content mod-sec221">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body combox55">
+                        <img src="~/images/logo1.png" alt="" class="mb-3">
+                        <p b-cd26ewwikh="">  COMING SOON!</p>
+
+
+                        <p class="text33">
+
+                            We are almost here! Get ready to be amazed.<br>
+                            <span class="boldtexr34"> We follow Agile!</span>
+                            <br>We are committed to bring you an incredible Crypto Trading experience.
+
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal usddiv23 right fade modelRightToLeft" id="currencyMobileList" tabindex="-1" aria-labelledby="currencyMobileListLabel" aria-hidden="true">
+        <div class="modal-dialog messagediv34">
+            <div class="modal-content ">
+                <div class="modal-head">
+                    <button type="button" class="btn-close close32bt" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-0">
+                    <div id="currMob">
+                    </div>
+                    <div id="countryMob">
+                        <div class="white">Country</div>
+                    </div>
+                    <div id="NotificationMobileList" class="top-navbar">
+                        <div class="noti-message w-100">
+                            <div class="not-title px-0">
+                                <span class="placeholder" style="width:100px;height:5px;"></span> <span> <a href="javascript:void(0)" class="placeholder" style="width:80px;height:5px;"></a></span>
+                            </div>
+                            <ul>
+                                <li class="px-0">
+                                    <div class="notidiv33">
+                                        <div class="noitileft44 w-100">
+                                            <span class="not-head3 placeholder col-12 mb-1" style="width:100%;height:5px;"> </span>
+                                            <span class="note-text2 placeholder col-12  mb-1" style="width:80%;height:5px;"> </span>
+                                            <span class="note-text2 placeholder col-12 mb-1" style="width:60%;height:5px;"> </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="px-0">
+                                    <div class="notidiv33">
+                                        <div class="noitileft44 w-100">
+                                            <span class="not-head3 placeholder col-12 mb-1" style="width:100%;height:5px;"> </span>
+                                            <span class="note-text2 placeholder col-12  mb-1" style="width:80%;height:5px;"> </span>
+                                            <span class="note-text2 placeholder col-12 mb-1" style="width:60%;height:5px;"> </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="px-0">
+                                    <div class="notidiv33">
+                                        <div class="noitileft44 w-100">
+                                            <span class="not-head3 placeholder col-12 mb-1" style="width:100%;height:5px;"> </span>
+                                            <span class="note-text2 placeholder col-12  mb-1" style="width:80%;height:5px;"> </span>
+                                            <span class="note-text2 placeholder col-12 mb-1" style="width:60%;height:5px;"> </span>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                            <div class="mesdiv43"> <span class="placeholder " style="width:150px;height:5px;"> <strong></strong> </span>  <a href="javascript:void(0)" class="btn-view23 placeholder" style="width:150px;height:5px;"> </a> </div>
+                            <!-- <a class="close" href="#">Close</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*This should only in Public Pages
+    <!-- Back to top button -->*@
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+    @*<!-- back to top button -->
+    <!-- Optional JavaScript; choose one of the two! -->*@
+    <script src="~/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.unobtrusive-ajax.js"></script>
+    <script type="text/javascript" src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" src="~/js/jquery-ui.min.js"></script>
+    @*<!-- Option 1: Bootstrap Bundle with Popper -->*@
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="~/js/signalr/dist/browser/signalr.min.js"></script>
+    @*ToDo: Arjun, This should be moved to our server using npm*@
+    @*<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />*@
+    @* <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>*@
+    <script>
+        @Html.Raw($"var MktStream = '{@mktVal}'")
+        @Html.Raw($"var MktAPI = '{mktAPI}'")
+        @Html.Raw($"var _fsl = 6")
+        @Html.Raw($"var selCur='{Model._Curr}'")
+        @Html.Raw($"var _selCountry='{Model._Country}'")
+        @Html.Raw($"var _selLang='{Model._LangShort}'")
+        @Html.Raw($"var __base='USDT'")
+        @Html.Raw($"var favList={Model._favList}")
+        @Html.Raw($"var watchList={Model._watchList}")
+            //Model._favList
+            //$("#mobile-number").intlTelInput();
+        @Html.Raw($"var __qf = 4")
+        @Html.Raw($"var __bf = 4")
+        @Html.Raw($"var __nf = 18")
+        @Html.Raw($"var __uf = 6")
+    </script>
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/owl.carousel.min.js"></script>
+        <script src="~/minjs/marge-all-script.min.js"></script>
+        <script src="~/minjs/toastr.min.js"></script>
+        <script src="~/minjs/moment.min.js"></script>
+        <script src="~/minjs/intlTelInput.min.js"></script>
+        <script src="~/minjs/paging.min.js"></script>
+        <script src="~/minjs/GeneralConfig.min.js"></script>
+        <script src="~/minjs/onetimeLoad.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/owl.carousel.min.js"></script>
+        <script src="~/js/eyeopenclose.js"></script>
+        <script src="~/js/academy-owl-carosol.js"></script>
+        <script src="~/js/owl-carosol.js"></script>
+        <script src="~/js/chat.js"></script>
+        <script src="~/js/toastr.js"></script>
+        <script src="~/js/moment.js"></script>
+        <script src="~/js/tooltip.js"></script>
+        <script src="~/js/intlTelInput.js"></script>
+        <script src="~/js/dropdown-menu.js"></script>
+        <script src="~/js/anchor-scroll.js"></script>
+        <script src="~/js/header-fixed.js"></script>
+        <script src="~/js/paging.js"></script>
+        <script src="~/js/GeneralConfig.js"></script>
+        <script src="~/js/onetimeLoad.js"></script>
+    }
+    @if (TempData["ToastMsg"] != null)
+    {
+        <script>
+                            var success = @((TempData["ToastMsg"] != null).ToString().ToLower());
+            if (success == true) {
+                var jsonToast = JSON.parse(decodeHtml('@TempData["ToastMsg"]'));
+                CreateToasterMessage(jsonToast.MsgTitle, jsonToast.MsgBody, jsonToast.MsgType);
+            }
+        </script>
+    }
+    @if (!Model._CookieConsent)
+    {
+        <script src="~/js/cookie.js"></script>
+    }
+    @await RenderSectionAsync("Scripts", required: false)
+    @*These Scripts should be called at the end of Page Rendering*@
+    @* <script>formateAll();</script>*@
+    <script>
+        $('.close-cb').on('click', function () {
+            $('.top-section').hide();
+        });
+    </script>
+
+</body>
+</html>

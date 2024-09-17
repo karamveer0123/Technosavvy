@@ -1,0 +1,30 @@
+﻿@model vmWithdraw
+<div class="form-group mt-3">
+
+        @if (Model.IB.INRUserOptions.BankDeposits.Count > 0)
+        {
+        <label class="form-label"> Bank Account Number </label>
+        <div class="form-select3">
+        <select class="my-select " aria-label="Deposit" asp-for="IB.INRUserOptions.selBankDeposits.ID">
+            @foreach (var BA in Model.IB.INRUserOptions.BankDeposits)
+            {
+                @if (Model.IB.INRUserOptions.selBankDeposits != null && BA.ID == Model.IB.INRUserOptions.selBankDeposits.ID)
+                {
+                    <option selected="selected" value="@BA.ID">@BA.Bank | @BA.AccountNumber</option>
+                }
+                else
+                {
+                        <option value="@BA.ID">@BA.Bank | @BA.AccountNumber</option>
+
+                }
+            }
+            </select>
+        </div>
+        }
+        else
+        {
+        <div class="linksmall"> <a asp-controller="settings" asp-action="AddPaymentMethod">SetUp Your Bank Account</a></div>
+        }
+    </div>
+
+

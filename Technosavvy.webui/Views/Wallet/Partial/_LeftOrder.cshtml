@@ -1,0 +1,87 @@
+﻿@model string
+<div id="wallet-left33" class="col-md-2 col-md-2 col-lg-2  col-xxl-2 px-0 wallet-left-bg">
+    <div class="d-flex flex-column align-items-center align-items-sm-start  sidebar min-vh-100 text-white">
+
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="nav_accordion">
+
+            @if (Model.IsNullOrEmpty() || Model.ToLower() == "open orders")
+            {
+                <li class="nav-item">
+                    <a asp-action="Open-Orders" asp-controller="Wallet" class="nav-link align-middle active">
+                        <i class="fa fa-envelope-open-o" aria-hidden="true"></i> <span class="ms-1  d-sm-inline">Open Order </span>
+                    </a>
+                </li>
+
+            }
+            else
+            {
+                <li class="nav-item">
+                    <a asp-action="Open-Orders" asp-controller="Wallet" class="nav-link align-middle">
+                        <i class="fa fa-envelope-open-o" aria-hidden="true"></i> <span class="ms-1   d-sm-inline">Open Order </span>
+                    </a>
+                </li>
+            }
+            @if (Model.IsNullOrEmpty() || Model.ToLower() == "order history")
+            {
+                <li class="nav-item">
+                    <a asp-action="Orders-History" asp-controller="Wallet" class="nav-link align-middle active">
+                        <i class="fa fa-history" aria-hidden="true"></i> <span class="ms-1  d-sm-inline">Order History</span>
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item">
+                    <a asp-action="Orders-History" asp-controller="Wallet" class="nav-link align-middle">
+                        <i class="fa fa-history" aria-hidden="true"></i> <span class="ms-1  d-sm-inline">Order History</span>
+                    </a>
+                </li>
+            }
+
+            @if (Model.IsNullOrEmpty() || Model.ToLower() == "trade history")
+            {
+                <li class="nav-item">
+                    <a asp-action="Trades" asp-controller="Wallet" class="nav-link align-middle active">
+                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i> <span class="ms-1  d-sm-inline">Trade History </span>
+                        </a>
+                    </li>
+
+            }
+            else
+            {
+                    <li class="nav-item">
+                    <a asp-action="Trades" asp-controller="Wallet" class="nav-link align-middle">
+                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i> <span class="ms-1  d-sm-inline">Trade History </span>
+                        </a>
+                    </li>
+            }
+           @* <li class="nav-item ">
+                <a href="spotopen-orders.html" class="nav-link active">
+                    <i class="fa fa-envelope-open-o" aria-hidden="true"></i> <span class=" d-none d-sm-inline">Open Order</span>
+                </a>
+            </li>*@
+
+
+           @* <li class="nav-item ">
+                <a href="order-history.html" class="nav-link">
+                    <i class="fa fa-history" aria-hidden="true"></i> <span class=" d-none d-sm-inline"> Order History </span>
+                </a>
+            </li>
+
+
+            <li class="nav-item ">
+                <a href="trade-history.html" class="nav-link">
+                    <i class="fa fa-calendar-plus-o" aria-hidden="true"></i> <span class=" d-none d-sm-inline">Trade History </span>
+                </a>
+            </li>*@
+
+        </ul>
+         <span class="wallerMobileMenu-btn">
+              <input class="menu-btn" type="checkbox" id="menu-btn" />
+              <label class="menu-icon" for="menu-btn">
+                <i class="fa fa-th" aria-hidden="true"></i>
+              </label>
+            </span>
+
+    </div>
+</div>

@@ -1,0 +1,78 @@
+﻿@using TechnoApp.Ext.Web.UI.Static;
+@model vmUser
+@{
+    if (ConfigEx.VersionType == versionType.PreBeta)
+        Layout = "_LayoutPre";
+}
+<section class="section-login bg2">
+    <div class="container">
+        <div class="login-box" id="login-tab">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="login-img"> <img src="~/images/login-img.png"> </div>
+                </div>
+                <div class="col-md-6 col-xs-12 pt-3">
+                    <div class="sign_up">
+                        <h1 class="heading "> Register</h1>
+                        <h5 class="pb-5">
+                            By creating an account you agree <a href="#">
+                                to our terms <br>
+                                and conditions
+                            </a> and <a href="#">Data Protection Guidelines</a>
+                        </h5>
+                        <form novalidate class="was-validated" asp-action="SendOtp" asp-controller="Home" id="addUser" enctype="multipart/form-data" data-ajax="true" data-ajax-method="POST" data-ajax-success="OnSuccess">
+                            <input type="hidden" asp-for="UserId" id="userId" />
+                            <div asp-validation-summary=ModelOnly class="text-danger"></div>
+                            <div class="form-group" id="emailDiv" style="position:relative">
+                                <input type="email" asp-for="Email" class="form-control" placeholder="Enter email" required>
+                                <div class="invalidEroor">
+                                    <span asp-validation-for="Email"></span>
+                                </div>
+                            </div>
+                            <div id="otpDiv" class="form-group d-none" style="position:relative">
+                                <input type="text" asp-for="OTP" class="form-control" placeholder="Enter OTP" required>
+                                <span class="resend112"> Resend OTP</span>
+                                <div class="invalidEroor">
+                                    <span asp-validation-for="OTP"></span>
+                                </div>
+                            </div>
+                            <div id="passwordDiv" class="d-none">
+                                <div class="form-group" style="position:relative">
+                                    <input type="password" asp-for="Password" class="form-control" placeholder="New Password" required>
+                                    <div class="invalidEroor">
+                                       <span class="text-danger" asp-validation-for="Password"></span> 
+                                    </div>
+                                    <span class="eye112"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                                </div>
+
+                                <div class="form-group" style="position:relative">
+                                    <input type="password" asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" required>
+                                    <div class="invalidEroor">
+                                        <span asp-validation-for="ConfirmPassword"> </span> 
+                                       
+                                    </div>
+                                    <span class="eye112"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <button class="btn gent-btn mt-3" id="frmBtn" type="submit" >Next </button>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+@section Scripts{    
+     @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/CustomScript.min.js"></script>
+    }
+    else
+    {          
+        <script src="~/js/CustomScript.js"></script>
+    }
+}

@@ -1,0 +1,104 @@
+
+<!-------------Outer-section---------------------->
+
+<!-----------------top section start ----------->
+<!-----------------top section start ----------->
+<!----------------------menu section---------------------------->
+
+<!---------------------------------------------------------------------->
+<section class="section-login bg2">
+  <div class="container">
+    <div class="login-box" id="login-tab">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="login-img"> <img src="~/images/login-img.png"> </div>
+        </div>
+   <div class="col-md-6 col-xs-12">
+          <div class="login-form">
+            <h1> Account Log In</h1>
+            <div id="login-tab" class="login_area">
+              <ul class="nav nav-tabs mb-3" role="tablist">
+                <li class="nav-item"> <a class="nav-link  active" data-bs-toggle="tab" href="#email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a> </li>
+                <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#mobile"><i class="fa fa-mobile" aria-hidden="true"></i> Mobile</a> </li>
+              </ul>
+              
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div id="email" class="tab-pane  active">
+                  <div class="acc-log-box">
+                    <form class="was-validated">
+          
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Email" id="validationTooltipPassword"  required>
+                        <span class="invalid-feedback">
+                          Please enter your registered Email.
+                        </span> 
+                      </div>
+
+                     
+                      
+                      
+                      <div class="form-group " >
+                        <input type="password" class="form-control" placeholder="Password" id="id_password1"  required>
+                        <span class="eye112"><a href="#"><i class="fa fa-eye" id="togglePassword1" aria-hidden="true"></i></a></span>
+                        <span class="invalid-feedback">
+                          Please enter your password.
+                        </span>
+                      </div>
+                    
+                     <button class="btn gent-btn" type="button" onclick="location.href='login-beta-release.html'">Login </button>
+                    <p class="text-center"> or </p>
+                      <button class="btn google-btn" type="button"  onclick="location.href='security-verificationgoogle.html'"><img class="" src="~/images/google-logo.png"> Continue With Google </button>
+                        <div class="acc-forget"><span> <a asp-controller="signup" asp-action="ForgetPassword">Forget Password?</a></span><span><a href="sign-up.html">  Sign up</a></span> </div>
+                    </form>
+                  </div>
+                </div>
+                <div id="mobile" class="tab-pane">
+                  <div class="acc-log-box">
+                    <form class="was-validated" novalidate >
+
+
+                      
+                      <div class="form-group" >
+                        <input type="tel" id="mobile-number" class="form-control input_flag-l" placeholder="e.g. +1 702 123 4567">
+                                                               </div> 
+
+                      <div class="form-group" >
+                        <input type="password" class="form-control" placeholder="Password" id="id_password"  required>
+                        <span class="eye112"><a href="#"><i class="fa fa-eye" id="togglePassword" aria-hidden="true"></i></a></span>                
+                        <div class="invalid-tooltip">
+                          Please choose a unique and valid email id.
+                          <div class="invalid"> <img src="~/images/icon.png"></div>
+                        </div>
+                       
+                      </div>
+
+
+                     
+                     <button class="btn gent-btn" type="button"  onclick="location.href='login-beta-release.html'">Login </button>
+                      <p class="text-center"> or </p>
+                      <button class="btn google-btn" type="button"  onclick="location.href='security-verificationgoogle.html'"><img  src="~/images/google-logo.png"> Continue With Google </button>
+                        
+                            <div class="row">
+<div class="acc-forget "><span> <a asp-controller="signup" asp-action="ForgetPassword">Forget Password?</a></span><span>| <a href="sign-up.html">  Sign up</a></span> </div>
+                     </div>
+                    </form>
+                  </div>
+
+
+
+
+
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!---------------------------------------------------------------------->
+

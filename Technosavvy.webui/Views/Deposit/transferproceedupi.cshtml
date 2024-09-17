@@ -1,0 +1,156 @@
+﻿@{
+    ViewData["Title"] = "TechnoApp   UPI Proceed Transfer";
+}
+
+@section Header {
+    <meta name="description" content="Initiate seamless digital asset transfers with TechnoApp  UPI Proceed Transfer." />
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Deposit </span>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">
+                            <div class="acoun-box authenti-box">
+                                <form id="msform" autocomplete="off">
+                                    <div class="shadow_TechnoSavvy">
+                                        <ol class="progressdiv">
+                                            <li class="step  is-complete" data-step="1">
+                                                <a href="#">
+                                                    Choose<br> Asset
+                                                </a>
+                                            </li>
+                                            <li class="step is-complete" data-step="2">
+                                                <a href="#">
+                                                    Enter <br>Bank Detail
+                                                </a>
+                                            </li>
+                                            <li class="step is-active" data-step="3">
+                                                <a href="#">
+                                                    Check <br>Information
+                                                </a>
+                                            </li>
+                                            <li class="step" data-step="4">
+                                                <a href="#">
+                                                    Completed
+                                                </a>
+                                            </li>
+                                        </ol>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-card">
+                                            <div class="css77buy-box">
+                                                <h5>Transfer money to proceed with order</h5>
+                                                <div class="notediv mt-3">
+                                                    Note: Use the upi details below to make tranfer through your online
+                                                    banking or mobile app to TechnoApp account.
+                                                </div>
+                                                <div class="css77-ordersucc text-center">
+                                                    <span class="css77-payno">
+                                                        <span>
+                                                            <h4>₹ INR</h4>
+                                                        </span> <span><i class="fa fa-inr" aria-hidden="true"></i> 10,000.00 </span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="csspaydiv mt-2">
+
+                                                    <div class="head csspaytitle"> Receiver Information </div>
+                                                    <div class="csspaymentbox aboutTechnoSavvy-clipboard">
+                                                        <input class="css77-paydet ms-0 js-copytextarea" readonly value="Receiver Name: TechnoApp">
+                                                        <button type="submit" class="js-textareacopybtn "><i class="fa fa-files-o"></i></button>
+                                                    </div>
+
+                                                    <div class="csspaymentbox aboutTechnoSavvy-clipboard">
+                                                        <input class="css77-paydet ms-0 js-copytextarea" readonly value="UPI ID: 145824566">
+                                                        <button type="submit" class="js-textareacopybtn "><i class="fa fa-files-o"></i></button>
+                                                    </div>
+
+                                                    <div class="payqr332">
+                                                        <div class="qrdiv332">
+                                                            <div class="css33check-text">Scan QR Code</div>
+                                                            <img src="/images/qr-code.png">
+                                                            <div class="overlay">
+                                                                <a href="#" class="icon" title="zoom">
+                                                                    <span data-bs-toggle="modal" data-bs-target="#qrModal">
+                                                                        <i class="fa fa-search-plus"
+                                                                           aria-hidden="true"></i>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!----------===========================================------------>
+                                               
+                                                <!-----============================================================================--------->
+                                            </div>
+
+                                            <span class="dflexdiv">
+                                                <a asp-controller="deposit" asp-action="choosebankaccount" type="button" name="previous" class="d-dark action-button">Previous</a>
+                                                <a asp-controller="deposit" asp-action="uploadreciept" type="button" name="next" class=" d-orange action-button float-right">I have Deposited, Continue</a>
+                                            </span>
+
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+
+            </div>
+
+        </div>
+
+        <!----------------------------------------------->
+
+    </div>
+</section>
+
+<div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog qrdiv445">
+        <div class="modal-content mod-sec221">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modalimg4"> <img src="/images/qr-code.png"></div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/js/mutiselect.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+        <script src="~/js/mutiselect.js"></script>
+    }
+
+
+    <script type="text/javascript">
+
+        $(".my-select").chosen({ width: "100%" });
+    </script>
+       }

@@ -1,0 +1,140 @@
+﻿@model vmPaymentMethodSetup
+@{
+    ViewData["Title"] = "Add Payment Methods with Ease on TechnoApp   Settings";
+}
+@section Header {
+    <meta name="description" content=" Click to explore Add Payment Method in settings, empowering you to personalize and manage your preferred payment options hassle-free." />
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33 px-0">
+            <span class="market-title-h2 headcss33">
+                <span> <a asp-controller="settings" asp-action="paymentdeposit"><i class="fa fa-angle-double-left" aria-hidden="true"></i> </a></span>
+                <span>Add Payment Method</span>
+            </span>
+        </div>
+
+        <div class="row">
+            <div class="csscenterscreen mt-4">
+                <div class="row">
+                    <!-------------------------------------------------------->
+                    <div class="css77-buyc-div">
+                        <div class="css77buy-box">
+                            <!-------------------------------------------------------->
+                            <form novalidate class="was-validated" autocomplete="off" asp-action="@Model.ActionMethod" asp-controller="settings" id="addPM" enctype="multipart/form-data">
+                                @Html.AntiForgeryToken()
+                                @Html.HiddenFor(x=>x._Theme)
+                                @Html.HiddenFor(x=>x._CookieConsent)
+                                <div asp-validation-summary=All class="text-danger"></div>
+                                <!-------------------------------------------------------->
+                                <div class="form-group mt-3">
+                                    <label class="form-label lable-name">Name of the Person</label>
+                                    <input type="text" class="form-control" asp-for="FullName"
+                                           aria-describedby="spndHelp" readonly>
+                                </div>
+                                <!-------------------------------------------------------->
+
+                                <div id="select100per" class="form-group mt-3">
+                                    <label class="form-label lable-name">Select Currency</label>
+                                    <div class="formselect2P">
+                                        @if (Model.FiatToken != null && Model.FiatToken.Code.IsNOT_NullorEmpty())
+                                        {
+                                            @Html.HiddenFor(x=>x.FiatToken.Code)
+                                            @Html.HiddenFor(x=>x.FiatToken.TokenId)
+                                            <div class="form-select">@Model.FiatToken.Code</div>
+                                        }
+                                        else
+                                        {
+                                        <select class="my-select" asp-for=FiatToken.Code aria-label="Select Currency">
+                                            <option>Select Currency</option>
+                                            @foreach (var ft in Model.FiatTokenList)
+                                            {
+                                                @if (Model.FiatToken != null && Model.FiatToken.Code.IsNOT_NullorEmpty() && Model.FiatToken.Code == ft.token.Code)
+                                                {
+                                                    <option selected value="@ft.token.Code">@ft.token.Code - @ft.Symbole</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@ft.token.Code">@ft.token.Code - @ft.Symbole</option>
+
+                                                }
+                                            }
+                                        </select>
+                                        }
+
+                                    </div>
+                                </div>
+                                @if (Model.FiatToken != null && Model.FiatToken.Code.ToUpper() == "INR")
+                                {
+                                    @await Html.PartialAsync("partial/_INRPayOption",Model)
+                                    @if (Model.SelectedPaymentMethod.IsNOT_NullorEmpty() && Model.SelectedPaymentMethod == "BankTransfer")
+                                    {
+                                        @await Html.PartialAsync("partial/_INRBankDeposit",Model)
+
+                                    }
+                                    else if (Model.SelectedPaymentMethod.IsNOT_NullorEmpty() && Model.SelectedPaymentMethod == "UPI")
+                                    {
+                                        @await Html.PartialAsync("partial/_INRUPI",Model)
+                                    }
+                                }
+                                else
+                                {
+                                    @*Place other Currency Deposit method UI here*@
+                                }
+
+                                <!--------------------------------->
+
+                                <div class="css4amtbox-left widdes445">
+                                    <h5>Note:</h5>
+                                    <span>
+                                        The added payment method will be shown to the buyer during the transaction to accept fiat
+                                        transfers. Please ensure that the information is correct, real, and matches your KYC information
+                                        on TechnoApp.
+                                    </span>
+                                </div>
+                                <!-------- ---------------------------------->
+                                <div class="dflexdiv">
+                                    <a class=" withsumm-btn  d-dark  mt-4 " type="button"
+                                       asp-controller="settings" asp-action="paymentdeposit">
+                                        Close
+                                    </a>
+
+                                    <button class=" withsumm-btn  mt-4 " type="submit">
+                                        Next
+                                    </button>
+                                </div>
+                                <!-------------------------------------------------------->
+                            </form>
+                            <!-------------------------------------------------------->
+                        </div>
+                    </div>
+                    <!-------------------------------------------------------->
+                </div>
+            </div>
+
+            <!----------------------------------------------->
+        </div>
+        <!-------------------------------------------------------->
+    </div>
+</section>
+@section Scripts{
+
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/upload-file.min.js"></script>
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/upload-file.js"></script>
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+    }
+
+
+    <script>
+
+        $('my-select').chosen({ width: "100%" });
+    </script>
+    }

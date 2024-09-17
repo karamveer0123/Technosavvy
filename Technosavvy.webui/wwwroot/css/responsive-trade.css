@@ -1,0 +1,397 @@
+@media (max-width: 1091.98px) {
+    .col-usdt-div{
+        min-width:20% !important;
+    }
+}
+    /* Medium devices (tablets, less than 992px)*/
+    @media (max-width: 991.98px) {
+        .register_link_div {
+            box-sizing: border-box;
+            margin: 0px;
+            min-width: 0px;
+            text-align: center;
+            margin: 10px;
+            height: 100%;
+            font-size: 14px;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+        .fullgraph45 {
+            width:100%;
+        }
+        .fulldiv546 {
+        width:100%;}
+        .fulldiv546 .col-md-31 {
+            width: 50%;
+        }
+        .marketdiv3256 {
+            width: 100% !important;
+        }
+        .trade-top-div {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0;
+        }
+
+        .col-usdt-div {
+            order: 0;
+        }
+
+        .col-24change-div {
+            order: 2;
+            min-width: 100% !important;
+        }
+
+            .col-24change-div .number-div ul {
+                padding: 0 !important;
+                justify-content: space-between;
+                gap: 10px !important;
+                flex-wrap: wrap;
+            }
+
+                .col-24change-div .number-div ul li {
+                    margin: 0 !important;
+                    padding: 7px !important;
+                    background: var(--bs-darkblak) !important;
+                    width: calc((100% / 5) - 10px);
+                }
+
+                    .col-24change-div .number-div ul li br {
+                        display: none;
+                    }
+
+                    .col-24change-div .number-div ul li:last-child {
+                        padding: 0px;
+                    }
+
+        .col-navdata33 {
+            order: 3;
+            width: 100%;
+            justify-content: space-between !important;
+            padding: 0 !important;
+        }
+
+        .countime324 {
+            order: 1;
+        }
+
+        .header_market .logo-bnb h1 {
+            font-size: 16px;
+        }
+
+        .header_market .txt-number .price-number {
+            font-size: 20px;
+        }
+
+        .header_market .txt-number .sub-number {
+            font-size: 14px;
+        }
+
+        #market-tabs .nav-tabs .nav-item .nav-link,
+        .nav-tabs .nav-link {
+            color: var(--bs-white);
+            text-transform: capitalize;
+            padding: .5rem !important;
+            line-height: 17px;
+        }
+
+            #market-tabs .nav-tabs .nav-item.show .nav-link,
+            .nav-tabs .nav-link.active {
+                font-family: 'Poppins', sans-serif !important;
+                font-weight: 400 !important;
+                margin: 0px !important;
+                padding: .5rem !important;
+                line-height: 17px !important;
+                border-radius: 3px !important;
+                border: 1px solid transparent !important;
+                font-size: 16px !important;
+            }
+
+        .in88,
+        .in6,
+        .in4 {
+            height: auto;
+        }
+
+        .footer_bottom_div {
+            height: auto;
+        }
+
+        .footer-buy-sell {
+            display: flex;
+            padding: 10px;
+            justify-content: center;
+            border-bottom: 1px solid var(--bs-black);
+            border-top: 1px solid var(--bs-black);
+        }
+
+            .footer-buy-sell button {
+                background: transparent;
+                border: 0;
+                display: flex;
+                gap: 10px;
+            }
+
+            .footer-buy-sell .buy {
+                background: var(--bs-green);
+                padding: .5rem 1rem;
+                width: 120px;
+                color: var(--bs-white);
+                border-radius: 4px;
+            }
+
+            .footer-buy-sell .sell {
+                background: var(--bs-red);
+                padding: .5rem 1rem;
+                width: 120px;
+                color: var(--bs-white);
+                border-radius: 4px;
+            }
+
+        #buySellMobile.modal.fade .modal-dialog {
+            transition: transform .3s ease-out;
+            transform: translate(0,50px);
+        }
+
+        #buySellMobile .modal-dialog {
+            position: fixed !important;
+            bottom: 0 !important;
+            left: 0% !important;
+            right: 0% !important;
+            margin-bottom: 0 !important;
+        }
+
+        #buySellMobile.modal.show .modal-dialog {
+            transform: none;
+        }
+
+        #buySellMobile .modal-content {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            background: var(--sell-bg);
+            padding-top: 10px;
+            min-height: 70vh;
+        }
+
+        .footer_bottom_div {
+            display:none;
+        }
+
+        .modal-backdrop {
+            background-color: var(--bg-main);
+        }
+
+            .modal-backdrop.show {
+                opacity: 0.9;
+            }
+
+        #bytabinne456f .nav-tabs li {
+            width: 50%;
+            text-align: center;
+        }
+
+        .bg-green {
+            background-color: var(--bs-green);
+        }
+
+        #bytabinne456f .nav-tabs li .active {
+            color: var(--bs-white) !important;
+        }
+
+        .bg-red {
+            background-color: var(--bs-red);
+        }
+
+        #bytabinne456f .nav-tabs li.bg-green .active,
+        #bytabinne456f .nav-tabs li.bg-red .active {
+            background: var(--bg-transgrey) !important;
+        }
+
+        #bytabinne456f .nav-tabs {
+            border-bottom: 0px;
+        }
+
+        #buySellMobile .tabtrbs54SB + .tab-content {
+            padding: 0 10px 10px;
+        }
+
+        #candlestickgrphindex1 {
+            height: 50vh;
+        }
+
+        .css44-hidebtn {
+            z-index: 9;
+            float: inherit;
+            margin-top: 13px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .sell-right-but .chart-title-indicator-container span:nth-child(1) {
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid var(--bs-darkblue);
+            padding: 8px 0;
+        }
+
+        .sell-right-but .chart-title-indicator-container span {
+            padding-top: 5px;
+        }
+
+        .sell-right-but {
+            align-items: center !important;
+        }
+
+        #buySellMobile .nav-tabs .nav-link {
+            padding: .5rem !important;
+            font-size: 16px !important;
+            font-weight: 400 !important
+        }
+
+            #buySellMobile .nav-tabs .nav-link:hover {
+                padding: .5rem !important;
+                font-size: 16px !important;
+            }
+
+        .graph-section-mobile .nav-tabs,
+        #buySellMobile .nav-tabs {
+            border-bottom: 0px;
+        }
+
+        .scroller-left {
+            margin-top: 10px;
+        }
+
+        .scroller-right {
+            margin-top: 10px;
+        }
+
+
+        .input-btn-css {
+            width: 100%;
+        }
+
+        .template1graph {
+            width: 100% !important;
+        }
+
+        .template1leftpart,
+        .templater1ightpart {
+            width: 50% !important;
+        }
+
+        #barTime {
+            padding: 5px;
+        }
+
+        .sell-right-but .css33-leftpan {
+            width: 30%;
+        }
+
+        .css-flexinput {
+            padding: 14px 9px;
+        }
+
+        .template1graph .login_home {
+            display: none;
+        }
+
+        .template1graph {
+            margin-bottom: 40px;
+            
+        }
+    }
+
+    /* Small devices (landscape phones, less than 768px)*/
+    @media (max-width: 767.98px) {
+        .trademy-div33 {
+            padding: 25% 0px !important;
+        }
+        .col-md-31 {
+            width: 50% !important;
+        }
+        .register_link_div {
+            box-sizing: border-box;
+            margin: 0px;
+            min-width: 0px;
+            text-align: center;
+            margin: 10px;
+            height: 100%;
+            font-size: 14px;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+       
+        .col-24change-div .number-div ul li {
+            margin: 0 !important;
+            padding: 7px !important;
+            background: var(--bs-darkblak) !important;
+            width: 48%;
+        }
+
+            .col-24change-div .number-div ul li:last-child {
+                padding: 0px;
+                width: 100%;
+            }
+       
+    }
+
+    /* X-Small devices (portrait phones, less than 576px)*/
+    @media (max-width: 575.98px) {
+        .wallet__assets--item-top-name .image img {
+            width:16px;
+        }
+        .col-md-31 {
+            width: 100% !important;
+        }
+        .height401 {
+            height: 154px;
+            overflow-y: auto;
+        }
+        .in1 {
+            height: 187px;
+            overflow: auto;
+        }
+
+        .buy-form-css {
+            padding: 5px 0px 15px 0px;
+        }
+        
+        .right-top-market.reletive_1 {
+            order:1;
+            margin-bottom:30px;
+        }
+
+        .otherMakretSec-main {
+            order: 0;
+            margin-top: 30px;
+        }
+        .template1leftpart, .templater1ightpart {
+            width: 100% !important;
+        }
+
+        .templater1ightpart {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 400.98px) {
+        .col-detnav {
+            flex-direction: column;
+            align-items: start;
+            gap: 5px;
+        }
+
+        .pricecss33-text {
+            font-size: 16px;
+            padding: 0;
+        }
+
+        .col-cashnav {
+            text-align: right;
+        }
+    }

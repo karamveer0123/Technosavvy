@@ -1,0 +1,27 @@
+﻿@model vmWithdraw
+<div class="form-group mt-3">
+    <label class="form-label"> UPI Account </label>
+    <div class="form-select3">
+        @if (Model.IB.INRUserOptions.UPI.Count > 0)
+        {
+            <select class="my-select " aria-label="Deposit" asp-for="IB.INRUserOptions.selUPI.ID">
+                @foreach (var BA in Model.IB.INRUserOptions.UPI)
+                {
+                    @if (Model.IB.INRUserOptions.selUPI != null && BA.ID == Model.IB.INRUserOptions.selUPI.ID)
+                    {
+                        <option selected="selected" value="@BA.ID">@BA.AccountHolderName | @BA.UPIid</option>
+                    }
+                    else
+                    {
+                        <option value="@BA.ID">@BA.AccountHolderName | @BA.UPIid</option>
+                    }
+                }
+            </select>
+        }
+        else
+        {
+            <div class="linksmall"> <a asp-controller="settings" asp-action="bankaccount">SetUp Your UPI Account</a></div>
+        }
+    </div>
+</div>
+

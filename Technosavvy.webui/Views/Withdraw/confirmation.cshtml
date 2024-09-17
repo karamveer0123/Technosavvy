@@ -1,0 +1,165 @@
+﻿@model vmWithdrawConfirmation
+@{
+    ViewData["Title"] = "Secure Fiat Withdrawal Confirmation | TechnoApp  ";
+}
+@section Header {
+    <meta name="description" content="Complete your fiat withdrawal securely on TechnoApp  . Confirm your transaction for a seamless and reliable experience. Your financial transactions, our priority." />
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Withdraw </span>
+            </span>
+
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">
+                            <div class="acoun-box authenti-box">
+                                <form id="msform">
+                                    <div class="shadow_TechnoSavvy">
+                                        <ol class="progressdiv">
+                                            <li class="step is-complete" data-step="1">  Enter Details</li>
+                                            <li class="step is-complete" data-step="2"> Summary </li>
+                                            <li class="step  is-complete" data-step="3"> 2F Verification </li>
+                                            <li class="step is-active" data-step="4"> Confirmation </li>
+                                        </ol>
+                                    </div>
+                                    <!---------------------------------------------->
+                                    <!-- fieldsets -->
+                                    <div class="row">
+                                        <div class="form-card">
+
+                                            <div class="css77buy-box">
+                                                <!--------------------confirmation progress------------------------------------>
+                                                @if (Model.Result!=null &&Model.Result.status == TechnoApp.Ext.Web.UI.Model.CryptoWithdrawRequestStatus.Failed || Model.Result.status == TechnoApp.Ext.Web.UI.Model.CryptoWithdrawRequestStatus.Rejected)
+                                                {
+                                                    @*ToDo:Kavita, Change this Block Design for Rejected rather waiting confirmation*@
+                                                    <div class="confpenddiv">
+                                                        <div class="modegred34">
+                                                            <div class="vericond432">
+                                                                <i class="fa fa-times d-red" aria-hidden="true"></i>
+                                                            </div>
+                                                            <h5 class="basered"> Request Rejected</h5>            
+                                                        </div>
+                                                        <div class="dflexcenter2">
+                                                            <a class="btn withsumm-btn  mt-4 " type="button"
+                                                               asp-controller="wallet" asp-action="index">
+                                                                Acknowledge
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                }
+                                                <!-----------------confirmation not complete so show this div------------>
+                                                @if (Model.Result != null && Model.Result.status == TechnoApp.Ext.Web.UI.Model.CryptoWithdrawRequestStatus.Reserved)
+                                                {
+                                                    <div class="confpenddiv">
+                                                        <div class="modegred34">
+                                                            <div class="vericond432">
+                                                                <i class="fa fa-exclamation d-orange" aria-hidden="true"></i>
+                                                            </div>
+                                                            <h5 class="orange"> Withdraw Pending</h5>
+                                                            <div class="specdivid">
+                                                                <span>Request ID </span>
+                                                                <span>
+                                                                    <a asp-controller="wallet" asp-action="RequestDetail">@Model.Result.PublicRequestId </a>
+                                                                    </span>
+                                                            </div>
+                                                            <div class="csstime55-dep mt-2 text-center">
+                                                                Your withdrawal request for <span class="orange"> @Model.Result.Amount @Model.Result.TokenCode</span> has been accepted!
+                                                            </div>
+                                                        </div>
+                                                        <!------------>
+                                                        <div class="text-div44">
+                                                            <div class="csstime55-text mt-3">
+                                                                Your withdraw request has been submitted. We may hold
+                                                                your request for upto 24hrs for internal review & for safety, security & compliance
+                                                                purposes.
+                                                            </div>
+                                                        </div>
+                                                        <div class="dflexcenter2">
+                                                            <a class="btn withsumm-btn  mt-4 " type="button"
+                                                               asp-controller="wallet" asp-action="index">
+                                                                Acknowledge
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                }
+
+                                                <!------------>
+                                                <!--------------------why Deposit success show this div------------------------------------>
+                                                @if (Model.Result != null && Model.Result.status == TechnoApp.Ext.Web.UI.Model.CryptoWithdrawRequestStatus.Completed)
+                                                {
+                                                    <div class="confpenddiv">
+                                                        <div class="modegred34">
+                                                            <div class="vericond432"> <i class="fa fa-check d-green" aria-hidden="true"></i></div>
+                                                        </div>
+                                                        <h5 class="basegreen"> Transaction Confirmed!</h5>
+                                                        <div class="specdivid mb-2">
+                                                            <span>Transaction ID </span>
+                                                            <span><a asp-controller="wallet" asp-action="ExTranDetail" asp-route-reqid="@Model.Result.PublicRequestId">@Model.Result.PublicRequestId </a></span>
+                                                        </div>
+                                                        <div class="text-div44">
+                                                            <div class="csstime55-text mt-3">
+                                                                Your Withdrawl request for <span class="orange">
+                                                                    @Model.Result.Amount @Model.Result.TokenCode
+                                                                </span> has been confirmed.
+                                                            </div>
+                                                        </div>
+                                                        <!-------------------------------------------------------------------->
+                                                        <div class="dflexcenter2">
+                                                            <a class="btn withsumm-btn  mt-4 " type="button"
+                                                           asp-controller="wallet" asp-action="index">
+                                                                Acknowledge
+                                                            </a>
+                                                        </div>
+                                                        <!-------------------------------------------------------------------->
+                                                    </div>
+                                                }
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+
+            </div>
+
+        </div>
+
+        <!----------------------------------------------->
+
+    </div>
+</section>
+@section Scripts{
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+    }
+
+
+    <script type="text/javascript">
+
+        $(".my-select").chosen({ width: "100%" });
+    </script>
+       }

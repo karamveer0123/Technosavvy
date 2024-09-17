@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Deposit Request Submitted ";
+}
+
+@section Header {
+    <meta name="description" content="Your deposit request has been successfully submitted through TechnoApp. Track your transaction status and manage deposits seamlessly." />
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">             
+                <span>Deposit </span>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">
+                            <div class="acoun-box authenti-box">
+                                <form id="msform" autocomplete="off">
+                                    <div class="shadow_TechnoSavvy">
+                                        <ol class="progressdiv">
+                                            <li class="step  is-complete" data-step="1">
+                                                <a href="#">
+                                                    Choose<br> Asset
+                                                </a>
+                                            </li>
+                                            <li class="step is-complete" data-step="2">
+                                                <a href="#">
+                                                    Enter <br>Bank Detail
+                                                </a>
+                                            </li>
+                                            <li class="step is-complete" data-step="3">
+                                                <a href="#">
+                                                    Check <br>Information
+                                                </a>
+                                            </li>
+                                            <li class="step is-active" data-step="4">
+                                                <a href="#">
+                                                    Completed
+                                                </a>
+                                            </li>
+                                        </ol>
+                                    </div>
+
+                                    <div class="row"> 
+                                        <div class="form-card">
+                                            <div class="confpenddiv">
+                                                <div class="modegred34">
+                                                    <div class="vericond432"> <i class="fa fa-check d-green" aria-hidden="true"></i></div>
+                                                </div>
+                                                <h5 class="basegreen">Deposit Notification Submitted</h5>
+                                                <div class="specdivid mb-3">
+                                                    <span>Deposit Notification ID </span>
+                                                    <span><a href="#">45bghjdf2145 </a></span>
+                                                </div>
+
+                                                <div class="csstime55-text mt-2">
+                                                    Your deposit notification for 3000 INR has been Received.<br>
+                                                    It may take upto 24hrs to reflect in your wallet.
+                                                </div>
+                                            </div>
+
+                                            <div class="dflexcenter2">
+                                                <button class="btn withsumm-btn  mt-4 " type="button"
+                                                        onclick="window.location.href='wallet.html'">
+                                                    Acknowledge
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>   </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+
+            </div>
+
+        </div>
+
+        <!----------------------------------------------->
+
+    </div>
+</section>
+@section Scripts{
+
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/js/mutiselect.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+        <script src="~/js/mutiselect.js"></script>
+    }
+
+
+    <script type="text/javascript">
+
+        $(".my-select").chosen({ width: "100%" });
+    </script>
+       }

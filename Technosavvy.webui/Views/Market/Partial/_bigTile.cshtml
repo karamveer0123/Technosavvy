@@ -1,0 +1,31 @@
+﻿ @model vmMarketTile
+@{
+    string root = "/images/usd/";
+    string ext = ".svg";
+}
+<div class="market-detail22 positionrelative33">
+    <div class="overlay-div">
+        <div class="name-m22">
+            <span> <img src=@string.Concat($"{root}{Model.TokenCode}.png")>
+                 @Model.TokenCode <small> @Model.TokenName </small></span>
+            <span>
+                <a href="#" class="icon-m22"><i class="fa fa-star-o" aria-hidden="true"></i> </a>
+                <a href="#" class="icon-m22"> <i class="fa fa-clock-o" aria-hidden="true"></i></a>
+            </span>
+        </div>
+
+        <div class="price-m22"><span class="price-font11"> Price : </span> <span class="css44-up">$0.67900000 </span> </div>
+        <div class="price-m22"><span> 24h Change : </span> <span class="css44-up">+5.42% </span> </div>
+        <div class="price-m22"><span>Volume 24h</span> <span>$ 25,310,000</span> </div>
+        <div class="price-m22">
+            <span>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#detail-model">
+                    Detail
+                </a>
+            </span> <span><a asp-controller="login" asp-action="login">Trade </a></span>
+        </div>
+    </div>
+    <div class="overlay-divouter">
+        <div class="commingdiv33"> COMING SOON!</div>
+    </div>
+</div>

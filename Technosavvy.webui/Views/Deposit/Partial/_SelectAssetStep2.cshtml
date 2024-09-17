@@ -1,0 +1,42 @@
+﻿@model vmDeposit
+
+<span>It is not</span>
+@if (Model.selectedCoin.HasValue)
+{
+    var tok = Model.TokenList.FirstOrDefault(x => x.TokenId == Model.selectedCoin);
+    <!-------select asset show network div------------>
+    if (tok != null)
+    {
+        var sNetwork = tok.SupportedCoin.Select(x => x.RelatedNetwork).ToList();
+        <span>Count is:@sNetwork.Count</span>
+            <form asp-action="SelectCoin" asp-controller="Deposit" id="msform" data-ajax="true" data-ajax-method="POST" data-ajax-update="#frmDeposit">
+            <div class="form-group mt-3">
+                <label class="lable-name22">
+                    Network
+                </label>
+                <div class="form-select3">
+                    <select class="my-select " asp-for=selectedNetwork style="display: none;" onchange="this.form.submit()">
+                        <option>Select Network</option>
+                        @foreach (var item in sNetwork)
+                        {
+                            <option data-img-src="/images/coin/coin/@string.Concat(item.NativeCurrencyCode.ToUpper(),".png")" value="@item.SupportedNetworkId">  @item.Name </option>
+                        }
+                    </select>@* <div class="chosen-container chosen-container-single" title="" style="width: 100%;">
+                        <a class="chosen-single">
+                            <span>Select Network</span>
+                            <div><b></b></div>
+                        </a>
+                        <div class="chosen-drop">
+                            <div class="chosen-search">
+                                <input class="chosen-search-input" type="text" autocomplete="off">
+                            </div>
+                            <ul class="chosen-results"></ul>
+                        </div>
+                    </div> *@
+
+                </div>
+            </div>
+        </form>
+    }
+}
+

@@ -1,0 +1,77 @@
+﻿@model vmWalletTransactions
+<div class="col-md-6 col-12">
+    <div class="css33-wallet">
+        <div class="css33-wallet-div">
+            <span class="title">Recent Transactions  </span>
+            <span class="css33-wallet-list">
+                <span> <a href="#" class="redirect44-btn"><i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+                <span> <a href="#"> <i class="fa fa-ellipsis-v" aria-hidden="true"></i></a></span>
+            </span>
+        </div>
+        <div id="css33-wallet-tabs" class="css33-wallet-tabs">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#twenty22">24h</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#sevendays22">7days  </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#thirtydays22"> 30days</a>
+                </li>
+
+            </ul>
+
+            <div class="tab-content css33-wallet-content">
+                <div class="tab-pane active" id="twenty22">
+                    <div class="css33-content-div">
+                        @foreach (var item in Model.WalletTransactions)
+                        {
+                            <div class="css33-buy-div">
+                                <div class="sub-title">@item.TokenName </div>
+                            </div>
+                            <div class="css33-sell-div">
+
+                                <div class="sub-title">@item.Amount (@item.Balance) </div>
+                            </div>
+                        }
+                       @* <div class="css33-buy-div">
+                            <div class="sub-title">Receive </div>
+                        </div>
+                        <div class="css33-sell-div">
+
+                            <div class="sub-title">Sent  </div>
+                        </div>*@
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="sevendays22">
+                    <div class="css33-content-div">
+                        <div class="css33-buy-div">
+                            <div class="sub-title">Receive </div>
+                        </div>
+                        <div class="css33-sell-div">
+
+                            <div class="sub-title">Sent </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="thirtydays22">
+                    <div class="css33-content-div">
+                        <div class="css33-buy-div">
+                            <div class="sub-title">Receive </div>
+                        </div>
+                        <div class="css33-sell-div">
+
+                            <div class="sub-title">Sent </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <a href="#" class="css33-wallet-btn" type="button">More</a>
+    </div>
+
+</div>

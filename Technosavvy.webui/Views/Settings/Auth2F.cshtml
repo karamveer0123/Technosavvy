@@ -1,0 +1,74 @@
+﻿@model vm2ndAuthPaymentMethod
+@{
+    ViewData["Title"] = "Login with Ease to TechnoApp  for a Productive Session";
+}
+@section Header {
+    <meta name="description" content="Unlock the potential of TechnoApp  with a hassle-free login experience.Click to access your account effortlessly." />
+}
+<section class="section-upload bg2 pt-0">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span> <a asp-controller="settings" asp-action="index"><i class="fa fa-angle-double-left" aria-hidden="true"></i> </a></span>
+                <span>2F  verification</span>
+            </span>
+        </div>
+        <div class="row">
+            <div class="csscenterscreen mt-4">
+                <div class="row">
+
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="authMultFac d-orange">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                        </div>
+                        
+                        <div class="verificationwithdraw-form">
+                            <div class="csstime55-dep mt-2 ">
+                                <div class="text text-center"> Please confirm your 2<sup>nd</sup> factor to complete your action.</div>
+                            </div>
+                            <div class="css33withformdiv">
+                                <form novalidate class="was-validated" autocomplete="off" asp-action="@Model.ActionMethod" asp-controller="settings" id="Verify2F" enctype="multipart/form-data">
+                                    @Html.AntiForgeryToken()
+                                    @Html.HiddenFor(x=>x._Theme)
+                                    @Html.HiddenFor(x=>x._CookieConsent)
+                                    @Html.HiddenFor(x=>x.infoBag)
+                                <div asp-validation-summary=All class="text-danger"></div>
+                                    <div class="form-group mt-4 clear">
+                                        <label class="lable-name22" for="pwd">E-mail verification code</label>
+                                        <input type="text" asp-for=EmailOTP class="form-control" placeholder=" ">
+                                        <div class="enter56"> Enter the 6-digit code received by
+                                            @await Html.PartialAsync("partial/_userNameMasked",Model)
+                                        </div>
+                                        <span class="resend112 gettimer"> OTP valid for 15 minutes.</span>
+                                    </div>
+
+                                    <div class="form-group mt-4 clear">
+                                        <label class="lable-name22" for="pwd">Google verification code</label>
+                                        <input type="password" class="form-control" asp-for=AuthCode placeholder="Enter code"  >
+
+                                        <div class="enter56"> Enter the 6-digit code from Google Authenticator.</div>
+                                        <span class="resend112 gettimer"></span>
+                                    </div>
+
+                                    <button class="gent-btn mt-3 mb-3" type="submit">Confirm </button>
+
+                                </form>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+            <!----------------------------------------------->
+        </div>
+    </div>
+</section>
+
+

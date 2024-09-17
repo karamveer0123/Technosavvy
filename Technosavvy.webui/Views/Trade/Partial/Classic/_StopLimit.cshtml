@@ -1,0 +1,195 @@
+﻿@model vmMarketTrade
+
+<div id="stop-limit" class="tab-pane ">
+
+    <div class="row clear">
+        <div class="col-md-6 col-xs-12 col-sm-6 col-px-p0">
+            <div id="buyDiv" class="green-bg buy-form-css">
+                <div class="">
+                    <div class="buy-css-44 mb-2"> 
+                        <span> Buy <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="stoploss-limit-order4" target="_blank"> <i class="fa fa fa-info-circle" aria-hidden="true"></i> </a> </span>
+                        <span class="pt-0 small dqa">
+                            Available 0.000000 USDT
+                            <span class="d-inline-block css22protext" tabindex="0" data-bs-toggle="popover"
+                                  data-bs-trigger="hover focus" data-bs-content="Add Funds" data-bs-original-title=""
+                                  title="">
+                                <span class="css44add-buy">
+                                    <a href="#">
+                                        <i class="fa fa-plus-circle"
+                                           aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="buy-form-css-box reletive_1">
+                    <form>
+                        @*STOP Limit Order Buy*@
+                        @Html.AntiForgeryToken()
+                        <div class="input-css mb-3 inputdflexgreen">
+                            <input type="text" id="slbStopPrice" autocomplete="off"
+                                   class="form-control-green w85per search-box dqf" required
+                                   placeholder="Stop Price" aria-label="Price"
+                                   aria-describedby="button-addon2">
+                            <button class="close-icon" type="reset"></button>
+                            <span class=" buy-text-input"> USDT </span>
+
+                            <span id="slbStopPriceV" class="error-msg d-none">Invalid Price!</span>
+                        </div>
+                        <div class="input-css mb-3 inputdflexgreen">
+                            <input type="text" id="slbPrice" autocomplete="off"
+                                   class="form-control-green w85per search-box dqf" required
+                                   placeholder="Limit Price" >
+                            <button class="close-icon" type="reset"></button>
+                            <span class=" buy-text-input"> USDT </span>
+
+                            <span id="slbPriceV" class="error-msg d-none">Invalid Price!</span>
+                        </div>
+                        <div class="input-css mb-3 inputdflexgreen ">
+                            <input type="text" id="slbAmount" autocomplete="off" 
+                                   class="form-control-green search-box w44per dbf"
+                                   required placeholder="Amount" aria-label="Amount" aria-describedby="button-addon2">
+                            <button class="close-icon" type="reset"></button>
+                            <div class="css-flexinput assdiv35">
+                                <div class="css44input-rece">
+                                    <span class="inputtext55">Asset Amt. </span>
+                                    <span id="slbassamt"> 0.0000 BTC </span>
+                                </div>
+
+                            </div>
+                            <span id="slbAmountV" class="error-msg d-none">Invalid Amount!</span>
+                        </div>
+                        <div class="input-css mb-3 inputdflexgreen ">
+                            <input type="text" id="slbTotal" autocomplete="off"
+                                   class="form-control-green search-box form-control-left88 w44per dqf" required
+                                   placeholder="Total" aria-label="Total" aria-describedby="button-addon2">
+                            <div class=" css-flexinput88">
+                                <div class="css44input-rece">
+                                    <span class="inputtext55">Swap Trade Value </span>
+                                    <span id="slbSTV"> 0.0000 USDT </span>
+                                </div>
+
+                                <div class="css44input-rece">
+                                    <span class="inputtext55">
+                                        TechnoSavvy <span class="d-inline-block css22protext"
+                                                   tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                                   data-bs-content="To avail this Cashback, become a Community Member."
+                                                   data-bs-original-title="" title="">
+                                            <i class="fa fa-info-circle css-1circle" aria-hidden="true"></i>
+                                        </span>
+                                    </span>
+                                    <span id="slbTechnoSavvyV"> 0.00 USDT </span>
+                                </div>
+                                <span id="slbTotalV" class="error-msg d-none">Invalid Trade value!</span>
+
+
+                            </div>
+                            <button class="close-icon" type="reset"></button>
+                        </div>
+                        <div class="input-btn-css">
+                            <a href="javascript:void();" type="button"
+                               id="btnBuyStopLimit" class="buy-sub-btn-55 green-btn"> Submit </a>
+                            <a href="javascript:void();" type="button" id="btnBuyStopLimitReset"
+                               class="buy-sub-btn-55 green-btn"> Reset </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="sellDiv" class="col-md-6 col-xs-12 col-sm-6 col-px-p0">
+            <div class="red-bg buy-form-css reletive_1">
+                <div class="buy-css-44  mb-2"> 
+                    <span> Sell <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="stoploss-limit-order" target="_blank"> <i class="fa fa fa-info-circle" aria-hidden="true"></i> </a></span>
+                    <span class="pt-0 small dba">
+                        Available 0.000000 BTC
+                        <span class="d-inline-block css22protext" tabindex="0" data-bs-toggle="popover"
+                              data-bs-trigger="hover focus" data-bs-content="Add Funds" data-bs-original-title=""
+                              title="">
+                            <span class="css44add-buy">
+                                <a href="#">
+                                    <i class="fa fa-plus-circle"
+                                       aria-hidden="true"></i>
+                                </a>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+                <div class="buy-form-css-box">
+                    <form>
+                        @*Limit Order Sell*@
+                        @Html.AntiForgeryToken()
+                        
+                        <div class="input-css mb-3 inputdflexred">
+                            <input type="text" id="slsStopPrice" autocomplete="off"
+                                   class="form-control-red w85per search-box  dbf"
+                                   placeholder="Stop Price " aria-label="Sell Price"
+                                   aria-describedby="button-addon2" required>
+                            <span class=" buy-text-input" type="button">USDT</span>
+                            <button class="close-icon" type="reset"></button>
+                            <span id="slsStopPriceV" class="error-msg d-none">Invalid Price!</span>
+
+                        </div>
+                        <div class="input-css mb-3 inputdflexred">
+                            <input type="text" id="slsPrice" autocomplete="off"
+                                   class="form-control-red w85per search-box  dbf" 
+                                   placeholder="Limit Price " 
+                                    required>
+                            <span class=" buy-text-input" type="button">USDT</span>
+                            <button class="close-icon" type="reset"></button>
+                            <span id="slsPriceV" class="error-msg d-none">Invalid Price!</span>
+
+                        </div>
+
+                        <div class="input-css mb-3 inputdflexred ">
+                            <input type="text" id="slsAmount" autocomplete="off" class="form-control-red search-box w44per dbf" placeholder="Amount" aria-label="Sell Amount"
+                                   aria-describedby="button-addon2" required>
+                            <button class="close-icon" type="reset"></button>
+                            <div class="css-flexinput assdiv35" type="button">
+                                <div class="css44input-rece">
+                                    <span class="inputtext55">Asset Amt. </span>
+                                    <span id="slsassamt"> 0.0000 BTC </span>
+                                </div>
+                            </div>
+                            <span id="slsAmountV" class="error-msg d-none">Invalid Amount!</span>
+
+                        </div>
+
+
+
+
+                        <div class="input-css mb-3 inputdflexred ">
+                            <input type="text" id="slsTotal" autocomplete="off"
+                                   class="form-control-red search-box form-control-left88 w44per dqf" placeholder="Total"
+                                   aria-label="Total" aria-describedby="button-addon2" required>
+                            <button class="close-icon" type="reset"></button>
+                            <div class="css-flexinput88">
+                                <div class="css44input-rece">
+                                    <span class="inputtext55">Swap Trade Value </span>
+                                    <span id="slsSTV"> 0.0000 USDT </span>
+                                </div>
+                                
+                                <div class="css44input-rece">
+                                    <span class="inputtext55">
+                                        TechnoSavvy <span class="d-inline-block css22protext"
+                                                   tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                                   data-bs-content="To avail this Cashback, become a Community Member."
+                                                   data-bs-original-title="" title="">
+                                            <i class="fa fa-info-circle css-1circle" aria-hidden="true"></i>
+                                        </span>
+                                    </span>
+                                    <span id="slsTechnoSavvyV"> 0.00 USDT </span>
+                                </div>
+                                <span id="slsTotalV" class="error-msg d-none">Invalid Trade value!</span>
+                            </div>
+                        </div>
+                        <div class="input-btn-css">
+                            <a href="javascript:void(0)" 
+                               type="button" id="btnSellStopLimit" class="buy-sub-btn-55 red-btn"> Submit </a> <a href="javascript:void(0)" type="button"  id="btnSellStopLimitReset" class="buy-sub-btn-55 red-btn"> Reset </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

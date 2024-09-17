@@ -1,0 +1,176 @@
+﻿@using NuGet.Protocol;
+@model vmPBMyPurchase
+@{
+    var cv = Model.TotalTechnoSavvy * Model.PrebetaBase.NavVCurrentPrice;
+    var ethScanPre = $"{ConfigEx.Config.GetSection("ethScanPre").Value}";
+}
+<section class="what-TechnoSavvy-section bg2 pb-0">
+    <div class="container">
+        <div class="purch-tabdiv border-0 pb-0">
+            <div class="wallet-sectdiv33">
+
+                <div class="wallet-userdiv33 px-0">
+                    <div class="css22-walletleftpan ">
+                        <div class="userdiv33-wal"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> </div>
+                        <div class="iddiv33-wa">
+                            <div> <span class="lightgrey3">User Name:</span> <span>@string.Concat($"{Model._UserName.Substring(0,2)}","***@",$"{Model._UserName.Split('@')[1]}")</span></div>
+                            <div> <span class="lightgrey3">Account Id :</span> <span>@Model.PrebetaBase.userAccount </span></div>
+                            <div class="kyc22-text">
+                                <span class="lightgrey3"> Community Status:</span>
+                                @if (Model.TotalTechnoSavvy >= 500)
+                                {
+                                    <span class="statusdiv33 green">
+                                        <i class="fa fa-circle" aria-hidden="true"></i>
+
+                                        Community Member | Cashback Enabled
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="statusdiv33 redlight">
+                                        <i class="fa fa-circle" aria-hidden="true"></i>
+                                        Non-Community User | No Cashback
+                                    </span>
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="css33-rightpan">
+                        <div class="logindiv33-wa"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="purch-tabdiv">
+            <div class="headingappen">My TechnoSavvy </div>
+        </div>
+        <div class="purch-tabdiv">
+            <div class="wallet-tabdiv border-bottom-0 px-0">
+                <div class="css11-wallect-range">
+                    <div class="css33-leftpan">
+                        <div class="css88-wall-dflex">
+                            <span class="css77-abal">Quantity</span>
+                            <div class="csss77-purchtext">
+                                <span>                                   
+                                    <span id="prQuanity">@Model.TotalTechnoSavvy.ToString("#,##0.00")</span>  <img src="images/buynav-icon.png" width="16px"> TechnoSavvy                                  
+                                    <span class="green d-block ps-4 fsz-10">&nbsp;</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="css88-wall-dflex">
+                            <span class="css77-abal">Purchase Value </span>
+                            <div class="csss77-purchtext">
+                                <span>                                  
+                                    <span id="prValue">@Model.TotalPurchasValue.ToString("#,##0.00")</span>  <img src="images/tether.png" width="16px"> USDT
+                                   <span class="green d-block ps-4 fsz-10">&nbsp;</span>
+                                </span>
+
+                            </div>
+                        </div>
+
+                        <div class="css88-wall-dflex">
+                            <span class="css77-abal">Current Value</span>
+                            <div class="csss77-purchtext">
+                                <span>                                  
+                                    <span id="prCurrentValue">@cv.ToString("#,##0.00")</span>   <img src="images/tether.png" width="16px"> USDT
+                                    <span class="green d-block ps-4 fsz-10 text-end">
+                                        @if (Model.TotalPurchasValue > 0 && cv > 0)
+                                        {
+                                            @string.Concat((((cv-Model.TotalPurchasValue)/Model.TotalPurchasValue)*100).ToString("0.00"),"%") <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                                        }
+                                        else
+                                        {
+                                            @string.Concat("0%") <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                                        }
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="css88-wall-dflex">
+                            <span class="css77-abal">Launch Value</span>
+                            <div class="csss77-purchtext">
+                                <span>                                   
+                                    <span id="prLaunchValue">@Model.TotalLaunchValue.ToString("#,##0.00")</span>  <img src="images/tether.png" width="16px"> USDT
+                                    <span class="green d-block ps-4 fsz-10 text-end">
+                                        @if (Model.TotalPurchasValue > 0 && Model.TotalLaunchValue > 0)
+                                        {
+                                            @string.Concat((((Model.TotalLaunchValue-Model.TotalPurchasValue)/Model.TotalPurchasValue)*100).ToString("0.00")
+,"%")
+                                        }
+                                        else
+                                        {
+                                            @string.Concat("0%")
+
+                                        }
+                                        <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="purch-table33">
+            <div class="title"> Transaction History</div>
+            <div id="comunity-css566-box" class="comunity-css566-box mb-3">
+                <div class="table-xscroll44   my-purchase-table-height">
+                    <table id="myPurchaseDataTable1" class="table  cssearn-table mainfeescss323">
+                        <thead class="trasaction-table-title ">
+                            <tr>
+                                <th nowrap="nowrap" class="css566-table-text th-sticky-left">Suggested Date & Time</th>
+                                <th nowrap="nowrap" class="css566-table-text">TXN ID</th>
+                                <th nowrap="nowrap" class="css566-table-text">Buy With </th>
+                                <th nowrap="nowrap" class="css566-table-text">Amount  </th>
+                            </tr>
+                        </thead>
+                        <tbody id="PurchaseData1" class="trasaction-table">
+                            @for (int i = 0; i < Model.myRecords.Count; i++)
+                            {
+                                var x = @Model.myRecords[i];
+                                <tr>
+                                    <td class="td-sticky-left">
+                                        <div class="css5leftdf">
+                                            <span >@x.DateOf +GMT  </span> <span> <small></small></span>
+                                        </div>
+                                    </td>
+
+                                    <td><a target="_new" href="@string.Concat(ethScanPre,x.TxnID)"> <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="@x.TxnID" title=" ">  @x.TxnID </span></a> </td>
+                                     
+                                    <td><div class="dflex22"><span> @x.BuyWith.ToString("0.0000") </span> <img src="~/images/coin/coin/@string.Concat(x.BuyWithName,".png")" width="14" class="ms-1" /> <small> @x.BuyWithName  </small></div></td>
+
+                                    <td><div class="dflex22"><span> @x.Amount.ToString("0.0000") </span> <img src="../images/coin/coin/TechnoSavvy.png" width="14" class="ms-1" /> <small> TechnoSavvy </small></div> </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    @if (Model.myRecords.Count <= 0)
+                    {
+                        <div id="noPurchase" class="trasaction-table">
+                            <div class="noheight54">
+                                <div class="norecord-div44">
+                                    <span><img src="~/pr/images/no-data.png"></span>
+                                    <span> No records found</span>
+                                </div>
+                                <div class="comdiv4">
+                                    <span class="textcom3">Secure TechnoSavvy to become a community member and assured cashback.</span> <span><a asp-controller="Secure-TechnoSavvy" asp-action="index" class="url-1">Secure TechnoSavvy Now  </a></span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+    <script>
+            $(document).ready(function () {
+                formateDate();
+            });
+    </script>
+}

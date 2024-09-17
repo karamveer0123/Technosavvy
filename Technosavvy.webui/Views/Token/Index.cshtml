@@ -1,0 +1,187 @@
+﻿@model vmTokenDetails
+<section class="about-TechnoSavvy market-section bg2 placeholder-glow">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 mb-4">
+                <h1><img src="@($"../images/coin/coin/{Model.TokenCode.ToUpper()}.png")" width="30" /> @Model.TokenCode.ToUpper() <small class="fs-6">On TechnoApp</small> </h1>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-TechnoSavvy-col7">
+                    <!-- <span class="rank-text"> Rank #2 </span> -->
+                    <span> Utility Token </span>
+                    <span> On <span class="p-0 m-0" id="wtList"><spna class="placeholder  placeholder-xs" style="width:50px"></spna></span> watchlists </span>
+                </div><!-- // about-TechnoSavvy-col7 -->
+                <div class="icon-tabs mt-4">
+                    <ul class="about-TechnoSavvy-option d-flex justify-content-between flex-wrap g-4">
+                        <li class="droplink44"><a id="WebURL" href="#" target="_blank"><spna class="placeholder  placeholder-xs" style="width:100px"></spna></a></li>
+                        <li class="droplink44"><a id="whitePaper" href="~/images/WhitePaper-TechnoSavvy-Version-3.pdf" target="blank"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Whitepaper </a></li>
+
+                    </ul>
+                </div>
+
+            </div><!-- // col-lg-7 -->
+            <div class="col-lg-6 ">
+                
+                    <div class="row">
+                        <div class="col-sm-3 col-lg-12 ">
+                            <div class="col5-an-box1 p-0">
+                                <div class="an-d-class" id="tokPrice">
+                                    <!-- <img src="../images/1.png"> -->
+                                    @*<h4> @Model.TokenCode.ToUpper() Price </h4>
+                                    <h5 class="dyCur" data-oval="@Model.Price"> </h5>*@
+                                    <div class="placeholder placeholder-xs  mt-1 mb-2" style="width:100px; "></div><br/>
+                                    <div class="placeholder placeholder-xs" style="width:100px;"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-9 col-lg-12 ">
+                            <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="csslowhigh88">
+                                    <span class="css566-marlah">24h Low & High</span><span class="css566-maric" data-bs-placement="top" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="The highest and lowest price paid for this asset in 24 hours." data-bs-original-title="" title=""> <i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                                </div>
+                                <div id="lowHigh">
+                                    <div class="css566-marpro align-items-center justify-content-end col5-sec2 mt-1">
+                                        <span class="css566-marchfl">Low: <span class="placeholder placeholder-xs" style="width:70px; height:10px"></span></span>
+                                        <span class="placeholder placeholder-xs" style="width:100px; height:10px"></span>
+                                        <span class="css566-marhi">High: <span class="placeholder placeholder-xs" style="width:70px; height:10px"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+            </div><!-- // col-lg-5 -->
+        </div><!-- // Row -->
+
+
+
+        <div class="row market-cap-sec mt-3 placeholder-glow">
+            <div class="col-lg-3 col-md-6">
+                <div class="css566-martime-div">
+                    <div class="css566-marPIt">
+                        <span class="css566-marlah">Market Cap</span>
+                        <span class="css566-maric" data-bs-placement="top" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="The total market value of a cryptocurrency's circulating supply. It is analogous to the free-float capitalization in the stock market." data-bs-original-title="" title=""> <i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="css566-marchfa" id="mktCap">
+                        @*<span> $453,911,947,323 </span><br>
+                        <span class="css44-up">+0.26% <i class="fa fa-long-arrow-up" aria-hidden="true"></i></span>*@
+                        <div class="placeholder placeholder-xs  mt-1 mb-2" style="width:150px; "></div><br/>
+                        <div class="placeholder placeholder-xs" style="width:100px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="css566-martime-div">
+                    <div class="css566-marPIt">
+                        <span class="css566-marlah">Fully Diluted Market Cap</span>
+                        <span class="css566-maric" data-bs-placement="top" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Fully-diluted market cap (FDMC) = price x max supply. If max supply is null, FDMC = price x total supply. if max supply and total supply are infinite or not available, fully-diluted market cap shows." data-bs-original-title="" title=""> <i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="css566-marchfa" id="fullyMktCap">
+                        @*<span> $453,911,947,323 </span><br>
+                        <span class="css44-down">-0.26% <i class="fa fa-long-arrow-down" aria-hidden="true"></i></span>*@
+                        <div class="placeholder placeholder-xs  mt-1 mb-2" style="width:150px; "></div><br/>
+                        <div class="placeholder placeholder-xs" style="width:100px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="css566-martime-div">
+                    <div class="css566-marPIt">
+                        <span class="css566-marlah">Volume 24h</span>
+                        <span class="css566-maric" data-bs-placement="top" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="A measure of how much of a cryptocurrency was traded in the last 24 hours." data-bs-original-title="" title=""> <i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="css566-marchfa" id="valume24">
+                        @*<span> $453,911,947,323 </span><br>
+                        <span class="css44-up">+0.26% <i class="fa fa-long-arrow-up" aria-hidden="true"></i></span>*@
+                        <div class="placeholder placeholder-xs  mt-1 mb-2" style="width:150px; "></div><br />
+                        <div class="placeholder placeholder-xs" style="width:100px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="css566-martime-div w-100">
+                    <div class="css566-marPIt">
+                        <span class="css566-marlah">Circulating Supply</span>
+                        <span class="css566-maric" data-bs-placement="top" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="The amount of coins that are circulating in the market and are in public hands. It is analogous to the flowing shares in the stock market." data-bs-original-title="" title=""> <i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                    </div>
+                    <div id="CirSupply" class="css566-marchfa d-flex align-items-center flex-wrap">
+                        @*<span> 50,000,000 TechnoSavvy (0.0444%) </span>
+                        <span class="nineright">90%</span>
+                        <div class="progress about-TechnoSavvy-progress">
+                            <div class="progress-bar" style="width:90%" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>*@
+                        <div class="placeholder placeholder-xs mt-1 mb-3" style="width:150px;"></div>
+                        <div class="placeholder placeholder-xs" style="width:100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row market-cap-sec2 mt-3 placeholder-glow">
+            <div class="col-lg-12 col-md-12 about-pera-text" id="tcPara">
+                <div class="placeholder col-12 placeholder-sm"></div>
+                <div class="placeholder col-12 placeholder-sm"></div>
+                <div class="placeholder col-12 placeholder-sm"></div>
+            </div>
+
+        </div><!-- // row -->
+           
+
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="container">
+<div class="row justify-content-center mt-3">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="select-hours justify-content-right">
+            <form>
+                <select id="barTime" class="form-select float-right h-select">
+                    <option selected data-du="3600" value="1Hrs">1 hrs</option>
+                    <option data-du="28800" value="8Hrs">8 hrs </option>
+                    <option data-du="86400" value="1Day">24 hrs </option>
+                    <option data-du="259200" value="3Day">3 Day </option>
+                    <option data-du="604800" value="7Day">7 Day </option>
+                </select>
+            </form>
+        </div>
+    </div>
+            <div class="col-lg-8">
+                <div id="lineGraph"></div>
+              
+            </div>
+        </div>
+        </div>
+</section>
+@section Scripts{
+     @if (ConfigEx.ShouldMini)
+    {   
+        <script src="~/minjs/echarts.min.js"></script>
+        <script src="~/minjs/GeneralConfig.min.js"></script>
+        <script src="~/minjs/tokenDetails.min.js"></script>
+        <script src="~/minjs/Graph/token-an-linegraph.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/echarts.min.js"></script>
+        <script src="~/js/GeneralConfig.js"></script>
+        <script src="~/js/TokenDetails.js"></script>
+        <script src="~/js/Graph/Token-linegraph.js"></script>
+
+    }
+    <script>
+       var tokenDD = [];
+$(function () {
+    $.get(window.location.origin + '/token/detailsOf?', { tName: '@Model.TokenCode.ToUpper()' }, function (d) {
+        //console.debug(d); 
+        tokenDD = JSON.parse(d);
+        GetTokenDetails(tokenDD)
+    });
+});
+    </script>
+  }
+
+

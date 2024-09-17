@@ -1,0 +1,36 @@
+﻿@model TechnoApp.Ext.Web.UI.Model.eeKYCStatus
+@switch (Model)
+{
+    case TechnoApp.Ext.Web.UI.Model.eeKYCStatus.NotStarted:
+        {
+            <span class="kyc22detext basered fw-bold"><i class="fa fa-times-circle-o basered" aria-hidden="true"></i> Not Started </span>
+        }
+        break;
+    case TechnoApp.Ext.Web.UI.Model.eeKYCStatus.Started:
+        {
+            <span class="kyc22detext orange fw-bold"><i class="fa fa-check-circle-o orange" aria-hidden="true"></i> Started </span>
+        }
+        break;
+    case TechnoApp.Ext.Web.UI.Model.eeKYCStatus.Pending:
+        {
+            <span class="kyc22detext  orange fw-bold"><i class="fa fa-dot-circle-o orange" aria-hidden="true"></i> Pending </span>
+        }
+        break;
+    case TechnoApp.Ext.Web.UI.Model.eeKYCStatus.AdditionalInfo:
+        {
+            <span class="kyc22detext orange fw-bold"><i class="fa fa-dot-circle-o orange" aria-hidden="true"></i> Additional Info Required </span>
+        }
+        break;
+    case TechnoApp.Ext.Web.UI.Model.eeKYCStatus.UnderProcess:
+        {
+            <span class="kyc22detext orange fw-bold"><i class="fa fa-dot-circle-o orange" aria-hidden="true"></i> In-Process </span>
+        }
+        break;
+    case TechnoApp.Ext.Web.UI.Model.eeKYCStatus.Completed:
+        {
+            <span class="kyc22detext  basegreen fw-bold"><i class="fa fa-check-circle-o basegreen" aria-hidden="true"></i> Verified </span>
+        }
+        break;
+    default:
+        break;
+}

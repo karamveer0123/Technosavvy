@@ -1,0 +1,217 @@
+
+<!-------------Outer-section---------------------->
+
+
+<!-----------------top section start ----------->
+<!----------------------menu section---------------------------->
+
+<!---------------------------------------------------------------------->
+<section class="section-login bg2">
+    <div class="container">
+      <div class="login-box" id="login-tab">
+        <div class="row">
+          <div class="col-md-6 col-xs-12">
+            <div class="login-img"> <img src="~/images/login-img.png"> </div>
+          </div>
+          <div class="col-md-6 col-xs-12 pt-3">
+            <div class="sign_up">
+          <h1 class="heading "> Register</h1>
+          <h5 class="pb-5"> By creating an account you agree to our<a href="#"> Terms <br>
+          of Use</a> and <a href="#">Privacy Policy</a></h5>
+          <form class="was-validated" novalidate>
+
+            <div class="form-group" style="position:relative">
+              <input type="text" class="form-control" placeholder="Enter email" id="validationTooltipPassword"  required>
+              <div class="invalid-tooltip">
+                Please choose a  valid Email id.
+              </div>
+            </div>
+          
+           
+           <button class="btn gent-btn mt-3" type="button" onclick="location.href='signup-otp.html'">Next </button>
+             
+                
+          </form>
+        
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!---------------------------------------------------------------------->
+
+
+<!--------------------------------------------------------------------->
+<!--------------------------------------------------------------------->
+<section class="section-footer bg1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 co-xs-12">
+        <div class="footer-box">
+          <div class="footer-list">
+            <div class="footer-title"> TechnoApp Community</div>
+            <ul>
+              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfsBL0LVLrXrRfaKudsddnxfIHYk2ZHm8CP8CotnVGcokeGuw/viewform" > TechnoApp Webinars</a></li>
+              <li><a asp-controller="library" asp-action="index">Media Library </a></li>
+              <li><a href="#" data-bs-toggle="modal" data-bs-target="#commingsoon"> Airdrop</a></li>
+             <li><a asp-controller="referral" asp-action="Index">Referral</a></li>
+              <li><a href="#" data-bs-toggle="modal" data-bs-target="#commingsoon">Press Release</a></li>
+                 </ul>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="col-md-3 co-xs-12">
+        <div class="footer-box">
+          <div class="footer-list">
+            <div class="footer-title">Products & Services</div>
+            <ul>
+             <li><a href="#" data-bs-toggle="modal" data-bs-target="#commingsoon"> Institutional Services </a></li>
+              <li><a href="#"  data-bs-toggle="modal" data-bs-target="#commingsoon"> TechnoApp Academy</a></li>
+              <li><a href="#" data-bs-toggle="modal" data-bs-target="#commingsoon">TechnoApp Labs</a></li>
+              <li><a href="#" data-bs-toggle="modal" data-bs-target="#commingsoon">TechnoApp API</a></li>
+       
+                          </ul>
+          </div>
+          
+   
+        </div>
+      </div>
+
+      <div class="col-md-2 co-xs-12">
+        <div class="footer-box">
+          <div class="footer-list">
+            <div class="footer-title">Policies</div>
+            <ul>
+              <li><a asp-controller="policy" asp-action="terms-of-use"> Terms of Use </a></li>
+              <li><a asp-controller="policy" asp-action="privacy-policy">Privacy Policy</a></li>
+              <li><a asp-controller="policy" asp-action="aml-policy"> AML/KYC Policy </a></li>
+              <li><a asp-controller="policy" asp-action="referral-policy">Referral Policy</a></li>
+             <li><a asp-controller="policy" asp-action="Licences">Licences</a></li>
+              <li><a asp-controller="policy" asp-action="disclaimer">Disclaimer</a></li>
+             
+           
+                           </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-2 co-xs-12">
+        <div class="footer-box">
+          <div class="footer-list">
+            <div class="footer-title"> Support</div>
+            <ul>
+              
+              <li><a asp-controller="policy" asp-action="Trading-rules"> Trading Rules </a></li>
+              <li><a href="#" data-bs-toggle="modal" data-bs-target="#commingsoon">Fees & Charges</a></li>
+   
+              <li><a href="#" data-bs-toggle="modal" data-bs-target="#commingsoon">FAQs</a></li>
+                           </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-2 co-xs-12">
+        <div class="footer-box">
+          <div class="footer-list">
+            <div class="footer-title"> Follow Us</div>
+         <div class="social-link"> 
+          <span><a href="https://www.facebook.com/TechnoApp " target="blank"> <i class="fa fa-facebook" aria-hidden="true"></i>  Facebook</a></span>
+          <span><a href="https://www.twitter.com/TechnoApp"  target="blank"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a> </span>
+          <span><a href="https://www.linkedin.com/company/TechnoApp/" target="blank"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn </a></span>
+          <span><a href="https://www.youtube.com/channel/UCT0rYEpfAv-xZJDtxRBDE-Q" target="blank"><i class="fa fa-youtube-play" aria-hidden="true"></i> YouTube </a></span>
+         </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <!-------------------------------------------------->
+    <button class="open-button" onclick="openForm()"><i class="fa fa-commenting-o" aria-hidden="true"></i> Support</button>
+
+<div class="chat-popup" id="myForm">
+  <form action=" " class="form-container">
+<div class="chat-box">
+  <div class="chat-top"> <span class="chat-title">TechnoApp Support</span> <span><button type="button" class="btn cancel" onclick="closeForm()"><i class="fa fa-times-circle" aria-hidden="true"></i></button> </span></div>
+
+</div>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    
+  </form>
+</div>
+    <!-------------------------------------------------->
+  </div>
+  <div class="container">
+    <div class="x__footer__content-center row">
+      <div class="col col-md-12 col-12">
+        <div class="x__copyright"> 
+          <!--        <div class="x__copyright__logo"> <img src="~/images/logo.png" alt="Exodus Logo"> </div>-->
+          <div class="x__copyright__copy">Copyright ©2022 <a href="#"> TechnoApp</a>.  All rights reserved. </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--------------------------------------------------------------------->
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="commingsoon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div id="csssdilog33" class="modal-dialog">
+    <div class="modal-content mod-sec221">
+      <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body combox55">
+        <img src="~/images/logo1.png" alt="" class="mb-3">
+        <p b-cd26ewwikh="">  COMING SOON!</p>
+      
+<p class="text33">We are almost here! Get ready to be amazed.<br>
+  <span class="boldtexr34"> We follow Agile!</span>
+  <br>We are committed to bring you an incredible Crypto Trading experience.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--------------------------------------------------------------------->
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+
+<!------------------------------->
+
+
+<!--------------------------------------------------------------------->
+
+<!--------------------------------------------------------------------->
+
+
+<!---------------------------------------------------------------------->
+
+
+<!---------------------------------------------------------->
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Optional JavaScript; choose one of the two! -->
+     
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+     
+     
+    
+     
+    
+   
+  

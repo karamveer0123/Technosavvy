@@ -1,0 +1,237 @@
+﻿@model vmKYCDocUploadStage
+@{
+    ViewData["Title"] = "Initiate KYC Verification with TechnoApp";
+}
+@section Header {
+    <meta name="description" content=" Click to start KYC verification and embark on a streamlined user onboarding process." />
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="row">
+            <div class="person-ver">
+                <h1 class="heading divenity44">
+                    <span>
+                        <a asp-controller="kycuser" asp-action="start-kyc">
+                            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                    <span>
+                        Personal Identity Verification
+                    </span>
+                </h1>
+                <ol class="steps">
+                    <li class="step is-complete" data-step="1">Basic Information </li>
+                    <li class="step step is-active" data-step="2">Upload KYC Documents</li>
+                    <li class="step" data-step="3">Submit</li>
+                </ol>               
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="person-ver">
+                    <h3 class="title">2. Upload KYC Documents</h3>
+                    <p class="p-0">
+                        Note : To complete your KYC process, a @Model.DocInstances.Sum(x=>x.PassScore) score points are required across all Categories.
+                    </p>
+                    <div class="css7-kycupload">
+                        <!----------------------------------------->
+                        <div class="css7-kycdoc-div">
+                            <div class="row align-items-start">
+                                <div class="col-md-12">
+                                    <div class="TechnoSavvy-kyc-title mt-3">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="TechnoSavvy-kyc-doc">
+                                                    <h3>Country of Residency</h3>
+                                                    <p class="mb-0 p-0">
+                                                        Please ensure that your documents are
+                                                        consistent with your country of residency.
+                                                    </p>
+                                                </div>
+
+                                                <div class="d-flex align-items-center w-100">
+
+                                                    <div class="country-flag">
+                                                        <img src="@string.Concat("/images/currency/",Model.Profile.Address.Country.Abbri.ToLower(),".png")" alt="" width="20">
+                                                    </div>
+                                                    <span class="country-name">@Model.Profile.Address.Country.countryName.ToUpper()</span>
+                                                </div>
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                                @await Html.PartialAsync("Partial/_docGroup",Model)
+                            </div>
+                        </div>
+
+                        <!----------------------------------------->
+                        <div class="css7-kycdoc-div mt-2">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="css7-kycdoc-div">
+
+                                        <div class="css7-kycdoctype">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h3>Instruction in upload image </h3>
+                                                    <div class="clearfix"></div>
+                                                    <ul class="img-instruction">
+                                                        <li>
+                                                            Max 7 MB in .jpg/.jpeg/.png format
+                                                        </li>
+                                                        <li>Readable, clear and well-lit</li>
+                                                        <li>Not reflective, and blurry</li>
+                                                        <li>No Black and white image edited</li>
+                                                        <li>
+                                                            Placed document against a solid-colored
+                                                            background
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="form-check link-css">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                   id="flexCheckChecked" checked="">
+                                            <label class="form-check-label" for="flexCheckChecked">
+                                                By clicking submit button. I agree to accept TechnoApp's <a href="in-terms-of-use.html"> Terms of Use </a> and <a href="in-privacy-policy.html">
+                                                    Privacy Policy.
+                                                </a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="css7-kyc-btn">
+                                        <a class="gent-btn mt-3 w-50" href="javascript:ValidateAndSubmit();" >
+                                            Upload & Submit
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@section Scripts{
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/minjs/upload-file.min.js"></script>
+        <script src="~/minjs/point-file.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+        <script src="~/js/upload-file.js"></script>
+        <script src="~/js/point-file.js"></script>
+    }
+
+
+    <script type="text/javascript">
+
+        $(".my-select").chosen({ width: "100%" });
+    </script>
+
+    <script>
+        function ValidateAndSubmit()
+        {
+            //Do Validation here
+            $('#frmUpload').submit();
+        }
+        jQuery(document).ready(function () {
+            ImgUpload();
+        });
+
+        function ImgUpload() {
+
+
+            $('.upload__inputfile').each(function () {
+                $(this).on('change', function (e) {
+                    var imgWrap = "";
+                    var imgArray = [];
+                    var dId=$(this).prop('id');
+                    imgWrap = $(this).closest('.upload__box').find('.upload__img-wrap');
+                    var maxLength = $(this).attr('data-max_length');
+                    var maxSize = $(this).attr('data-max_size');
+
+                    var files = e.target.files;
+                    var filesArr = Array.prototype.slice.call(files);
+                    var iterator = 0;
+                    filesArr.forEach(function (f, index) {
+
+                        if (!f.type.match('image.*')) {
+                            return;
+                        }
+                        if (f.size>maxSize){
+                            $('#' + dId).val('').clone(true);
+                            $('#' + dId+'_err').html('file too large..');
+                            return;
+                        }
+                        else
+                        {
+                            $('#' + dId + '_err').html('');
+                        }
+
+                        if (imgArray.length > maxLength) {
+                            return false
+                        } else {
+                            var len = 1;
+                            for (var i = 0; i < imgArray.length; i++) {
+                                if (imgArray[i] !== undefined) {
+                                    len++;
+                                }
+                            }
+                            if (len > maxLength) {
+                                return false;
+                            } else {
+                                imgArray.push(f);
+
+                                var reader = new FileReader();
+                                reader.onload = function (e) {
+                                    var html = "<div class='upload__img-box'><div style='background-image: url(" + e.target.result + ")' data-number='" + $(".upload__img-close").length + "' data-id='"+dId+"' data-file='" + f.name + "' class='img-bg'><div class='upload__img-close'></div></div></div>";
+                                    imgWrap.html(html);
+                                    iterator++;
+                                }
+                                reader.readAsDataURL(f);
+                            }
+                        }
+                    });
+                    getPoint(dId);
+                });
+            });
+
+            $('body').on('click', ".upload__img-close", function (e) {
+                var file = $(this).parent().data("file");
+                var dId = $(this).parent().data("id");
+                //for (var i = 0; i < imgArray.length; i++) {
+                //    if (imgArray[i].name === file) {
+                //        imgArray.splice(i, 1);
+                //        break;
+                //    }
+                //}
+                
+                $(this).parent().parent().remove();
+                $('#'+dId).val('').clone(true);
+                RemovePoint(dId);
+            });
+        }
+    </script>
+    
+    }
+
+
+

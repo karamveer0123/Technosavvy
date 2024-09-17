@@ -1,0 +1,115 @@
+﻿@model vm2ndAuth
+@{
+    ViewData["Title"] = "Secure Fiat Withdrawal: 2-Factor Verification  ";
+}
+
+@section Header {
+    <meta name="description" content="Enhance your financial security with TechnoApp  fiat withdrawal process. Experience two-factor verification for added protection. Withdraw safely and confidently." />
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Withdraw </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">              
+                        <div class="css77buy-box">
+                            <!---------------------------------------------->
+                                    <!-- progressbar -->
+                                    <!---------------------------------------------->
+                                    <div class="shadow_TechnoSavvy">
+                                <ol class="progressdiv">
+                                    <li class="step is-complete" data-step="1">  Enter Details</li>
+                                    <li class="step is-complete" data-step="2"> Summary </li>
+                                    <li class="step is-active" data-step="3"> 2F Verification </li>
+                                    <li class="step" data-step="4"> Confirmation </li>
+                                </ol>
+                               
+                                    </div>
+                                    <!---------------------------------------------->
+                            <form novalidate class="was-validated" autocomplete="off" asp-action="@Model.ActionMethod" asp-controller="Withdraw" id="frmWithdraw" enctype="multipart/form-data">
+                                @Html.HiddenFor(x=>x.infoBag)
+                                <div id="sMsg" asp-validation-summary=All class="text-danger"></div>
+                                <div id="Msg" class="text-danger"></div>
+                                <div class="authMultFac d-orange">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                </div>
+                                    <div class="row">                      
+
+                                        <div class="form-card">
+                                            <div class="verificationwithdraw-form">
+                                                
+                                                <div class="css33withformdiv">
+
+                                                    <div class="form-group mt-4 clear">
+                                                        <label class="form-label" for="pwd">E-mail verification code</label>
+                                                        <input type="text" class="form-control" placeholder=" " asp-for="OTP">                                         
+                                                        <div class="enter56"> Enter the 6-digit code received by @await Html.PartialAsync("partial/_userNameMasked",Model)</div>
+                                                        <span class="resend112 gettimer"> OTP valid for <span id="countdowntimer">15</span>
+                                                        minutes.</span>
+                                                    </div>
+
+                                                    <div class="form-group mt-4 clear">
+                                                        <label class="form-label" for="pwd">Google verification code</label>
+                                                        <input type="password" class="form-control" placeholder="Enter code " asp-for="Code">
+                                                        <div class="enter56"> Enter the 6-digit code from Google Authenticator.</div>                                                       
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        <span class="dflexdiv">
+                                            <a asp-controller="Wallet" asp-action="Index" type="button" name="previous" class="d-dark  action-button">Cancel</a>
+
+                                                <input type="submit" class=" d-orange action-button float-right" value="Continue">
+                                            </span>
+                                        </div>                                       
+                                    </div>
+                                </form>                     
+                                                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+
+            </div>
+
+        </div>
+
+        <!----------------------------------------------->
+
+    </div>
+</section>
+@section Scripts{
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/minjs/mutiselect.js"></script>
+        <script src="~/minjs/with.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+        <script src="~/js/mutiselect.js"></script>
+        <script src="~/js/with.js"></script>
+    }
+
+
+    <script type="text/javascript">
+
+        $(".my-select").chosen({ width: "100%" });
+    </script>
+       }

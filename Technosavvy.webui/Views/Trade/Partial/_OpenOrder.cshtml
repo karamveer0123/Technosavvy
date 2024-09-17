@@ -1,0 +1,98 @@
+﻿@model List<vmMarketMyOrder>
+<div id="comunity-css566-box" class="comunity-css566-box">
+    <div class="table-xscroll44  table-responsive">
+        <table class="table  cssearn-table">
+            <thead class="trasaction-table-title">
+                <tr>
+                    @*1*@
+                    <th class="css566-table-text">Date </th>
+                    @*2*@
+                    <th class="css566-table-text">Id </th>
+
+                    @*3*@
+                    <th class="css566-table-text">Asset</th>
+
+                    @*4*@
+                    <th class="css566-table-text">Side </th>
+
+                    @*<th class="css566-table-text">
+                    <div id="market-more" class="market-more-css45">
+                    <div class="dropdown">
+                    <button type="button" class="btn btn-more-css44 dropdown-toggle" data-bs-toggle="dropdown">
+                    Side
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-css44">
+                    <li><a class="dropdown-item dropdown-item-css44" href="#">Link 1</a></li>
+                    <li><a class="dropdown-item" href="#">Link 2</a></li>
+                    <li><a class="dropdown-item" href="#">Link 3</a></li>
+                    </ul>
+                    </div>
+                    </div>
+                    </th>*@
+                    @*5*@
+                    <th class="css566-table-text">Price </th>
+
+                    @*6*@
+                    <th class="css566-table-text">Amount </th>
+
+                    @*7*@
+                    <th class="css566-table-text"> Filled </th>
+
+                    @*8*@
+                    <th class="css566-table-text"> Total </th>
+
+                    @*9*@
+                    <th class="css566-table-text">Tigger Conditions</th>
+
+                    @*10*@
+                    <th class="css566-table-text">
+                        <div id="market-more" class="market-more-css45">
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-more-css44 dropdown-toggle" data-bs-toggle="dropdown">
+                                    Cancel All
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-css44">
+                                    <li><a class="dropdown-item dropdown-item-css44" href="#">Link 1</a></li>
+                                    <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Link 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="trasaction-table">
+                @foreach (var r in @Model)
+                {
+                    <tr>
+                        <td>r.OrderDate </td>
+                        <td>r.OrderId </td>
+                        <td>r.Asset </td>
+                        <td>r.OrderType </td>
+                        <td>r.Price </td>
+                        <td>r.Amount </td>
+                        <td>r.Filled </td>
+                        <td>r.Total </td>
+                        <td>r.TriggerCondition </td>
+                    </tr>
+                }
+                <tr>
+                    <td>24-Jan-2022 </td>
+                    <td> 100525898-1-1251-595448498171000000-357</td>
+                    <td>BTC </td>
+                    <td> Buy</td>
+                    <td>16802.36</td>
+                    <td> 0.23</td>
+                    <td>3864.54 </td>
+                    <td>0.00 </td>
+                    <td> 3864.54</td>
+                    <td> -- </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+</div>

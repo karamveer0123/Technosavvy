@@ -1,0 +1,183 @@
+﻿@{
+    ViewData["Title"] = "Withdraw Fiat Easily | Secure and Convenient Transactions";
+}
+
+@section Header {
+    <meta name="description" content="Experience seamless fiat withdrawals. Our secure platform ensures easy and convenient transactions for your financial needs. Start withdrawing now!" />
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Withdraw </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">
+                            <div class="acoun-box authenti-box">
+                                <form id="msform" autocomplete="off">
+                                    <!---------------------------------------------->
+                                    <!-- progressbar -->
+                                    <!---------------------------------------------->
+                                    <div class="shadow_TechnoSavvy">
+                                        <ol class="progressdiv">
+                                            <li class="step  is-active" data-step="1">
+                                                Choose<br>Currency
+                                            </li>
+                                            <li class="step " data-step="2">
+                                                Withdraw <br> Method
+
+                                            </li>
+                                            <li class="step" data-step="3">
+                                                Enter <br>Bank Detail
+                                            </li>
+                                            <li class="step " data-step="4">
+                                                Check <br>Information
+                                            </li>
+                                            <li class="step" data-step="5">
+                                                2F <br> Verification
+                                            </li>
+                                            <li class="step" data-step="6">
+                                                Completed
+                                            </li>
+                                        </ol>
+                                        <!---------------------------------------------->
+
+                                    </div>
+                                    <!---------------------------------------------->
+                                    <!-- fieldsets -->
+                                    <div class="row">
+                                        <!-------------------------------------------->
+                                        <div class="form-card">
+                                            <div class="css77buy-box">
+                                                <!---------------==================start assset div==========================-------------------->
+                                                <div class="assetseprate">
+                                                    <div class="form-group mt-3">
+                                                        <label class="form-label">
+                                                            Select the asset you would like to
+                                                            Withdraw
+                                                        </label>
+                                                        <div class="form-select3">
+                                                            <select class="my-select ">
+                                                                <option>INR - ₹</option>
+                                                                <optgroup label="Token">
+                                                                    <option data-img-src="/images/coin/BNB.png">BNB</option>
+                                                                    <option data-img-src="/images/coin/BTC.png">BTC</option>
+                                                                    <option data-img-src="/images/coin/BUSD.png">BUSD</option>
+                                                                    <option data-img-src="/images/coin/CHZ.png">CHZ</option>
+                                                                    <option data-img-src="/images/coin/DAI.png">DAI</option>
+                                                                    <option data-img-src="/images/coin/ETH.png">ETH</option>
+                                                                    <option data-img-src="/images/coin/LINK.png">LINK</option>
+                                                                    <option data-img-src="/images/coin/LUNC.png">LUNC</option>
+                                                                    <option data-img-src="/images/coin/MATIC.png">MATIC</option>
+                                                                    <option data-img-src="/images/coin/TechnoSavvy.png">TechnoSavvy</option>
+                                                                    <option data-img-src="/images/coin/USDC.png">USDC</option>
+                                                                    <option data-img-src="/images/coin/USDT.png">USDT</option>
+                                                                    <option data-img-src="/images/coin/wBTC.png">wBTC</option>
+                                                                </optgroup>
+                                                                <optgroup label="Currency">
+                                                                    <option>INR - ₹</option>
+                                                                    <option>CHF - FR</option>
+                                                                    <option>BRL - R$</option>
+                                                                    <option>USD - $</option>
+                                                                    <option>AUD - $</option>
+                                                                    <option>CAD - $</option>
+                                                                    <option>CLP - $</option>
+                                                                    <option>CNY - ¥</option>
+                                                                    <option>CZK - KČ</option>
+                                                                    <option>DKK - KR</option>
+                                                                    <option>EUR - €</option>
+                                                                    <option>GBP - £</option>
+                                                                    <option>MYR - RM</option>
+                                                                    <option>HKD - $</option>
+                                                                    <option>HUF - FT</option>
+                                                                    <option>IDR - RP</option>
+                                                                    <option>ILS - ₪</option>
+                                                                    <option>INR - ₹</option>
+                                                                    <option>JPY - ¥</option>
+                                                                    <option>KRW - ₩</option>
+                                                                    <option>MXN - $</option>
+                                                                </optgroup>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!---------------==================start amount div==========================-------------------->
+                                                <div class="amountseprate">
+                                                    <div class="form-group mt-3">
+                                                        <label  class="form-label">Enter Amount</label>
+                                                        <input type="text" class="form-control" placeholder="Enter Amount"
+                                                            >
+                                                        <span class="sleft432 text-right width100"> Available Balance: ₹ 150.00 </span>
+                                                    </div>
+
+                                                    <!-------------------------------->
+                                                    <div class="form-groupdiv w-100">
+                                                        <a class="withdrlink float-right"
+                                                           asp-controller="convert" asp-action="convertwithdraw" type="button">
+                                                            Convert & Withdraw
+                                                        </a> <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover"
+                                                                        data-bs-trigger="hover focus"
+                                                                        data-bs-content="You can convert all of your other tokens & assets to your desired assets at the same time while withdrawing"
+                                                                        data-bs-original-title="" title="">
+                                                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                                        </span>
+                                                    </div>
+                                                    <!-------------------------------->
+                                                </div>
+                                                <!---------------==================end amount div==========================-------------------->
+
+                                            </div>
+                                            <a asp-controller="withdraw" asp-action="fiatchooseaccount" type="button" name="next" class="action-button  gent-btn">Continue</a>
+                                        </div>                                     
+                                
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+
+            </div>
+
+        </div>
+
+        <!----------------------------------------------->
+
+    </div>
+</section>
+@section Scripts{
+     @if (ConfigEx.ShouldMini)
+    {   
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/minjs/mutiselect.js"></script>
+    }
+    else
+    {    
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+        <script src="~/js/mutiselect.js"></script>
+    }
+    
+
+    <script type="text/javascript">
+
+        $(".my-select").chosen({ width: "100%" });
+    </script>
+       }

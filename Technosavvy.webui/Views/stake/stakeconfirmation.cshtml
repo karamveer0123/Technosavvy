@@ -1,0 +1,87 @@
+﻿@model vmMyStakingConfirm
+@{
+    ViewData["Title"] = "TechnoApp Stake Confirmation: Secure Your Investment";
+}
+@section Header {
+    <meta name="description" content="Confirm your stake on TechnoApp  with confidence. Our secure confirmation process ensures the protection of your investment." />
+
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+
+                <span>Staking</span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="summarydiv">
+                            <!--==============================================-->
+                            <!--==============================================-->
+                            <div class="confpenddiv">
+                                <!------------------------------>
+                                <div class="modegred34">
+                                    <div class="vericond432"> <i class="fa fa-check d-green" aria-hidden="true"></i></div>
+                                </div>
+                                <!------------------------------>
+                                <h5> Subscription Successful!</h5>
+                                <!------------------------------>
+                                <div class="csstime55-dep mt-2 text-center"> Staking Confirmed for <span class="orange">@(Model.Record.Amount.ToString("#,##0.###")) @Model.Token.Code! </span></div>
+                                <!------------------------------>
+                            </div>
+                            <!--==============================================-->
+                            <!--==============================================-->
+                            <div class="css77-withdrawlS">
+                                <div class="csssum-title55"> Subscription Amount</div>
+                                <div class="csssum-detail55 orange"> @(Model.Record.Amount.ToString("#,##0.###")) @Model.Token.Code</div>
+                            </div>
+                            <!--==============================================-->
+                            <div class="css77-withdrawlS">
+                                <div class="csssum-title55"> Subscription Date</div>
+                                <div class="csssum-detail55">@(Model.Record.StartedOn.ToString("dd-MMM-yyyy"))</div>
+
+                            </div>
+                            <!--==============================================-->
+
+                            <div class="css77-withdrawlS">
+                                <div class="csssum-title55">Redemption Amount</div>
+                                <div class="csssum-detail55 orange">@(Model.Record.MatureAmount.ToString("#,##0.###")) @Model.Token.Code</div>
+                            </div>
+
+                            <!--==============================================-->
+                            <div class="css77-withdrawlS">
+                                <div class="csssum-title55">Redemption Date</div>
+                                <div class="csssum-detail55">@((Model.Record.ExpectedEndData).ToString("dd-MMM-yyyy"))</div>
+                            </div>
+                            <!--==============================================-->
+                            <div class="csstime55-text cssfun44-div mt-3 mb-2">
+                                Check your history <a asp-controller="wallet" asp-action="EarnWallet"> staking history</a>.
+
+                            </div>
+                            <!--==============================================-->
+
+                            <div class="dflexcenter2">
+                                <a class="withsumm-btn  mt-3 " type="button" asp-controller="wallet" asp-action="index">Acknowledge</a>
+                            </div>
+                            <!--==============================================-->
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+
+            </div>
+        </div>
+
+        <!----------------------------------------------->
+    </div>
+</section>

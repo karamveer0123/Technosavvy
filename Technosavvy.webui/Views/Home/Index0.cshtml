@@ -1,0 +1,874 @@
+﻿@model vmBase
+@{
+    ViewData["Title"] = "TechnoApp: Next-Gen Crypto Exchange"; 
+}
+@section Header {
+    <meta name="description" content="Discover the future of cryptocurrency trading at TechnoApp. Experience advanced features, secure transactions, and seamless trading on our innovative platform." />
+    
+}
+ 
+<section class="banner-section bg1">
+    <div class="container-xxl">
+        <div class="row">
+
+            <div class="col-md-7 col-12">
+                <div class="css566-banner-box banner-text">
+                    <h1>
+                        World's Most Rewarding <br>
+                        <span> Crypto Exchange </span>
+                    </h1>
+                    <h4 class="">
+                        TechnoApp - World's first revenue generating crypto currency exchange.<br>
+                        It rewards you every time you trade.
+                    </h4>
+                    <h3 class="">
+                        <span>
+                            Upto 0.10% <span class="d-inline-block css22protext proper" tabindex="0"
+                                             data-bs-placement="top" data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                             data-bs-content="*only for community members." data-bs-original-title="" title=""><a asp-controller="cashback" asp-action="index"> Cashback* </a></span>
+                            <p> Of Transaction Value. </p>
+                        </span> <span class="linecss22"> </span> <span>
+                            <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featurezero" class="css22protext" tabindex="0" data-bs-placement="top" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="for all trades" data-bs-original-title="" title="">Zero </a>  SWAP Fees
+                        </span>
+                    </h3>
+                    @if (Model._SessionHash.IsNOT_NullorEmpty())
+                    {
+                        <a asp-controller="trade" asp-action="index" class="css566-btn" type="button"> Start Trading </a>
+
+                    }
+                    else
+                    {
+                        <a asp-controller="login" asp-action="login" class="css566-btn"> Start Trading </a>
+
+                    }
+
+                    <div class="css566-user-no">
+                        <span> <strong> 11k+ </strong> Trusted Users </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 col-12 p0">
+                <div class="css566-banner-img">
+                    <img src="../images/banner-hand.png">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="what-TechnoSavvy-section bg2">
+    <div class="container">
+
+        <div class="row">
+            <div class="css566-heading mb-3">
+                <h3 class="text-center ">TechnoApp, The Next-Generation<br>Crypto Exchange</h3>
+                <span class="text-center ">
+                    <div class="divider"></div>
+                </span>
+                <p class="text-center  wow fadeInUp" data-wow-delay="0.2s">
+                    Pay No More Charges to Trade Your Favorite
+                    Cryptocurrencies
+                </p>
+            </div>
+        </div>
+        <div class="row">
+
+
+            <div class="css566-slide">
+                <div class="owl-slider">
+                    <div id="carousel" class="owl-carousel">
+                        <div class="item">
+                            <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featureseamless">
+                                <div class="css566-slide-box ">
+                                    <div class="css566-slide-img"> <img src="../images/uniqe-icon.png"> </div>
+                                    <div class="css566-slide-text"> Seamless Trading Experience </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featurecashback">
+                                <div class="css566-slide-box ">
+                                    <div class="css566-slide-img"> <img src="../images/demand-icon.png"> </div>
+                                    <div class="css566-slide-text">Cashback Rewards on Every Transaction</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item">
+                            <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featurezero">
+                                <div class="css566-slide-box">
+                                    <div class="css566-slide-img22"> <img src="../images/lowest.png"> </div>
+                                    <div class="css566-slide-text">No SWAP Fees </div>
+                                </div>
+                            </a>
+                        </div>
+                      
+                        <div class="item">
+                            <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featureliquidity">
+                                <div class="css566-slide-box">
+                                    <div class="css566-slide-img"> <img src="../images/value-icon.png"> </div>
+                                    <div class="css566-slide-text"> Augmented Liquidity Pool </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="slider-section bg1">
+    <div class="container">
+        <div id="demo2" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button data-bs-target="#demo2" data-bs-slide-to="0" class="active"></button>
+                <button data-bs-target="#demo2" data-bs-slide-to="1"></button>
+                <button  data-bs-target="#demo2" data-bs-slide-to="2"></button>               
+            </div>
+          
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="https://TechnoApp.com/" target="_blank" >
+                        <img src="../images/banner-1.jpg" alt="banner1" class="d-block w-100">
+                    </a>
+                </div>
+            @*     <div class="carousel-item">
+                    <a asp-action="registeruser" asp-controller="signup" >
+                        <img src="../images/banner-2.jpg" alt="banner2" class="d-block w-100">
+                    </a>
+                </div> *@
+                <div class="carousel-item">
+                    <a asp-action="registeruser" asp-controller="signup">
+                        <img src="../images/banner-3.jpg" alt="banner3" class="d-block w-100">
+                    </a>
+                </div>
+                <div id="dyLoc1" class="carousel-item">
+                    <a asp-controller="referral" asp-action="Index" >
+                        <img src="../images/banner-4.jpg" alt="banner4" class="d-block w-100">
+                    </a>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo2" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo2" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="get-tade-section bg1">
+    <div class="container">
+        <div class="row">
+            <div class="css566-heading mb-3">
+                <h3 class="text-center ">
+                    You Get More Than You Pay, <br>
+                    Each Time You Trade
+                </h3>
+                <span class="text-center ">
+                    <div class="divider"></div>
+                </span>
+            </div>
+        </div>
+        <div class="d-none d-lg-block">
+        <div class="row ">
+            <div class="col-md-4 col-12">
+                <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featurecashback">
+                    <div class="css566-trade-box zoom-out">
+                        <div class="css566-trade-img"> <img src="../images/cashback.png"> </div>
+                        <div class="css566-trade-text">Cashback On Every Trade </div>
+                    </div>
+                </a>
+
+                <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featureappreciate">
+                    <div class="css566-trade-box zoom-out ">
+                        <div class="css566-trade-img"> <img src="../images/demand-icon.png"> </div>
+                        <div class="css566-trade-text"> TechnoSavvy Appreciates Your Capital </div>
+                    </div>
+                </a>
+
+                <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featurezero">
+                    <div class="css566-trade-box zoom-out ">
+                        <div class="css566-trade-img"> <img src="../images/uniqe-icon.png"> </div>
+                            <div class="css566-trade-text"> Trade With Zero SWAP Fees  </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 col-12">
+                <div class="portfolio-img "> <img src="../images/portfolio-section.png"></div>
+            </div>
+
+            <div class="col-md-4 col-12">
+                <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featuremoney">
+                    <div class="css566-trade-box zoom-out">
+                        <div class="css566-trade-text">Generate Profit From Arbitrage Trading </div>
+                        <div class="css566-trade-img-right"> <img src="../images/genrate-profile.png"> </div>
+                    </div>
+                </a>
+
+                <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featureimpact">
+                    <div class="css566-trade-box zoom-out">
+                        <div class="css566-trade-text">TechnoApp Reduces The Impact Cost For The Trade </div>
+                        <div class="css566-trade-img-right"> <img src="../images/reduce.png"> </div>
+                    </div>
+                </a>
+
+                <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featuretrade">
+                    <div class="css566-trade-box zoom-out">
+                        <div class="css566-trade-text">TechnoApp Turns Your Losses Into Profit </div>
+                        <div class="css566-trade-img-right"> <img src="../images/profit.png"> </div>
+                    </div>
+                </a>
+
+            </div>
+
+
+        </div>
+        </div>
+        <div class="d-block d-lg-none">
+        <div class="row">
+          <div class="col-6 col-sm-4">
+              <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featurecashback">
+              <div class="css566-trade-box zoom-out">
+                <div class="css566-trade-img"> <img src="../images/cashback.png"> </div>
+                <div class="css566-trade-text">Cashback On <br> Every Trade </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-sm-4">
+            <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featureappreciate">
+              <div class="css566-trade-box zoom-out ">
+                <div class="css566-trade-img"> <img src="../images/demand-icon.png"> </div>
+                <div class="css566-trade-text"> TechnoSavvy Appreciates <br> Your Capital </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-sm-4">
+            <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featurezero">
+              <div class="css566-trade-box zoom-out ">
+                <div class="css566-trade-img"> <img src="../images/uniqe-icon.png"> </div>
+                <div class="css566-trade-text"> Trade With Zero <br> swap fees </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-sm-4">
+            <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featuremoney">
+              <div class="css566-trade-box zoom-out">
+                <div class="css566-trade-img"> <img src="../images/genrate-profile.png"> </div>
+                <div class="css566-trade-text">Generate Profit From <br> Arbitrage Trading </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-sm-4">
+             <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featureimpact">
+              <div class="css566-trade-box zoom-out">
+                <div class="css566-trade-img"> <img src="../images/reduce.png"> </div>
+                <div class="css566-trade-text">TechnoApp Reduces The Tmpact<br> Cost For The Trade </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-sm-4">
+            <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featuretrade">
+              <div class="css566-trade-box zoom-out">
+                <div class="css566-trade-img"> <img src="../images/profit.png"> </div>
+                <div class="css566-trade-text">TechnoApp Turns Your Losses<br> Into Profit. </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</section>
+
+
+<section class="market-cart-section bg2">
+    <div class="container">
+        <div class="row">
+            <div class="css566-heading mb-3">
+                <h3 class="text-center ">Market </h3>
+                <span class="text-center ">
+                    <div class="divider"></div>
+                </span>
+                <p class="text-center ">Track your favourite cryptocurrency and its worth at one place. </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-none d-lg-block ">
+                <div id="comunity-css566-box" class="comunity-css566-box">
+
+                    <table class="table table-responsive placeholder-glow" id="myMktTable-home">
+                        <thead class="trasaction-table-title">
+                            <tr>
+                                <th nowrap="nowrap" rowspan="2" class="css566-table-text th-sticky-left">
+                                    <div class="name-css46">
+                                        <span>Name</span> 
+                                    </div>
+                                </th>                               
+
+                                <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                    <div class="change24-css46">
+                                        <span> Price</span>
+                                    </div>
+                                </th>
+                                 <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                    <div class="price-css46">
+                                        <span>24h Change(%)</span>
+                                    </div>
+                                </th>
+
+                                <th nowrap="nowrap" colspan="2" class="css566-table-text">
+                                    <div class="volume-css467 text-center orange">
+                                        <span>Cashback</span>
+                                    </div>
+                                </th>
+
+                            </tr>
+                          <tr>
+                                <th nowrap="nowrap"  class="css566-table-text w-150">
+                                <div class="volume-css46"><span> 24h</span> </div>
+                            </th>
+                                <th nowrap="nowrap" class="css566-table-text w-150">
+                                <div class="volume-css46"><span> YTD</span> </div>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody class="trasaction-table">
+                              <tr>
+                                                       <td style="min-width: 200px;">
+                                                           <div class="row g-0 align-items-center">
+                                                               <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                               <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                           </div>
+                                                       </td>
+                                                      
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                            <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                      
+                                                    </tr>
+                                                     <tr>
+                                                       <td style="min-width: 200px;">
+                                                           <div class="row g-0 align-items-center">
+                                                               <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                               <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                           </div>
+                                                       </td>
+                                                      
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                            <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                      
+                                                    </tr>
+                                                    
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+
+            <div class="col-12 d-block d-lg-none">
+          <div id="marketMobileViewData" class="market-tab-box mt-0">
+              
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                           
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                           
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                        
+</div>
+        </div>
+        <div class="col-12 text-right mt-0 mt-lg-4 ">
+            <a asp-controller="Market" asp-action="index" class="url-1">View More</a>
+        </div>
+        </div>
+    </div>  
+</section>
+
+<section class="comunity-section bg1">
+    <div class="container">
+        <div class="row">
+            <div class="css566-heading mb-3">
+                <h3 class="text-center ">TechnoApp Community </h3>
+                <span class="text-center ">
+                    <div class="divider"></div>
+                </span>
+                <p class="text-center">Seamless trading with high return on investment</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-7 col-12">
+                <div class="css566-cashback">
+                    <h4>Get Cashback on Each Spend! </h4>
+                    <h2>
+                        Stake TechnoSavvy & Shoot-Up<br>
+                        Your Daily profit
+                    </h2>
+                </div>
+                <div class="css566-staking">
+                    <span>
+                        <h3> 0.10% <br><span>of transaction value as cashback </span></h3>
+                        <p>on staking 50,000 TechnoSavvy </p>
+                    </span>
+
+                    <span>
+                        <h3>0.05%<br><span>of transaction value as cashback </span></h3>
+                        <p>on staking 5,000 TechnoSavvy </p>
+                    </span>
+                </div>       
+
+                    <a asp-controller="buy" asp-action="index"  class="css566-btn mt-2"> Secure TechnoSavvy  </a>
+               
+            </div>
+
+            <div class="col-md-5 col-12">
+                <div class="css-566-staking-img"> <img src="../images/staking-graph.png"> </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="register-section bg1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-12">
+                <div class="css566-register-left">
+                    <div class="css566-heading">
+                        <h3>Register With TechnoApp</h3>
+                        <p> Start Your Crypto Journey in 3 Easy Steps!</p>
+                    </div>
+                    <div class="css566-register-img"> <img src="../images/register-img.png"> </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-12">
+                <div class="css566-register-left">
+                 
+                    <a asp-controller="signup" asp-action="registeruser">
+                        <div class="css566-regiter-step">
+                            <span> <img src="../images/account-1.png"> </span>
+                            <span>
+                                <h2> Create your account</h2>
+                                <p>Register on TechnoApp with your details </p>
+                            </span>
+                        </div>
+                    </a>
+
+                    <a asp-controller="signup" asp-action="registeruser">
+                        <div class="css566-regiter-step">
+                            <span> <img src="../images/strat-trading.png"> </span>
+                            <span>
+                                <h2> Start trading</h2>
+                                <p>
+                                    Buy and sell Bitcoin, Ethereum, USDT <br>
+                                    & many other cryptocurrencies on TechnoApp
+                                </p>
+                            </span>
+                        </div>
+                    </a>
+
+                    <a asp-controller="signup" asp-action="registeruser">
+                        <div class="css566-regiter-step">
+                            <span> <img src="../images/verify.png"> </span>
+                            <span>
+                                <h2>Verify your identity</h2>
+                                <p>Complete your KYC </p>
+                            </span>
+                        </div>
+                    </a>
+                 
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="investment-section bg2">
+    <div class="container">
+        <div class="css566-invest-box">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="css566-invest-div lets-start-text-class">
+                        <h2>
+                           Join the Crypto Revolution!
+                        </h2>
+                        <h3>Explore the Leading Cryptocurrencies on TechnoApp</h3>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="css566-invest-btn">
+                        @if (Model._SessionHash.IsNOT_NullorEmpty())
+                            {
+                                <a asp-controller="trade" asp-action="index" class="css566-btn" type="button"> Start Trading </a>
+
+                            }
+                            else
+                            {
+                                <a asp-controller="login" asp-action="login" class="css566-btn"> Start Trading </a>
+
+                            }
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="css566-invest-box">
+            <div class="css566-invest-div">
+                <h2>We are here to <span>help You !</span></h2>
+
+            </div>
+
+            <div class="css566-help-div">
+                <div class="css566-help-box">
+                    <span> <img src="../images/support.png"> </span>
+
+                    <span>
+                        <h3>24/7 Chat Support </h3>
+                        <p>
+                            Round-the-clock customer assistance for all your needs.
+                        </p>
+                        <a href="https://t.me/TechnoApp_Support" class="btn-chat-now" target="_blank"> Chat now</a>
+                    </span>
+                </div>
+
+                <div class="css566-help-box">
+                    <span> <img src="../images/faq.png"> </span>
+
+                    <span>
+                        <h3>FAQs </h3>
+                        <p>View FAQs for detailed information<br> on specific features. </p>
+                        <a asp-controller="library" asp-action="faq" class="btn-chat-now"> Learn More</a>
+                    </span>
+                </div>
+
+                <div class="css566-help-box">
+                    <span> <img src="../images/blog.png"> </span>
+
+                    <span>
+                        <h3>Blogs </h3>
+                        <p>
+                            Stay up to date with latest crypto trends and TechnoApp.
+                        </p>
+                        <a asp-controller="blog" asp-action="an-introduction-to-TechnoApp" class="btn-chat-now"> Learn More</a>
+
+                       
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    @section Scripts{
+      
+    @if (ConfigEx.ShouldMini)
+    {
+         <script src="~/minjs/cMarketclient.min.js"></script>
+    }
+    else
+    {
+          <script src="~/js/cMarketclient.js"></script>
+    }       
+    <script>
+         $(document).ready(function () {
+            formateAll;              
+        });
+     </script>
+    }

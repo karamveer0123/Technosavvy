@@ -1,0 +1,148 @@
+﻿@{
+    ViewData["Title"] = "Choose Your Fiat Withdrawal Account";
+}
+
+@section Header {
+    <meta name="description" content="Explore seamless fiat withdrawal options. Select your preferred account for hassle-free transactions. Experience secure and efficient financial management." />
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Withdraw </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">
+                            <div class="acoun-box authenti-box">
+                                <form id="msform" autocomplete="off">
+                                    <!---------------------------------------------->
+                                    <!-- progressbar -->
+                                    <!---------------------------------------------->
+                                    <div class="shadow_TechnoSavvy">
+                                        <ol class="progressdiv">
+                                            <li class="step  is-complete" data-step="1">
+                                                Choose<br>Currency
+                                            </li>
+                                            <li class="step is-active" data-step="2">
+                                                Withdraw <br> Method
+
+                                            </li>
+                                            <li class="step " data-step="3">
+                                                Enter <br>Bank Detail
+                                            </li>
+                                            <li class="step " data-step="4">
+                                                Check <br>Information
+                                            </li>
+                                            <li class="step " data-step="5">
+                                                2F <br> Verification
+                                            </li>
+                                            <li class="step" data-step="6">
+                                                Completed
+                                            </li>
+                                        </ol>
+                                        <!---------------------------------------------->
+
+                                    </div>
+                                    <!---------------------------------------------->
+                                    <!-- fieldsets -->
+                                    <div class="row">  
+                                        <div class="form-card">
+                                            <div class="css77buy-box">
+                                                <!----------------------------------------------------->
+                                                <div class="form-group mt-3">
+                                                    <label class="form-label">Amount</label>
+                                                    <input type="text" class="form-control" placeholder="3000.00"
+                                                           disabled>
+                                                    <span class="sell-coin11"> INR</span>
+                                                </div>
+                                                <!----------------------------------------------------->
+                                                <div class="form-group mt-3">
+                                                    <label class="form-label">Withdraw With</label>
+                                                    <div class="methoutdiv">
+                                                        <div class="methdiv432">
+                                                            <div class="meticon"><img src="/images/bank.png"></div>
+                                                            <div class="metname">
+                                                                <span>Bank Transfer</span>
+                                                                <span class="metstate33">
+                                                                    NEFT/RTGS/IMPS| Processing Time:Upto 6 hours during 9:00 AM on
+                                                                    bank working days
+                                                                </span>
+                                                            </div>
+                                                            <div class="metfee">Fees:10.00 </div>
+                                                        </div>
+                                                        <!---------------------->
+
+                                                        <div class="methdiv432">
+                                                            <div class="meticon"><img src="/images/UPI.png"> </div>
+                                                            <div class="metname">
+                                                                <span>UPIs</span>
+                                                                <span class="metstate33">
+                                                                    Processing Time: Upto 6 hours during 9:00 AM to 9:00 PM on bank
+                                                                    working days
+                                                                </span>
+                                                            </div>
+                                                            <div class="metfee">Fees: 15.00 INR</div>
+                                                        </div>
+                                                        <!---------------------->
+
+
+                                                    </div>
+                                                </div>
+                                                <!----------------------------------------------------->
+                                            </div>
+                                            <div class="dflexdiv">
+                                                <a asp-controller="withdraw" asp-action="withdrawfiat" type="button" name="previous" class="d-dark  action-button">Previous</a>
+                                                <a asp-controller="withdraw" asp-action="fiattransferprocess" type="button" name="next" class="d-orange action-button float-right">Continue</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+
+            </div>
+
+        </div>
+
+        <!----------------------------------------------->
+
+    </div>
+</section>
+@section Scripts{
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/minjs/mutiselect.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+        <script src="~/js/mutiselect.js"></script>
+    }
+
+
+    <script type="text/javascript">
+
+        $(".my-select").chosen({ width: "100%" });
+    </script>
+       }

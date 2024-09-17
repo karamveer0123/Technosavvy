@@ -1,0 +1,470 @@
+﻿@model vmRewardCenter
+@{
+    ViewData["Title"] = "Unlock Rewards with TechnoApp  : Referral Program Benefits Await";
+}
+
+@section Header {
+    <meta name="description" content="Explore the TechnoApp  referral program and reap the benefits. Refer friends and colleagues to earn exciting rewards. Join now!" />
+}
+<section class="page-section bg1">
+    <div class="container">
+        <div class="row pt-4">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="css566-heading mb-3">
+                    <h2> TechnoApp Reward Centre  </h2>
+                    <div class="divider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="invite-friend bg1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="invite-text">
+                    <h1> Invite Your Friends &amp; <span> Get Rewarded in TechnoSavvy </span></h1>
+                    <a asp-controller="policy" asp-action="referral-policy" class="css566-btn " type="button" target="_blank"> Referral Policy </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="invite-form">
+                    <form>
+                        <div class="form-group second-input position-relative">
+                            <input id="txtRefCode" type="text" readonly="" value="@Model.RefLink" class="js-copytextarea skyblue form-control ">
+                            <p type="submit" class="js-textareacopybtn invbtn33"><i class="fa fa-files-o"></i></p>
+                            <div class="copytext34">Copied!</div>
+                        </div>
+           
+                        <div class="invite-friend-btn">
+                            <button type="button" data-bs-toggle="collapse" data-bs-target="#demo"> Invite Friends </button>
+                        </div>
+                        <div id="demo" class="collapse invite-social-icon rewardsocil55">
+                            <ul class="rewardsico55">
+                                <li class="social-share-url facebook"> <a href="javascript:void(0)" id="shareBtnface"> <img src="~/images/rewardcenter-img/facebook-icon.png" alt="image"></a></li>
+                                <li class="social-share-url twitter"> <a href="javascript:void(0)" id="shareOnTwitterButton"> <img src="~/images/twitter-icon.png" alt="image"></a></li>
+                                <li class="social-share-url telegram"> <a href="javascript:void(0)" id="shareBtnTelegram"> <img src="~/images/rewardcenter-img/telegram.png" alt="image"></a></li>
+                                <li class="social-share-url whatsapp"> <a href="javascript:void(0)" id="shareBtnwhatsup"><img src="~/images/rewardcenter-img/whatsup.png" alt="image"></a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ref-number bg2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h3 class="head-text"> Referral Summary </h3>
+            </div>
+            <div class="col-lg-4 col-md-4 ">
+                <div class="refoutdiv22">
+                    <!------------------>
+                    <div class="refleftdiv22">
+                        <div class="refdatadflex">
+                            <p> Total No. Of Referrals </p>
+                            <h3> @Model.Reward.TotalNoOfRef</h3>
+                        </div>
+                    </div>
+                    <!------------------>
+                    <div class="refrightdiv22">
+                        <div class="refupdiv22">
+                            <div class="refdata22">
+                                <h3>@Model.Reward.LastMonthRef </h3>
+                                <p>Last Month</p>
+                            </div>
+                        </div>
+                        <!------------------>
+                        <div class="refdowndiv">
+                            <div class="refdata22">
+                                <h3>@Model.Reward.ThisMonthRef</h3>
+                                <p>This Month</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!------------------>
+                </div>
+                <!------------------>
+            </div>
+            <div class="col-lg-4 col-md-4 ">
+                <div class="refoutdiv22">
+                    <!------------------>
+                    <div class="refleftdiv22">
+                        <div class="refdatadflex">
+                            <p>Earn TechnoSavvy </p>
+                            <h3>@(
+                                    Model.Reward.TechnoSavvyPaid + Model.Reward.TechnoSavvyUnPaid 
+                                )</h3>
+                        </div>
+                    </div>
+                    <!------------------>
+                    <div class="refrightdiv22">
+                        <div class="refupdiv22">
+                            <div class="refdata22">
+                                <h3>@Model.Reward.TechnoSavvyPaid </h3>
+                                <p>Paid</p>
+                            </div>
+                        </div>
+                        <!------------------>
+                        <div class="refdowndiv">
+                            <div class="refdata22">
+                                <h3>@Model.Reward.TechnoSavvyUnPaid</h3>
+                                <p>Earned</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!------------------>
+                </div>
+                <!------------------>
+            </div>
+
+            <div class="col-lg-4 col-md-4">
+                <div class="ref-num-box-1 ref-num-box-3 rewardivh">
+                    <ul>
+                        <li>
+                            Registered Users <span>
+                                @Model.Reward.RegisteredUserCount <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Number of registered users with your reference code
+                                  " data-bs-original-title="" title="">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                </span>
+                            </span>
+                        </li>
+                        <li>
+                            Community Members <span>
+                                @Model.Reward.CommunityUserCount <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Number of Community user with your reference code
+                                  " data-bs-original-title="" title="">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                </span>
+                            </span>
+                        </li>
+                        <li>
+                            Qualified Users <span>
+                                @Model.Reward.QualifiedUserCount <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="User with successful first trade execution
+                                    " data-bs-original-title="" title="">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                </span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="slider-section bg1">
+    <div class="container">
+        <div id="demo2" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button data-bs-target="#demo2" data-bs-slide-to="0" class="active"></button>
+                <button data-bs-target="#demo2" data-bs-slide-to="1"></button>
+                <button data-bs-target="#demo2" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="https://TechnoApp.com/" target="_blank">
+                        <img src="../images/banner-1.jpg" alt="banner1" class="d-block w-100">
+                    </a>
+                </div>
+                @*     <div class="carousel-item">
+                <a asp-action="registeruser" asp-controller="signup" >
+                <img src="../images/banner-2.jpg" alt="banner2" class="d-block w-100">
+                </a>
+                </div> *@
+                <div class="carousel-item">
+                    <a asp-action="registeruser" asp-controller="signup">
+                        <img src="../images/banner-3.jpg" alt="banner3" class="d-block w-100">
+                    </a>
+                </div>
+                <div id="dyLoc1" class="carousel-item">
+                    <a asp-controller="referral" asp-action="Index">
+                        <img src="../images/banner-4.jpg" alt="banner4" class="d-block w-100">
+                    </a>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo2" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo2" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+</section>
+<section class="refer-sec bg2">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-12 col-md-12">
+                <h3 class="head-text"> How To Refer? </h3>
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+                <div class="step-earn-col-1 text-center">
+                    <h2> 01 </h2>
+                    <p> Register on <a href="https://TechnoApp.com/" target="_blank" class="url-1"> TechnoApp<sup>TM</sup> </a> &amp; generate your unique referral link  </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+                <div class="step-earn-col-1 text-center">
+                    <h2> 02 </h2>
+                    <p> Share and invite friends to sign up with your referral link </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+                <div class="step-earn-col-1 text-center">
+                    <h2> 03 </h2>
+                    <p> On successful registration you get $1 TechnoSavvy and your friend will get $3 TechnoSavvy    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="market-section reward-sec bg1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 reward-img">
+                <h3 class="head-text"><i class="fa fa-gift orange pe-1" aria-hidden="true"></i>  My Rewards </h3>
+            </div>
+        </div>
+             
+                    <div class="row align-items-end date-colum myReferralsForm">
+                        <div class="col-md-9">
+                            <div class="dflex4470">
+                                <span>
+                        <label for="text" class="lable-name22"> From </label>
+                        <input type="date" id="startDate" class="form-control">
+                    </span>
+                    <span>
+                        <label for="text" class="lable-name22"> To </label>
+                        <input type="date" id="endDate" class="form-control">
+                        </span>
+                    
+                    <span class="filreward32">
+                         <a href="javascript:void(0)" class="reset-btn me-2" id="filterBtn">
+                             <i class="fa fa-filter" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0)" type="button" class="reset-btn m-0" id="resetBtn">
+                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                        </div>
+                    </div>
+            <div class="col-md-3">
+                <div class="positionrelative float-right">
+                            <input type="search"  autocomplete="off" class="market-search" placeholder="Search.." name="search" data-tab="myTableMyRewards">
+                            <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                       
+                   </div>
+                    <!-- <div class="col-lg-4 col-md-4 col-6">
+                        <br>
+                        <a href="#" class="export-btn"> Export </a>
+                    </div> -->
+                </div>
+           
+            <!-- Table -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div id="comunity-css566-box" class="reward-table placeholder-glow">
+                        <table  id="myTableMyRewardsTable" class="table table-responsive">
+                            <thead class="trasaction-table-title">
+                                <tr>
+                                    <th nowrap=""> ID </th>
+                                    <th nowrap=""> Distribution Date </th>
+                                    <th nowrap=""> Bonus </th>
+                                    <th nowrap=""> Reward Type </th>
+                                    <th nowrap=""> Reward Name </th>
+                                    <th nowrap=""> Status </th>
+                                </tr>
+                            </thead>
+                            <tbody id="myTableMyRewards">
+                                <tr>
+                                     <td><div class="placeholder w-50" style="height: 15px;"></div></td>
+                                     <td><div class="placeholder w-50" style="height: 15px;"></div></td>
+                                     <td><div class="placeholder w-50" style="height: 15px;"></div></td>
+                                     <td><div class="placeholder w-50" style="height: 15px;"></div></td>
+                                     <td><div class="placeholder w-50" style="height: 15px;"></div></td>
+                                     <td><div class="placeholder w-50" style="height: 15px;"></div></td>
+                                </tr>
+                                 <tr>
+                                     <td><div class="placeholder w-50" style="height: 15px;"></div></td>
+                                     <td><div class="placeholder w-50" style="height: 15px;"></div></td>
+                                     <td><div class="placeholder w-50" style="height: 15px;"></div></td>
+                                     <td><div class="placeholder w-50" style="height: 15px;"></div></td>
+                                     <td><div class="placeholder w-50" style="height: 15px;"></div></td>
+                                     <td><div class="placeholder w-50" style="height: 15px;"></div></td>
+                                </tr>
+                               @* <tr>
+                                    <td> 1234 </td>
+                                    <td> 12/02/2022 </td>
+                                    <td> 3 </td>
+                                    <td> Referral </td>
+                                    <td> SignUp </td>
+                                    <td> Pending  </td>
+                                </tr>
+                                <tr>
+                                    <td> 1234 </td>
+                                    <td> 12/03/2022 </td>
+                                    <td> 4 </td>
+                                    <td> Airdrop </td>
+                                    <td> Discord  </td>
+                                    <td> Approved </td>
+                                </tr>
+                                <tr>
+                                    <td> 1234 </td>
+                                    <td> 12/04/2022 </td>
+                                    <td> 5 </td>
+                                    <td> Referral </td>
+                                    <td> SignUp </td>
+                                    <td> Pending  </td>
+                                </tr>
+                                <tr>
+                                    <td> 1234 </td>
+                                    <td> 12/05/2022 </td>
+                                    <td> 2 </td>
+                                    <td> Giveaway </td>
+                                    <td> Registration  </td>
+                                    <td> Approved </td>
+                                </tr>
+                                <tr>
+                                    <td> 1234 </td>
+                                    <td> 12/06/2022 </td>
+                                    <td> 1 </td>
+                                    <td> Referral </td>
+                                    <td> SignUp </td>
+                                    <td> Pending  </td>
+                                </tr>*@
+                            </tbody>
+                        </table>                        
+                    </div>
+                </div>
+            </div>
+            <!-- // Table -->
+        </div>
+    
+</section>
+<section class="reward-sec referrals-sec bg1">
+    <div class="container">
+      
+            <div class="row">
+                <div class="col-lg-12 col-md-12 referral-img">
+                    <h3 class="head-text"> <i class="fa fa-users orange pe-1" aria-hidden="true"></i> My Referrals </h3>
+                </div>
+            </div>
+              <div class="row align-items-end date-colum myReferralsForm">
+                        <div class="col-md-9">
+                            <div class="dflex4470">
+                                <span>
+                        <label for="text" class="lable-name22"> From </label>
+                        <input type="date" id="startDate2" class="form-control">
+                    </span>
+                    <span>
+                        <label for="text" class="lable-name22"> To </label>
+                        <input type="date" id="endDate2" class="form-control">
+                        </span>
+                      <span>
+                  
+                    <select class="form-select fotm control filter" id="userStatus">
+                        <option value="" selected> All </option>
+                        <option value="Active Trader"> Active Trader </option>
+                        <option value="Registered"> Registered </option>
+                        <option value="Community Member"> Community Member </option>
+                        <option value="Pending"> Pending </option>
+                    </select>
+
+
+                   
+                </span>
+                    
+                    <span class="filreward32">
+                         <a href="javascript:void(0)" class="reset-btn me-2" id="filterBtn2">
+                             <i class="fa fa-filter" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0)" type="button" class="reset-btn m-0" id="resetBtn2">
+                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                        </div>
+                    </div>
+                   <div class="col-md-3">
+                       
+                        <div class="positionrelative float-right" >
+                            <input type="search" autocomplete="off" class="market-search" placeholder="Search.." name="search" data-tab="myTableMyReferrals">
+                            <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                        </div>
+                       
+                   </div>
+                    <!-- <div class="col-lg-4 col-md-4 col-6">
+                        <br>
+                        <a href="#" class="export-btn"> Export </a>
+                    </div> -->
+                </div>
+           
+            <!-- Table -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div id="comunity-css566-box" class="reward-table">
+                        <table id="MyReferralsTable" class="table">
+                            <thead class="trasaction-table-title">
+                                <tr>
+                                    <th> Date of Registration </th>
+                                    <th> Status </th>
+                                    <th> Reward </th>
+                                    <th> Count  </th>
+                                </tr>
+                            </thead>
+                            <tbody id="myTableMyReferrals">
+                                @foreach (var rec in Model.myReferrals)
+                                {
+                                    <tr>
+                                        <td class="dydate" data-oval="@rec.RegistrationDate">  @rec.RegistrationDate </td>
+                                        <td class="status" data-status="@rec.UserStatus"> @rec.UserStatus </td>
+                                        <td> @rec.Amount </td>
+                                        <td> @rec.Count </td>
+                                    </tr>
+                                }
+                                @*<tr>
+                                    <td> 1234 </td>
+                                    <td> 12/2/2022 </td>
+                                    <td> Approved </td>
+                                    <td> Yes </td>
+                                </tr>*@
+
+                            </tbody>
+                        </table>
+                        <!-- <div class="row text-center">
+                            <div class="col-lg-12 col-md-12">
+                                <img src="~/images/rewardcenter-img/reward.png" alt="image">
+                                <h5> No Rewards </h5>
+                            </div>
+                            <a href="#"> Invite Friends </a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- // Table -->
+        </div>
+ 
+</section>
+@section Scripts{
+    @if (ConfigEx.ShouldMini)
+    {   
+        <script src="~/minjs/preward.min.js"></script>
+        <script src="~/minjs/clipboard.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/preward.js"></script>
+        <script src="~/js/clipboard.js"></script>
+    }
+    
+    <script>
+        formateJustDate();
+    </script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script async src="~/js/shareReward.js"></script>
+    
+}

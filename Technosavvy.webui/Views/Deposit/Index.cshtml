@@ -1,0 +1,261 @@
+﻿@model vmDeposit
+@{
+    ViewData["Title"] = "Deposit Your Transactions On TechnoApp  ";
+}
+@section Header {
+    <meta name="description" content="Seamlessly manage your digital assets with swift and secure transactions. Explore hassle-free depositing for a streamlined financial journey." />
+
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+
+                <span>Deposit </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">
+                            <div class="acoun-box authenti-box">
+                                <!-- progressbar -->
+                                @if (Model.ActionMethod == "Currency")
+                                {
+                                    <div class="shadow_TechnoSavvy">
+                                        <ol class="progressdiv">
+                                            <li class="step is-active" data-step="1">                                              
+                                                    Enter Details                                            
+                                            </li>
+                                            <li class="step" data-step="2">                                       
+                                                    Confirmation                                               
+                                            </li>
+                                        </ol>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="shadow_TechnoSavvy">
+                                        <ol class="progressdiv">
+                                            <li class="step is-active" data-step="1">                                              
+                                                    Choose Asset                                             
+                                            </li>
+                                            <li class="step " data-step="2">                                               
+                                                    Enter <br> Deposit form                                              
+                                            </li>
+                                            <li class="step" data-step="3">
+                                                Verify <br> Information
+                                            </li>
+                                            <li class="step" data-step="4">                                              
+                                                    Completed                                               
+                                            </li>
+                                        </ol>
+                                        <!---------------------------------------------->
+
+                                    </div>
+                                }
+                                <!---------------------------------------------->
+                                <!-- fieldsets -->
+                                <form novalidate class="was-validated" autocomplete="off" asp-action="@Model.ActionMethod" asp-controller="deposit" id="frmDeposit" enctype="multipart/form-data">
+                                    @Html.AntiForgeryToken()
+                                    @Html.HiddenFor(x=>x._Theme)
+                                    @Html.HiddenFor(x=>x._CookieConsent)
+                                    <div asp-validation-summary=All class="text-danger"></div>
+                                    <div id="Msg" class="text-danger"></div>
+                                    <div class="row">
+                                        <div class="form-card">
+                                            <div class="css77buy-box">
+
+                                                @await Html.PartialAsync("partial/_SelectAssetStep1",Model)
+                                                <div id="dNetwork" class=" d-none form-group mt-3">
+                                                    <label class="form-label">
+                                                        Network
+                                                    </label>
+                                                    <div class="form-select3">
+                                                        <select asp-for=selectedNetwork onchange="NetworkSelected()">
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div id="dWallet" class="form-groupmt-3 d-none">
+                                                    <div class="css7-kyc-btn ">
+                                                        <div class="css33genratewal positionrelative33">
+                                                            <div id="showLoading" class="loading d-none"></div>
+                                                            <div class="overlaydiv">
+                                                                <div class="payqr332">
+                                                                    <div id="qrholder" class="genwalldiv332">
+                                                                        <a href="GenerateNetWallet()" id="generateWallet" class="css55-enable-btn">Click to Generate Wallet</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!------>
+                                                        <!------>
+                                                        <div class="wartd543">
+                                                            <div class="uploadlist343">
+                                                                <h3>Instructions:</h3>
+                                                                <ul>
+                                                                    <li>Always Transfer from your Personal Wallet so that you can prove ownership of Transferring Wallet if such need arise. </li>
+                                                                    <li>Even if you are Transferring from another exchange or Smart Contract Wallet, you should transfer to your personal wallet</li>
+                                                                    <li>Carefully enter your own TechnoApp Public Wallet Address. Once Transferred, Asset is irrecoverable.</li>
+                                                                    <li>Every Transfer into your TechnoApp Public Wallet will automatically be visible in your fund Wallet with in Next 60 Minutes.</li>
+                                                                    <li>If there is any Transfer that is not visible in 60 minutes, then you can claim such funds <a asp-action="claimTran" asp-controller="deposit" class="linkcolor">here</a>.</li>
+                                                                    <li> For more information <a href="#" class="linkcolor"> click here</a></li>
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <!------>
+                                                    </div>
+                                                </div>
+
+                                                <div id="dWalletTxt" class="d-none form-groupmt-3">
+                                                    <div class="form-group">
+                                                        <label class="form-label">Deposit Wallet Address    </label>
+                                                        <div class="input-group position-relative">
+                                                            <input id="nWallet" type="text" class="form-control5  js-copytextarea " value="shiv" readonly>
+                                                            <span class="btn btn-copy js-textareacopybtn"><i class="fa fa-clipboard" aria-hidden="true"></i></span>
+                                                            <div class="copytext34">Copied!</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--------------------------------------------->
+                                               @* <div id="dAmt" class="d-none form-group mt-3">
+                                                    <label for="exampleInputSpend" class="form-label">Deposit Amount</label>
+                                                    <input type="text" class="form-control" placeholder="Min asset of worth $50" id="exampleInputSpend" aria-describedby="spndHelp">
+                                                </div>
+
+                                                *@<!--------------------------------------------->
+                                                <div id="dTermsAndCondition" class="form-check mt-2 d-none">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        I have read and agree to <a href="#" class="linkcolor"> TechnoApp deposit Services Agreement</a>
+                                                    </label>
+                                                </div>
+                                                <!------------------------------------------>
+
+
+                                            </div>
+
+                                        </div>
+                                       
+                                        <a id="btnDeposit" asp-action="index" asp-controller="wallet" class=" d-none  gent-btn">I have Deposited</a>
+                                        @if (true == false)
+                                        {
+                                            <fieldset>
+                                                <div class="form-card">
+                                                    <div id="deposit-tabdiv" class="mt-4 mb-4">
+
+                                                        <div class="css77buy-box">
+                                                            <!--------------------confirmation in process show this div------------------------------------>
+                                                            <div class="confpenddiv">
+                                                                <div class="check-depdiv55">
+                                                                    <div class="css44timediv ">
+                                                                        <svg class="timer">
+                                                                            <circle class="progress-frame" cx="100" cy="100" r="50"></circle>
+                                                                            <circle class="progress-time" cx="100" cy="100" r="50" style="stroke-dasharray: 314.159; stroke-dashoffset: 36.2491;"></circle>
+                                                                        </svg>
+                                                                        <div class="time">
+                                                                            <p><span class="seconds">30</span></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <h5 class="orange">Confirmation Pending</h5>
+                                                            </div>
+
+                                                            <!---------confirmation not complete so show this div---------->
+                                                            <div class="confpenddiv">
+                                                                <div class="modegred34">
+                                                                    <div class="vericond432"> <i class="fa fa-exclamation d-orange" aria-hidden="true"></i></div>
+                                                                    <h5 class="orange">Confirmation Pending</h5>
+                                                                    <div class="specdivid">
+                                                                        <span>Request ID </span>
+                                                                        <span><a href="#">45bghjdf2145 </a></span>
+                                                                    </div>
+                                                                </div>
+                                                                <!------------>
+                                                                <div class="text-div44">
+                                                                    <div class="csstime55-text mt-3">
+                                                                        Your deposit in process. Check your Fund Wallet in a few minutes.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!------------why Deposit success show this div------------->
+                                                            <div class="confpenddiv">
+                                                                <div class="modegred34">
+                                                                    <div class="vericond432"> <i class="fa fa-check d-green" aria-hidden="true"></i></div>
+
+                                                                    <h5 class="basegreen">Funds Received!</h5>
+                                                                    <div class="specdivid">
+                                                                        <span>Request ID </span>
+                                                                        <span><a href="#">45bghjdf2145 </a></span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="text-div44">
+                                                                    <div class="csstime55-text mt-3">
+                                                                        <span class="orange">10 ETH  </span> has been deposited to your Fund Wallet Successfully!
+                                                                    </div>
+
+                                                                </div>
+                                                                <!-------------------------------------------------------------------->
+                                                                <div class="dflexcenter2">
+                                                                    <button class="btn withsumm-btn  mt-4 " type="button" onclick="window.location.href='wallet.html'">Acknowledge</button>
+                                                                </div>
+                                                                <!-------------------------------------------------------------------->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        }
+
+                                    </div>
+                                    <div id="dFiat" class="row">
+                                        @await Html.PartialAsync("partial/_CurrencyTokenINRMethod",Model)
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+@section Scripts{
+
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/clipboard.min.js"></script>
+        <script src="~/minjs/qrcode.min.js"></script>
+        <script src="~/minjs/dep.min.js"></script>
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/clipboard.js"></script>
+        <script src="~/js/qrcode.min.js"></script>
+        <script src="~/js/dep.js"></script>
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+    }
+
+
+}

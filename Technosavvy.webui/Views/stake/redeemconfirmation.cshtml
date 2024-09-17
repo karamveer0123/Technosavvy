@@ -1,0 +1,89 @@
+﻿@model vmMyStakingConfirm
+
+@{
+    ViewData["Title"] = "Stake Redemption Confirmation: Securely Unlock Your Staked Rewards";
+}
+@section Header {
+    <meta name="description" content="Ensure the security of unlocking your rewards through our streamlined and secure confirmation process. Experience peace of mind in your staking journey with TechnoApp. " />
+
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span> <a asp-controller="stake" asp-action="index"><i class="fa fa-angle-double-left" aria-hidden="true"></i> </a></span>
+                <span>Staking</span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        @if (Model.Record == null)
+        {
+            <div class="row">
+                <div class="csscenterscreen mt-4">
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77withdrawl-box">
+                            <div class="notediv">
+                                Technical Rule Engine have prevented the redemption of this Staking..!!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+        else
+        {
+            <div class="row">
+                <div class="csscenterscreen mt-4">
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77withdrawl-box">
+                            <!--==============================================-->
+                            <div class="confpenddiv">
+                                <!---------------------------------->
+                                <div class="modegred34">
+                                    <div class="vericond432"> <i class="fa fa-check d-green" aria-hidden="true"></i></div>
+                                </div>
+                                <!-------------------------->
+                                <h5 class="orange">@Model.Token.Code Redemption Confirmed!</h5>
+                                <!---------------------------->
+                                <div class="csstime55-dep mt-2 text-center"> You have sucessfully redeemed your <span class="orange"> @(Model.Record.MatureAmount.ToString("#,##0.###")) @Model.Token.Code</span>. </div>
+                                <!----------------------->
+                            </div>
+                            <!--==============================================-->
+                            <div class="css77-withdrawlS">
+                                <div class="csssum-title55">Subscription Date</div>
+                                <div class="csssum-detail55 ">  @(Model.Record.StartedOn.ToString("dd-MMM-yyyy"))</div>
+                            </div>
+                            <!--==============================================-->
+                            <div class="css77-withdrawlS">
+                                <div class="csssum-title55">Subscription Amount</div>
+                                <div class="csssum-detail55 ">  @(Model.Record.Amount.ToString("#,##0.###")) @Model.Token.Code</div>
+                            </div>
+                            <!--==============================================-->
+                            @*    <div class="css77-withdrawlS">
+                        <div class="csssum-title55">Redemption Amount</div>
+                        <div class="csssum-detail55 "> 0.9999 ETH</div>
+                        </div>*@
+                            <!--==============================================-->
+                            @*          <div class="css77-withdrawlS">
+                        <div class="csssum-title55">Redemption Date</div>
+                        <div class="csssum-detail55 ">  2023-02-20 | 10:27</div>
+                        </div>*@
+                            <!--==============================================-->
+
+                            <div class="dflexcenter2">
+                                <a class="btn withsumm-btn  mt-4 " type="button" asp-controller="wallet" asp-action="index">Acknowledge</a>
+                            </div>
+                            <!--==============================================-->
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!----------------------------------------------->
+            </div>
+        }
+        <!--==============================================-->
+    </div>
+</section>

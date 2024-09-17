@@ -1,0 +1,33 @@
+﻿@model vmWalletProfile
+<div class="wallet-sectdiv33">
+    <div class="wallet-userdiv33">
+        <div class="css22-walletleftpan ">
+            <div class="userdiv33-wal"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> </div>
+            <div class="iddiv33-wa">
+                <div> <span class="lightgrey3">User Name:</span> <span>@Model.Name</span>                   
+                    <span class="px-2 stcom76 orange"><i class="fa fa-users px-1" aria-hidden="true"></i>Community</span>
+                    <span class="px-2 stcom76 blue"><i class="fa fa-star  px-1" aria-hidden="true"></i>Standard</span>
+                    <span class="px-2 stcom76 teal"><i class="fa fa-trophy px-1" aria-hidden="true"></i>Premium</span>
+                    <span class="px-2 stcom76 basered"><i class="fa fa-user-times px-1" aria-hidden="true"></i>Non-Community</span>
+                </div>
+                <div> <span class="lightgrey3">Account Id:</span> <span>@Model.AccountNo </span></div>
+                <div class="kyc22-text">
+                    <span class="lightgrey3"> KYC Status:</span> 
+                    <span class="statusdiv33" id="stausKyc">
+                        <a asp-action="index" asp-controller="kycuser">                            
+                            @await Html.PartialAsync("partial/_kycStatus",Model.KYCStatus)                            
+                            <div class="statusBubbol">
+                                <span class="statusHand"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></span>
+                                
+                            </div>
+                        </a>
+                        </span> 
+                </div>
+            </div>
+        </div>
+        <div class="css33-rightpan">
+            <div class="logindiv33-wa d-none d-lg-block">Last Login Session :11.09.2022 | 2:00 PM </div>
+
+        </div>
+    </div>
+</div>

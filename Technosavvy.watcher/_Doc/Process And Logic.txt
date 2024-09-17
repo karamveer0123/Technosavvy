@@ -1,0 +1,44 @@
+﻿WatchDog is for Following Functions
+	- (1)Solution Component Integration into Process
+		-By Verifing the 
+			-Component Origion
+			-Domain 
+			-Explicit Permission from Admin User for such Component.
+		-By Allocating them 
+			-Instance Id
+			-Component Group Id
+			-Private Guid
+			-Solution Encryption Key
+	- (2)Solution Component Health
+		-By Intermitently Receiving 
+			-Process Events
+			-Error Log
+			-System Resources snapshot
+			-Consumed Resources snapshot
+		-By Calculating Stress Matrix 
+			-On Components
+			-On Instances.
+	- (3)Notifing Admin User in Realtime about SLA breach
+	- (4)Receive and BroadCast User Specific Messages
+	- (5)Verify System Data Integrity with Random Data Calculation
+	- (6)Persist Performance Matrix in Storage
+-WatchDog is a Multi Instance Component
+-Based on Start Time of the Instance, a voting process will decide the 
+	-Primary Instance
+	-DBLogger
+	-Reporter
+-In the Event of a Component faliuer, voting Process will reassign the role within 30 Sec
+-Primary Instance will be responsible for 
+	- (1)Solution Component Integration into Process
+-Reporter Instance will be responsible for
+	- (2)Solution Component Health
+	- (3)Notifing Admin User in Realtime about SLA breach (SignalR)
+-DBLogger Instance will be responsible for
+	- (6)Persist Performance Matrix in Storage
+***************************************************************************
+Following are the Don't for WatchDog Eco System.
+1. Same Machine (VM) can't run 2 instances of watchDog. Unique Name issue will throw the Logic off.
+2. 
+
+
+		

@@ -1,0 +1,121 @@
+﻿@using TechnoApp.Ext.Web.UI.Static;
+@model vmUserLogin
+@{
+    ViewData["Title"] = "Log In";
+    if (ConfigEx.VersionType == versionType.PreBeta)
+        Layout = "_LayoutPre";
+
+}
+
+@if (ViewBag.Status == null || !ViewBag.Status)
+{
+
+<section class="section-login bg2">
+    <div class="container">
+        <div class="login-box" id="login-tab">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="login-img"> <img src="~/images/login-img.png"> </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="login-form">
+                        <h1> Account Log In</h1>
+                        <div id="login-tab" class="login_area">
+                            <ul class="nav nav-tabs mb-3" role="tablist">
+                                <li class="nav-item"> <a class="nav-link  active" data-bs-toggle="tab" href="#email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#mobile"><i class="fa fa-mobile" aria-hidden="true"></i> Mobile</a> </li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div id="email" class="tab-pane  active">
+                                    <div class="acc-log-box">
+                                        <form class="was-validated" asp-action="Login" asp-controller="Login">
+                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                            <div class="form-group " style="position:relative">
+                                                <input type="email" id="txtuName" asp-for="UserName" class="form-control" placeholder="Email" id="validationTooltipPassword" required>
+                                                <div class="invalidEroor">
+                                                    <span asp-validation-for="UserName"></span>
+                                                    <div class="invalid"> <img src="~/images/icon.png"></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group " style="position:relative">
+                                                <input id="txtPwd" type="password" asp-for="Password" class="form-control" placeholder="Password" id="validationTooltipPassword" required>
+                                                <div class="invalidEroor">
+                                                    <span asp-validation-for="Password"></span>
+                                                    <div class="invalid"> <img src="~/images/icon.png"></div>
+                                                </div>
+                                            </div>
+                                            <span class="eye112"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                                            <button id="btnFrmLogIn" class="btn gent-btn" type="submit">Login </button>
+                                            <p class="text-center"> or </p>
+                                            <button class="btn google-btn" type="button" onclick="location.href='security-verificationgoogle.html'"><img class="" src="~/images/google-logo.png"> Continue With Google </button>
+                                            <div class="acc-forget"><span> <a asp-controller="signup" asp-action="ForgetPassword">Forgot Password</a></span><span>| <a asp-controller="signup" asp-action="RegisterUser"> Register Now</a></span> </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div id="mobile" class="tab-pane">
+                                    <div class="acc-log-box">
+                                        <form class="was-validated" novalidate>
+
+
+
+                                            <div class="form-group" style="position:relative">
+                                                <input type="tel" id="mobile-number" class="form-control input_flag-l" placeholder="e.g. +1 702 123 4567">
+                                            </div>
+
+                                            <div class="form-group" style="position:relative">
+                                                <input type="password" class="form-control" placeholder="Password" id="validationTooltipEmail" required>
+                                                <div class="invalid-tooltip">
+                                                    Please choose a unique and valid username.
+                                                    <div class="invalid"> <img src="~/images/icon.png"></div>
+                                                </div>
+
+                                            </div>
+
+
+                                            <span class="eye112"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                                            <button class="btn gent-btn" type="button" onclick="location.href='security-verification-email-google.html'">Login </button>
+                                            <p class="text-center"> or </p>
+                                            <button class="btn google-btn" type="button" onclick="location.href='security-verificationgoogle.html'"><img src="~/images/google-logo.png"> Continue With Google </button>
+
+                                            <div class="row">
+                                                <div class="acc-forget "><span> <a asp-controller="signup" asp-action="ForgetPassword">Forgot Password?</a></span><span>| <a asp-controller="signup" asp-action="RegisterUser"> Register Now</a></span> </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+}else
+{
+    <div>@ViewBag.Message</div>
+    <div>
+        <img src="@ViewBag.BarcodeImageUrl" />
+    </div>
+    <div>
+        Manual Setup Code : @ViewBag.SetupCode
+    </div>
+    <div>
+        @using (Html.BeginForm("TwoFactorAuthenticate", "Home", FormMethod.Post))
+        {
+            <input type="text" name="CodeDigit" />
+            <input type="submit" class="btn btn-success" />
+        }
+    </div>
+}

@@ -1,0 +1,63 @@
+﻿@model vmSettingProfile
+<div class="css55-security-div">
+    <div class="css55-heading">My Profile </div>
+
+    <div class="css55-security-box">
+        <div class="css55-security-left">
+            <span><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+            <span>
+                <div class="css55-security-title">
+                    Nickname
+                    <p>Set a customized nickname for your profile Edit</p>
+                </div>
+            </span>
+
+        </div>
+        <div class="css55-security-center"></div>
+        <div class="css55-security-nick56">
+            <form asp-action="ProfileSetting" class="css55-security-nick56" asp-controller="Settings">
+           <span>
+                <span>
+                    <input type="text" asp-for="UserNicName" class="form-control" placeholder="nick name">
+                </span>
+                <span asp-validation-for="UserNicName"></span>            
+            <input type="hidden" asp-for="UserId" />
+                </span>
+                <span>
+                        <button type="submit" class="css55-change-btn">Submit </button>
+                </span>
+        </form>
+    </div></div>
+@*     <div class="css55-security-box">
+        <div class="css55-security-left">
+            <span><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
+            <span>
+                <div class="css55-security-title">
+                    Address &  Management
+                    <h5> Add & whitelist address you trust.</h5>
+                </div>
+            </span>
+
+        </div>
+        <div class="css55-security-center"> </div>
+        <div class="css55-security-nick56"><span> <span class="css55-change-btn" >Manage</span></span> </div>
+    </div> *@
+    <!----------------------------->
+    <!----------------------------->
+    <div class="css55-security-box">
+        <div class="css55-security-left">
+            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+            <span>
+                <div class="css55-security-title">
+                    Payment & Deposit
+                    <h5>Add your deposit & payment details, you will use to transfer for all future fiat transactions.</h5>
+                </div>
+            </span>
+
+        </div>
+        <div class="css55-security-center"> </div>
+        <div class="css55-security-nick56"><span> <a asp-controller="settings" asp-action="paymentdeposit" class="css55-change-btn">Manage</a></span> </div>
+    </div>
+    <!----------------------------->
+
+</div>

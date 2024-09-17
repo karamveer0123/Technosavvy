@@ -1,0 +1,224 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NoWarn>$(NoWarn);SYSLIB0014;SYSLIB0022;SYSLIB0021;CS8618;CS8604;CS8603;CS8602;CS8600;CS8601</NoWarn>
+    <OutputType>Exe</OutputType>
+    <IsPublishable>True</IsPublishable>
+    <RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <UserSecretsId>2bf28875-a335-465d-9c2d-c39201224e81</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\PreAction\**" />
+    <Compile Remove="Views\t1\**" />
+    <Compile Remove="Views\t6\**" />
+    <Compile Remove="Views\t7\**" />
+    <Compile Remove="Views\t\**" />
+    <Content Remove="Views\PreAction\**" />
+    <Content Remove="Views\t1\**" />
+    <Content Remove="Views\t6\**" />
+    <Content Remove="Views\t7\**" />
+    <Content Remove="Views\t\**" />
+    <EmbeddedResource Remove="Views\PreAction\**" />
+    <EmbeddedResource Remove="Views\t1\**" />
+    <EmbeddedResource Remove="Views\t6\**" />
+    <EmbeddedResource Remove="Views\t7\**" />
+    <EmbeddedResource Remove="Views\t\**" />
+    <None Remove="Views\PreAction\**" />
+    <None Remove="Views\t1\**" />
+    <None Remove="Views\t6\**" />
+    <None Remove="Views\t7\**" />
+    <None Remove="Views\t\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Extentions\Extension.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\FeesCharges\feescharges.cshtml" />
+    <Content Remove="Views\Library\faq.cshtml" />
+    <Content Remove="Views\Market\ListMode.cshtml" />
+    <Content Remove="Views\t4\earnhighreturnsblog.cshtml" />
+    <Content Remove="Views\t4\earnhistory.cshtml" />
+    <Content Remove="Views\t4\earnwallet.cshtml" />
+    <Content Remove="Views\t4\emailverification.cshtml" />
+    <Content Remove="Views\t4\encouraginggenzinvestorsblog.cshtml" />
+    <Content Remove="Views\t4\entitycategory.cshtml" />
+    <Content Remove="Views\t4\entitysummary.cshtml" />
+    <Content Remove="Views\t4\faq.cshtml" />
+    <Content Remove="Views\t4\feescharges.cshtml" />
+    <Content Remove="Views\t4\fiatenablement.cshtml" />
+    <Content Remove="Views\t4\forgetpassword.cshtml" />
+    <Content Remove="Views\t4\fundingwallet.cshtml" />
+    <Content Remove="Views\t4\inamlpolicy.cshtml" />
+    <Content Remove="Views\t4\Index.cshtml" />
+    <Content Remove="Views\t4\index1.cshtml" />
+    <Content Remove="Views\t4\index2.cshtml" />
+    <Content Remove="Views\t4\index3.cshtml" />
+    <Content Remove="Views\t4\Indexindia.cshtml" />
+    <Content Remove="Views\t4\Indexus.cshtml" />
+    <Content Remove="Views\t4\inprivacypolicy.cshtml" />
+    <Content Remove="Views\t4\institutionalservices.cshtml" />
+    <Content Remove="Views\t4\intermsofuse.cshtml" />
+    <Content Remove="Views\t4\interwalletaccepted.cshtml" />
+    <Content Remove="Views\t4\interwalletsummary.cshtml" />
+    <Content Remove="Views\t4\interwallettransfer.cshtml" />
+    <Content Remove="Views\t4\isitsafetotrade.cshtml" />
+    <Content Remove="Views\t4\kycappendic.cshtml" />
+    <Content Remove="Views\t4\kycpersonalverification.cshtml" />
+    <Content Remove="Views\t4\kycpersonalverificationupload.cshtml" />
+    <Content Remove="Views\t4\kycuploadsefie.cshtml" />
+    <Content Remove="Views\t4\license.cshtml" />
+    <Content Remove="Views\t4\List.cshtml" />
+    <Content Remove="Views\t4\listaggrement.cshtml" />
+    <Content Remove="Views\t4\listpage.cshtml" />
+    <Content Remove="Views\t4\login.cshtml" />
+    <Content Remove="Views\t4\loginbetarelease.cshtml" />
+    <Content Remove="Views\t4\loginotp.cshtml" />
+    <Content Remove="Views\t4\market.cshtml" />
+    <Content Remove="Views\t4\marketdetail.cshtml" />
+    <Content Remove="Views\t4\marketgainercoins.cshtml" />
+    <Content Remove="Views\t4\markethighlightcoin.cshtml" />
+    <Content Remove="Views\t4\marketnewlisting.cshtml" />
+    <Content Remove="Views\t4\markettopvolume.cshtml" />
+    <Content Remove="Views\t4\medialibrary.cshtml" />
+    <Content Remove="Views\t4\mostrewardingcryptoblog.cshtml" />
+    <Content Remove="Views\t4\TechnoSavvyannouncesitsicolaunchblog.cshtml" />
+    <Content Remove="Views\t4\ncamlpolicy.cshtml" />
+    <Content Remove="Views\t4\ncprivacypolicy.cshtml" />
+    <Content Remove="Views\t4\nctermscondition.cshtml" />
+    <Content Remove="Views\t4\newpassword.cshtml" />
+    <Content Remove="Views\t4\nextgencryptoblog.cshtml" />
+    <Content Remove="Views\t4\openorders.cshtml" />
+    <Content Remove="Views\t4\orderhistory.cshtml" />
+    <Content Remove="Views\t4\p2porder.cshtml" />
+    <Content Remove="Views\t4\personalidentity.cshtml" />
+    <Content Remove="Views\t4\pressrelease.cshtml" />
+    <Content Remove="Views\t4\reasonstoinvestblog.cshtml" />
+    <Content Remove="Views\t4\referralpolicy.cshtml" />
+    <Content Remove="Views\t4\referralprogram.cshtml" />
+    <Content Remove="Views\t4\registerbusiness.cshtml" />
+    <Content Remove="Views\t4\relatedparties.cshtml" />
+    <Content Remove="Views\t4\rewardcenter.cshtml" />
+    <Content Remove="Views\t4\riskdisclosure.cshtml" />
+    <Content Remove="Views\t4\security.cshtml" />
+    <Content Remove="Views\t4\securityverificationgoogle.cshtml" />
+    <Content Remove="Views\t4\signup.cshtml" />
+    <Content Remove="Views\t4\signupotp.cshtml" />
+    <Content Remove="Views\t4\signuppassword.cshtml" />
+    <Content Remove="Views\t4\spotopenorders.cshtml" />
+    <Content Remove="Views\t4\spotwallet.cshtml" />
+    <Content Remove="Views\t4\thenewtrendsblog.cshtml" />
+    <Content Remove="Views\t4\thingstoconsiderblog.cshtml" />
+    <Content Remove="Views\t4\tokencompliance.cshtml" />
+    <Content Remove="Views\t4\tokeninfo.cshtml" />
+    <Content Remove="Views\t4\tokeninfomation.cshtml" />
+    <Content Remove="Views\t4\tokenlegal.cshtml" />
+    <Content Remove="Views\t4\tokenlegal2.cshtml" />
+    <Content Remove="Views\t4\tokensecurity.cshtml" />
+    <Content Remove="Views\t4\tokensubmit.cshtml" />
+    <Content Remove="Views\t4\top10reasonsblog.cshtml" />
+    <Content Remove="Views\t4\tradehistory.cshtml" />
+    <Content Remove="Views\t4\tradingrulessvg.cshtml" />
+    <Content Remove="Views\t4\tradingrulesus.cshtml" />
+    <Content Remove="Views\t4\transaction.cshtml" />
+    <Content Remove="Views\t4\uploadeddocument.cshtml" />
+    <Content Remove="Views\t4\usamlpolicy.cshtml" />
+    <Content Remove="Views\t4\userprofile.cshtml" />
+    <Content Remove="Views\t4\usprivacypolicy.cshtml" />
+    <Content Remove="Views\t4\ustermsconditions.cshtml" />
+    <Content Remove="Views\t4\wallet.cshtml" />
+    <Content Remove="Views\t4\wallet2.cshtml" />
+    <Content Remove="Views\t4\whatmakesTechnoSavvygoldblog.cshtml" />
+    <Content Remove="Views\t4\whyshouldyouinvestblog.cshtml" />
+    <Content Remove="Views\t4\withdrawal.cshtml" />
+    <Content Remove="Views\t4\withdrawalaccepted.cshtml" />
+    <Content Remove="Views\t4\withdrawalnow.cshtml" />
+    <Content Remove="Views\t4\withdrawalsummary.cshtml" />
+    <Content Remove="Views\Wallet\Index.cshtml" />
+    <Content Remove="Views\Wallet\Index2.cshtml" />
+    <Content Remove="Views\Wallet\SpotWallet.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Controllers\nemo5x0v.bvf~" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\FeesCharges\feescharges.cshtml" />
+    <None Include="Views\Library\faq.cshtml" />
+    <None Include="Views\t5\aboutbtc.cshtml" />
+    <None Include="Views\t5\academydetail.cshtml" />
+    <None Include="Views\t5\airdropprogram.cshtml" />
+    <None Include="Views\t5\appendix.cshtml" />
+    <None Include="Views\t5\cashbackmain.cshtml" />
+    <None Include="Views\t5\changepassword.cshtml" />
+    <None Include="Views\t5\faq.cshtml" />
+    <None Include="Views\t5\feescharges.cshtml" />
+    <None Include="wwwroot\images\1INCHBUSD.svg" />
+    <None Include="wwwroot\images\download.svg" />
+    <None Include="wwwroot\images\icon.svg" />
+    <None Include="wwwroot\images\usd\AUD.svg" />
+    <None Include="wwwroot\images\usd\BRL.svg" />
+    <None Include="wwwroot\images\usd\CAD.svg" />
+    <None Include="wwwroot\images\usd\CHF.svg" />
+    <None Include="wwwroot\images\usd\CLP.svg" />
+    <None Include="wwwroot\images\usd\CNY.svg" />
+    <None Include="wwwroot\images\usd\CZK.svg" />
+    <None Include="wwwroot\images\usd\DKK.svg" />
+    <None Include="wwwroot\images\usd\EUR.svg" />
+    <None Include="wwwroot\images\usd\GBP.svg" />
+    <None Include="wwwroot\images\usd\HKD.svg" />
+    <None Include="wwwroot\images\usd\HUF.svg" />
+    <None Include="wwwroot\images\usd\IDR.svg" />
+    <None Include="wwwroot\images\usd\ILS.svg" />
+    <None Include="wwwroot\images\usd\INR.svg" />
+    <None Include="wwwroot\images\usd\JPY.svg" />
+    <None Include="wwwroot\images\usd\KRW.svg" />
+    <None Include="wwwroot\images\usd\MXN.svg" />
+    <None Include="wwwroot\images\usd\MYR.svg" />
+    <None Include="wwwroot\images\usd\USD.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GoogleAuthenticator" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="7.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Trade\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Home\Index.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\StopOrderlimit.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

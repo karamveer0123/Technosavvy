@@ -1,0 +1,172 @@
+﻿@model vmWalletHome
+
+@{
+    Console.WriteLine($"This is Check -1 from View");
+}
+<section class="section-wallet bg2">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+
+            @await Html.PartialAsync("Partial/_WalletLeftMenu","index")
+            @{Console.WriteLine($"This is Check -2 from View");};
+
+            <div class="col-md-10 col-lg-10 col-xxl-10 py-3">
+                <div class="wallet-right33">
+                    <div class="wallet-sectdiv33">
+                        <div class="wallet-userdiv33">
+                            <div class="userdiv33-wal"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> </div>
+                            <div class="iddiv33-wa"><a href="#"> UserId: @Model.UserDetails.Item1<i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a> </div>
+                            <div class="logindiv33-wa">Last Login Session : @Model.UserDetails.Item2</div>
+                            <div class="kycdiv33-wa"> <span> KYC Status:</span> <span class="statusdiv33"> In Progress </span></div>
+                        </div>
+                    </div>
+            @{Console.WriteLine($"This is Check -3 from View");};
+
+                    <div class="wallet-sectdiv33">
+                        <div id="wallet-tabdiv" class="wallet-tabdiv">
+                            <div class="heading"> Wallet Overview</div>
+                            <div class="css33wallettab">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#buy44">Buy Crypto</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" asp-controller="Deposit" asp-action="index">Deposit</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#send44">Send </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#transfer44">Transfer </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#withdraw44"> Withdraw</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#history44"> Transaction History </a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="wallet-tabdiv" class="wallet-sectdiv33">
+                        <div class="wallet-tabdiv">
+                            <div class="css77-wallect-bal">
+                                <div class="css77-wall-acc">
+                                    <span class="css77-abal">Account Balance:   </span>
+                                    <span class="csss77-walinp">
+                                        <span class="css77-baldiv">@Model.AccountBalance.Item1 <small>@Model.AccountBalance.Item2 </small> </span>
+                                        <span><a href="#"><i class="fa fa-eye-slash" aria-hidden="true"></i> </a></span>
+                                    </span>
+                                </div>
+                                <div class="css77-sel">
+                                    <div class=" form-select form444">
+                                        <select class="my-select">
+                                            <option>Select Coin</option>
+                                            <option data-img-src="/images/1.png">BTC</option>
+                                            <option data-img-src="/images/2.png">ETH</option>
+                                            <option data-img-src="/images/nav-icon.png">TechnoSavvy</option>
+                                            <option data-img-src="/images/3.png">USDT</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @{
+                        Console.WriteLine($"This is Check -4 from Wallet/Index2 View");
+                    };
+
+                    <div class="wallet-sectdiv33">
+
+
+                        <div id="wallet-tabdiv" class="tab-content tab-wall77">
+                            <div class="tab-pane active" id="buy44">
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="css77asses-div">
+                                            <div class="heading">My Assets </div>
+                                            <div class="css77asses-table mt-3">
+                                                <div id="comunity-css566-box" class="comunity-css566-box">
+                                                    <table class="table table-responsive">
+                                                        <thead class="trasaction-table-title">
+                                                            <tr>
+                                                                <th class="css566-table-text">Assets</th>
+                                                                <th class="css566-table-text text-right">Balance</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="trasaction-table">
+                                                            @foreach (var item in @Model.Assets)
+                                                            {
+                                                                <tr>
+                                                                    <td>   <div class="coin-name-css46">@item.Item1  </div></td>
+                                                                    <td><div class="coin-24change-css46  ">@item.Item2	 </div></td>
+                                                                </tr>
+                                                            }
+                                                            @{
+                                                                Console.WriteLine($"This is Check -5 from View");
+                                                            };
+
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="css77asses-div">
+                                            <div class="heading">My Cashback</div>
+
+                                            <div class="css33-earnto mt-3 css77wallet-cash">
+                                                <span>
+                                                    <div class="css33-token csswallet77">
+                                                        <span><img src="/images/nav-icon.png"> </span>
+                                                        <span class="css33-icon-name">
+                                                            500 TechnoSavvy <br> <small> $2345.2300 </small>
+                                                        </span>
+                                                    </div>
+                                                </span>
+
+                                            </div>
+                                            <div class="css-ref-btn">
+                                                <div class="heading">  Referrals   </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="deposit44"> bbb </div>
+                            <div class="tab-pane fade" id="send44"> ccc </div>
+                            <div class="tab-pane fade" id="transfer44"> ddd </div>
+                            <div class="tab-pane fade" id="withdraw44"> eee </div>
+                            <div class="tab-pane fade" id="history44"> fff </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @{
+        Console.WriteLine($"This is Check -6 from View");
+    };
+
+</section>
+    @section Styles{
+    <link rel="stylesheet" href="~/css/dashboard.css">
+    <link rel="stylesheet" href="~/css/style.css">
+}
+@section Scripts{
+    <script type="text/javascript">
+        $(".my-select").chosen({ width: "100%" });
+    </script>
+   }

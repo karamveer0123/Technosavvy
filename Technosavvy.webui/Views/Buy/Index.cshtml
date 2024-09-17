@@ -1,0 +1,162 @@
+﻿@model vmBuy
+@{
+    ViewData["Title"] = "Effortless Crypto Purchases for a Seamless Investment Journey";
+    var sCoin = Model.selectedCoin.HasValue ? Model.TokenList.FirstOrDefault(x => x.TokenId == Model.selectedCoin) : null;
+    var pCoin = Model.PaySelectedCoin.HasValue ? Model.CurrencyList.FirstOrDefault(x => x.token.TokenId == Model.PaySelectedCoin) : null;
+}
+
+@section Header {
+    <meta name="description" content="Simplify your crypto investments with TechnoApp  Buy. Experience an easy and secure platform for purchasing digital assets." />
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Buy Crypto </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">
+                            <!---===================================================-->
+                            <!---------------------------------------------->
+                            <form novalidate class="was-validated" autocomplete="off" asp-action="Summary" asp-controller="Buy" id="frmBuy" enctype="multipart/form-data">
+                                <div id="sMsg" asp-validation-summary=All class="text-danger"></div>
+                                <div id="Msg" class="text-danger"></div>
+                                <!------===================asset=========================================------>
+                                <div id="select100per" class="form-group">
+                                    <label class="form-label">Select the asset you would like to deposit</label>
+                                    <div class="input-group mb-3">
+                                        <div class=" form-select3 ">
+                                            <select class="my-select " asp-for=selectedCoin onchange="AssetSelected()">
+                                                @if (Model.selectedCoin.HasValue)
+                                                {
+                                                    <option value="">Select Asset</option>
+                                                }
+                                                else
+                                                {
+                                                    <option  value="" selected="selected">Select Asset</option>
+                                                }
+                                                @foreach (var item in Model.TokenList)
+                                                {
+                                                    @if (Model.selectedCoin.HasValue && Model.selectedCoin == @item.TokenId)
+                                                    {
+                                                        <option selected="" data-img-src="/images/coin/coin/@string.Concat(item.Code.ToUpper(),".png")" value="@item.TokenId">  @item.Code </option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option data-img-src="/images/coin/coin/@string.Concat(item.Code.ToUpper(),".png")" value="@item.TokenId"> @item.Code</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+
+                                        <input type="number" step="0.001" asp-for=BuyAmount class="form-control" placeholder="Enter Amount" autocomplete="off" aria-describedby="spndHelp">
+                                    </div>
+                                </div>
+                                <!---------===========================pay=========================------------>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div id="select100per" class="form-group mt-3">
+                                            <label class="form-label">Pay With</label>
+                                            <div class=" form-select3">
+
+                                                <select class="my-select " asp-for=PaySelectedCoin onchange="AssetSelected()">
+                                                   
+                                                    @foreach (var item in Model.CurrencyList)
+                                                    {
+                                                        @if (Model.PaySelectedCoin.HasValue)
+                                                        {
+                                                            <option value="">Select Asset</option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="" selected="selected">Select Asset</option>
+                                                        }
+                                                        if (Model.PaySelectedCoin.HasValue && Model.PaySelectedCoin == @item.token.TokenId)
+                                                        {
+                                                            <option selected="" data-img-src="/images/coin/coin/@string.Concat(item.token.Code.ToUpper(),".png")" value="@item.token.TokenId">@item.Symbole @item.token.Code</option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option data-img-src="/images/coin/coin/@string.Concat(item.token.Code.ToUpper(),".png")" value="@item.token.TokenId"> @item.Symbole @item.token.Code </option>
+                                                        }
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group mt-3">
+                                            <label class="form-label">Total</label>
+                                            <input type="number" step="0.01" asp-for="PayAmount" class="form-control">
+                                            <span class="sleft432 float-right"> Available Balance: @(Model.AvailablePayAmount.ToString("#,###.##"))</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!------------------------------------------------>
+                                <div class="form-group width100">
+                                    <a class="withdrlink float-right" asp-controller="deposit" asp-action="index" type="button">
+                                        Deposit
+                                    </a>
+                                </div>
+                                <!------------------------------------------------>
+                                <!------------------------rate detail on tooltip------------------------>
+                                <div class="css4amtbox-left cs4dile4w">
+                                    @if (Model.ValueOfOne > 0)
+                                    {
+                                        <span>
+                                            Rate <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="
+                               The price of crypto changes frequently based on market conditions. Please refer to the price on the confirm order page as your final quotation. " data-bs-original-title="" title="">
+                                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                            </span> <img src="/images/coin/coin/@string.Concat(sCoin.Code.ToUpper(),".png")" width="16px" /> @sCoin.Code ≈ @(Model.ValueOfOne.ToString("#,###.##")) @pCoin.token.Code
+
+                                        </span>
+                                    }
+                                </div>
+                                <!------------------------------------------------>
+                                <input class=" gent-btn mt-1 " value="Buy Now " type="submit">
+                                @* <a class=" gent-btn mt-1 " type="button" asp-controller="buy" asp-action="buysummary">Buy Now </a>*@
+                                <!---===================================================-->
+                            </form>
+                            <!---===================================================-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/minjs/bu.min.js"></script>
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/clipboard.js"></script>
+        <script src="~/js/select.js"></script>
+        <script src="~/js/bu.js"></script>
+        <script src="~/js/images-select.js"></script>
+    }
+
+    <script type="text/javascript">
+        $(".my-select").chosen({ width: "100%" });
+        @Html.Raw($"var rate = '{Model.ValueOfOne}'")
+    </script>
+       }

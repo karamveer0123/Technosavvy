@@ -1,0 +1,62 @@
+﻿@model vmDeposit
+@if (Model.IsFiat)
+{
+
+    @foreach (var item in Model.CurrencyList)
+    {
+        @if (Model.selectedCoin == item.token.TokenId && item.token.Code.ToUpper() == "INR")
+        {
+            <div class="amountseprate">
+                <div class="form-group mt-3">
+                    <label class="lable-name22"> Amount</label>
+                    <input type="text" asp-for="Amount" class="form-control" placeholder="Enter Amount" aria-describedby="spndHelp">
+                </div>
+                <!---------------------------------------->
+                <div class="form-group mt-3">
+                    <label  class="lable-name22">Deposit Method</label>
+                    <div class="methoutdiv">
+                            <div class="methdiv432 active">
+                            <div class="form-check dflex20div position-relative">
+                                    <input asp-for="IsBankDeposits" class="form-check-input" type="checkbox">
+                                <label class="form-check-label">
+                                        Bank Transfer
+                                        <span>
+                                            NEFT/RTGS/IMPS| Processing Time:Upto 6 hours during 9AM on
+                                            bank working days
+                                        </span>
+                                    <span class="metfee">Fees: @(Model.IB.INRTechnoAppOption.UPI.Count > 0 ? Model.IB.INRTechnoAppOption.BankDeposits.Min(x => x.DepositFee).ToString("#,##0.00") : "-") @item.Symbole </span>
+                                    </label>
+                                </div>
+
+                            </div>
+                            <div class="methdiv432 active">
+                                <div class="form-check dflex20div position-relative">
+                                    <input asp-for="IsUPI" class="form-check-input" type="checkbox">
+                                <label class="form-check-label">
+                                        UPIs
+                                        <span>
+                                            Processing Time: Upto 6 hours during 9AM to 9PM on bank
+                                            working days
+                                        </span>
+                                    <span class="metfee">Fees: @(Model.IB.INRTechnoAppOption.UPI.Count > 0 ? Model.IB.INRTechnoAppOption.UPI.Min(x => x.DepositFee).ToString("#,##0.00") : "-") @item.Symbole </span>
+                                    </label>
+                                </div>
+                         
+                            </div>
+                    </div>
+                </div>
+                <!------------------------------------>
+
+                <a name="next" href="javascript:INRStep2();" class="gent-btn mt-3"> Continue</a>
+            </div>
+           
+
+                    
+               
+
+
+        }
+
+    }
+
+}

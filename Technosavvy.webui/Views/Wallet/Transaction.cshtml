@@ -1,0 +1,1005 @@
+﻿@model vmWalletTransactions
+@{
+    ViewData["Title"] = "TechnoApp  Wallet: Streamlined Transactions for a Financial Journey";
+}
+@section Header {
+    <meta name="description" content=" Empowering Your Transactions. Experience the speed and security of our user-friendly platform for seamless transactions." />
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/responsive-wattet.css">
+}
+@{
+    var ethScanPre = $"{ConfigEx.Config.GetSection("ethScanPre").Value}";
+}
+<section class="section-wallet bg2">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            @await Html.PartialAsync("Partial/_WalletLeftMenu","index")       
+                <div class="col-lg-10 col-xxl-10">
+                    <div id="walletdiv801" class="wallet-right33 wallet-maindiv4 ">
+                    @await Html.PartialAsync("Partial/_TopUserDetails",Model.UserDetails)
+                        <!--------------------------------->
+                        <div class="wallet-sectdiv33">
+                            <div id="wallet-tabdiv" class="wallet-tabdiv">
+                                <div class="heading">Transaction History</div>
+                                <div class="css33wallettab px-0 d-flex align-items-center mt-2">
+                                    <ul id="myTab" class="nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a class="nav-link  active" data-bs-toggle="tab" data-target=".etab-p1, .etabi-img1"   href="#cryptodeposit44">Crypto</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" data-target=".etab-p2, .etabi-img2"  href="#fiatdeposit44">Fiat</a>
+                                        </li>
+                                         
+                                             
+                                        
+                                    </ul>
+                                    <div class="tab-content ms-2 d-block d-lg-none">
+  <div class="tab-pane fade show active etab-p1">
+    <a href="javascript:void(0)" class="nav-link iconFilter1 text-white"><i class="fa fa-filter" aria-hidden="true"></i></a>
+  </div>
+  <div class="tab-pane fade etab-p2">
+    <a href="javascript:void(0)" class="nav-link iconFilter2 text-white"><i class="fa fa-filter" aria-hidden="true"></i></a>
+  </div>
+  </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    
+                        <div class="wallet-sectdiv33">
+                            <div id="wallet-tabdiv" class="tab-content p-0 p-lg-3 css77asses-div">
+                                <div class="tab-pane fade show active etabi-img1 cryptodeposit44 position-relative" >
+
+                                    <div class="sell-right-but  tabsSearchMobile" id="crytoDepositSearch">
+@*
+                                        <div class="css33-leftpan">
+                                            <span class="sell-btn-22">
+                                                <lable class="label857"> Type</lable>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected="">All</option>
+                                                    <option value="1">Deposit</option>
+                                                    <option value="2">Withdraw</option>
+                                                </select>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <lable class="label857">Time Period</lable>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected="">1 days</option>
+                                                    <option value="1">3 days</option>
+                                                    <option value="2">7 days</option>
+                                                </select>
+                                            </span>
+
+                                            <span class="sell-btn-22">
+                                                <lable class="label857"> Asset</lable>
+                                                <div class=" form-select2 form254">
+                                                <select asp-for="selectedCryptoCoin" onchange="CryptoValMatrxChange(this)" class="my-select">
+                                                    <option>Select Coin</option>
+                                                    @foreach (var tk in Model.TokenList)
+                                                    {
+                                                        if (tk.token.Code == Model.selectedCryptoCoin)
+                                                        {
+                                                            <option data-bval="@tk.basePrice" selected data-img-src="../images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")">@tk.token.Code </option>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <option data-bval="@tk.basePrice" data-img-src="../images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")">@tk.token.Code </option>
+
+                                                        }
+                                                    }
+                                                </select>
+
+                                                </div>
+                                            </span>
+
+                                            <span class="sell-btn-22">
+                                                <lable class="label857"> Wallet</lable>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected="">Funding Wallet</option>
+                                                    <option value="1">Earn </option>
+                                                    <option value="3">Spot wallet</option>
+                                                </select>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <lable class="label857">Status</lable>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected="">Pending</option>
+                                                    <option value="1">Successful</option>
+                                                    <option value="3">Cancelled</option>
+                                                </select>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <label for="inputPassword5" class="label857">Txn Hash</label>
+                                                <input type="text" class="form-select  form-control2 cssform454"
+                                                       aria-describedby="passwordHelpBlock" placeholder="Enter Text">
+                                            </span>
+                                            <span class="sell-btn-22 d-lg-none">
+                                                <a class="csss77-histbtn ms-auto btnTrnsReset">Reset</a>
+                                            </span>
+                                            <span class="sell-btn-22 d-lg-none">
+                                                <a class="csss77-histbtn mx-0 btnTrnsFilter">Filter</a>
+                                            </span>
+                                        </div>
+*@
+                                       
+                                         <div class="tab-content">
+                                             <div class="tab-pane exter-p1 fade show active" >
+                                                 
+                                        <div class="css33-leftpan">
+                                            <span class="sell-btn-22">
+                                                <lable class="label857"> Type</lable>
+                                                <select class="form-select Interfilter" id="interType">
+                                                    <option value="" selected>All</option>
+                                                    <option value="Deposit">Deposit</option>
+                                                    <option value="Withdraw">Withdraw</option>
+                                                </select>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <lable class="label857">Time Period</lable>
+                                                <select class="form-select Interfilter"  id="interPeriod">
+                                                    <option value="" selected>Select Period</option>
+                                                    <option value="1"> 1 days</option>
+                                                    <option value="3">3 days</option>
+                                                    <option value="7">7 days</option>
+                                                </select>
+                                            </span>
+
+                                            <span class="sell-btn-22">
+                                                <lable class="label857"> Asset</lable>
+                                                <div class=" form-select2 form254">
+                                                <select id="interAsset" asp-for="selectedCryptoCoin"  class="my-select Interfilter">
+                                                    <option value="" selected>Select Coin</option>
+                                                    @foreach (var tk in Model.TokenList)
+                                                    {
+                                                        if (tk.token.Code == Model.selectedCryptoCoin)
+                                                        {
+                                                            <option data-bval="@tk.basePrice" selected data-img-src="../images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")" value="@tk.token.Code">@tk.token.Code </option>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <option data-bval="@tk.basePrice" data-img-src="../images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")" value="@tk.token.Code">@tk.token.Code </option>
+
+                                                        }
+                                                    }
+                                                </select>
+
+                                                </div>
+                                            </span>
+
+                                            <span class="sell-btn-22">
+                                                <lable class="label857"> Wallet</lable>
+                                                <select class="form-select Interfilter" id="interWallet">
+                                                    
+                                                    <option value="" selected>Select Wallet</option>
+                                                    <option value="FundingWallet" >Funding Wallet</option>
+                                                    <option value="EarnWallet">Earn </option>
+                                                    <option value="SpotWallet">Spot wallet</option>
+                                                </select>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <lable class="label857">Status</lable>
+                                                <select class="form-select Interfilter"  id="interStatus">      
+                                                    <option value="" selected>Select Status</option>
+                                                    <option value="Successful">Successful</option>
+                                                    <option value="Cancelled">Cancelled</option>
+                                                </select>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <label  class="label857">Txn Hash</label>
+                                                <input type="text" class="form-select  form-control2 cssform454 market-search2" data-tab="InternalTransaction" placeholder="Enter Text">
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <a class="csss77-histbtn ms-auto btnTrnsReset" id="InterBtnReset">    <i class="fa fa-refresh" aria-hidden="true"></i></a>
+                                            </span>
+                                            <span class="sell-btn-22 d-lg-none">
+                                                <a class="csss77-histbtn mx-0 btnTrnsFilter">Filter</a>
+                                            </span>
+                                        </div>
+
+                                             </div>
+                                             <div class="tab-pane exter-p2 fade" >
+                                                 
+                                        <div class="css33-leftpan">
+                                            <span class="sell-btn-22">
+                                                <lable class="label857"> Type</lable>
+                                                <select class="form-select Exterfilter"  id="enterType">
+                                                    <option value="" selected>All</option>
+                                                    <option value="Withdraw">Deposit</option>
+                                                    <option value="Deposit">Withdraw</option>
+                                                    <option value="Cashback">Cashback</option>
+                                                    <option value="Rewards">Rewards</option>
+                                                    <option value="Swap">Swap</option>
+                                                    <option value="Buy">Buy</option>
+                                                </select>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <lable class="label857">Time Period</lable>
+                                                <select class="form-select Exterfilter" id="enterPeriod">
+                                                    <option value="" selected>Select Period</option>
+                                                    <option value="1" selected="">1 days</option>
+                                                    <option value="3">3 days</option>
+                                                    <option value="7">7 days</option>
+                                                </select>
+                                            </span>
+
+                                            <span class="sell-btn-22">
+                                                <lable class="label857"> Asset</lable>
+                                                <div class=" form-select2 form254">
+                                                <select asp-for="selectedCryptoCoin" id="enterAsset" class="my-select Exterfilter">
+                                                    <option value="" selected>Select Coin</option>
+                                                    
+                                                    @foreach (var tk in Model.TokenList)
+                                                    {
+                                                        if (tk.token.Code == Model.selectedCryptoCoin)
+                                                        {
+                                                            <option data-bval="@tk.basePrice" selected data-img-src="../images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")" value="@tk.token.Code">@tk.token.Code </option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option data-bval="@tk.basePrice" data-img-src="../images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")" value="@tk.token.Code">@tk.token.Code </option>
+                                                        }
+                                                    }
+                                                </select>
+
+                                                </div>
+                                            </span>
+
+                                            <span class="sell-btn-22">
+                                                <lable class="label857"> Wallet</lable>
+                                                <select class="form-select Exterfilter" id="enterWallet">
+                                                    
+                                                    <option value="" selected>Select Wallet</option>
+                                                    <option value="FundingWallet">Funding Wallet</option>
+                                                    <option value="EarnWallet">Earn </option>
+                                                    <option value="SpotWallet">Spot wallet</option>
+                                                </select>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <lable class="label857">Status</lable>
+                                                <select class="form-select Exterfilter" id="enterStatus"> 
+                                                    <option value="" selected>Select Status</option>
+                                                    <option value="Successful">Successful</option>
+                                                    <option value="Cancelled">Cancelled</option>
+                                                </select>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <label class="label857">Txn Hash</label>
+                                                <input type="text" class="form-select  form-control2 cssform454  market-search2" placeholder="Enter Text" data-tab="ExternalTransaction">
+                                            </span>
+                                            <span class="sell-btn-22  ">
+                                                <a class="csss77-histbtn ms-auto btnTrnsReset"  id="btnExtReset">
+                                                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                                                </a>
+                                            </span>
+                                            <span class="sell-btn-23 w-100 text-center d-lg-none">
+                                                <a class="csss77-histbtn mx-0 w-100 d-block btnTrnsFilter">Filter</a>
+                                            </span>
+                                        </div>
+
+                                             </div>
+                                              <div class="tab-pane exter-p3 fade" >
+
+                                                         
+                                        <div class="css33-leftpan">
+                                            <span class="sell-btn-22">
+                                                <lable class="label857"> Type</lable>
+                                                <select class="form-select refundfilter"  id="refundType">
+                                                    <option value="" selected>All</option>
+                                                    <option value="Withdraw">Deposit</option>
+                                                    <option value="Deposit">Withdraw</option>
+                                                    <option value="Cashback">Cashback</option>
+                                                    <option value="Rewards">Rewards</option>
+                                                    <option value="Swap">Swap</option>
+                                                    <option value="Buy">Buy</option>
+                                                </select>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <lable class="label857">Time Period</lable>
+                                                <select class="form-select refundfilter" id="refundPeriod">
+                                                    <option value="" selected>Select Period</option>
+                                                    <option value="1" selected="">1 days</option>
+                                                    <option value="3">3 days</option>
+                                                    <option value="7">7 days</option>
+                                                </select>
+                                            </span>
+
+                                            <span class="sell-btn-22">
+                                                <lable class="label857"> Asset</lable>
+                                                <div class=" form-select2 form254">
+                                                <select asp-for="selectedCryptoCoin" id="refundAsset" class="my-select refundfilter">
+                                                    <option value="" selected>Select Coin</option>
+                                                    
+                                                    @foreach (var tk in Model.TokenList)
+                                                    {
+                                                        if (tk.token.Code == Model.selectedCryptoCoin)
+                                                        {
+                                                            <option data-bval="@tk.basePrice" selected data-img-src="../images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")" value="@tk.token.Code">@tk.token.Code </option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option data-bval="@tk.basePrice" data-img-src="../images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")" value="@tk.token.Code">@tk.token.Code </option>
+                                                        }
+                                                    }
+                                                </select>
+
+                                                </div>
+                                            </span>
+
+                                            <span class="sell-btn-22">
+                                                <lable class="label857"> Wallet</lable>
+                                                <select class="form-select refundfilter" id="refundWallet">
+                                                    
+                                                    <option value="" selected>Select Wallet</option>
+                                                    <option value="FundingWallet">Funding Wallet</option>
+                                                    <option value="EarnWallet">Earn </option>
+                                                    <option value="SpotWallet">Spot wallet</option>
+                                                </select>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <lable class="label857">Status</lable>
+                                                <select class="form-select refundfilter" id="refundStatus"> 
+                                                    <option value="" selected>Select Status</option>
+                                                    <option value="Successful">Successful</option>
+                                                    <option value="Cancelled">Cancelled</option>
+                                                </select>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <label class="label857">Txn Hash</label>
+                                                <input type="text" class="form-select  form-control2 cssform454  market-search2" placeholder="Enter Text" data-tab="TradesRefunds">
+                                            </span>
+                                            <span class="sell-btn-22  ">
+                                                <a class="csss77-histbtn ms-auto btnTrnsReset"  id="btnRefundReset">
+                                                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                                                </a>
+                                            </span>
+                                            <span class="sell-btn-23 w-100 text-center d-lg-none">
+                                                <a class="csss77-histbtn mx-0 w-100 d-block btnTrnsFilter">Filter</a>
+                                            </span>
+                                        </div>
+                                              </div>
+                                         </div>
+                                        
+                                       @* <div class="css33-rightpan d-none d-lg-block">
+                                            <span class="sell-btn-22">
+                                                <span class="d-inline-block opencss11" tabindex="0"
+                                                      data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                                      data-bs-content="View transaction history older than 7 days" data-bs-original-title=""
+                                                      title=""><a href="http://dev.TechnoApp.nsch.com/TechnoApp_blockchain0.2/index.html" target="_blank" type="button" class="css-subbtn44" id="liveToastBtn"> View on TechnoApp explorer </a> </span>
+                                            </span>
+                                        </div>*@
+
+                                    </div>
+
+
+
+                                    <div id="crypto-css466" class="css77asses-div  pt-2 px-0">
+                                        <ul class="nav nav-tabs" id="interExterTabs">
+
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-bs-toggle="tab"  data-target=".inter-p1, .exter-p1" href="#internalcrpto">Internal Transaction</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-bs-toggle="tab"  data-target=".inter-p2, .exter-p2" href="#externalcrpto">External Transaction</a>
+                                            </li>
+                                             <li class="nav-item">
+                                                <a class="nav-link" data-bs-toggle="tab"  data-target=".inter-p3, .exter-p3" href="#externalcrpto">Trades & Refunds</a>
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+                                    <div class="tab-content placeholder-glow">
+                                        <!-------------------------------------->
+                                        <div class="tab-pane inter-p1 fade show active" >
+                                            <div id="transactionDataTable2">
+                                             <div id="comunity-css566-box" class="comunity-css566-box">
+                                                <div class="sell-right-but pt-0 pb-2">
+                                                    <div class="css33-leftpan">
+                                                        <span class="sell-btn-22">
+                                                        <lable class="label857"> No. of rows</lable>
+                                                        <select class="form-select simple-pagination-items-per-page" >
+                                                            
+                                                        </select>
+                                                    </span> 
+                                                </div>
+
+                                                    <div class="css33-rightpan">
+                                                    <form action="" class="positionrelative">
+                                                        <input type="search" class="market-search" placeholder="Search.." name="search" data-tab="InternalTransaction"  autocomplete="off">
+                                                        <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                               
+                                                <div class="css-Rheigh442 table-parent">
+                                                    <div class="table-responsive">
+                                                    <table id="topscroll2" class="table table-child">
+                                                        <thead class="trasaction-table-title">
+                                                            <tr>
+
+                                                                <th nowrap="nowrap" class="css566-table-text text-left th-sticky-left">Asset </th>
+                                                                <th nowrap="nowrap" class="css566-table-text">Time </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> From </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Amount</th>
+                                                                <th nowrap="nowrap" class="css566-table-text">To</th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Txn Hash </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Status </th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="InternalTransaction" class="trasaction-table trans-tab-img">
+
+                                                            <tr>
+                                                                <td class="td-sticky-left">
+                                                                    <div class="row g-0 align-items-center" style="width: 125px;">
+                                                                       <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                                       <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                                       <div class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                                                                   </div>
+                                                                </td>
+                                                                <td>
+                                                                     <div class="placeholder w-100" style="height: 15px; width:70px;"></div>
+                                                                </td>
+                                                                <td><div class="placeholder w-100" style="height: 15px; width:70px;"></div></td>
+                                                                <td><div class="placeholder w-100" style="height: 15px; width:70px;"></div></td>
+                                                                <td><div class="placeholder w-100" style="height: 15px; width:50px;"></div></td>
+                                                                <td>
+                                                                    <div class="placeholder w-100" style="height: 15px; width:70px;"></div>
+                                                                </td>
+
+                                                                <td><div class="placeholder w-100" style="height: 15px; width:50px;"></div></td>
+
+                                                            </tr>
+
+@*
+                                                            <tr>
+                                                                <td  class="td-sticky-left">
+                                                                    <a href="about-btc.html">
+                                                                        <div class="coin-name-css46 ">
+                                                                            <span><img src="/images/coin/TechnoSavvy.png"></span>
+                                                                            <span>TechnoSavvy</span> <small>TechnoSavvy</small>
+                                                                        </div>
+                                                                    </a>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="css5datet44">
+                                                                        <span> 12/19/2022 </span> <span> <small> 12:00:00</small></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td>Spot Wallet</td>
+                                                                <td>12.123456 </td>
+                                                                <td>Fund Wallet</td>
+                                                                <td>
+                                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                                                          data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67"
+                                                                          data-bs-original-title="" title=""
+                                                                          aria-describedby="popover531066"><a href="#"> 4fe73...</a></span>
+                                                                </td>
+
+                                                                <td>Success </td>
+                                                            </tr>
+*@
+
+
+                                                        </tbody>
+                                                         <tfoot>
+                                                            <tr>
+                                                                <td colspan="7">
+                                                                    <div class="noheight54">
+                                                                        <div class="norecord-div44">
+                                                                            <span><img src="../images/no-data.png"></span>
+                                                                            <span> No records found</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    </div>
+                                                     <div class="row">
+                                                    <div class="col-12">
+                                                          <div class="my-navigation">
+                                                             <div class="simple-pagination-first"></div>
+                                                             <div class="simple-pagination-previous"></div>
+                                                             <div class="simple-pagination-page-numbers"></div>
+                                                             <div class="simple-pagination-next"></div>
+                                                             <div class="simple-pagination-last"></div>
+                                                          </div>
+                                                     </div>
+                                                </div> 
+
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <!-------------------------------------->
+                                        <div class="tab-pane inter-p2 fade" >
+                                            <div id="transactionDataTable3">
+                                                <div id="comunity-css566-box" class="comunity-css566-box">
+                                                <div class="sell-right-but pt-0 pb-2">
+                                                    <div class="css33-leftpan">
+                                                        <span class="sell-btn-22 ">
+                                                            <lable class="label857"> No. of rows</lable>
+                                                            <select class="form-select simple-pagination-items-per-page" >
+                                                            
+                                                            </select>
+                                                        </span> 
+                                                    </div>
+                                                 
+                                                    <div class="css33-rightpan">
+                                                        <form  class="positionrelative ">
+                                                            <input type="search"  autocomplete="off" class="market-search w-100" placeholder="Search.." name="search" data-tab="ExternalTransaction">
+                                                            <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                        </form>
+                                                    </div>
+                                                </div>
+
+
+                                                 
+                                                <div  class="css-Rheigh442 table-parent">
+                                                    <div class="table-responsive">
+                                                    <table id="topscroll3" class="table table-responsive table-child">
+                                                        <thead class="trasaction-table-title">
+                                                            <tr>
+
+                                                                <th nowrap="nowrap" class="css566-table-text text-left th-sticky-left">Asset </th>
+                                                                <th nowrap="nowrap" class="css566-table-text">Time </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Type </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Amount</th>
+                                                                <th nowrap="nowrap" class="css566-table-text">Wallet</th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Txn Hash </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Status </th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="ExternalTransaction" class="trasaction-table trans-tab-img">
+
+                                                             <tr>
+                                                                <td class="td-sticky-left">
+                                                                    <div class="row g-0 align-items-center" style="width: 125px;">
+                                                                       <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                                       <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                                       <div class="placeholder col-2 ms-2" style=" height: 15px;"> </div>
+                                                                   </div>
+                                                                </td>
+                                                                <td>
+                                                                     <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                                </td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td>
+                                                                    <div class="placeholder " style="height: 15px; width:70px;"></div>
+                                                                </td>
+
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+
+                                                            </tr>
+                                                           @* <tr>
+                                                                <td>
+                                                                    <a href="about-btc.html">
+                                                                        <div class="coin-name-css46 ">
+                                                                            <span><img src="/images/coin/TechnoSavvy.png"></span>
+                                                                            <span>TechnoSavvy</span> <small>TechnoSavvy</small>
+                                                                        </div>
+                                                                    </a>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="css5datet44">
+                                                                        <span> 12/19/2022 </span> <span> <small> 12:00:00</small></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td>Deposit</td>
+                                                                <td>12.123456 </td>
+                                                                <td>Fund Wallet</td>
+                                                                <td>
+                                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                                                          data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67"
+                                                                          data-bs-original-title="" title=""
+                                                                          aria-describedby="popover531066"><a href="#"> 4fe73...</a></span>
+                                                                </td>
+
+                                                                <td>Success</td>
+
+                                                            </tr>*@
+
+
+
+
+                                                        </tbody>
+                                                         <tfoot>
+                                                            <tr>
+                                                                <td colspan="7">
+                                                                    <div class="noheight54">
+                                                                        <div class="norecord-div44">
+                                                                            <span><img src="../images/no-data.png"></span>
+                                                                            <span> No records found</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    </div>
+                                                    <div class="row">
+                                                    <div class="col-12">
+                                                          <div class="my-navigation">
+                                                             <div class="simple-pagination-first"></div>
+                                                             <div class="simple-pagination-previous"></div>
+                                                             <div class="simple-pagination-page-numbers"></div>
+                                                             <div class="simple-pagination-next"></div>
+                                                             <div class="simple-pagination-last"></div>
+                                                          </div>
+                                                     </div>
+                                                </div> 
+
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <!-------------------------------------->
+                                        <div class="tab-pane inter-p3 fade" >
+                                            <div id="transactionTradesRefunds">
+                                                <div id="comunity-css566-box" class="comunity-css566-box">
+                                                <div class="sell-right-but pt-0 pb-2">
+                                                    <div class="css33-leftpan">
+                                                        <span class="sell-btn-22 ">
+                                                            <lable class="label857"> No. of rows</lable>
+                                                            <select class="form-select simple-pagination-items-per-page" >
+                                                            
+                                                            </select>
+                                                        </span> 
+                                                    </div>
+                                                    <div class="css33-rightpan">
+                                                        <form  class="positionrelative ">
+                                                            <input type="search"  autocomplete="off" class="market-search w-100" placeholder="Search.." name="search" data-tab="TradesRefunds">
+                                                            <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                        </form>
+                                                    </div>
+                                                </div>
+
+
+                                                 
+                                                <div  class="css-Rheigh442 table-parent">
+                                                    <div class="table-responsive">
+                                                    <table id="TradesRefundsTable" class="table table-responsive table-child">
+                                                        <thead class="trasaction-table-title">
+                                                            <tr>
+
+                                                                <th nowrap="nowrap" class="css566-table-text text-left th-sticky-left">Asset </th>
+                                                                <th nowrap="nowrap" class="css566-table-text">Time </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Type </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Amount</th>
+                                                                <th nowrap="nowrap" class="css566-table-text">Wallet</th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Txn Hash </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Status </th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="TradesRefunds" class="trasaction-table trans-tab-img">
+
+                                                             <tr>
+                                                                <td class="td-sticky-left">
+                                                                    <div class="row g-0 align-items-center" style="width: 125px;">
+                                                                       <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                                       <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                                       <div class="placeholder col-2 ms-2" style=" height: 15px;"> </div>
+                                                                   </div>
+                                                                </td>
+                                                                <td>
+                                                                     <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                                </td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td>
+                                                                    <div class="placeholder " style="height: 15px; width:70px;"></div>
+                                                                </td>
+
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+
+                                                            </tr>
+                                                           @* <tr>
+                                                                <td>
+                                                                    <a href="about-btc.html">
+                                                                        <div class="coin-name-css46 ">
+                                                                            <span><img src="/images/coin/TechnoSavvy.png"></span>
+                                                                            <span>TechnoSavvy</span> <small>TechnoSavvy</small>
+                                                                        </div>
+                                                                    </a>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="css5datet44">
+                                                                        <span> 12/19/2022 </span> <span> <small> 12:00:00</small></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td>Deposit</td>
+                                                                <td>12.123456 </td>
+                                                                <td>Fund Wallet</td>
+                                                                <td>
+                                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                                                          data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67"
+                                                                          data-bs-original-title="" title=""
+                                                                          aria-describedby="popover531066"><a href="#"> 4fe73...</a></span>
+                                                                </td>
+
+                                                                <td>Success</td>
+
+                                                            </tr>*@
+
+
+
+
+                                                        </tbody>
+                                                         <tfoot>
+                                                            <tr>
+                                                                <td colspan="7">
+                                                                    <div class="noheight54">
+                                                                        <div class="norecord-div44">
+                                                                            <span><img src="../images/no-data.png"></span>
+                                                                            <span> No records found</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    </div>
+                                                    <div class="row">
+                                                    <div class="col-12">
+                                                          <div class="my-navigation">
+                                                             <div class="simple-pagination-first"></div>
+                                                             <div class="simple-pagination-previous"></div>
+                                                             <div class="simple-pagination-page-numbers"></div>
+                                                             <div class="simple-pagination-next"></div>
+                                                             <div class="simple-pagination-last"></div>
+                                                          </div>
+                                                     </div>
+                                                </div> 
+
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane fade fiatdeposit44 etabi-img2  position-relative">
+
+                                    <div class="sell-right-but tabsSearchMobile" id="fiatDepositSearch">
+                                        <div class="css33-leftpan">
+                                            <span class="sell-btn-22">
+                                                <lable class="label857"> Type</lable>
+                                                <select class="form-select fiatfilter" id="fiatType">
+                                                    <option value="" selected="">All</option>
+                                                    <option value="Deposit">Deposit</option>
+                                                    <option value="Withdraw">Withdraw</option>
+                                                </select>
+                                            </span>
+
+                                            <span class="sell-btn-22">
+                                                <lable class="label857">Time Period</lable>
+                                                <select class="form-select fiatfilter"  id="fiatPeriod">
+                                                    <option value="" selected>Select Period</option>
+                                                    <option value="1">1 days</option>
+                                                    <option value="3">3 days</option>
+                                                    <option value="7">7 days</option>
+                                                </select>
+                                            </span>
+
+                                            <span class="sell-btn-22">
+                                                <lable class="label857"> Asset</lable>
+                                                <div class=" form-select2 form254">
+                                                <select asp-for="selectedCryptoCoin" id="fiatAsset" class="my-select fiatfilter">
+                                                    <option value="" selected>Select Coin</option>
+                                                    @foreach (var tk in Model.TokenList)
+                                                    {
+                                                        if (tk.token.Code == Model.selectedCryptoCoin)
+                                                        {
+                                                            <option data-bval="@tk.basePrice" selected data-img-src="../images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")" value="@tk.token.Code">@tk.token.Code </option>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <option data-bval="@tk.basePrice" data-img-src="../images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")" value="@tk.token.Code">@tk.token.Code </option>
+
+                                                        }
+                                                    }
+                                                </select>
+
+                                                </div>
+                                            </span>
+
+                                            <span class="sell-btn-22">
+                                                <lable class="label857">Status</lable>
+                                                <select class="form-select fiatfilter" id="fiatStatus">
+                                                    <option value="" selected>Select Status</option>
+                                                    <option value="Successful">Successful</option>
+                                                    <option value="Cancelled">Cancelled</option>
+                                                </select>
+                                            </span>
+                                            <span class="sell-btn-22 trans-w100">
+                                                <label  class="label857">Txn Hash</label>
+                                               <input type="text" class="form-select  form-control2 cssform454  market-search2" placeholder="Enter Text" data-tab="fiatTransactionData">
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <a class="csss77-histbtn ms-auto btnTrnsReset"  id="btnFiatReset">    <i class="fa fa-refresh" aria-hidden="true"></i></a>
+                                            </span>
+                                            <span class="sell-btn-23 w-100 text-center d-lg-none">
+                                                <a class="csss77-histbtn mx-0 w-100 d-block btnTrnsFilter">Filter</a>
+                                            </span>
+                                        </div>
+                                        @*<div class="css33-rightpan d-none d-lg-block">
+                                            <span class="sell-btn-22">
+                                                <span class="d-inline-block opencss11" tabindex="0"
+                                                      data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                                      data-bs-content="View transaction history older than 7 days" data-bs-original-title=""
+                                                      title=""><a href="http://dev.TechnoApp.nsch.com/TechnoApp_blockchain0.2/index.html" target="_blank" type="button" class="css-subbtn44" id="liveToastBtn"> View on TechnoApp explorer </a> </span>
+
+                                            </span>
+                                        </div>*@
+                                    </div>
+                                    <!-------------->
+                                <div id="transactionDataTable4">
+                                    <div id="comunity-css566-box" class="comunity-css566-box">
+                                        <div class="sell-right-but pt-0 pb-2">
+                                            <div class="css33-leftpan">
+                                                <span class="sell-btn-22 ">
+                                                    <lable class="label857"> No. of rows</lable>
+                                                    <select class="form-select simple-pagination-items-per-page" >
+                                                            
+                                                    </select>
+                                                </span> 
+                                            </div>
+                                         
+                                            <div class="css33-rightpan">
+                                                <form  class="positionrelative">
+                                                    <input type="search"  autocomplete="off" class="market-search w-100" placeholder="Search.." name="search" data-tab="fiatTransactionData" >
+                                                    <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                </form>
+                                            </div>
+                                        </div>
+                                       
+                                        <div  class="css-Rheigh442 table-parent">
+                                            <div class="table-responsive">
+                                            <table id="topscroll4" class="table  table-child">
+                                                <thead class="trasaction-table-title">
+                                                    <tr>
+                                                        <th nowrap="nowrap" class="css566-table-text  text-left th-sticky-left">Asset</th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text">Time </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text"> Type </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text"> Amount</th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text"> Wallet</th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text"> Txn Hash </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text"> Status </th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="fiatTransactionData" class="trasaction-table trans-tab-img">
+                                                     <tr>
+                                                                <td class="td-sticky-left">
+                                                                   
+                                                                  <div class="placeholder" style="width: 70px; height: 15px;"></div>
+                                                                   
+                                                                </td>
+                                                                <td>
+                                                                     <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                                </td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td>
+                                                                    <div class="placeholder " style="height: 15px; width:70px;"></div>
+                                                                </td>
+
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+
+                                                            </tr>
+                                                   @* <tr>
+
+                                                        <td>INR - ₹</td>
+                                                        <td>
+                                                            <div class="css5datet44">
+                                                                <span> 12/19/2022 </span> <span> <small> 12:00:00</small></span>
+                                                            </div>
+                                                        </td>
+                                                        <td>Deposit</td>
+                                                        <td>3,025.00 </td>
+                                                        <td>Fund Wallet</td>
+                                                        <td>
+                                                            <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                                                  data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67"
+                                                                  data-bs-original-title="" title=""
+                                                                  aria-describedby="popover531066"><a href="#"> 4fe73...</a></span>
+                                                        </td>
+                                                        <td>Success</td>
+                                                    </tr>*@
+
+
+
+
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="7">
+                                                            <div class="noheight54">
+                                                                <div class="norecord-div44">
+                                                                    <span><img src="../images/no-data.png"></span>
+                                                                    <span> No records found</span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+
+                                            </div>
+                                        <div class="row">
+                                                <div class="col-12">
+                                                        <div class="my-navigation">
+                                                            <div class="simple-pagination-first"></div>
+                                                            <div class="simple-pagination-previous"></div>
+                                                            <div class="simple-pagination-page-numbers"></div>
+                                                            <div class="simple-pagination-next"></div>
+                                                            <div class="simple-pagination-last"></div>
+                                                        </div>
+                                                    </div>
+                                            </div> 
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>     
+        </div>
+    </div>
+
+</section>
+
+@section Scripts{
+    <script>
+           @Html.Raw($"var dCheck = '{Model.WalletTransactions.ToJson()}'")
+           @Html.Raw($"var ethScanPre='{ethScanPre}'")
+    </script>
+    @if (ConfigEx.ShouldMini){   
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script> 
+       <script src="~/minjs/TransactionWallet.min.js"></script>
+    }else{    
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>        
+       <script src="~/js/TransactionWallet.js"></script>
+    }
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".my-select").chosen({ width: "100%" });
+            //LoadCurrIfNot();
+            formateDate();
+           formateAll();             
+            });
+    </script>
+}

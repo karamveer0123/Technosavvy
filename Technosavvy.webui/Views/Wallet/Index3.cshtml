@@ -1,0 +1,743 @@
+﻿@using NuGet.Protocol;
+@model vmWalletHome
+@{
+    ViewData["Title"] = "TechnoApp Wallet: Manage Your Digital Assets";
+    var j = Model.ToJson();
+}
+@section Header {
+    <meta name="description" content="Explore the TechnoApp Wallet for seamless management of your digital assets. Secure, user-friendly, and designed for a hassle-free experience." />
+
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/responsive-wattet.css">
+}
+@{
+    var tkSum = Model.Assets.Where(x => x.cType == CoinType.Crpto).Sum(x => x.BaseVal);
+}
+
+<section class="section-wallet bg2 ">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            @await Html.PartialAsync("Partial/_WalletLeftMenu","index")
+            <div class="col-lg-10 col-xxl-10 px-3">
+                <div id="walletdiv801" class="wallet-right33 placeholder-glow wallet-maindiv4 ">
+
+                    @await Html.PartialAsync("Partial/_TopUserDetails",Model.UserDetails)
+                    @await Html.PartialAsync("Partial/_TopMenu","Wallet Overview")
+
+                    <div id="wallet-Summary" class="wallet-sectdiv33 placeholder-glow">
+                        <div id="wallet-tabdiv" class="wallet-tabdiv walletProtfolio">
+                            <div class="css11-wallect-range">
+                                <div class="css33-leftpan">
+                                    <div class="css88-wall-dflex ">
+                                        <span class="css77-abal">Total Portfolio Value  </span>
+                                        <span class="css77-walinp css77-baldiv" id="id_password2">
+                                            <span class="dyCryo" data-dval="@Model.Assets[0].tokenPrecision" data-oval="@Model.AccountBalance_baseV">@Model.AccountBalance_CryotoV @Model.selectedCryptoCoin  </span>
+                                            <small class="dyCur" data-dval="@Model.Assets[0].tokenPrecision" data-oval="@Model.AccountBalance_baseV"> -- </small>
+                                            @*<span class="placeholder w-100" style="height:15px"></span>
+                                            <span class="placeholder w-100" style="height:15px"></span>*@
+                                        </span>
+
+                                    </div>
+
+                                    <div class="css88-wall-dflex">
+                                        <span class="css77-abal">Crypto Holding </span>
+                                        <div class="csss77-walinp11">
+                                            <div class="css77-valuecheck css77-overleng" id="CryHolding">
+                                                <div class="d-flex w-100">
+                                                    <span class="css77ethno"><span class="dyCryo" data-dval="@Model.Assets[0].tokenPrecision" data-oval="@tkSum">--</span> <small class="dyCur" data-dval="@Model.Assets[0].tokenPrecision" data-oval="@tkSum"> -- </small> </span>
+                                                    <span class="css77-value24per"><span class="css44-down wallet-i-2"><i class="fa fa-long-arrow-down" aria-hidden="true"></i> - 2.42%  </span><span></span><small>(24h)</small></span>
+                                                    @* <span class="placeholder w-100" style="height:15px"></span>
+                                                    <span class="placeholder w-100" style="height:15px"></span>*@
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="css33-rightpan">
+                                    <div class="css88-wall-dflex">
+                                        <div class=" form-select2 form444">
+                                            <div id="searchbox435">
+                                                <select asp-for="selectedCryptoCoin" onchange="CryptoValMatrxChange()" class="my-select">
+                                                    <option>Select Coin</option>
+                                                    @foreach (var tk in Model.TokenList)
+                                                    {
+                                                        if (tk.token.Code == Model.selectedCryptoCoin)
+                                                        {
+                                                            <option data-bval="@tk.basePrice" selected data-img-src="/images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")">@tk.token.Code </option>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <option data-bval="@tk.basePrice" data-img-src="/images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")">@tk.token.Code </option>
+
+                                                        }
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wallet-sectdiv33 mt-3 d-none d-lg-block ">
+                        <div class="css77asses-div width100">
+                            <div class="row">
+                                <div class="col-md-5 col-xs-12">
+                                    <div class="market-line-graph">
+                                        <div id="smallvolume-piechart" style="height: 250px"></div>
+                                    </div>
+                                    <div class="graphtext44">Asset Holding (%) </div>
+                                </div>
+                                <div class="col-md-7 col-xs-12">
+                                    <div class="market-line-graph px-3">
+                                        <div id="volumemarket-graph" style="height: 250px"></div>
+                                    </div>
+                                    <div class="graphtext44">% Change in Asset Value (24h) </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wallet-sectdiv33 d-none d-lg-block ">
+                        <div id="wallet-tabdiv" class="tab-wall77">
+                            <div class="row">
+                                <div class="col-md-12 col-12">
+                                    <div id="topscroll1" class="css77asses-div">
+                                        <div class="css11-wallect-range mb-2">
+                                            <div class="css33-leftpan">
+                                                <div class="heading">My Assets </div>
+                                            </div>
+                                            <div class="css33-rightpan">
+                                                <form action=" " class="positionrelative">
+                                                    <input type="search" autocomplete="off" class="market-search" data-tab="myAssetTabal-01" placeholder="Search" name="search">
+                                                    <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                </form>
+                                                <div id="topScroll" class="topscroll" style="">
+                                                    <a href="#topscroll1"><i class="fa fa-long-arrow-up" aria-hidden="true"></i> </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @await Html.PartialAsync("Partial/_WalletBalanceTab",Model)
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12 col-12">
+                                    <div class="css77asses-div pt-0">
+                                        <div class="heading">My Cashback<span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="The cashback value represents the amount that has been paid." data-bs-original-title="" title=""><i class="fa fa-info-circle" aria-hidden="true"></i></span></div>
+
+                                        <div class="css33-earnto mt-3 css77wallet-cash placeholder-glow" id="cashbackAssets">
+                                            <div class="nav22cash">
+                                                <div class="textcasb">Total Cashback Earned</div>
+                                                <div class="css33-token csswallet77">
+                                                    <span><img src="images/nav-icon.png"> </span>
+                                                    <span class="css33-icon-name">
+                                                        0 TechnoSavvy <br> <small> $0.00 </small>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="nav22cash">
+                                                <div class="css77-valuecheck css77-casgh mt-0">
+                                                    <span class="css77ethno"><span>Price of TechnoSavvy</span> <small> $ 0.00 </small> </span>
+                                                    <span class="css77-value24per">
+                                                        <span class=" css44-down"> <i class="fa fa-long-arrow-down" aria-hidden="true"></i><small class="px-1">- 0.00% </small> </span> <span> (24h)</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css77asses-table mt-1">
+                                            <div class="css33-rightpan mb-2">
+                                                <form action=" " class="positionrelative">
+                                                    <input type="search" class="market-search" autocomplete="off" data-tab="myCashback-566" placeholder="Search.." name="search" data-tab="myMktTaball-566">
+                                                    <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                </form>
+                                            </div>
+                                            <div id="comunity-css566-box" class="comunity-css566-box table-responsive">
+                                                <div id="cashbackDesktop">
+                                                <div class="table-xscroll44 mt-2 placeholder-glow">
+                                                    <table class="table ">
+                                                        <thead class="trasaction-table-title">
+                                                            <tr>
+                                                                <th nowrap="nowrap" class="text-left css566-table-text">Date &amp; Time </th>
+                                                                <th nowrap="nowrap" class="css566-table-text">Trade Id</th>
+                                                                <th nowrap="nowrap" class="css566-table-text">Trade Amount</th>
+                                                                <th nowrap="nowrap" class="css566-table-text">Cashback [USDT]</th>
+
+                                                                <th nowrap="nowrap" class="css566-table-text">Cashback [TechnoSavvy]</th>
+
+                                                                <th nowrap="nowrap" class="css566-table-text">Cashback status</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="myCashback-566">
+                                                           @* @foreach (var item in Model.MyCashBack)
+                                                            {
+                                                                <tr>
+                                                                    <td>
+                                                                        @item.CreatedOn.ToString("dd-MMM-yyyy")
+                                                                    </td>
+                                                                    <td>
+                                                                        @item.TradeId
+                                                                    </td>
+                                                                    <td>@item.TradeValue.ToString("#,##0.######")</td>
+                                                                    <td>@item.CashBackTechnoSavvyValue.ToString("#,##0.######")</td>
+                                                                    <td>@item.CashBackTechnoSavvyTokens.ToString("#,##.######")</td>
+                                                                    <td>@(item.RewardTransactionId != Guid.Empty ? "PAID" : "ACCRUED")</td>
+                                                                </tr>
+                                                            }*@
+                                                        </tbody>
+                                                        <tfoot>
+                                                            <tr>
+                                                                <td colspan="6">
+                                                                    <div class="noheight54">
+                                                                        <div class="norecord-div44">
+                                                                            <span><img src="images/no-data.png"></span>
+                                                                            <span> No records found</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    <div id="cashbackNorecords" class="trasaction-table">
+                                                        <div class="noheight54">
+                                                            <div class="norecord-div44">
+                                                                <span><img src="images/no-data.png"></span>
+                                                                <span> No records found</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <a asp-controller="Wallet"  asp-action="EarnWallet" class="see-more-m33"><i class="fa fa-caret-right" aria-hidden="true"></i> View More</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-12">
+                                    <div class="css77asses-div">
+                                        <div class="css-ref-btn">
+                                            <div class="css11-wallect-range mb-2">
+                                                <div class="css33-leftpan">
+                                                    <div class="heading">My Rewards <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Rewards represents the total value of eligible rewards that's earned through referrals." data-bs-original-title="" title=""><i class="fa fa-info-circle" aria-hidden="true"></i></span></div>
+                                                </div>
+                                                <div class="css33-rightpan">
+                                                    <form action=" " class="positionrelative">
+                                                        <input type="search" class="market-search" autocomplete="off" placeholder="Search.." name="search" data-tab="MyRewards-01">
+                                                        <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="css77asses-table mt-1">
+                                                <div id="comunity-css566-box" class="comunity-css566-box">
+                                                    <div class="css-Rheigh44 mt-2" id="walletReward">
+                                                        <table class="table table-responsive">
+                                                            <thead class="trasaction-table-title">
+                                                                <tr>
+                                                                    <th nowrap="" class="text-left">Earned Date </th>
+                                                                    <th nowrap=""> Paid date </th>
+                                                                    <th nowrap=""> Reward type </th>
+                                                                    <th nowrap=""> Amount</th>
+                                                                    <th nowrap=""> Status </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="MyRewards-01">
+                                                                <tr>
+                                                                    <td nowrap class="text-left"> 12/01/2023</td>
+                                                                    <td> 12/02/2022  </td>
+                                                                    <td>Signup </td>
+                                                                    <td nowrap>
+                                                                        <div class="datettrade44">
+                                                                            <div class="dflex22"><span>-</span> <small> TechnoSavvy</small> </div>
+                                                                            <div class="dflex22"><span> 1200</span> <small>USDT </small></div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td> Pending  </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td nowrap class="text-left"> 12/01/2023</td>
+                                                                    <td> 12/02/2022  </td>
+                                                                    <td>Perpectual </td>
+                                                                    <td nowrap>
+                                                                        <div class="datettrade44">
+                                                                            <div class="dflex22"><span>100.000000</span><small> TechnoSavvy</small> </div>
+                                                                            <div class="dflex22"><span> 1200</span> <small>USDT </small></div>
+                                                                        </div>
+                                                                    </td>
+
+                                                                    <td> Approved  </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td nowrap class="text-left"> 12/01/2023 </td>
+                                                                    <td> 12/02/2022  </td>
+                                                                    <td>Group Signup </td>
+                                                                    <td nowrap>
+                                                                        <div class="datettrade44">
+                                                                            <div class="dflex22"><span>100.000000</span><small> TechnoSavvy</small> </div>
+                                                                            <div class="dflex22"><span> 1200.00</span> <small>USDT </small></div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>Approved </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-left"> 12/01/2023 </td>
+                                                                    <td> 12/02/2022  </td>
+                                                                    <td>Signup </td>
+                                                                    <td nowrap>
+                                                                        <div class="datettrade44">
+                                                                            <div class="dflex22"><span>-</span> <small> TechnoSavvy</small>  </div>
+                                                                            <div class="dflex22"><span> 1200.000000</span> <small>USDT </small></div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td> Pending  </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td nowrap class="text-left"> 12/01/2023  </td>
+                                                                    <td> 12/02/2022  </td>
+                                                                    <td>Signup </td>
+                                                                    <td nowrap>
+                                                                        <div class="datettrade44">
+                                                                            <div class="dflex22"><span>-</span> <small> TechnoSavvy</small>  </div>
+                                                                            <div class="dflex22"><span> 1200</span> <small>USDT </small></div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td> Pending  </td>
+                                                                </tr>
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <td colspan="5">
+                                                                        <div class="noheight54">
+                                                                            <div class="norecord-div44">
+                                                                                <span><img src="images/no-data.png"></span>
+                                                                                <span> No records found</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                        <div id="myrefrelNorecodes" class="trasaction-table">
+                                                            <div class="noheight54">
+                                                                <div class="norecord-div44">
+                                                                    <span><img src="images/no-data.png"></span>
+                                                                    <span> No records found</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a asp-controller="ReferralProgram" asp-action="reward" class="see-more-m33 refLink"><i class="fa fa-caret-right" aria-hidden="true"></i> View More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Wallet Mobile Screen -->
+                <div id="walletdivMobile" class="wallet-mobile placeholder-glow d-block d-lg-none">
+
+                    <div class="wallerMobileHead">
+                        @* <div class="wallet-sectdiv33">
+                        <div class="wallet-note33 drop-in">
+                        <div class="d-flex">
+                        <div class="flex-shrink-0">
+                        <i class="fa fa-info-circle fs-5" aria-hidden="true"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-2">
+                        <div class="message text-left">This beta release allow access to the
+                        community based on their TechnoSavvy holding. Currently, your holding is
+                        not sufficient to get access on TechnoApp beta. You can secure more
+                        TechnoSavvy to gain early access.
+                        @if (Model._SessionHash.IsNullOrEmpty()) {
+
+                        } else
+                        {
+                        <a class="orange" asp-action="LogOut" asp-controller="Login"> You've been logged out.</a>
+                        }
+                        </div>
+                        </div>
+                        </div>
+                        <input id="checkbox-cb1" hidden/>
+                        <label for="checkbox-cb1" class="close-cb"><i class="fa fa-times" aria-hidden="true"></i></label>
+                        </div>
+                        </div>*@
+                        <!-- Mobile User Information -->
+                        <div class="row d-none">
+                            <div class="col-md-12">
+                                @await Html.PartialAsync("Partial/_TopUserDetails",Model.UserDetails)
+
+                            </div>
+                            <div class="col-md-12">
+
+                                @await Html.PartialAsync("Partial/_TopMenu","Wallet Overview")
+                            </div>
+                        </div>
+                        <!-- ./ Mobile User Information -->
+                        <!-- Links -->
+                        <div class="row">
+                            <div class="col-12  d-none">
+                                <div class="css33-rightpan">
+                                    <div class="css88-wall-dflex">
+                                        <div class=" form-select2 form444 pt-3">
+                                            <div id="searchbox4356" class="form-select2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12  d-none">
+                                <div class="css33-leftpan pb-3">
+                                    <div class="css88-wall-dflex">
+                                        <span class="css77-abal">Total Portfolio Value </span>
+                                        <span class="css77-walinp css77-baldiv" id="id_password3">
+                                            @*<span  class="dyCryo" data-dval="@Model.Assets[0].tokenPrecision" data-oval="@Model.AccountBalance_baseV">@Model.AccountBalance_CryotoV @Model.selectedCryptoCoin  </span><small class="dyCur" data-dval="@Model.Assets[0].tokenPrecision" data-oval="@Model.AccountBalance_baseV"> -- </small>*@
+                                            <span class="placeholder w-100" style="height:15px"></span>
+                                            <span class="placeholder w-100" style="height:15px"></span>
+                                        </span>
+                                    </div>
+
+                                    <div class="css88-wall-dflex">
+                                        <span class="css77-abal">Crypto Holding </span>
+                                        <span class="csss77-walinp">
+                                            <div class="css77-valuecheck css77-overleng" id="CryHolding2">
+                                                <div class="w-100">
+                                                    <span class="placeholder w-100" style="height:15px"></span>
+                                                    <span class="placeholder w-100" style="height:15px"></span>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="col-md-12 col-12">
+                                    <div class="py-3 width100">
+                                        <div class="tabs-mobileview">
+                                            <ul class="nav nav-tabs border-0" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" role="tab" data-bs-toggle="pill"
+                                                       href="#myAssets">My Assets</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" role="tab" data-bs-toggle="pill"
+                                                       href="#MyCashback">My Cashback</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" role="tab" data-bs-toggle="pill"
+                                                       href="#MyRewards">
+                                                        My Rewards
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="col-md-12">
+
+                                    <div class="tab-content tabs-content-bg p-div-box" id="myWalletOverview-Mobile">
+                                        <div id="myAssets" class="tab-pane fade show active ">
+                                            <!-- Search Box -->
+                                            <form class="position-relative pt-2">
+                                                <input type="search" class="market-search" autocomplete="off" placeholder="Search.." name="search" data-search>
+                                                <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </form>
+                                            <!-- Search Box -->
+                                            <div id="mobileMyAssets">
+                                                <!-- wallet Assets List -->
+                                                <div class="wallet__assets placeholder-glow">
+                                                    <div class="wallet__assets--heading">
+                                                        <div class="wallet__assets--item-top">
+                                                            <div class="wallet__assets--item-top-name">
+                                                                Assets
+                                                            </div>
+                                                            <div class="wallet__assets--item-top-amount">
+                                                                Balance
+                                                            </div>
+                                                            <div class="wallet__assets--item-top-action">
+                                                                Action
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="myMktTaball-m-566">
+                                                        <!-- Assets List items -->
+                                                        <div class="wallet__assets--items">
+                                                            <div class="wallet__assets--item-top">
+                                                                <div class="wallet__assets--item-top-name">
+                                                                    <div class="row g-0 align-items-center" style="width:150px">
+                                                                        <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                                        <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wallet__assets--item-top-amount">
+                                                                    <div class="placeholder" style="width:50px;height: 15px;"></div>
+                                                                </div>
+                                                                <div class="wallet__assets--item-top-action">
+                                                                    <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="wallet__assets--items">
+                                                            <div class="wallet__assets--item-top">
+                                                                <div class="wallet__assets--item-top-name">
+                                                                    <div class="row g-0 align-items-center" style="width:150px">
+                                                                        <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                                        <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wallet__assets--item-top-amount">
+                                                                    <div class="placeholder" style="width:50px;height: 15px;"></div>
+                                                                </div>
+                                                                <div class="wallet__assets--item-top-action">
+                                                                    <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="wallet__assets--items">
+                                                            <div class="wallet__assets--item-top">
+                                                                <div class="wallet__assets--item-top-name">
+                                                                    <div class="row g-0 align-items-center" style="width:150px">
+                                                                        <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                                        <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="wallet__assets--item-top-amount">
+                                                                    <div class="placeholder" style="width:50px;height: 15px;"></div>
+                                                                </div>
+                                                                <div class="wallet__assets--item-top-action">
+                                                                    <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div id="myAssetNoRecodes4" class="trasaction-table" style="display:none">
+                                                        <div class="noheight54">
+                                                            <div class="norecord-div44">
+                                                                <span><img src="images/no-data.png"></span>
+                                                                <span> No records found</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- ./ wallet Assets List -->
+                                                <div class="my-navigation mt-4">
+                                                    <div class="simple-pagination-first"></div>
+                                                    <div class="simple-pagination-previous"></div>
+                                                    <div class="simple-pagination-page-numbers"></div>
+                                                    <div class="simple-pagination-next"></div>
+                                                    <div class="simple-pagination-last"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="MyCashback" class="tab-pane fade ">
+
+                                            <div class="css33-earnto mt-3 css77wallet-cash placeholder-glow" id="cashbackAssets2">
+                                                <div class="nav22cash">
+                                                    <div class="textcasb">Total Cashback Earned</div>
+                                                    <div class="css33-token csswallet77">
+                                                        <span><img src="images/nav-icon.png"> </span>
+                                                        <span class="css33-icon-name">
+                                                            0 TechnoSavvy <br> <small> $0.00 </small>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="nav22cash">
+                                                    <div class="css77-valuecheck css77-casgh mt-0">
+                                                        <span class="css77ethno">
+                                                            <span>24h Change</span>
+                                                            <div class="d-flex w-100">
+                                                                <div class="placeholder w-50" style="width:50px;height:15px"></div>
+                                                                <div class="placeholder w-50 ms-2" style="width:50px;height:15px"></div>
+                                                            </div>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="css77asses-table mt-1">
+                                                <div class="css33-rightpan mb-2 p-0">
+                                                    <form class="positionrelative  w-100">
+                                                        <input type="search" class="market-search" autocomplete="off" data-tab="myCashback2-566" placeholder="Search.." name="search">
+                                                        <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                    </form>
+                                                </div>
+                                                <div id="comunity-css566-box22" class="comunity-css566-box table-responsive p-2">
+
+                                                    <div class="table-xscroll44 mt-2 table-responsive placeholder-glow">
+                                                        <table class="table ">
+                                                            <thead class="trasaction-table-title">
+                                                                <tr>
+                                                                    <th nowrap="nowrap" class="text-left css566-table-text th-sticky-left">Date &amp; Time </th>
+                                                                    <th nowrap="nowrap" class="css566-table-text">Trade Id</th>
+                                                                    <th nowrap="nowrap" class="css566-table-text">Trade Amount</th>
+                                                                    <th nowrap="nowrap" class="css566-table-text">Cashback [USDT]	</th>
+                                                                    <th nowrap="nowrap" class="css566-table-text">Cashback [TechnoSavvy]</th>
+                                                                    <th nowrap="nowrap" class="css566-table-text">Cashback status</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="myCashback2-566">
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <td colspan="6">
+                                                                        <div class="noheight54">
+                                                                            <div class="norecord-div44">
+                                                                                <span><img src="images/no-data.png"></span>
+                                                                                <span> No records found</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                        <div id="cashbackNorecords2" class="trasaction-table">
+                                                            <div class="noheight54">
+                                                                <div class="norecord-div44">
+                                                                    <span><img src="images/no-data.png"></span>
+                                                                    <span> No records found</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div id="MyRewards" class="tab-pane fade  ">
+                                            <div class="css-ref-btn">
+                                                <div class="css11-wallect-range">
+
+                                                    <div class="css33-rightpan">
+                                                        <form action=" " class="positionrelative w-100">
+                                                            <input type="search" class="market-search mb-0" autocomplete="off" placeholder="Search.." name="search" data-tab="MyRewards-02">
+                                                            <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="css77asses-table mt-1">
+                                                    <div id="comunity-css566-box" class="comunity-css566-box p-2">
+                                                        <div class="css-Rheigh44 table-responsive mt-2" id="walletReward2">
+                                                            <table class="table">
+                                                                <thead class="trasaction-table-title">
+                                                                    <tr>
+                                                                        <th nowrap="" class="text-left th-sticky-left">Earned Date </th>
+                                                                        <th nowrap=""> Paid date </th>
+                                                                        <th nowrap=""> Reward type </th>
+                                                                        <th nowrap=""> Amount</th>
+                                                                        <th nowrap=""> Status </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="MyRewards-02"></tbody>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <td colspan="5">
+                                                                            <div class="noheight54">
+                                                                                <div class="norecord-div44">
+                                                                                    <span><img src="images/no-data.png"></span>
+                                                                                    <span> No records found</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table>
+                                                            <div id="myrefrelNorecodes2" class="trasaction-table" style="">
+                                                                <div class="noheight54">
+                                                                    <div class="norecord-div44">
+                                                                        <span><img src="images/no-data.png"></span>
+                                                                        <span> No records found</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a asp-controller="ReferralProgram" asp-action="reward" class="see-more-m33 refLink"><i class="fa fa-caret-right" aria-hidden="true"></i> View More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <!-- Links -->
+                    </div>
+
+
+
+                </div>
+                <!-- ./ Wallet Mobile Screen -->
+            </div>
+        </div>
+    </div>
+
+</section>
+@section Scripts{
+    <!--<script>
+    @Html.Raw($"var wdata = {Model.ToVmClient().ToJson()}")
+    </script>
+    -->
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/minjs/WalletAssets.min.js"></script>
+        <script type="text/javascript" src="~/js/echarts.min.js"></script>
+        <script src="~/js/small-volume-paechart.js"></script>
+        <script src="~/js/volume-grafhm.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+        <script type="text/javascript" src="~/js/echarts.min.js"></script>
+        <script src="~/js/WalletAssets.js"></script>
+        <script src="~/js/small-volume-paechart.js"></script>
+        <script src="~/js/volume-grafhm.js"></script>
+    }
+
+
+    <script>
+        $('.close-cb').on('click', function () {
+            $('.drop-in').hide();
+        });
+    </script>
+    <script>
+        LoadCurrIfNot();
+        $(document).ready(function () {
+            $(".my-select").chosen({ width: "100%" });
+            formateAll();
+        });
+    </script>
+
+
+    <script>
+
+
+        $('.css44-cross').on('click', function () {
+            $('.top-section').hide();
+        })
+
+
+
+    </script>
+}

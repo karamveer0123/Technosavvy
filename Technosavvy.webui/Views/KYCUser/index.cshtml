@@ -1,0 +1,188 @@
+﻿@model vmProfile
+
+@{
+    ViewData["Title"] = "Streamlining KYC Processes with TechnoApp  ";
+}
+@section Header {
+    <meta name="description" content="Discover the power of TechnoApp  for KYC user verification. Navigate the future of KYC with ease and confidence." />
+}
+<!---------------------------------------------------------------------->
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33 px-0">
+            <span class="market-title-h2 ">
+                <span>Identification </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="wallet-right33 px-0">
+                <div class="wallet-sectdiv33">
+                    <div class="wallet-userdiv33">
+                        <div class="css22-walletleftpan ">
+                            <div class="userkyc33-wal position-relative">
+                                <img src="images/user.png" alt="" class="avtar" width="70">                            
+                            </div>
+                            <div class="idkycde33-wa">
+                                <span>@string.Concat(Model.FirstName.ToUpper()," ",Model.LastName.ToUpper())</span>
+                                <span>@Model._UserName</span>
+                                @await Html.PartialAsync("partial/_kycStatus",Model.KYCStatus)
+                            </div>
+
+                        </div>
+                        <div class="css33-rightpan">
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------->
+                <div class="wallet-sectdiv33 p-3">
+
+                    <div class="row">
+                        <div class="col-md-6 col-lg-7">
+                            <div class="nacv-user-information">
+                                <h3 class="title">Personal Information</h3>
+
+                                <div class="css7fundouter-box">
+                                    <div class="csskycder-box w-100 p-0">
+                                        <div class="dyvdetad9978">
+                                            <span>Name </span> <span>@string.Concat(Model.FirstName," ",Model.LastName) </span>
+                                        </div>
+                                        <div class="dyvdetad9978">
+                                            <span>Date of Birth </span> <span>@Model.DateOfBirth.ToString("dd-MMM-yyyy") </span>
+                                        </div>
+                                        <div class="dyvdetad9978">
+                                            <span>Email address </span> <span>@Model._UserName</span>
+                                        </div>
+                                        <div class="dyvdetad9978">
+                                            <span>Country of Residency </span> <span>
+                                                @(Model.lstCountries.First(x => x.countryId == Model.TaxResidencyId).countryName) </span >
+                                        </div>
+                                       @* @if (Model.KYCStatus == TechnoApp.Ext.Web.UI.Model.eeKYCStatus.Completed)
+                                        {
+                                            <div class="dyvdetad9978">
+                                                <span>KYC Date </span> <span>2023-05-17 | 20:00PM IST </span>
+                                            </div>
+                                            <div class="dyvdetad9978">
+                                                <span>KYC Score </span> <span>@Model.myDocs.Sum(x=>x.) Pts</span>
+                                            </div>
+                                        }*@
+                                        @if (Model.myDocs != null && Model.myDocs.Count>0)
+                                        {
+                                            <div class="kyc-doc-submit w-100">
+                                                <h3>KYC Documents Submitted</h3>
+                                                <div class="kycheigsub5 table-responsive">
+                                                <table class="table text-start">
+                                                    <tbody>
+                                                        @foreach (var item in Model.myDocs)
+                                                        {
+                                                            <tr>
+                                                                <td>
+                                                                    @item.PlaceHolderName
+
+                                                                </td>
+                                                                <td>
+                                                                    <div class="doc-details d-flex align-items-center justify-content-between">
+                                                                        <div class="input-text">
+                                                                            <div class="dummy-text">@item.InternalName</div>
+
+                                                                        </div>
+                                                                        @* <div class="input-eye-icon">
+
+                                                                <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                                                </div>*@
+                                                                        @if (item.Status == TechnoApp.Ext.Web.UI.Model.eDocumentStatus.Accepted)
+                                                                        {
+                                                                            <div class="verify-text basegreen fw-bold">
+                                                                                Verified
+                                                                            </div>
+                                                                        }
+                                                                        else if (item.Status == TechnoApp.Ext.Web.UI.Model.eDocumentStatus.Rejected)
+                                                                        {
+                                                                            <div class="verify-text basered fw-bold">
+                                                                                Rejected
+                                                                            </div>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <div class="verify-text yellow fw-bold">
+                                                                                Submitted
+                                                                            </div>
+                                                                        }
+                                                                    </div>
+                                                                </td>
+                                                                @*<td>
+                                                        <button class="btn-orange">Update</button>
+                                                        </td>*@
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                              </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-5">
+                            <div class="TechnoSavvy-inportant-notes">
+                              
+                                @if(Model.KYCStatus!= TechnoApp.Ext.Web.UI.Model.eeKYCStatus.UnderProcess && Model.KYCStatus!= TechnoApp.Ext.Web.UI.Model.eeKYCStatus.Completed)
+                                {
+                                    <h3>Verify your account</h3>
+                                    <p>Complete your identity verification to access all services of exchange.</p>
+                                    <h4>Required:</h4>
+                                    <ul class="mb-0">
+                                        <li>Personal Information</li>
+                                        <li>Government Issued Id</li>
+                                        <li>Tax Id</li>
+                                        <li>Facial Recognition</li>
+                                    </ul>
+                                }
+                                else if (Model.KYCStatus == TechnoApp.Ext.Web.UI.Model.eeKYCStatus.UnderProcess)
+                                {
+                                    <h3>Important Note:</h3>
+                                    <ul class="mb-0">
+                                        <li>Please read the declaration carefully before clicking "Update KYC".</li>
+                                        <li>
+                                            You cannot transfer your account to another person or substitute another person's Id to your Id.
+                                            For more details <a href="javascript:void(0)" class="view-more">View More</a>.
+
+                                        </li>
+                                    </ul>
+                                    <ul class="view-more-details" style="display: none;">
+                                        <li>The document has expired</li>
+                                        <li>Name of the document is changed.</li>
+                                        <li>The 10-digits Id number is changed.</li>
+                                        <li>The country of residency is changed.</li>
+                                        <li> Update or replace your existing documents to meet specific fiat change requirements.</li>
+                                        <li>
+                                            Change the name to system recognizable language.(from local language Id card to English
+                                            language Passport)
+                                        </li>
+
+                                    </ul>
+                                }
+                                
+                                <button onclick="window.location.href='@Url.Action("start-kyc","kycuser")'" class="btn csss77-histbtn mt-3">Update KYC</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!------------------------------->
+           
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+<script>
+    $(".view-more-details").slideUp();
+    $(".view-more").click(function () {
+        $(".view-more-details").slideToggle();
+        $(this).hide();
+    });
+</script>
+}
+
+

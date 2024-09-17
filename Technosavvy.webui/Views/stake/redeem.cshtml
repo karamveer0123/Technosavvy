@@ -1,0 +1,107 @@
+﻿@model vmMyStakingConfirm
+
+@{
+    ViewData["Title"] = "Unlock Your Rewards with Seamless Redemption Process";
+    var IsAllowed = Model.Record!=null&&( Model.Record.ExpectedEndData < DateTime.UtcNow || Model.Record.StakingSlot.IsHardFixed == false);
+}
+@section Header {
+    <meta name="description" content="Redeem your staked assets effortlessly with TechnoApp. Explore a secure and streamlined redemption process to unlock your rewards." />
+
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span> <a asp-controller="stake" asp-action="index"><i class="fa fa-angle-double-left" aria-hidden="true"></i> </a></span>
+                <span>Staking</span>
+            </span>
+
+        </div>
+        <div class="row">
+            @if (Model.Record == null)
+            {
+                <div class="csscenterscreen mt-4">
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77withdrawl-box">
+                            <div class="notediv">
+                                No Such Staking available..!!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+            else
+            { 
+            <form novalidate class="was-validated" autocomplete="off" asp-action="redeem_" asp-controller="Stake" id="frmStaking" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(x=>x.Record.StakeId)
+                <div class="csscenterscreen mt-4">
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <!--==============================================-->
+                        <div class="css77withdrawl-box">
+                            <!--==============================================-->
+                            <h5 class="orange">Redeem @Model.Token.Code</h5>
+                            <!--==============================================-->
+                            <div class="veriimg54"> <img src="@string.Concat("../../images/coin/coin/",Model.Token.Code.ToUpper(),".png")"></div>
+                            <!--==============================================-->
+                            @if (Model.Record.StakingSlot.Community == eCommunityCategory.None)
+                            {
+                                <div class="notediv"> NOTE: Redemption in advance will result in loss of interest, you have accrued.</div>
+                            }
+                            else
+                            {
+                                <div class="notediv"> NOTE: Redemption of TechnoSavvy Tokens may impact your community status, that can be result onto your accrued cashback & rewards.</div>
+                            }
+
+
+                            <!--==============================================-->
+                            <div class="css77-withdrawlS">
+                                <div class="csssum-title55"> Redemption Amount</div>
+                                <div class="csssum-detail55 orange">  @(Model.Record.Amount.ToString("#,##0.###")) @Model.Token.Code</div>
+                            </div>
+                            <!--==============================================-->
+                            <div class="css77-step43 text-center">
+                                <!--------------------------------------->
+                                <div class="css77smalltext56">
+                                    <div class="csssum-title55 bold33">Principal Amt.</div>
+                                    <div class="csssum-detail55 bold33"> Earned Interest</div>
+                                </div>
+                                <!------------------------------------------>
+                                <div class="css77smalltext56">
+                                    <div class="csssum-title55">@(Model.Record.Amount.ToString("#,##0.###")) @Model.Token.Code</div>  -
+                                    <div class="csssum-detail55">@((Model.Record.MatureAmount - Model.Record.Amount).ToString("#,##0.###"))  @Model.Token.Code</div>
+                                </div>
+                                <!-------------------------------------->
+                            </div>
+                            <!--==============================================-->
+                            <!--==============================================-->
+                            @if (!IsAllowed)
+                            {
+                                <div class="notediv"> NOTE: This Staking is not yet Redemable due to the Staking Terms.</div>
+
+                            }
+                            <div class="dflexdiv">
+                                @if (!IsAllowed)
+                                {
+                                    <a class=" withsumm-btn  d-dark   mt-4" type="button" asp-controller="wallet" asp-action="index"> Acknowledge</a>
+                                }
+                                else
+                                {
+                                    <a class=" withsumm-btn  d-dark   mt-4" type="button" asp-controller="wallet" asp-action="index"> Cancel</a>
+
+                                    <input class=" withsumm-btn   d-orange mt-4" type="submit" asp- value="Redeem Earliar" />
+                                }
+                            </div>
+                            <!--==============================================-->
+
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+            }
+            <!----------------------------------------------->
+        </div>
+    </div>
+</section>

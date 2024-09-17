@@ -1,0 +1,49 @@
+﻿@using TechnoApp.Ext.Web.UI.Static;
+@model vm2ndAuth
+@{
+    ViewData["Title"] = "Google Auth";
+    if (ConfigEx.VersionType == versionType.PreBeta)
+        Layout = "_LayoutPre";
+}
+<section class="section-login bg2">
+    <div class="container">
+        <div class="login-box" id="login-tab">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="login-img"> <img src="~/images/login-img.png"> </div>
+                </div>
+                <div class="col-md-6 col-xs-12 pt-3">
+                    <div class="verification-form">
+                        <h1 class="heading "> Security Verification</h1>
+                        @if(Model.ErrMsg.IsNullOrEmpty())
+                        {
+                            //<p>To secure your account, please complete the following verification.</p>
+                        }
+                        else
+                        {
+                            <div class="se76"> @Model.ErrMsg</div>
+                        }
+                        <form id="addUser" enctype="multipart/form-data" asp-action="TwoFactorLogIn" asp-controller="Login" enctype="multipart/form-data"  method="POST" autocomplete="off" >
+                            @Html.AntiForgeryToken()
+                            <div class="form-group mt-4 clear">
+                                <label class="text010" for="pwd">Authenticator Code</label>
+                                <input type="password" class="form-control" asp-for="OTP" placeholder="Enter Code">
+                                <input type="hidden" asp-for="Code" />
+                                <input type="hidden" asp-for="infoBag" />
+                                @*<span class="eye182">Verification code send <i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                                <span class="resend112"> Resend OTP</span>*@
+                            </div>
+                            <div class="enter56"> Enter the 6-digit code from Google Authenticator</div>
+                            @*<div class="se76"> Security verification unavailable?</div>*@
+                            <button class="btn gent-btn" type="submit">Submit </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+

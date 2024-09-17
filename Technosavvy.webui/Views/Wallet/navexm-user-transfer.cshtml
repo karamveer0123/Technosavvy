@@ -1,0 +1,328 @@
+﻿@model vmWalletFundTransfer
+@{
+    ViewData["Title"] = "Funds Transfer";
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Internal Transfer </span>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="funding-form">
+                            <form>
+                                <!-------==========================================--------->
+                                <div class="form-group">
+                                    <label for="exampleInputSpend" class="lable-name22"> From</label>
+                                    <select class="form-select2 form-select" aria-label="Default select example">
+                                        <option selected="">Select Wallet</option>
+                                        <option value="1">Earn Wallet</option>
+                                        <option value="2">Spot  Wallet</option>
+                                        <option value="2">Funding  Wallet</option>
+                                    </select>
+
+                                </div>
+                                <!-------==========================================--------->
+                                <div id="select100per" class="form-group mt-3">
+                                    <label for="exampleInputSpend" class="form-label">Select the token you would linke to transfer</label>
+                                    <div class="input-group mb-3">
+                                        <div class=" form-select3 ">
+                                            <select class="my-select " asp-for=selectedCoin>
+                                                <option>Select Network</option>
+                                            </select>
+                                           
+                                        </div>
+                                        <input type="text" auto class="form-control" placeholder="Enter Amount" asp-for="Amount" aria-describedby="spndHelp">
+                                    </div>
+                                    <span class="sleft432 float-right"> Available Balance :500 BNB</span>
+                                </div>
+                                
+                                <!-------==========================================--------->
+                                <!-----------------tab div--------------------------->
+                                <!-------==========================================--------->
+
+                                <div class="form-group ">
+                                    <!-------==========================================--------->
+                                    <div id="widrtab44div">
+                                        <label for="exampleInputSpend" class="lable-name22"> Transfer to</label>
+                                        <!-------==========================================--------->
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-bs-toggle="tab" href="#imgone11"> With in Wallet  </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-bs-toggle="tab" href="#imgtwo11">Other TechnoApp User Wallet </a>
+                                            </li>
+                                        </ul>
+                                        <!-------==========================================--------->
+                                        <div class="tab-content">
+                                            <!-------==============tab first content============================--------->
+                                            <div class="tab-pane active" id="imgone11">
+                                                <!-------==========================================--------->
+                                                <div class="form-group mt-4">
+                                                    <label class="lable-name22">To</label>
+                                                    <select class="form-select2 form-select" aria-label="Default select example">
+                                                        <option selected="">Spot Wallet</option>
+                                                        <option value="1">Funding Wallet</option>
+                                                        <option value="2">Earn Wallet</option>
+                                                    </select>
+                                                </div>
+                                                <!-------==========================================--------->
+                                                <div class="form-check mt-2">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        I have read and agree to <a href="#" class="linkcolor"> TechnoApp Internal Transfer Services Agreement</a>
+                                                    </label>
+                                                </div>
+                                                <!-------==========================================--------->
+                                                <button class="btn gent-btn mt-3" type="button" onclick="window.location.href='internaltransfer-confirmation.html'"> Confirm </button>
+                                                <!-------==========================================--------->
+                                            </div>
+                                            <!-------==========================================--------->
+                                            <!-------============second tab content==============================--------->
+
+                                            <div class="tab-pane " id="imgtwo11">
+                                                <!-------==========================================--------->
+                                                <div class="form-group mt-4 dflexdiv">
+                                                    <span class="csstime55-text text-left">You have additional <span class="orange">200 BNB </span> in your other wallets. Do you want to include them also? </span>
+
+                                                    <span>
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" data-bs-toggle="collapse" data-bs-target="#wallet3288" aria-expanded="true" checked="">
+                                                        </div>
+                                                    </span>
+                                                </div>
+
+                                                <!-------==========================================--------->
+
+                                                <div id="wallet3288" class="collapse">
+                                                    <div class="selord43ews">
+                                                        <div class="methdiv432 active">
+                                                            <div class="form-check dflex20div">
+                                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    Spot Wallet
+                                                                    <span>Include 300 INR balance of spot wallet.</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="metfee">Avi bal:3000 INR </div>
+                                                        </div>
+
+                                                        <div class="methdiv432">
+                                                            <div class="form-check dflex20div">
+                                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    Earn Wallet
+                                                                    <span>Include 300 INR balance of spot wallet.</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="metfee">Avi bal:3000 INR </div>
+                                                        </div>
+
+                                                        <div class="methdiv432">
+                                                            <div class="form-check dflex20div">
+                                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    Fund Wallet
+                                                                    <span>Include 300 INR balance of spot wallet.</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="metfee">Avi bal:3000 INR </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-------==========================================--------->
+                                                <!-------==========================================--------->
+
+                                                <div class="form-group mt-4">
+                                                    <label for="exampleInputSpend" class="lable-name22">Wallet Address</label>
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" placeholder="Select address from address book" aria-describedby="button-addon2">
+                                                        <button type="button" class="btn book44cs" data-bs-toggle="collapse" data-bs-target="#bankdetail88" aria-expanded="true"><i class="fa fa-book" aria-hidden="true"></i></button>
+                                                    </div>
+                                                </div>
+
+                                                <!-------==========================================--------->
+                                                <div id="bankdetail88" class="collapse">
+                                                    <div id="widrtab44div " class="form-group">
+                                                        <div id="multisediv" class="input-group mb-3">
+
+
+                                                            <div class="dropdown-list">
+                                                                <div class="mx-2 my-2">
+                                                                    <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+                                                                </div>
+                                                                <div class="selectdiv43">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                                        <label for="checkbox-custom_21" class="checkbox-custom-label">
+                                                                            <div class="flexwsbox435"> <span>ETH</span> <span class="smalltext">2354653jdfhgudfGDFgj12245824 </span></div>
+                                                                            <div class="Csswd45r"> <span>Yogita ETH address</span></div>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="selectdiv43">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                                        <label for="checkbox-custom_21" class="checkbox-custom-label">
+                                                                            <div class="flexwsbox435"> <span>ETH</span> <span class="smalltext">2354653jdfhgudfGDFgj12245824 </span></div>
+                                                                            <div class="Csswd45r"> <span>Yogita ETH address</span></div>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="selectdiv43">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                                        <label for="checkbox-custom_21" class="checkbox-custom-label">
+                                                                            <div class="flexwsbox435"> <span>ETH</span> <span class="smalltext">2354653jdfhgudfGDFgj12245824 </span></div>
+                                                                            <div class="Csswd45r"> <span>Yogita ETH address</span></div>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="selectdiv43">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                                        <label for="checkbox-custom_21" class="checkbox-custom-label">
+                                                                            <div class="flexwsbox435"> <span>ETH</span> <span class="smalltext">2354653jdfhgudfGDFgj12245824 </span></div>
+                                                                            <div class="Csswd45r"> <span>Yogita ETH address</span></div>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-------==========================================--------->
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label orange" for="flexCheckDefault">
+                                                        Add this address to whitelist
+                                                    </label>
+                                                </div>
+                                                <!-------==========================================--------->
+                                                <div class="addlisdet3422">
+                                                    <div class="adtext4328X">
+                                                        <span class="tith4"> Address </span> <span class="texth5"> 0985462-JKL142VFR24KJ </span>
+                                                    </div>
+                                                    <div class="adtext4328X">
+                                                        <span class="tith4">Network </span> <span class="texth5"> TechnoApp </span>
+                                                    </div>
+                                                    <div class="adtext4328X">
+                                                        <span class="tith4">Whitelist </span> <span class="texth5"> Whitelisted </span>
+                                                    </div>
+                                                </div>
+                                                <!---------------============================================-------------------->
+                                                <div class="form-check mt-2 width100">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        I have read and agree to <a href="#" class="linkcolor"> TechnoApp Internal Transfer Services Agreement</a>
+                                                    </label>
+                                                </div>
+                                                <!-------==========================================--------->
+
+
+                                                <button class="btn gent-btn mt-3" type="button" onclick="window.location.href='internaltransfer-summary.html'"> Confirm</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-------==========================================--------->
+                                <!---------------------------close tab div----------------->
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 col-12">
+                <div class="css77-buyc-div mt-4 mb-4">
+                    <div class="row">
+                        <div class="css77buydivh">
+                            <h2 class="heading">Related FAQs </h2>
+                        </div>
+
+                    </div>
+
+                    <div class="css77-topcoin">
+                        <div class="faqrigtdiv443">
+
+                            <div class="faqdivqs11">
+                                <div class="titlefw2aq">Buy Crypto </div>
+                                <div class="subtiy544">
+                                    <ul>
+                                        <li><a href="#">How to buy in TechnoApp?</a>  </li>
+                                        <li><a href="#">How to buy in TechnoApp?</a>  </li>
+                                        <li><a href="#">How to buy in TechnoApp?</a>  </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-------------------------------->
+                            <div class="faqdivqs11">
+                                <div class="titlefw2aq">Buy Crypto </div>
+                                <div class="subtiy544">
+                                    <ul>
+                                        <li><a href="#">How to buy in TechnoApp?</a>  </li>
+                                        <li><a href="#">How to buy in TechnoApp?</a>  </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-------------------------------->
+                            <div class="faqdivqs11">
+                                <div class="titlefw2aq">Buy Crypto </div>
+                                <div class="subtiy544">
+                                    <ul>
+                                        <li><a href="#">How to buy in TechnoApp?</a>  </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <!-------------------------------->
+                            <div class="faqdivqs11">
+                                <div class="titlefw2aq">Buy Crypto </div>
+                                <div class="subtiy544">
+                                    <ul>
+                                        <li><a href="#">How to buy in TechnoApp?</a>  </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!----------------------------------------------->
+    </div>
+</section>
+
+@section Scripts{
+    
+    @if (ConfigEx.ShouldMini)
+    {   
+        <script src="~/minjs/dep.min.js"></script>
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>        
+    }
+    else
+    {
+        <script src="~/js/dep.js"></script>
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>        
+    }
+}

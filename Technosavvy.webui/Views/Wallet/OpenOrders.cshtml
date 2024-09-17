@@ -1,0 +1,326 @@
+﻿@using NuGet.Protocol;
+@model vmOrders
+@{
+    ViewData["Title"] = "Manage Open Orders with Ease | Wallet Dashboard";
+}
+
+@section Header {
+    <meta name="description" content="Explore and control your open orders effortlessly on the Wallet Dashboard. Streamline your transactions with intuitive tools for better financial management." />
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/responsive-wattet.css">
+}
+<section class="section-wallet bg2">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            @await Html.PartialAsync("Partial/_LeftOrder","open orders")
+          <div class="col-md-10 col-lg-10 col-xxl-10">
+                <div id="walletdiv801" class="wallet-right33 wallet-maindiv4">
+                    <div class="wallet-sectdiv33">
+                  <div id="wallet-tabdiv" class="wallet-tabdiv">
+                  
+                  <div class="heading">  Open Order </div>
+                  <div class="css99-hisbtn">  
+                    <a  class=" csss77-histbtn ">  Export <i class="fa fa-external-link" aria-hidden="true"></i>
+                    </a>
+  
+                </div>
+                </div>
+                </div>
+
+ <!----------------------------------------------->
+ <div class="wallet-sectdiv33">
+    <div id="wallet-tabdiv" class="mx-3">
+      <div class="sell-right-but ">
+        <div class="css33-leftpan">
+
+          <span class="sell-btn-22">
+            <lable class="label857">Pair</lable>
+             <div class=" form-select2 form254">
+                <select class="my-select2 filter" aria-label="Pair" id="fPair">
+               <option value="" selected>All</option>
+                
+                </select>  
+         </div>
+            </span>
+
+          
+          <span class="sell-btn-22">
+            <lable class="label857"> Side</lable>
+              <select class="form-select filter" aria-label="Side" id="fSide">
+                  <option value="" selected>All</option>
+                  <option value="Buy">Buy </option>
+                  <option value="Sell">Sell</option>
+               
+                </select>  
+          </span>
+          
+        <span class="sell-btn-22">
+            <lable class="label857"> Order Type</lable>
+             <div class=" form-select2 form254">
+            <select class="my-select2 filter" aria-label="Order" id="fOrderType">
+                  <option value="" selected>All</option>
+                  @*<option value="FOK">FOK</option>
+                  <option value="ICE Berg">ICE Berg</option>
+                  <option value="IOC">IOC</option>
+                  <option value="Limit">Limit Order</option>
+                  <option value="Loop">Loop</option>
+                  <option value="Market">Market</option>
+                  <option value="OCO">OCO</option>
+                  <option value="Stop Limit">Stop Limit</option>
+                  <option value="Stop Market">Stop Market</option>*@
+              
+                 
+                </select>  
+                </div>
+          </span>
+          <span class="sell-btn-22">
+                <a class="csss77-histbtn ms-auto btnTrnsReset" id="btnReset">    <i class="fa fa-refresh" aria-hidden="true"></i></a>
+            </span>
+            @* <span class="sell-btn-22">
+                <a href="javascript:void(0)" class="css-subbtn44 mx-0" id="btnFReset"> Reset </a>
+            </span>*@
+        </div>
+<!---->
+<div class="css33-rightpan">
+<button type="button" class="css-subbtn44 btnFetch2 spinner-button" id="liveToastBtn"> Cancel All Orders </button>
+</div>
+<!----> </div>
+                       </div></div>
+  <!----------------------------------------------->
+
+      <!----------------------------------------------------->             
+      
+                
+      <div class="wallet-sectdiv33 px-3">
+        <div id="comunity-css566-box" class="comunity-css566-box table-responsive">
+                            <div class="css33-rightpan mb-2">
+                                <form action=" " class="positionrelative">
+                                    <input type="search" class="market-search" placeholder="Search.." name="search" data-tab="tbopenorder">
+                                    <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                </form>
+
+                            </div>
+        <div id="openOrderTableMain">
+            <div class="table-xscroll44 placeholder-glow">
+              <table class="table  table-sortable cssearn-table" id="walletOpenOrderTable">
+                <thead class="trasaction-table-title">
+                    <tr>
+                            <th nowrap="nowrap" class="css566-table-text th-sticky-left">Pair</th> 
+                            <th nowrap="nowrap" class="css566-table-text">Date &amp; Time </th>   
+                            <th nowrap="nowrap" class="css566-table-text">Order Id</th>  
+                            <th nowrap="nowrap" class="css566-table-text">Type </th>                           
+                            <th nowrap="nowrap" class="css566-table-text">Side </th>
+                            <th nowrap="nowrap" class="css566-table-text">Price</th>
+                            <th nowrap="nowrap" class="css566-table-text"> Amount </th> 
+                            <th nowrap="nowrap" class="css566-table-text"> Open </th> 
+                            <th nowrap="nowrap" class="css566-table-text">Total</th>
+                            <th nowrap="nowrap" class="css566-table-text"> Asset Amount</th>
+                            <th nowrap="nowrap" class="css566-table-text"> Swap Trade Value</th>                   
+                            <th nowrap="nowrap" class="css566-table-text">Trigger Conditions</th>                   
+                            <th nowrap="nowrap" class="css566-table-text">Action </th>
+                    
+                    </tr>
+                </thead>
+                    <tbody id="tbopenorder" class="trasaction-table">
+                        <tr>                           
+                            <td class="text-left td-sticky-left">
+                                <span class="placeholder" style="width:50px;height:5px;"></span></td>
+                            <td>
+                                <div class="css5datet44 d-flex">
+                                    <span> <span class="placeholder" style="width:100px;height:5px;"></span> </span> 
+                                    
+                                </div> 
+                            </td>
+                            <td> 
+                                <span class="placeholder" style="width:50px;height:5px;"></span>
+                            </td> 
+                            <td><span class="placeholder" style="width:50px;height:5px;"></span></td> 
+                            <td><span class="placeholder" style="width:50px;height:5px;"></span> </td>
+                            <td>
+                                <div class="datettrade44 d-flex">
+                                    <span><span class="placeholder" style="width:100px;height:5px;"></span></span> 
+                                   
+                                </div>
+                            </td>
+                            <td>
+                                <div class="datettrade44 d-flex">
+                                    <span> <span class="placeholder" style="width:100px;height:5px;"></span></span> 
+                                   
+                                </div>
+                            </td>
+                            <td><div class="datettrade44"><span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                            <td><div class="datettrade44"><span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                            <td><div class="datettrade44">
+                                <span class="placeholder" style="width:50px;height:5px;"></span>
+                                </div>
+                            </td>
+                            <td><div class="datettrade44"><span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                            <td><span class="placeholder" style="width:50px;height:5px;"></span> </td>
+                            <td class="csscancel44"><span class="placeholder" style="width:50px;height:5px;"></span></td>
+                        </tr>
+                        <tr>                           
+                            <td class="text-left td-sticky-left"><span class="placeholder" style="width:50px;height:5px;"></span></td>
+                            <td>
+                                <div class="css5datet44 d-flex">
+                                    <span> <span class="placeholder" style="width:100px;height:5px;"></span> </span> 
+                                    
+                                </div> 
+                            </td>
+                            <td> 
+                                <span class="placeholder" style="width:50px;height:5px;"></span>
+                            </td> 
+                            <td><span class="placeholder" style="width:50px;height:5px;"></span></td> 
+                            <td><span class="placeholder" style="width:50px;height:5px;"></span> </td>
+                            <td>
+                                <div class="datettrade44 d-flex">
+                                    <span><span class="placeholder" style="width:100px;height:5px;"></span></span> 
+                                   
+                                </div>
+                            </td>
+                            <td>
+                                <div class="datettrade44 d-flex">
+                                    <span> <span class="placeholder" style="width:100px;height:5px;"></span></span> 
+                                   
+                                </div>
+                            </td>
+                            <td><div class="datettrade44"><span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                            <td><div class="datettrade44"><span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                            <td><div class="datettrade44">
+                                <span class="placeholder" style="width:50px;height:5px;"></span>
+                                </div>
+                            </td>
+                            <td><div class="datettrade44"><span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                            <td><span class="placeholder" style="width:50px;height:5px;"></span> </td>
+                            <td class="csscancel44"><span class="placeholder" style="width:50px;height:5px;"></span></td>
+                        </tr>
+
+                   @* <tr>                      
+                    
+                      <td class="text-left">BTC/USDT</td>                           
+                      <td><div class="css5datet44">
+                         <span> 25/12/2022 </span> <span> <small> 10:00:00</small></span>
+                        </div> </td>
+                        <td> <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67" data-bs-original-title="" title="">4fe73...</span>  </td> 
+                       <td>Limit</td> 
+                      
+                        <td><span class="css44-up">Buy</span> </td>
+                        <td><div class="datettrade44"><span> 20000.00</span> <small> USDT </small></div></td>
+                        <td><div class="datettrade44"><span> 1.00</span> <small>BTC</small></div></td>  
+                        <td><div class="datettrade44"><span> 0.30</span> <small> BTC</small></div></td>                                                       
+                         <td><div class="datettrade44"><span> 20000.00</span> <small> USDT</small></div></td>
+                         <td>
+                          <div class="datettrade44">
+                            <span> 0.9998 </span> <small> BTC</small>
+                          </div>
+                        </td>
+
+                        <td><div class="datettrade44"><span>20002.00 </span> <small> USDT</small></div></td>
+                        <td>N/A </td>
+                        <td class="csscancel44"><button type="button" class="btnFetch spinner-button" id="btn2"> Cancel </button></td>
+                                                                                           
+                         </tr>*@
+      
+                      
+                </tbody>
+                <tfoot >
+                    <tr>
+                        <td colspan="12">
+                            <div class="noheight54">
+                                <div class="norecord-div44">
+                                    <span><img src="../images/no-data.png"></span>
+                                    <span> No records found</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        
+        </div>
+        <div class="my-navigation mt-4">
+		<div class="simple-pagination-first"></div>
+		<div class="simple-pagination-previous"></div>
+		<div class="simple-pagination-page-numbers"></div>
+		<div class="simple-pagination-next"></div>
+		<div class="simple-pagination-last"></div>
+	</div>
+    </div>
+    <!-- ==== Pagination ==== -->
+    @*<div class="row">
+      <div class="row"> <nav id="pagination-css" aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+          <li class="page-item"><a class="page-link " href="#">1</a></li>
+          <li class="page-item  active"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">4</a></li>
+          <li class="page-item"><a class="page-link" href="#">5</a></li>
+          <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        </ul>
+      </nav></div>
+    </div>*@
+    <!-- ==== // Pagination ==== -->
+
+                   </div>
+     </div>
+                </div>
+
+
+          </div>
+        </div>
+    </div>
+</section>
+<!---->
+<!-- Modal -->
+<div class="position-fixed top-10 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body">
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            Are you sure you want to cancel.
+             @*Your all order is canceled.*@
+        </div>
+    </div>
+</div>
+
+<!------------------------------->
+<!---->
+
+@section Scripts{
+    <script>
+        @Html.Raw($"var myOpenOrders = {Model.myOrders.ToJson()}")
+    </script>
+    @if (ConfigEx.ShouldMini)
+    {   
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script> 
+        <script src="~/minjs/sorting.min.js"></script>
+        <script src="~/minjs/openOrdersDetails.min.js"></script>
+    }
+    else
+    {    
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>   
+        <script src="~/js/sorting.js"></script>
+        <script src="~/js/openOrdersDetails.js"></script>
+    }
+    
+    <script>
+       
+           
+    
+        LoadCurrIfNot();
+        formateDate();
+        $(document).ready(function () {
+            $(".my-select").chosen({ width: "100%" });
+            formateAll();
+        });
+        filterOrders();
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+
+      
+    </script>
+}

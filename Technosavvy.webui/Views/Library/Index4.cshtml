@@ -1,0 +1,111 @@
+﻿@model vmFAQDisplay
+@{
+    //Layout = "_LayoutPre";
+    ViewData["Title"] = "TechnoApp FAQs: Your Crypto Queries Answered";
+    int ccGrp = 0;
+    int ccItem = 0;
+    string ccGName = "";
+    string ccItemName = "";
+}
+@section Header {
+    <meta name="description" content="Get answers to your crypto questions at TechnoApp FAQs. Find clarity, understand processes, and navigate the world of cryptocurrency with confidence." />
+}
+
+
+
+<section class="page-section a-inner-head bg1 pt-5">
+    <div class="container-fluid">
+        <div class="row pt-4">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="css566-heading mb-3">
+                    <h1> Frequently Asked Questions (FAQs)</h1>
+                    <div class="divider"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="index-links">
+                    <ul>
+                        <li><a asp-controller="home" asp-action="index" class="url-1"> Home </a></li>
+                          <li>|</li>
+                        <li>FAQs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // Page name section -->
+<!-- FAQ page section -->
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="row">
+            <div class="faqsearch">
+                <div  class="positionrelative mx-auto">
+                    <input type="search" id="txtSearchFaq" class="market-search" placeholder="Search FAQs">
+                    <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+      
+            <div class="row mt-4">
+                <div class="col-lg-12 col-md-12">
+                    <div id="aboutmainaccor" class="faqdiv66 ">
+                        <div class="accordion" id="apFAQs">
+                       @foreach (var iGrp in Model.FAQs)
+        {
+            { ccGrp++; }
+            ccGName = string.Concat("panelsStayOpen-", ccGrp.ToString());
+                        
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-@ccGName">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="@string.Concat("#",ccGName)" aria-expanded="true" aria-controls="panelsStayOpen-@ccGName">
+                                        <div class="faq-q-list"> <h2> @Html.Raw(iGrp.Key) </h2></div>
+                                    </button>
+                                </h2>
+                                <div id="@ccGName" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-@ccGName" style="">
+                                    <div class="accordion-body">
+
+                                        <div id="faqaccdiv32" class="accordefaq213">
+                                            <!-- B. About TechnoApp  -->
+
+                                            <div id="About-TechnoApp" class="faqdiv66">
+                                                <div class="accordion" id="apFAQs">
+                                                    @foreach (var item in iGrp.Value)
+                                                    {
+                                                        { ccItem++; }
+                                                        ccItemName = string.Concat("panelsMyAns-", ccItem.ToString());
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header" id="panelsStayOpen-@ccItemName">
+                                                                <button class="accordion-button  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@ccItemName"  aria-expanded="false" aria-controls="panelsStayOpen-@ccItemName">
+                                                                    @Html.Raw(item.QuestionText)
+                                                                </button>
+                                                            </h2>
+                                                            <div id="@ccItemName" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-@ccItemName">
+                                                                <div class="accordion-body">
+                                                                    @Html.Raw(item.AnswerText)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        
+
+    </div>
+</section>
+@section Scripts{
+    <script>
+        bindaccordionSearch('txtSearchFaq', 'apFAQs');
+    </script>
+  }

@@ -1,0 +1,581 @@
+@media (min-width: 992px) {
+  .wallerMobileMenu-btn {
+    display: none;
+  }
+}
+/* Medium devices (tablets, less than 992px)*/
+@media (max-width: 991.98px) {
+    .wallerMobileMenu-btn {
+        position: absolute;
+        right: -32px;
+        top: 0;
+    }
+    .wallet__assets--item-top-name .image img {width:20px;
+    }
+    .wallerMobileMenu-btn .menu-icon {
+        cursor: pointer;
+        padding: 6px 8px 4px;
+        user-select: none;
+        background: var(--bg-login);
+        color: var(--bs-white);
+        font-size: 20px;
+        border-radius: 0 10px 10px 0;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.5s ease-in-out;
+    }
+  .wallerMobileMenu-btn .menu-icon:hover {
+    background-color: var(--bs-white);
+    color: var(--bg-login);
+  }
+  .menu-btn {
+    display: none;
+  }
+
+  .wallet-left-bg {
+    background: var(--bs-darkblak);
+    width: 280px;
+    position: fixed;
+    z-index: 100;
+    left: -280px;
+    top: 63.66px;
+    transition: all 0.5s ease-in-out;
+  }
+  .walletMenuBody #wallet-left33 {
+    left: 0%;
+  }
+  /*.wallet-mobile {
+    border: 1px solid var(--bs-bordergrey);
+  }*/
+
+    .wallerMobileHead .heading {
+        color: var(--bs-yellow);
+        padding: 0;
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+    }
+  #walletdivMobile .wallet-userdiv33 {
+    padding: 15px 0;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .wallerLink .nav-link {
+    color: var(--bs-white);
+  }
+  .css33-rightpan {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
+  .wallet-mobile .css33-leftpan {
+    flex-wrap: wrap;
+  }
+    .css88-wall-dflex {
+        width: auto;
+        padding-right: 0;
+    }
+  .css77-baldiv,
+  .css77-value24per,
+  .css77-valuecheck,
+  .css77ethno {
+    width: 100%;
+  }
+  .market-search {
+    max-width: 100%;
+  }
+  
+  .walletDropdown .dropdown-item {
+    color: var(--bs-white);
+    font-size: 14px;
+  }
+
+  /* Wallet Assets Datalist in table format */
+  .wallet__assets {
+  }
+  .wallet__assets--heading {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  .wallet__assets--heading .wallet__assets--item-top-amount,
+  .wallet__assets--heading .wallet__assets--item-top-name,
+  .wallet__assets--heading .wallet__assets--item-top-action {
+    font-size: 14px;
+  }
+
+  .wallet__assets--items {
+    border-top: 1px solid var(--bs-bordergrey);
+    padding: 8px 0;
+    width:100%;
+  }
+  .wallet__assets--item-top,
+  .wallet__assets--item--bottom-item {
+    color: var(--bs-white);
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+  }
+  .wallet__assets--item--bottom{
+    margin-top: 8px;
+  }
+  .wallet__assets--item--bottom-item {
+
+    padding: 5px 0;
+    border-bottom: 1px solid var(--bs-bordergrey);
+  }
+
+  .wallet__assets--item--bottom-item:last-child{
+    border-bottom: 0px;
+    
+  }
+.amountToggle{
+  cursor: pointer;
+}
+  small {
+    color: var(--bs-lightgrey);
+    font-size: 10px;
+    line-height: 21px;
+  }
+  .wallet__assets--item-top-name {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    width: 50%;
+  }
+  .wallet__assets--item-top-name .image {
+  }
+    .wallet__assets--item-top-name .assets__name {
+        font-size: 14px;
+        display: flex;
+        gap: 3px;
+        align-items: baseline;
+    }
+    .wallet__assets--item-top-amount {
+        font-size: 15px;
+        display: flex;
+        gap: 5px;
+        justify-content: end;
+        min-width: 150px;
+        margin-left:auto;
+    }
+    .wallet__assets--item-top-action {
+        width: 48px;
+       /* text-align: right;
+        min-width: 100px;*/
+    }
+    .wallet__assets--item-bottom {
+        display: none;
+        margin: 10px 0px;
+        font-size: 15px;
+        background: var(--bs-darkgrey);
+        padding: 8px;
+    }
+  .walletDropdown.dropstart .dropdown-toggle::before {
+    display: none;
+  }
+  .walletDropdown .dropdown-toggle {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:auto;
+  }
+    .wallet__assets--item-top-amount{
+        min-width:150px;
+    }
+    #wallet-tabdiv .nav-tabs .nav-link{
+        margin-bottom:0px;
+        font-size:14px !important;
+    }
+    #wallet-tabdiv .nav-tabs{
+        justify-content:center;
+    }
+    .wallet-tabdiv{
+        padding:15px 0;
+        gap:15px;
+    }
+    .tabs-mobileview .nav-tabs .nav-item .nav-link{
+        font-size:14px !important;
+    }
+    .wallerMobileHead{
+        margin-bottom:30px;
+    }
+    .wallet-right33{
+        padding-right:0px;
+    }
+    .wallet-userdiv33{
+        flex-direction:column;
+    }
+    .css22-walletleftpan {
+        padding: 0 .5rem;
+        width: 100%;
+    }
+    .wallet-tabdiv .heading {
+        width: 100%;
+        text-align: center;
+        padding: .5rem 0;
+    } 
+    .css77-wall-acc {
+        width: 100%;
+        padding: .5rem 0;
+    }
+    .css77-sel {
+        width: 100%;
+        padding: 0;
+    }
+    #wallet-tabdiv .form-select2{
+        min-width:100%;
+    }
+    div#walletdiv801{
+        border:0;
+    }
+    .earnsearch {
+        position: relative;
+        top: auto;
+        width: calc(100% - 10px);
+    }
+
+    .stakinflex432{
+        min-width:260px;
+    }
+    .wallet-tabdiv{
+        flex-direction:column;
+    }
+    .sell-right-but{
+        flex-direction:column;
+        gap:15px;
+    }
+    .css33-leftpan {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .sell-btn-22{
+        width:32.33%;
+    }
+        .sell-btn-22 .form254{
+            width:100%;
+        }
+    .css33-rightpan{
+        justify-content:center;
+        padding-left:0;
+    }
+    #cashback44 .sell-right-but,
+    #MyCashback33 .sell-right-but {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+
+    #cashback44 .css33-leftpan,
+    #MyCashback33 .css33-leftpan {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #cashback44 .sell-btn-22,
+    #MyCashback33 .sell-btn-22
+    {
+        width: 100%;
+    }
+
+        #cashback44 .sell-btn-22 .form254,
+        #MyCashback33 .sell-btn-22 .form254
+        {
+            width: 100%;
+        }
+
+    #cashback44 .css33-rightpan,
+    #MyCashback33 .css33-rightpan
+    {
+        justify-content: center;
+        padding-left: 0;
+    }
+    .wallet-maindiv4{
+        max-height:unset;
+        overflow:visible;
+    }
+    .tabsSearchMobile {
+        position: absolute;
+        right: -100%;
+        background-color: var(--bs-darkgrey);
+        z-index: 99;
+        width: 100%;
+        padding: 20px;
+        transition: all 0.3s ease-in-out;
+        height: 100%;
+    }
+        .tabsSearchMobile.active{
+            right:0;
+        }
+    .walletProtfolio .css33-rightpan{
+        width:auto;
+    }
+    .btnTrnsReset {
+        padding:6px 10px !important;
+     
+    }
+}
+@media (max-width: 767.98px) {
+   
+    .section-wallet{
+        min-height:unset;
+    }
+    .sell-btn-22 {
+        width: 49%;
+    }
+
+        .sell-btn-22 .form254 {
+            width: 100%;
+        }
+
+    .css33-rightpan {
+        justify-content: center;
+    }
+    .opencss11,
+    .opencss11 .css-subbtn44 {
+        width: 100%;
+        text-align: center;
+        margin-left:0;
+    }
+    #comunity-css566-box .trasaction-table tr td {
+        font-size: 14px;
+        max-width: inherit;
+    }
+    #cashback44 .sell-right-but,
+    #MyCashback33 .sell-right-but {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+
+    #cashback44 .css33-leftpan,
+    #MyCashback33 .css33-leftpan {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #cashback44 .sell-btn-22,
+    #MyCashback33 .sell-btn-22{
+        width: 100%;
+    }
+
+        #cashback44 .sell-btn-22 .form254,
+        #MyCashback33 .sell-btn-22 .form254
+        {
+            width: 100%;
+        }
+
+    #cashback44 .css33-rightpan,
+    #MyCashback33 .css33-rightpan
+    {
+        justify-content: center;
+        padding-left: 0;
+    }
+    #internalcrpto .positionrelative,
+    #externalcrpto .positionrelative,
+    #fiatdeposit44 .positionrelative,
+    #MyCashback33 .positionrelative,
+    #cashback44 .positionrelative {
+        width: 100%;
+    }
+    #crypto-css4666 .nav-tabs .nav-link,
+    #crypto-css4666 .nav-tabs .nav-link.active{
+        font-size:13px !important;
+    }
+
+    .earnStakingTabs .nav-tabs {
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding-bottom: 5px;
+    }
+        .earnStakingTabs .nav-tabs .nav-link {
+            text-wrap: nowrap;
+        }
+    .sell-btn-22.trans-w100{
+        width:100% !important;
+    }
+        .sell-btn-22.trans-w100 .form-control2 {
+            width:100% !important;
+            min-width: 100% !important;
+        }
+}
+    /* X-Small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+
+    .wallet__assets--item-top-amount .sotAmt {
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 100px;
+        text-overflow: ellipsis;
+    }
+    .stcom76 {
+        font-size: 11px;
+    }
+        .css-subbtn44 {
+            padding: 7px 7px;
+            font-size: 12px;
+            margin-left: 0px;
+        }
+        .wallet__assets--item-top-amount {
+            min-width: auto;
+        }
+
+        .css88-wall-dflex {
+            width: 100%;
+            padding-right: 0;
+        }
+
+        .css77-baldiv,
+        .css77-value24per,
+        .css77-valuecheck,
+        .css77ethno {
+            width: 100%;
+        }
+
+        .tabs-content-bg {
+            padding: 7px !important;
+        }
+        .sell-btn-22 {
+            width: 48%;
+        }
+        #cryptodeposit44 .css33-rightpan .sell-btn-22 {
+            width: 100%;
+        }
+        .market-search {
+            max-width: 100%;
+            width:100%;
+        }
+        .positionrelative.w-75{
+            width:100% !important;
+        }
+    .walletProtfolio .css11-wallect-range {
+        flex-wrap:wrap;
+    }
+    .walletProtfolio .css33-leftpan {
+        flex-wrap: nowrap;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .walletProtfolio .css33-rightpan {
+        width: 100%;
+    }
+    }
+
+    @media (max-width: 430.98px) {
+        .css88-wall-dflex {
+            width: 100%;
+            padding-right: 0;
+        }
+        .css88-wall-dflex {
+            width: 100%;
+            padding-right: 0;
+        }
+        .walletProtfolio .css33-leftpan {
+            flex-wrap: wrap;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        /* span.sotAmt {
+        white-space: nowrap;
+        width: 60px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: 1px solid #000000;
+    }*/
+    }
+
+#stausKyc{
+   position:relative;
+}
+.statusBubbol {
+    display: none;
+    
+}
+#stausKyc .statusBubbol {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top:20px;
+    transform: translateX(-50%);
+    
+}
+    #stausKyc .statusBubbol .statusHand {
+        position: absolute;
+        top: -10px;
+        font-size: 20px;
+        animation: top-in-down-out 2s ease-out infinite;
+        display:none;
+    }
+
+
+@keyframes top-in-down-out {
+    0% {
+        top: -10px;
+       
+    }
+
+    50% {
+        top: 0px;
+       
+    }
+
+    100% {
+        top: -10px;
+        
+    }
+}
+
+.cryptodeposit44{
+    overflow-x:hidden;
+}
+.fiatdeposit44 {
+    overflow-x: hidden;
+}
+.wallDeposit{
+    position:relative;
+}
+.indicate::before {
+    content: '\f25a';
+    font-family: FontAwesome;
+    position: absolute;
+    font-size: 16px;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%, -15px) rotate(180deg);
+    animation: donw-in-top-out 2s ease-out infinite;
+    transition:all 0.3s;
+}
+.indicate:hover::before{
+    opacity:0;    
+}
+.unactive a{
+    color: var(--bs-white) !important
+}
+@keyframes donw-in-top-out {
+    0% {
+        top: 5px;
+    }
+
+    50% {
+        top: -15px;
+    }
+
+    100% {
+        top: 5px;
+    }
+}

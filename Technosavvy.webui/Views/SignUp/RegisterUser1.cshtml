@@ -1,0 +1,156 @@
+﻿@using TechnoApp.Ext.Web.UI.Static;
+@model vmRegisterUser
+@{
+    ViewData["Title"] = "Register on TechnoApp | Create Your Account Now";  
+}
+@{
+    
+    if (ConfigEx.VersionType == versionType.PreBeta)
+        Layout = "_LayoutPre";
+
+    var stage1 = Model.OTPSendStatus == false && Model.OTPVerifyStatus == false && Model.RegistrationStatus == false;
+    var stage2 = Model.OTPSendStatus && Model.OTPVerifyStatus == false;
+    var stage3 = Model.OTPVerifyStatus && Model.RegistrationStatus == false;
+
+}
+
+@section Header {
+    <meta name="description" content="Join TechnoApp today by completing the secure registration process. Unlock a world of possibilities in a few simple steps." />
+}
+<section class="section-login bg2">
+    <div class="container">
+        <div class="login-box" id="login-tab">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="login-img"> <img src="~/images/login-img.png"> </div>
+                </div>
+                <div class="col-md-6 col-xs-12 pt-3">
+                    <div class="sign_up">
+                        @if (Model.ForgetPasswordStatus)
+                        {
+                            <h1 class="heading "> Forgot Password</h1>
+                        }
+                        else
+                        {
+                            <h1 class="heading "> Register</h1>
+                            <h5 class="pb-5">
+                                By creating an account you agree to our <a asp-controller="Policy" asp-action="terms-of-use">
+                                    Terms of Use
+                                </a> and <a asp-controller="Policy" asp-action="Privacy-Policy">Privacy Policy</a>
+                            </h5>
+                        }
+                        @if (stage1)
+                        {
+                            <form novalidate class="was-validated" method="POST" autocomplete="off" asp-action="CheckAndRegisterUser" asp-controller="Signup" id="addUser" enctype="multipart/form-data">
+                                @Html.AntiForgeryToken()
+                                <div asp-validation-summary="ModelOnly" class="text-left text-danger"></div>
+                                <div class="form-group" id="emailDiv" style="position:relative">
+                                    <input type="email" id="txtemail" asp-for="vmRegUserName.Email" class="form-control" placeholder="Enter email" required>
+                                    <div class="invalid-feedback text-danger">
+                                        <span asp-validation-for="vmRegUserName.Email"></span>
+                                    </div>
+                                    
+                                </div>
+                                <button class="btn gent-btn  " id="frmBtn1" type="submit">Next </button>
+                                <div class="entity44-div"><span> Already Registered?  <a asp-controller="login" asp-action="login"> Login </a></span></div>
+                            </form>
+
+
+
+                        }
+                        @if (stage2)
+                        {
+                            <form novalidate class="was-validated" asp-action="ConfirmEmailOTP" autocomplete="off" asp-controller="Signup" id="addUser2" enctype="multipart/form-data" method="post">
+                                <div id="otpDiv" class="form-group " style="position:relative">
+                                    <input type="hidden" asp-for="vmRegUserName.Email" />
+                                    @Html.HiddenFor(m=>m._UserId)
+                                    @Html.HiddenFor(m=>m.OTPSendStatus)
+                                    @Html.HiddenFor(m=>m.ForgetPasswordStatus)
+                                    <input type="hidden" asp-for="OTPVerifyStatus" />
+                                    <input type="hidden" asp-for="RegistrationStatus" />
+                                    <input type="text" asp-for="EmailOTP.OTP" class="form-control" placeholder="Enter OTP" required>
+                                   @* @if (Model.ForgetPasswordStatus)
+                                    {
+                                        <a class="resend112" id="btnResend" asp-action="ResendUserOTP" asp-controller="SignUp" asp-route-Email="@Model.vmRegUserName.Email"> Resend OTP</a>
+                                    } 
+                                    //Started again
+                                    if(Model.ErrorMessage.IsNullOrEmpty())
+                                    {
+                                        <a class="resend112" id="btnResend" asp-action="ResendUserOTP" asp-controller="SignUp" asp-route-Email="@Model.vmRegUserName.Email"> Resend OTP</a>
+
+                                        <a href="javascript:void(0)" class="resend112 optCountSecond">Resend OTP in <span id="countdowntimer">0</span> Seconds</a>
+
+                                    }
+                                    else
+                                    {
+                                        <a class="resend112" id="btnResend2" asp-action="ResendUserOTP" asp-controller="SignUp" asp-route-Email="@Model.vmRegUserName.Email"> Resend OTP</a>
+                                        <div class=" text-danger">
+                                            @Model.ErrorMessage
+                                        </div>
+
+                                }*@
+                                    <div class=" text-left text-danger">
+                                            @Model.ErrorMessage
+                                        </div>
+                                    <div class="invalid-feedback text-danger">
+                                        <span asp-validation-for="EmailOTP.OTP"></span>
+                                    </div>
+
+                                </div>
+                                <button class="btn gent-btn  " id="frmBtn" onclick="return CheckFormValid('addUser2')" type="submit">Next </button>
+                            </form>
+
+                        }
+                        @if (stage3)
+                        {
+                            <form novalidate class="was-validated" autocomplete="off"  asp-action="SetNewUserPassword" asp-controller="Signup" id="addUser3" enctype="multipart/form-data" method="post">
+                                <div id="passwordDiv">
+                                    <div class="form-group" style="position:relative">
+                                        @Html.HiddenFor(m=>m._UserId)
+                                        @Html.HiddenFor(m=>m.OTPSendStatus)
+                                        @Html.HiddenFor(m=>m.ForgetPasswordStatus)
+                                        <input type="hidden" asp-for="OTPVerifyStatus" />
+                                        <input type="hidden" asp-for="RegistrationStatus" />
+                                        <input type="hidden" asp-for="vmRegUserName.Email" />
+                                        <input type="password" asp-for="vmPassword.Password" class="form-control changePwd" placeholder="New Password" required>
+                                        <span class="eye112 convertPwd"><i class="fa fa-eye" id="togglePassword1" aria-hidden="true"></i></span>
+                                        <div class="invalidEroor">
+                                            <span asp-validation-for="vmPassword.Password"></span>
+                                        </div>
+                                        @*<span class="eye112"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>*@
+                                    </div>
+
+                                    <div class="form-group" style="position:relative">
+                                        <input type="password" asp-for="vmPassword.ConfirmPassword" class="form-control changePwd" placeholder="Confirm Password" required>
+                                        <span class="eye112  convertPwd"><i class="fa fa-eye" id="togglePassword" aria-hidden="true"></i></span>
+                                        <div class="invalidEroor">
+                                            <span asp-validation-for="vmPassword.ConfirmPassword"> </span>
+
+                                        </div>
+                                        @*<span class="eye112"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>*@
+                                    </div>
+                                </div>
+                                <button class="btn gent-btn  " id="frmBtn" onclick="return CheckFormValid('addUser3')" type="submit">Next </button>
+                            </form>
+
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+@section Scripts{
+    @if (ConfigEx.ShouldMini)
+    {   
+        <script src="~/minjs/CustomScript.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/CustomScript.js"></script>
+    }
+   
+}

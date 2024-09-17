@@ -1,0 +1,43 @@
+﻿@model vmCurrencyOptions
+@{
+    int length = Model.CurrencyNames.Count;
+    string r = "~/images/usd/";
+    string ext = ".svg";
+}
+
+<ul class="dropdown-menu megamenu drop55" aria-labelledby="navbarDropdown">
+    <div id="sub-menu23 " class=" sub-menu23">
+        <div class="col-md-3 col-sm-3 col-12">
+
+            @for (int i = 0; i < length; i++)
+            {
+        <li>
+                    @if (Model.SelectedCurrency == Model.CurrencyNames[i])
+                    {
+                <a class="dropdown-item CurrInput " id=@string.Concat($"flexSwitch{Model.CurrencyNames[i]}") onclick=@string.Concat($"UpdateCurrency('flexSwitch{Model.CurrencyNames[i]}')")>
+                    <div class="css222-usd ">
+                        <div class="form-check form-switch">
+                            <div class="css222-usd-img"><img src=@string.Concat($"/images/usd/{Model.CurrencyNames[i]}{ext}")></div>
+                            <label id=@string.Concat($"flexSwitch{Model.CurrencyNames[i]}txt") class="form-check-label">@Model.CurrencyNames[i]</label>
+                        </div>
+                    </div>
+                </a>
+                    }
+                    else
+                    {
+                <a class="dropdown-item CurrInput " id=@string.Concat($"flexSwitch{Model.CurrencyNames[i]}") onclick=@string.Concat($"UpdateCurrency('flexSwitch{Model.CurrencyNames[i]}')")>
+                    <div class="css222-usd">
+                        <div class="form-check form-switch">
+                            <div class="css222-usd-img"><img src=@string.Concat($"/images/usd/{Model.CurrencyNames[i]}{ext}")></div>
+                            <label id=@string.Concat($"flexSwitch{Model.CurrencyNames[i]}txt") class="form-check-label">@Model.CurrencyNames[i]</label>
+                        </div>
+                    </div>
+                </a>
+
+                    }
+        </li>
+            }
+
+    </div>
+    </div>
+</ul>

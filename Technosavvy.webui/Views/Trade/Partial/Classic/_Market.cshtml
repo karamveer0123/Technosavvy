@@ -1,0 +1,170 @@
+﻿@model vmMarketTrade
+
+
+<div id="Market" class="tab-pane fade">
+
+    <div class="row clear">
+        <div class="col-md-6 col-xs-12 col-sm-6 col-px-p0">
+            <div class="green-bg buy-form-css">
+                <div class="">
+                    <div class="buy-css-44 mb-2"> 
+                        <span> Buy <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="market-order" target="_blank"> <i class="fa fa fa-info-circle" aria-hidden="true"></i> </a> </span>
+                        <span class="small pt-0 dqa">
+                            Available 0.000000 USDT
+                            <span class="d-inline-block css22protext" tabindex="0" data-bs-toggle="popover"
+                                  data-bs-trigger="hover focus" data-bs-content="Add Funds" data-bs-original-title=""
+                                  title="">
+                                <span class="css44add-buy">
+                                    <a href="#">
+                                        <i class="fa fa-plus-circle"
+                                           aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </span>
+                    </div>
+                </div>
+                <div class="buy-form-css-box reletive_1">
+                    <form id="mbf">
+                        @*Market Buy Order*@
+                        @Html.AntiForgeryToken()
+                        <div class="input-css inputdflexgreen mb-3">
+                            <input type="text" id="mbPrice"  autocomplete="off"
+                                   class="form-control-green w85per dqf" placeholder="Price (Leave blank for Market Order)">
+                            <span class=" buy-text-input" type="button"> USDT </span>
+                        </div>
+                        <div class="input-css mb-3 inputdflexgreen ">
+                            <input type="text" id="mbAmount" autocomplete="off"
+                                   class="form-control-green search-box w44per dbf"
+                                   required placeholder="Amount" aria-label="Amount" aria-describedby="button-addon2">
+                            <button class="close-icon" type="reset"></button>
+                            <div class=" css-flexinput assdiv35" type="button">
+
+                                <div class="css44input-rece">
+                                    <span class="inputtext55">Asset Amt. </span>
+                                    <span id="mbassamt"> 0.0000 BTC </span>
+                                </div>
+
+                            </div>
+                            <span id="mbAmountV" class="error-msg d-none">Invalid Amount!</span>
+                        </div>
+
+                        <div class="input-css mb-3 inputdflexgreen ">
+                            <input type="text" id="mbTotal" autocomplete="off"
+                                   class="form-control-green search-box form-control-left88 w44per dqf" required
+                                   placeholder="Total" aria-label="Total" aria-describedby="button-addon2">
+                            <div class=" css-flexinput88" type="button">
+                                <div class="css44input-rece">
+                                    <span class="inputtext55">Swap Trade Value </span>
+                                    <span id="mbSTV"> 0.0000 USDT </span>
+                                </div>
+
+
+                                <div class="css44input-rece">
+                                    <span class="inputtext55">
+                                        TechnoSavvy <span class="d-inline-block css22protext"
+                                                   tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                                   data-bs-content="To avail this Cashback, become a Community Member."
+                                                   data-bs-original-title="" title="">
+                                            <i class="fa fa-info-circle css-1circle" aria-hidden="true"></i>
+                                        </span>
+                                    </span>
+                                    <span id="mbTechnoSavvyV"> 0.00 USDT </span>
+                                </div>
+
+
+                            </div>
+                            <button class="close-icon" type="reset"></button>
+                            <span id="mbTotalV" class="error-msg d-none">Invalid Amount!</span>
+                        </div>
+                        <div class="input-btn-css">
+                            <a href="javascript:void(0)()" type="button"
+                               id="btnBuyMarket" class="buy-sub-btn-55 green-btn">
+                                Submit
+                            </a> <a href="javascript:void(0)" type="reset"
+                                    id="btnBuyMarketReset" class="buy-sub-btn-55 green-btn"> Reset </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12 col-sm-6 col-px-p0">
+            <div class="red-bg buy-form-css reletive_1">
+                <div class="buy-css-44 mb-2"> 
+                    <span> Sell <a asp-controller="academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="market-order" target="_blank"> <i class="fa fa fa-info-circle" aria-hidden="true"></i> </a></span>
+                    <span class="small pt-0 dba">
+                        Available 0.000000 BTC
+                        <span class="d-inline-block css22protext" tabindex="0" data-bs-toggle="popover"
+                              data-bs-trigger="hover focus" data-bs-content="Add Funds" data-bs-original-title=""
+                              title="">
+                            <span class="css44add-buy">
+                                <a href="#">
+                                    <i class="fa fa-plus-circle"
+                                       aria-hidden="true"></i>
+                                </a>
+                            </span>
+                        </span>
+                </div>
+                <div class="buy-form-css-box">
+                    <form id="msf">
+                        @*Market Sell Order*@
+                        <div class="input-css inputdflexred mb-3">
+                            <input type="text" id="msPrice" autocomplete="off" class="form-control-red w85per dqf"
+                                   onfocus="SetSellCurrPrice()" placeholder="Price (Leave blank for Market Order)"
+                                   aria-label="Sell Price" aria-describedby="button-addon2">
+                            <span class=" buy-text-input" type="button">USDT </span>
+                        </div>
+                        <div class="input-css mb-3 inputdflexred ">
+                            <input type="text" id="msAmount" autocomplete="off" onfocus="SetSellCurrPrice()"
+                                   onkeyup="CallTotalSell()" onblur="CallTotalSell()"
+                                   class="form-control-red search-box w44per" placeholder="Amount" aria-label="Sell Amount"
+                                   aria-describedby="button-addon2" required="">
+                            <button class="close-icon" type="reset"></button>
+                            <div class="css-flexinput assdiv35" >
+
+                                <div class="css44input-rece">
+                                    <span class="inputtext55">Asset Amt. </span>
+                                    <span id="msassamt"> 0.0000 BTC </span>
+                                </div>
+
+                            </div>
+                            <span id="msAmountV" class="error-msg d-none">Invalid Amount!</span>
+                        </div>
+                        <div class="input-css mb-3 inputdflexred ">
+                            <input type="text" id="msTotal" autocomplete="off"
+                                   class="form-control-red search-box form-control-left88 w44per" placeholder="Total"
+                                   aria-label="Total" aria-describedby="button-addon2" required="">
+                            <button class="close-icon" type="reset"></button>
+                            <div class=" css-flexinput88" type="button">
+                                <div class="css44input-rece">
+                                    <span class="inputtext55">Swap Trade Value </span>
+                                    <span id="msSTV"> 0.0000 USDT </span>
+                                </div>
+
+
+                                <div class="css44input-rece">
+                                    <span class="inputtext55">
+                                        TechnoSavvy <span class="d-inline-block css22protext"
+                                                   tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                                   data-bs-content="To avail this Cashback, become a Community Member."
+                                                   data-bs-original-title="" title="">
+                                            <i class="fa fa-info-circle css-1circle" aria-hidden="true"></i>
+                                        </span>
+                                    </span>
+                                    <span id="msTechnoSavvyV"> 0.00 USDT </span>
+                                </div>
+
+
+                            </div>
+                            <span id="msTotalV" class="error-msg d-none">Invalid Amount!</span>
+                        </div>
+                        <div class="input-btn-css">
+                            <a href="javascript:void(0)"
+                               type="button" id="btnSellMarket" class="buy-sub-btn-55 red-btn"> Submit </a> <a href="javascript:void(0)" type="button"
+                                                                                                               id="btnSellMarketReset" class="buy-sub-btn-55 red-btn"> Reset </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

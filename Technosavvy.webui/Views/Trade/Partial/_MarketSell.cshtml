@@ -1,0 +1,33 @@
+﻿@model vmTradeOrder
+
+@{
+}
+<div class="red-bg buy-form-css reletive_1">
+    <div class="buy-css-44"> <span> Sell</span> <span>@Model.BaseName</span></div>
+    <div class="buy-css-44"> <span> </span> <span class="small">Available</span><span id="msba" class="small"> @string.Format(@Model.BaseFormat,@Model.AvailableBase)</span><span class="small"> @Model.BaseName <span class="css44add-buy"> <a href="#"> <i class="fa fa-plus-circle" aria-hidden="true"></i> </a></span> </span></div>
+    <div class="buy-form-css-box">
+        <form id="frmMarketSell">
+            @Html.AntiForgeryToken()
+            <div class="input-css mb-3">
+                <input type="number" id="msPrice" autocomplete="off" class="form-control-red search-box" placeholder="Price (Leave blank for Market Order)" aria-label="Sell Price" aria-describedby="button-addon2" required>
+                <span class=" buy-text-input" type="button">@Model.QuoteName</span>
+            </div>
+            <div class="d-none " id="msPriceV">price</div>
+
+            <div class="input-css mb-3">
+                <input type="text" id="msAmount" autocomplete="off" class="form-control-red search-box" placeholder="Amount" aria-label="Sell Amount" aria-describedby="button-addon2" required>
+                <span class=" buy-text-input" type="button">@Model.BaseName </span>
+            </div>
+            <div class="d-none " id="msAmountV">amt</div>
+
+
+            <div class="input-css mb-3">
+                <input type="text" id="msTotal" autocomplete="off" class="form-control-red search-box" placeholder="Total" aria-label="Total" aria-describedby="button-addon2" required>
+                <span class=" buy-text-input" type="button">@Model.BaseName</span>
+            </div>
+            <div class="d-none" id="msTotalV">total</div>
+
+            <div class="input-btn-css"> <a  type="button" id="btnSellMarket" class="buy-sub-btn-55 red-btn"> Submit </a> <a  type="button" id="btnSellMarketReset" class="buy-sub-btn-55 red-btn"> Reset </a> </div>
+        </form>
+    </div>
+</div>

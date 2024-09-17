@@ -1,0 +1,989 @@
+
+<!-------------Outer-section---------------------->
+
+
+<!-----------------top section start ----------->
+
+<!----------------------menu section---------------------------->
+<section id="myHeader" class="menu-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="top-meu-box">
+        <div class="top-menu-left">
+
+          <div class="logo-top "> <a class="navbar-brand" asp-controller="home" asp-action="index"><img src="~/images/b-logo.png"></a></div>
+
+          <div class="menu-top">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <div class="menu">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse menu-collapse" id="navbarSupportedContent">
+
+
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://TechnoApp.com/" > Demo</a>
+                    </li>
+
+
+                    <li class="nav-item wallet-top  dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">      Buy           </a>
+                      <ul class="dropdown-menu dropdown-menu-css44 top-navbar css-inline" data-popper-placement="bottom-start">
+                        <li><a class="dropdown-item   dropdown-item-css44" href="https://buy.TechnoSavvytoken.com/" ><i class="fa fa-credit-card" aria-hidden="true"></i> Buy TechnoSavvy</a></li>
+                        <li><a class="dropdown-item" asp-controller="login" asp-action="login" ><i class="fa fa-credit-card" aria-hidden="true"></i> Buy Crypto</a></li>
+                        <li><a class="dropdown-item" asp-controller="login" asp-action="login"> <i class="fa fa-search" aria-hidden="true"></i> Deposit Crypto</a></li>
+                        <li><a class="dropdown-item" asp-controller="login" asp-action="login"> <i class="fa fa-user" aria-hidden="true"></i> P2P Trade</a></li>
+                        <li><a class="dropdown-item" asp-controller="login" asp-action="login"> <i class="fa fa-money" aria-hidden="true"></i> Withdraw</a></li>     
+                      </ul>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#commingsoon">Academy</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link " asp-controller="market" asp-action="index">Market</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " asp-controller="login" asp-action="login">Trade</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " asp-controller="login" asp-action="login"> P2P</a>
+                    </li>
+
+                    <li class="nav-item dropdown ">
+                      <a class="nav-link  sub-menu22 dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-indent" aria-hidden="true"></i>
+                      </a>
+                      <ul class="dropdown-menu megamenu drop55" aria-labelledby="navbarDropdown">
+                        <div id="sub-menu23" class=" sub-menu23">
+                          <div class="col-md-4 col-12">
+                            <li><a class="dropdown-item" href="#"><span><img src="~/images/bank.png">
+                                </span><span>Institutional Access<p>TechnoApp offers unrivalled digital asset
+                                    tailored<br> solutions for our Institutional clients </p></span></a></li>
+                            <li><a class="dropdown-item" href="#"><span><img src="~/images/api.png"></span> <span>
+                                  TechnoApp APIs <p>Create, Connect, and Trade on the Go.<br> APIs to power your advanced
+                                    trading.</p></span></a></li>
+
+                          </div>
+
+                          <div class="col-md-4 col-12">
+                            <li><a class="dropdown-item" href="#">
+                                <spna><img src="~/images/trade2.png"></spna><span> Strategic Trading <p> Create
+                                    High-Profit Trading Strategies and <br>Trade Like a Pro. </p></span>
+                              </a></li>
+                            <li><a class="dropdown-item" href="#"> <img src="~/images/funds.png"> Strategic Funds</a>
+                            </li>
+                          </div>
+                          <div class="col-md-4 col-12">
+                            <li><a class="dropdown-item" href="#"><span><img src="~/images/lab.png"></span><span> Labs
+                                  <p>TechnoApp Labs Empowering the Web 3.0 </p></span></a></li>
+                          </div>
+                        </div>
+                      </ul>
+                    </li>
+                  </ul>
+
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <div class="top-menu-right">
+          <form>
+            <div id="top-navbar" class="top-navbar">
+              <div class="top-navbar">
+                <span class="login-top"><a asp-controller="login" asp-action="login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login
+                  </a></span>
+                <span class="login-top"><a href="sign-up.html"><i class="fa fa-file-text-o" aria-hidden="true"></i>
+                    Signup </a></span>
+
+                <span>
+                  <div class="dropdown">
+                    <button class=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      ENG
+                    </button>
+                    <ul class="dropdown-menu megamenu drop55" aria-labelledby="navbarDropdown">
+                      <div id="sub-menu23 " class=" sub-menu23">
+                        <div class="col-md-4 col-sm-4 col-12">
+                          <li><a class="dropdown-item" href="#">
+
+                              <div class="css222-usd active">
+                                <div class="form-check form-switch">
+                                  <label class="form-check-label" for="flexSwitchCheckind">English (India)</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckind" />
+                                </div>
+                              </div>
+
+                            </a></li>
+
+                          <li><a class="dropdown-item" href="#">
+
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <label class="form-check-label" for="flexSwitchCheckbahasa">Bahasa Indonesia</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckbahasa" />
+                                </div>
+                              </div>
+
+                            </a></li>
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <label class="form-check-label" for="flexSwitchCheckespanol">Español
+                                    (International)</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckespanol" />
+                                </div>
+                              </div>
+                            </a></li>
+
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-12">
+                          <li><a class="dropdown-item" href="#">
+
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <label class="form-check-label" for="flexSwitchCheckenglish2">English
+                                    (India)</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckenglish2" />
+                                </div>
+                              </div>
+
+                            </a></li>
+
+                          <li><a class="dropdown-item" href="#">
+
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <label class="form-check-label" for="flexSwitchCheckindonesia">Bahasa
+                                    Indonesia</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckindonesia" />
+                                </div>
+                              </div>
+
+                            </a></li>
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <label class="form-check-label" for="flexSwitchCheckesp2">Español
+                                    (International)</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckesp2" />
+                                </div>
+                              </div>
+                            </a></li>
+
+                        </div>
+
+
+                        <div class="col-md-4 col-sm-4 col-12">
+                          <li><a class="dropdown-item" href="#">
+
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <label class="form-check-label" for="flexSwitchCheckeng3">English (India)</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckeng3" />
+                                </div>
+                              </div>
+
+                            </a></li>
+
+                          <li><a class="dropdown-item" href="#">
+
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <label class="form-check-label" for="flexSwitchCheckindo22">Bahasa Indonesia</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckindo22" />
+                                </div>
+                              </div>
+
+                            </a></li>
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <label class="form-check-label" for="flexSwitchCheckesp44">Español
+                                    (International)</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckesp44" />
+                                </div>
+                              </div>
+                            </a></li>
+
+                        </div>
+                      </div>
+                    </ul>
+
+                  </div>
+                </span>
+
+                <span>
+                  <div class="dropdown">
+                    <button class=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      USD
+                    </button>
+                    <ul class="dropdown-menu megamenu drop55" aria-labelledby="navbarDropdown">
+                      <div id="sub-menu23 " class=" sub-menu23">
+
+
+
+
+                        <div class="col-md-3 col-sm-3 col-12">
+                          <li><a class="dropdown-item" href="#">
+
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/CHF.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckchf">CHF - FR</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckchf" />
+                                </div>
+                              </div>
+
+                            </a></li>
+
+                          <li><a class="dropdown-item" href="#">
+
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/BRL.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckbrl">BRL - R$</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckbrl" />
+                                </div>
+                              </div>
+
+                            </a></li>
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd active">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/USD.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckusd">USD - $</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckusd" />
+                                </div>
+                              </div>
+                            </a></li>
+
+
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/AUD.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckaud">AUD - $</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckaud" />
+                                </div>
+                              </div>
+                            </a></li>
+
+
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/CAD.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckcad">CAD - $</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckcad" />
+                                </div>
+                              </div>
+                            </a></li>
+
+                        </div>
+
+
+
+                        <div class="col-md-3 col-sm-3 col-12">
+                          <li><a class="dropdown-item" href="#">
+
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/CLP.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckclp">CLP - $</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckclp" />
+                                </div>
+                              </div>
+
+                            </a></li>
+
+                          <li><a class="dropdown-item" href="#">
+
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/CNY.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckcny">CNY - ¥</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckcny" />
+                                </div>
+                              </div>
+
+                            </a></li>
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/CZK.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckczk">CZK - KČ</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckczk" />
+                                </div>
+                              </div>
+                            </a></li>
+
+
+                          <li><a class="dropdown-item" href="#">
+
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/DKK.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckdkk">DKK - KR</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckdkk" />
+                                </div>
+                              </div>
+
+                            </a></li>
+
+                          <li><a class="dropdown-item" href="#">
+
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/EUR.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckeur">EUR - €</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckeur" />
+                                </div>
+                              </div>
+
+                            </a></li>
+
+                        </div>
+
+
+                        <div class="col-md-3 col-sm-3 col-12">
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/GBP.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckgbp">GBP - £</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckgbp" />
+                                </div>
+                              </div>
+
+                            </a></li>
+
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/MYR.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckmyr">MYR - RM</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckmyr" />
+                                </div>
+                              </div>
+
+
+                            </a></li>
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/HKD.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckhkd">HKD - $</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckhkd" />
+                                </div>
+                              </div>
+                            </a></li>
+
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/HUF.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckhuf">HUF - FT</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckhuf" />
+                                </div>
+                              </div>
+                            </a></li>
+
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/IDR.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckidr">IDR - RP</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckidr" />
+                                </div>
+                              </div>
+                            </a></li>
+
+                        </div>
+
+
+
+                        <div class="col-md-3 col-sm-3 col-12">
+                          <li><a class="dropdown-item" href="#">
+
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/ILS.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckils">ILS - ₪</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckils" />
+                                </div>
+                              </div>
+
+                            </a></li>
+
+                          <li><a class="dropdown-item" href="#">
+
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/INR.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckinr">INR - ₹</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckinr" />
+                                </div>
+                              </div>
+
+                            </a></li>
+
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/JPY.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckjpy">JPY - ¥</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckjpy" />
+                                </div>
+                              </div>
+                            </a></li>
+
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/KRW.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckkrw">KRW - ₩</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckkrw" />
+                                </div>
+                              </div>
+                            </a></li>
+
+                          <li><a class="dropdown-item" href="#">
+                              <div class="css222-usd">
+                                <div class="form-check form-switch">
+                                  <div class="css222-usd-img"><img src="~/images/usd/MXN.svg"></div>
+                                  <label class="form-check-label" for="flexSwitchCheckmxn">MXN - $</label>
+                                  <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckmxn" />
+                                </div>
+                              </div>
+                            </a></li>
+
+                        </div>
+                      </div>
+                    </ul>
+
+                  </div>
+                </span>
+
+                <span><a href="light-theme/Index.html"><i class="fa fa-sun-o" aria-hidden="true"></i></a></span>
+
+              </div>
+
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<!----------------------menu section---------------------------->
+
+<!---------------------------------------------------------------------->
+<!-- <div class="section-toppopup">
+  <div class="container">
+    <div id="topbar"> Details you enter here should match as per your Govenrment-Issued ID.
+    </div>
+</div> -->
+<!---------------------------------------------------------------------->
+<section class="section-wallet bg2"> 
+      <div class="container-fluid">
+        <div class="row flex-nowrap">
+          <div id="wallet-left33" class="col-md-2 col-md-2 col-lg-2  col-xxl-2 px-0 wallet-left-bg">
+                <div class="d-flex flex-column align-items-center align-items-sm-start   text-white">
+                
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="wallet.html" class="nav-link align-middle active">
+                              <i class="fa fa-search" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">Overview  </span>
+                            </a>
+                        </li>
+                  
+                        <li class="nav-item">
+                            <a href="spot-wallet.html" class="nav-link  align-middle">
+                              <i class="fa fa-credit-card" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline">Spot Wallet</span></a>
+                        </li class="nav-item">
+             
+       <li class="nav-item">   <a href="funding-wallet.html" class="nav-link  align-middle">
+        <i class="fa fa-money" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline">Funding Wallet</span> </a>
+                        </li>
+
+                        <li class="nav-item">   <a href="earn-wallet.html" class="nav-link  align-middle">
+                          <i class="fa fa-folder-open" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">Earn Wallet</span> </a>
+                  </li>
+
+                  <li class="nav-item">   <a href="transaction.html" class="nav-link align-middle">
+                    <i class="fa fa-table" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">Transaction History</span> </a>
+            </li>
+
+            <li class="nav-item">   <a href="account-statement.html" class="nav-link  align-middle">
+              <i class="fa fa-file-text-o" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">Account Statement</span> </a>
+      </li>
+                    </ul>
+           
+       
+                </div>
+            </div>
+            <!----------------------------------------------->
+
+            <div class="col-md-10 col-lg-10 col-xxl-10 py-3">
+               <div class="wallet-right33"> 
+<div class="wallet-sectdiv33">
+  <div class="wallet-userdiv33">
+    <div class="css22-walletleftpan ">
+<div class="userdiv33-wal"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> </div>
+<div class="iddiv33-wa"><span>User Name: Vivek Gupta</span>
+  <span>Account Id : 687564351 </span>
+  <span class="kyc22-text"> KYC Status:<span class="statusdiv33"> In Progress </span></span> 
+ </div></div>
+<div class="css33-rightpan">
+<div class="logindiv33-wa">Last Login Session :11.09.2022 | 2:00 PM </div>
+<div class="css3edit"><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a></div>
+  </div></div>
+</div>
+
+<div class="wallet-sectdiv33">
+<div id="wallet-tabdiv" class="wallet-tabdiv">
+  <div class="heading"> Wallet Overview</div>
+  <div class="css33wallettab"> 
+    <ul class="nav nav-tabs">
+      <li class="nav-item">    
+        <a class="nav-link "  href="buy-crypto.html">Buy Crypto</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#deposit44">Deposit</a>
+      </li> 
+
+
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#transfer44">Transfer </a>
+      </li> 
+
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#withdraw44"> Withdraw</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link"  href="transaction.html"> Transaction History </a>
+      </li> 
+    
+    </ul>
+
+  </div>
+</div>
+
+</div>
+<div id="wallet-tabdiv" class="wallet-sectdiv33">   <div class="wallet-tabdiv"><div class="css11-wallect-range">
+ <div class="css33-leftpan">
+  <div class="css88-wall-dflex">
+    <span class="css77-abal">Total Portfolio Value (ETH)  </span>
+    <span class="csss77-walinp">
+      <span id="id_password" class="css77-baldiv">0.000021 ETH<small> = $ 1.00002 </small> </span>
+      <span><a href="#"><i class="fa fa-eye" id="togglePassword" aria-hidden="true"></i> </a></span>
+    </span>
+  </div>
+
+  <div class="css88-wall-dflex">
+    <span class="css77-abal">Crypto Holding </span>
+    <span class="csss77-walinp">
+     <div class="css77-valuecheck css77-overleng"> <span class="css77ethno" ><span>0.00021 ETH</span> <small> = $ 1.00001 </small> </span>
+   <span class="css77-value24per"><span class="css44-down"><i class="fa fa-long-arrow-down" aria-hidden="true"></i> - 2.42%  </span><span></span><small>(24h)</small></span>
+  </div>  </span></div>
+
+    <div class="css88-wall-dflex">
+      <span class="css77-abal">Invested Value</span>
+      <span class="csss77-walinp">
+       <div class="css77-valuecheck"> <span class="css77ethno" ><span>0.00021 ETH</span> <small> = $ 1.00001 </small> </span>
+     </div>
+      </span></div>
+      <div class="css88-wall-dflex">
+        <span class="css77-abal">All time gain</span>
+        <span class="csss77-walinp">
+         <div class="css77-valuecheck css77-overleng"> <span class="css77ethno" ><span>$0.00012 </span> </span>
+       <span class="css77-value24per  css44-up"><i class="fa fa-long-arrow-up" aria-hidden="true"></i>  <small>+ 2.42% </small></span>
+      </div>  </span></div>
+    </div>
+
+    <div class="css33-rightpan">
+      <div class="css88-wall-dflex"> 
+        <div class=" form-select2 form444"> 
+        <select class="my-select" aria-label="Default select example">
+          <option >Select Coin</option>
+          <option data-img-src="~/images/1.png">BTC</option>
+          <option data-img-src="~/images/2.png">ETH</option>
+          <option data-img-src="~/images/nav-icon.png">TechnoSavvy</option>
+          <option data-img-src="~/images/3.png">USDT</option>
+                        </select>
+    
+      </div></div></div>
+  </div>
+
+
+
+</div></div></div>        
+
+<div class="wallet-sectdiv33">
+
+    
+    <div id="wallet-tabdiv" class="tab-content tab-wall77">
+        
+
+      <div class="tab-pane active" id="buy44"> 
+        <div class="row">
+          <div class="col-md-5 col-12">
+            <div class="css77asses-div">
+          <div class="heading">My Assets </div>
+          <div class="css77asses-table mt-3">
+            
+            <div id="comunity-css566-box" class="comunity-css566-box ">    
+              <div class="mb-2 ">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Hide Zero Balance
+                </label>
+              </div>
+            </div>
+              <div class="  css-heigh44">
+              <table class="table table-responsive">
+                <thead class="trasaction-table-title">
+                    <tr>
+                        <th class="css566-table-text">Assets</th>
+          
+                        <th class="css566-table-text text-right">Balance</th>
+                                  
+                 
+                    </tr>
+                </thead>
+                <tbody class="trasaction-table">
+                  <tr>
+          
+                    <td>   <div class="coin-name-css46"><span><img src="~/images/nav-icon.png"></span> TechnoSavvy </div></td>
+                   <td><div class="coin-24change-css46  "><div class="css5waltab44">
+                    <span> 12.400001  TechnoSavvy</span> <span> <small> ($ 24.88002)</small></span>
+                   </div> </div></td>
+                          
+                </tr>
+      
+          
+                    <tr>
+          
+                        <td>   <div class="coin-name-css46"><span><img src="~/images/1.png"></span> BTC </div></td>
+                       <td><div class="coin-24change-css46  "><div class="css5waltab44">
+                        <span> 12.44001 BTC</span> <span> <small> ($ 24.88002)</small></span>
+                       </div> </div></td>
+                              
+                    </tr>
+          
+                    <tr>
+          
+                      <td>   <div class="coin-name-css46"><span><img src="~/images/2.png"></span> ETH </div></td>
+                     <td><div class="coin-24change-css46  "><div class="css5waltab44">
+                      <span> 12.44001 ETH</span> <span> <small> ($ 24.88002)</small></span>
+                     </div> </div></td>
+                          
+                  </tr>
+          
+                  <tr>
+          
+                      <td>   <div class="coin-name-css46"> <span><img src="~/images/5.png"></span> USDT </div></td>
+                     <td><div class="coin-24change-css46  "><div class="css5waltab44">
+                      <span> 12.44001 USDT</span> <span> <small> ($ 24.88002)</small></span>
+                     </div> </div></td>
+                          
+                  </tr>
+         
+                  <tr>
+          
+                    <td>   <div class="coin-name-css46"><span><img src="~/images/1.png"></span> BTC </div></td>
+                   <td><div class="coin-24change-css46  "><div class="css5waltab44">
+                    <span> 12.44001 BTC</span> <span> <small> ($ 24.88002)</small></span>
+                   </div> </div></td>
+                          
+                </tr>
+      
+      
+           
+                </tbody>
+            </table>     </div>      
+          </div>
+          </div>
+            </div>
+          
+          </div>
+          <div class="col-md-7 col-12">
+            <div class="css77asses-div">
+              <div class="heading">My Cashback</div>
+          
+              <div class="css33-earnto mt-3 css77wallet-cash"> 
+                <span class="nav22cash"> 
+
+
+
+                  <div class="textcasb">Total Cashback Earned</div>
+                     <div class="css33-token csswallet77">
+                    <span><img src="~/images/nav-icon.png"> </span>
+                    <span class="css33-icon-name"> 500 TechnoSavvy <br> <small> $2345.2300 </small>
+                    </span>
+                  </div>                  
+                </span>  
+                <span class="nav22cash"><div class="css77-valuecheck css77-casgh mt-0"> <span class="css77ethno"><span>Price of TechnoSavvy</span> <small> $ 1.60001 </small> </span>
+                  <span class="css77-value24per"><span class=" css44-down"> <i class="fa fa-long-arrow-down" aria-hidden="true"></i><small>- 2.42% </small></span> <span> (24h)</span>
+                 </div> </span>
+                             
+                  <span class="nav22cash css77-klmd css77-casgh">
+                    <span class="css77-abal">All time gain</span>
+                   <div class="css77-abklcheck ">                    
+                  <span class="css77ethno"><span>+$0.00012 </span> </span>
+                 <span class="css77-value24per"><i class="fa fa-long-arrow-up css44-up" aria-hidden="true"></i>
+                   <small class=" css44-up">+ 2.42% </small>
+                </span>
+                </div>
+              
+              </span>
+                
+                  </div>
+                  <div class="css-ref-btn">
+                    <div class="css88asses-div">
+                      <div class="heading">My Referrals </div>
+                      <div class="css77asses-table mt-3">
+                        <div id="comunity-css566-box" class="comunity-css566-box">  
+                          <div class="btnref55"> <a href="" data-bs-toggle="modal" data-bs-target="#refferal-model" class="csss77-histbtn"> Expand</a></div>
+                          <div class=" css-Rheigh44">     
+                          <table class="table table-responsive">
+                            <thead class="trasaction-table-title">
+                                <tr>
+                                    <th  nowrap="nowrap"  class="css566-table-text">Period</th>                      
+                                    <th  nowrap="nowrap" class="css566-table-text text-right">Total Referrals</th>
+                                    <th  nowrap="nowrap" class="css566-table-text text-right">TechnoSavvy Earn</th>
+                                    <th  nowrap="nowrap" class="css566-table-text text-right">Value</th>
+                                    <th  nowrap="nowrap" class="css566-table-text text-right">Status</th>
+                                              
+                             
+                                </tr>
+                            </thead>
+                            <tbody class="trasaction-table">
+                              <tr>                      
+                              <td><div class=" ">12-01-2022-12-31-2022	 </div></td>
+                               <td> <div class="coin-24change-css46  ">55</div></td>
+                               <td><div class="coin-24change-css46  ">0.250000 TechnoSavvy</div></td>
+                               <td><div class="coin-24change-css46  ">$2.000002</div></td>
+                               <td><div class="coin-24change-css46  ">Transfered</div></td>
+                                     
+                            </tr>
+                  
+                        
+                          <tr>                      
+                            <td><div class=" ">12-01-2022-12-31-2022	 </div></td>
+                             <td> <div class="coin-24change-css46  ">55</div></td>
+                             <td><div class="coin-24change-css46  ">0.250000 TechnoSavvy</div></td>
+                             <td><div class="coin-24change-css46  ">$2.000002</div></td>
+                             <td><div class="coin-24change-css46  ">Pending</div></td>
+                                   
+                          </tr>
+                      
+                        
+                          <tr>                      
+                            <td><div class=" ">12-01-2022-12-31-2022	 </div></td>
+                             <td> <div class="coin-24change-css46  ">55</div></td>
+                             <td><div class="coin-24change-css46  ">0.250000 TechnoSavvy</div></td>
+                             <td><div class="coin-24change-css46  ">$2.000002</div></td>
+                             <td><div class="coin-24change-css46  ">Pending</div></td>
+                                   
+                          </tr>
+                      
+                            </tbody>
+                        </table>      </div>  
+                      </div>
+                      </div>
+                        </div>
+                  </div>
+          </div></div>
+          </div>
+
+
+      </div>
+    
+  
+</div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+          </div>   
+            </div>
+
+            <!----------------------------------------------->
+        </div>
+    </div>
+    
+
+
+</section>
+
+<!--------------------------------------------------------------------->
+
+<!--------------------------refferal table expand model------------------------------------------->
+<!-- Modal -->
+<div class="modal fade" id="refferal-model" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="detail-model" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <button class="cross-btn"  data-bs-dismiss="modal" aria-label="Close"> <img src="~/images/cross.png" class="cross44" > </button>
+        <div class="detail-model544">
+          <div id="comunity-css566-box" class="comunity-css566-box">  
+            
+            <table class="table table-responsive">
+              <thead class="trasaction-table-title">
+                  <tr>
+                      <th  nowrap="nowrap"  class="css566-table-text">Period</th>                      
+                      <th  nowrap="nowrap" class="css566-table-text text-right">Total Referrals</th>
+                      <th  nowrap="nowrap" class="css566-table-text text-right">TechnoSavvy Earn</th>
+                      <th  nowrap="nowrap" class="css566-table-text text-right">Value</th>
+                      <th  nowrap="nowrap" class="css566-table-text text-right">Status</th>
+                                
+               
+                  </tr>
+              </thead>
+              <tbody class="trasaction-table">
+                <tr>                      
+                <td><div class="  ">12-01-2022-12-31-2022	 </div></td>
+                 <td> <div class="coin-24change-css46  ">55</div></td>
+                 <td><div class="coin-24change-css46  ">0.250000 TechnoSavvy</div></td>
+                 <td><div class="coin-24change-css46  ">$2.000002</div></td>
+                 <td><div class="coin-24change-css46  ">Transfered</div></td>
+                       
+              </tr>
+    
+              <tr>                      
+                <td><div class="   ">12-01-2022-12-31-2022	 </div></td>
+                 <td> <div class="coin-24change-css46  ">55</div></td>
+                 <td><div class="coin-24change-css46  ">0.250000 TechnoSavvy</div></td>
+                 <td><div class="coin-24change-css46  ">$2.000002</div></td>
+                 <td><div class="coin-24change-css46  ">Transfered</div></td>
+                       
+              </tr>
+              
+              <tr>                      
+                <td><div class="   ">12-01-2022-12-31-2022	 </div></td>
+                 <td> <div class="coin-24change-css46  ">55</div></td>
+                 <td><div class="coin-24change-css46  ">0.250000 TechnoSavvy</div></td>
+                 <td><div class="coin-24change-css46  ">$2.000002</div></td>
+                 <td><div class="coin-24change-css46  ">Transfered</div></td>
+                       
+              </tr>
+              <tr>                      
+                <td><div class="   ">12-01-2022-12-31-2022	 </div></td>
+                 <td> <div class="coin-24change-css46  ">55</div></td>
+                 <td><div class="coin-24change-css46  ">0.250000 TechnoSavvy</div></td>
+                 <td><div class="coin-24change-css46  ">$2.000002</div></td>
+                 <td><div class="coin-24change-css46  ">Transfered</div></td>
+                       
+              </tr>
+              <tr>                      
+                <td><div class="  ">12-01-2022-12-31-2022	 </div></td>
+                 <td> <div class="coin-24change-css46  ">55</div></td>
+                 <td><div class="coin-24change-css46  ">0.250000 TechnoSavvy</div></td>
+                 <td><div class="coin-24change-css46  ">$2.000002</div></td>
+                 <td><div class="coin-24change-css46  ">Transfered</div></td>
+                       
+              </tr>
+            <tr>                      
+              <td><div class="  ">12-01-2022-12-31-2022	 </div></td>
+               <td> <div class="coin-24change-css46  ">55</div></td>
+               <td><div class="coin-24change-css46  ">0.250000 TechnoSavvy</div></td>
+               <td><div class="coin-24change-css46  ">$2.000002</div></td>
+               <td><div class="coin-24change-css46  ">Pending</div></td>
+                     
+            </tr>
+        
+          
+            <tr>                      
+              <td><div class="  ">12-01-2022-12-31-2022	 </div></td>
+               <td> <div class="coin-24change-css46  ">55</div></td>
+               <td><div class="coin-24change-css46  ">0.250000 TechnoSavvy</div></td>
+               <td><div class="coin-24change-css46  ">$2.000002</div></td>
+               <td><div class="coin-24change-css46  ">Pending</div></td>
+                     
+            </tr>
+        
+              </tbody>
+          </table>    
+        </div>
+         </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+<!--------------------------------------------------------------------->
+
+
+<!---------------------------------------------------------------------->
+
+
+<!---------------------------------------------------------->
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/header-fixed.js"></script>
+    <script src="js/eyeopenclose.js"></script>
+    <script src="js/select.js" type="text/javascript"></script>
+    <script src="js/images-select.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(".my-select").chosen({width:"100%"});
+    </script>
+
+   
+  

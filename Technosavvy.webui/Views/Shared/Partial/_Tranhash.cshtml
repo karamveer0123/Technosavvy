@@ -1,0 +1,66 @@
+﻿@model vmPBTechnoSavvyBuyForm
+@if (Model.isAwaiting == false)
+{
+    <form asp-action="ClaimTran" asp-controller="buyTechnoSavvy" autocomplete="off" class="was-validated" id="txForm" method="post" data-ajax="false" data-ajax-method="POST" data-ajax-update="#hashForm">
+        <div asp-validation-summary="All" class="text-danger"></div>
+       @* @if (Model.failCount > 0)
+        {
+            <small class="errMsg">You Account will be Blocked for 24 hours after 3 invalid transaction hash Request.</small>
+        }*@
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="NetworkId">
+        <input type="hidden" asp-for="ethNetWalletAddress">
+        <div class="mb-3 form-group clearfix">
+            <label class="lable-name22">Enter Transaction Hash </label>
+            <input type="text" class="form-control errInput" asp-for="TxHash"
+               placeholder="Transaction Hash">
+        </div>
+        <div class="mb-3">
+            @if (Model.isAwaiting)
+            {
+                <button disabled type="submit" class="btn gent-btn buttonProcess py-0" id="confirmYourDeposit">
+                    Confirm
+                    <div class="timer-progress">
+                        <svg class="timer">
+                            <circle class="progress-frame" cx="30" cy="30" r="15"></circle>
+                            <circle class="progress-time" cx="30" cy="30" r="15"></circle>
+                        </svg>
+                        <div class="time">
+                            <span class="seconds1">120</span><span>sec</span>
+                        </div>
+                    </div>
+                </button>
+                
+            }
+            else
+            {
+                <button type="submit" class="btn gent-btn buttonProcess py-0" id="confirmYourDeposit">
+                    Confirm
+                </button>
+            }
+
+        </div>
+    </form>
+}
+else
+{
+    <div class="mb-3 form-group clearfix">
+        <label class="lable-name22">Enter Transaction Hash </label>
+        <input type="text" disabled class="form-control errInput" asp-for="TxHash"
+           placeholder="Transaction Hash">
+    </div>
+    <div class="mb-3">
+        <button disabled type="submit" class="btn gent-btn buttonProcess py-0" id="confirmYourDeposit">
+            Confirm
+            <div class="timer-progress">
+                <svg class="timer">
+                    <circle class="progress-frame" cx="30" cy="30" r="15"></circle>
+                    <circle class="progress-time" cx="30" cy="30" r="15"></circle>
+                </svg>
+                <div class="time">
+                    <span class="seconds1">120</span><span>sec</span>
+                </div>
+            </div>
+        </button>
+    </div>
+}

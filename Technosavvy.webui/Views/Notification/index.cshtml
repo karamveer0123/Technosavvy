@@ -1,0 +1,560 @@
+﻿
+@{
+    ViewData["Title"] = "Secure Notifications Platform | TechnoApp";
+}
+
+@section Header {
+    <meta name="description" content="Experience reliable and secure notifications on TechnoApp  platform. Stay informed with real-time updates. Explore the next level of notification management." />
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/responsive-wattet.css">
+}
+<section class="section-MCenter bg2">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="wallet-tabdiv" class="wallet-tabdiv">
+                <div class="css33-leftpan">
+                    <div class="not-heading">Notifications </div>
+                </div>
+                <div class="csnot55">
+                    <span class="sell-btn-22 w-100">                 
+                            <form action=" " class="positionrelative">
+                                <input type="search" class="market-search" placeholder="Search.." name="search" autocomplete="off" data-tab="myMktTaball-566">
+                                <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            </form>                       
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!---------------------------------------------------------------------->
+<section class="section-wallet bg2">
+    <div class="container-fluid">
+        <div class="row flex-nowrap ">
+            <div id="notification-left" class="col-md-2 col-md-2 col-lg-2  col-xxl-2 px-0 wallet-left-bg messagecenter44">
+                <div class="d-flex flex-column align-items-center align-items-sm-start  sidebar min-vh-100 text-white">
+                    <div class="notification-tabdiv">
+                        <ul id="myNotificationTab" class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link  active" data-bs-toggle="tab" href="#allnoti"><i class="fa fa-bullhorn" aria-hidden="true"></i> Announcement</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#tradenoti"><i class="fa fa-exchange" aria-hidden="true"></i> Trade</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#depositnoti"> <i class="fa fa-briefcase" aria-hidden="true"></i> Deposit</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#walletnoti"><i class="fa fa-envelope" aria-hidden="true"></i> Withdraw </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cashbacknoti"><i class="fa fa-gift" aria-hidden="true"></i> Cashback </a>
+                            </li>
+
+                        </ul>
+                        <span class="wallerMobileMenu-btn">
+                            <input class="menu-btn" type="checkbox" id="menu-btn" />
+                            <label class="menu-icon" for="menu-btn">
+                                <i class="fa fa-th" aria-hidden="true"></i>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!----------------------------------------------->
+
+            <div class="col-md-10 col-lg-10 col-xxl-10 py-3">
+                <div id="walletdiv801" class="wallet-right33 wallet-maindiv4 ">
+
+                    <!------------------------------->
+                    <div class="wallet-sectdiv33">
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show" id="allnoti">
+                                <div id="wallet-tabdiv" class="wallet-tabdiv">
+                                    <div class="css33-leftpan">
+                                        <div class="not-heading"> Announcement  </div>
+                                    </div>
+
+                                    <div id="cssmark55" class="css33-rightpan">
+                                        <span class="sell-btn-22">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+                                                <label class="form-check-label" for="flexCheckChecked"> Hide Read Notifcations </label>
+                                            </div>
+                                        </span>
+                                        <span class="sell-btn-22">
+                                            <input type="button" class="csss77-histbtn" value="Mark all as Read">
+                                        </span>
+                                        <span class="sell-btn-22">
+                                            <input type="button" class="csss77-histbtn" value="Clear all ">
+                                        </span>
+
+
+
+                                    </div>
+                                </div>
+                                <div id="cssnotifi77" class="notification-box">
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                            <div class="css33-textbox">
+                                                <h2>Verify your identity and get cashback rewards! </h2>
+                                                <p>
+                                                    Complete Identity Verifcation and get TechnoSavvy worth of $4.00
+                                                </p>
+                                                <a asp-controller="notification" asp-action="announcement" class="css77notilink"> See More</a>
+
+                                            </div>
+                                        </div>
+                                        <div id="cssmark55">
+                                            <div class="css33-rightpan csslink-icon77">
+                                                <span> 24:60:60  </span>
+                                                <span> 2022/12/26  </span>
+                                                <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                            <div class="css33-textbox">
+                                                <h2>You've received a new task</h2>
+                                                <p>
+                                                    Check your task center and complete your tasks to get a reward!
+                                                </p>
+                                                <a asp-controller="notification" asp-action="announcement" class="css77notilink"> See More</a>
+
+                                            </div>
+                                        </div>
+                                        <div class="css33-rightpan csslink-icon77">
+
+                                            <span> 24:60:60  </span>
+                                            <span>   2022/12/26 </span>
+                                            <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+                                        </div>
+                                    </div>
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                            <div class="css33-textbox">
+                                                <h2>New device has been authorized</h2>
+                                                <p>
+                                                    You have successfully authorized a new device or in a new loaction to sign into your TechnoApp account Location:
+                                                </p>
+                                                <a asp-controller="notification" asp-action="announcement" class="css77notilink"> See More</a>
+                                            </div>
+                                        </div>
+                                        <div class="css33-rightpan csslink-icon77">
+                                            <span> 24:60:60  </span>
+                                            <span> 2022/12/26  </span>
+                                            <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---------------------------------------------->
+                            <div class="tab-pane fade" id="tradenoti">
+                                <div id="wallet-tabdiv" class="wallet-tabdiv">
+                                    <div class="css33-leftpan">
+                                        <div class="not-heading">Trade </div>
+                                    </div>
+                                    <div class="css33-rightpan">
+                                        <div id="cssmark55" class="css33-rightpan">
+                                            <span class="sell-btn-22">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+                                                    <label class="form-check-label" for="flexCheckChecked"> Hide Read Notifcations </label>
+                                                </div>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <input type="button" class="csss77-histbtn" value="Mark all as Read">
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <input type="button" class="csss77-histbtn" value="Clear all ">
+                                            </span>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="cssnotifi77" class="notification-box">
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                            <div class="css33-textbox">
+                                                <h2>Verify your identity and get cashback rewards! </h2>
+                                                <p>
+                                                    Complete Identity Verifcation and get TechnoSavvy worth of $4.00
+                                                </p>
+                                                <a href="#" class="css77notilink" data-bs-toggle="modal" data-bs-target="#exampleModal"> See More</a>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="css33-rightpan csslink-icon77">
+
+                                            <span> 24:60:60  </span>
+                                            <span> 2022/12/26  </span>
+                                            <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i></div>
+                                            <div class="css33-textbox">
+                                                <h2>You've received a new task</h2>
+                                                <p>
+                                                    Check your task center and complete your tasks to get a reward!
+                                                </p>
+                                                <a href="#" class="css77notilink" data-bs-toggle="modal" data-bs-target="#exampleModal"> See More</a>
+
+                                            </div>
+                                        </div>
+                                        <div class="css33-rightpan csslink-icon77">
+
+                                            <span> 24:60:60  </span>
+                                            <span> 2022/12/26  </span>
+                                            <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+
+                                        </div>
+                                    </div>
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                            <div class="css33-textbox">
+                                                <h2>New device has been authorized</h2>
+                                                <p>
+                                                    You have successfully authorized a new device or in a new loaction to sign into your TechnoApp account Location: New Delhi India IP Address: 14.11.237.206 Devvives:
+                                                    Edge V107.25641454 (Windows) If this activity is not your own operation, please disable your account and contact us immediately.
+                                                </p>
+                                                <a href="#" class="css77notilink" data-bs-toggle="modal" data-bs-target="#exampleModal"> See More</a>
+
+                                            </div>
+                                        </div>
+                                        <div class="css33-rightpan csslink-icon77">
+
+                                            <span> 24:60:60  </span>
+                                            <span> 2022/12/26  </span>
+                                            <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <!---------------------------------------------->
+                            <div class="tab-pane fade" id="depositnoti">
+                                <div id="wallet-tabdiv" class="wallet-tabdiv">
+                                    <div class="css33-leftpan">
+                                        <div class="not-heading"> Deposit  </div>
+                                    </div>
+                                    <div class="css33-rightpan">
+                                        <div id="cssmark55" class="css33-rightpan">
+                                            <span class="sell-btn-22">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+                                                    <label class="form-check-label" for="flexCheckChecked"> Hide Read Notifcations </label>
+                                                </div>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <input type="button" class="csss77-histbtn" value="Mark all as Read">
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <input type="button" class="csss77-histbtn" value="Clear all ">
+                                            </span>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="cssnotifi77" class="notification-box">
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                            <div class="css33-textbox">
+                                                <h2>Verify your identity and get cashback rewards! </h2>
+                                                <p>
+                                                    Complete Identity Verifcation and get TechnoSavvy worth of $4.00
+                                                </p>
+                                                <a href="#" class="css77notilink" data-bs-toggle="modal" data-bs-target="#exampleModal"> See More</a>
+                                            </div>
+                                        </div>
+                                        <div class="css33-rightpan csslink-icon77">
+                                            <span> 24:60:60  </span>
+                                            <span> 2022/12/26  </span>
+                                            <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+                                        </div>
+                                    </div>
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                            <div class="css33-textbox">
+                                                <h2>You've received a new task</h2>
+                                                <p>
+                                                    Check your task center and complete your tasks to get a reward!
+                                                </p>
+                                                <a href="#" class="css77notilink" data-bs-toggle="modal" data-bs-target="#exampleModal"> See More</a>
+
+                                            </div>
+                                        </div>
+                                        <div class="css33-rightpan csslink-icon77">
+
+                                            <span> 24:60:60  </span>
+                                            <span> 2022/12/26  </span>
+                                            <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+                                        </div>
+                                    </div>
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                            <div class="css33-textbox">
+                                                <h2>New device has been authorized</h2>
+                                                <p>
+                                                    You have successfully authorized a new device or in a new loaction to sign into your TechnoApp account Location: New Delhi India IP Address: 14.11.237.206 Devvives:
+                                                    Edge V107.25641454 (Windows) If this activity is not your own operation, please disable your account and contact us immediately.
+                                                </p>
+                                                <a href="#" class="css77notilink" data-bs-toggle="modal" data-bs-target="#exampleModal"> See More</a>
+
+                                            </div>
+                                        </div>
+                                        <div class="css33-rightpan csslink-icon77">
+
+                                            <span> 24:60:60  </span>
+                                            <span> 2022/12/26  </span>
+                                            <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---------------------------------------------->
+                            <div class="tab-pane fade" id="walletnoti">
+                                <div id="wallet-tabdiv" class="wallet-tabdiv">
+                                    <div class="css33-leftpan">
+                                        <div class="not-heading"> Wallet  </div>
+                                    </div>
+                                    <div class="css33-rightpan">
+                                        <div id="cssmark55" class="css33-rightpan">
+                                            <span class="sell-btn-22">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+                                                    <label class="form-check-label" for="flexCheckChecked"> Hide Read Notifcations </label>
+                                                </div>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <input type="button" class="csss77-histbtn" value="Mark all as Read">
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <input type="button" class="csss77-histbtn" value="Clear all ">
+                                            </span>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="cssnotifi77" class="notification-box">
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                            <div class="css33-textbox">
+                                                <h2>Verify your identity and get cashback rewards! </h2>
+                                                <p>
+                                                    Complete Identity Verifcation and get TechnoSavvy worth of $4.00
+                                                </p>
+                                                <a href="#" class="css77notilink" data-bs-toggle="modal" data-bs-target="#exampleModal"> See More</a>
+                                            </div>
+                                        </div>
+                                        <div class="css33-rightpan csslink-icon77">
+                                            <span> 24:60:60  </span>
+                                            <span> 2022/12/26  </span>
+                                            <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                            <div class="css33-textbox">
+                                                <h2>You've received a new task</h2>
+                                                <p>
+                                                    Check your task center and complete your tasks to get a reward!
+                                                </p>
+                                                <a href="#" class="css77notilink" data-bs-toggle="modal" data-bs-target="#exampleModal"> See More</a>
+                                            </div>
+                                        </div>
+                                        <div class="css33-rightpan csslink-icon77">
+                                            <span> 24:60:60  </span>
+                                            <span> 2022/12/26  </span>
+                                            <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+                                        </div>
+                                    </div>
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                            <div class="css33-textbox">
+                                                <h2>New device has been authorized</h2>
+                                                <p>
+                                                    You have successfully authorized a new device or in a new loaction to sign into your TechnoApp account Location: New Delhi India IP Address: 14.11.237.206 Devvives:
+                                                    Edge V107.25641454 (Windows) If this activity is not your own operation, please disable your account and contact us immediately.
+                                                </p>
+                                                <a href="#" class="css77notilink" data-bs-toggle="modal" data-bs-target="#exampleModal"> See More</a>
+
+                                            </div>
+                                        </div>
+                                        <div class="css33-rightpan csslink-icon77">
+
+                                            <span> 24:60:60  </span>
+                                            <span> 2022/12/26  </span>
+                                            <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---------------------------------------------->
+                            <div class="tab-pane fade" id="cashbacknoti">
+                                <div id="wallet-tabdiv" class="wallet-tabdiv">
+                                    <div class="css33-leftpan">
+                                        <div class="not-heading"> Cashback  </div>
+                                    </div>
+                                    <div class="css33-rightpan">
+                                        <div id="cssmark55" class="css33-rightpan">
+                                            <span class="sell-btn-22">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+                                                    <label class="form-check-label" for="flexCheckChecked"> Hide Read Notifcations </label>
+                                                </div>
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <input type="button" class="csss77-histbtn" value="Mark all as Read">
+                                            </span>
+                                            <span class="sell-btn-22">
+                                                <input type="button" class="csss77-histbtn" value="Clear all ">
+                                            </span>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="cssnotifi77" class="notification-box">
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                            <div class="css33-textbox">
+                                                <h2>Verify your identity and get cashback rewards! </h2>
+                                                <p>
+                                                    Complete Identity Verifcation and get TechnoSavvy worth of $4.00
+                                                </p>
+                                                <a href="#" class="css77notilink" data-bs-toggle="modal" data-bs-target="#exampleModal"> See More</a>
+                                            </div>
+                                        </div>
+                                        <div class="css33-rightpan csslink-icon77">
+                                            <span> 24:60:60  </span>
+                                            <span> 2022/12/26  </span>
+                                            <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                            <div class="css33-textbox">
+                                                <h2>You've received a new task</h2>
+                                                <p>
+                                                    Check your task center and complete your tasks to get a reward!
+                                                </p>
+                                                <a href="#" class="css77notilink" data-bs-toggle="modal" data-bs-target="#exampleModal"> See More</a>
+                                            </div>
+                                        </div>
+                                        <div class="css33-rightpan csslink-icon77">
+                                            <span> 24:60:60  </span>
+                                            <span> 2022/12/26  </span>
+                                            <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+                                        </div>
+                                    </div>
+                                    <div class="css33notification-div">
+                                        <div class="css33-leftpan">
+                                            <div class="css33icon2"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                                            <div class="css33-textbox">
+                                                <h2>New device has been authorized</h2>
+                                                <p>
+                                                    You have successfully authorized a new device or in a new loaction to sign into your TechnoApp account Location: New Delhi India IP Address: 14.11.237.206 Devvives:
+                                                    Edge V107.25641454 (Windows) If this activity is not your own operation, please disable your account and contact us immediately.
+                                                </p>
+                                                <a href="#" class="css77notilink" data-bs-toggle="modal" data-bs-target="#exampleModal"> See More</a>
+
+                                            </div>
+                                        </div>
+                                        <div class="css33-rightpan csslink-icon77">
+
+                                            <span> 24:60:60  </span>
+                                            <span> 2022/12/26  </span>
+                                            <span> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i> </a> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---------------------------------------------->
+               
+                        </div>
+                    </div>
+                    <!------------------------------->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal right fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog messagediv34">
+        <div class="modal-content ">
+            <div class="modal-body">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h2>Verify your identity and get cashback rewards! </h2>
+                <div class="mode-date44 mb-2 csslink-icon77">
+                    <span> 24:60:60  </span>
+                    <span> 2022/12/26  </span>
+                </div>
+                <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+
+     @if (ConfigEx.ShouldMini){   
+       <script src="~/minjs/notificaton.min.js"></script>
+    }else{        
+       <script src="~/js/notificaton.js"></script>
+    }
+<script>
+    $('.css44-cross').on('click', function () {
+        $('.top-section').hide();
+    })
+    var triggerTabList = [].slice.call(document.querySelectorAll('#myNotificationTab a'))
+triggerTabList.forEach(function (triggerEl) {
+    var tabTrigger = new bootstrap.Tab(triggerEl)
+
+    triggerEl.addEventListener('click', function (event) {
+        event.preventDefault()
+        tabTrigger.show()
+    })
+});
+
+   
+       
+</script>
+}

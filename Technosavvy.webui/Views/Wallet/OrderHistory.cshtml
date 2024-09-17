@@ -1,0 +1,311 @@
+﻿@using NuGet.Protocol;
+@model vmOrders
+@{
+    ViewData["Title"] = "View Order History | Track Transactions with TechnoApp  Wallet";
+}
+
+@section Header {
+    <meta name="description" content="Access detailed order history and track your financial transactions seamlessly. Stay informed and in control. Explore your transaction journey with TechnoApp  Wallet." />
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/responsive-wattet.css">
+}
+<section class="section-wallet bg2">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            @await Html.PartialAsync("Partial/_LeftOrder","order history")
+
+            <div class="col-md-10 col-lg-10 col-xxl-10">
+                <div id="walletdiv801" class="wallet-right33 wallet-maindiv4">
+                    <div class="wallet-sectdiv33">
+                        <div id="wallet-tabdiv" class="wallet-tabdiv">
+                            <div class="heading">Order History </div>
+                            <div class="css99-hisbtn">
+
+                                <a class=" csss77-histbtn ">
+                                    Export <i class="fa fa-external-link" aria-hidden="true"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="wallet-sectdiv33">
+                        <div id="wallet-tabdiv" class="mx-3">
+                            <div class="sell-right-but ">
+                                <div class="css33-leftpan">
+
+                                    <span class="sell-btn-22">
+                                        <lable class="label857">Pair</lable>
+                                        <div class=" form-select2 form254">
+                                          <select class="my-select2  filter" aria-label="Pair" id="fPair">
+                                                <option value="" selected>All</option>
+                  
+                </select>  
+                                        </div>
+                                    </span>
+
+                                    <span class="sell-btn-22">
+                                        <lable class="label857"> Side</lable>
+                                        <select class="form-select  filter" aria-label="Side" id="fSide">
+                                             <option value="" selected>All</option>
+                  <option value="Buy">Buy </option>
+                  <option value="Sell">Sell</option>
+
+                                        </select>
+                                    </span>
+                                    <span class="sell-btn-22">
+                                        <lable class="label857"> Period</lable>
+                                        <select class="form-select  filter" aria-label="Period" id="fPeriod">
+                                            <option value="" selected>All</option>
+                                            <option value="1">Past 24 hrs</option>
+                                            <option value="3">Past 3 Days</option>
+                                            <option value="7">Past 7 Days </option>
+
+                                        </select>
+                                    </span>
+
+
+
+                                    <span class="sell-btn-22">
+                                        <lable class="label857"> Order Type</lable>
+                                        <div class=" form-select2 form254">
+                                            <select class="my-select2  filter" aria-label="Order" id="fOrderType">                                               
+                                                 <option value="" selected>All</option>
+                                                 @*<option value="FOK">FOK</option>
+                                                   <option value="ICE Berg">ICE Berg</option>
+                                                   <option value="IOC">IOC</option>
+                                                   <option value="Limit">Limit Order</option>
+                                                   <option value="Loop">Loop</option>
+                                                   <option value="Market">Market</option>
+                                                   <option value="OCO">OCO</option>
+                                                   <option value="Stop Limit">Stop Limit</option>
+                                                   <option value="Stop Market">Stop Market</option>*@
+                                            </select>
+                                        </div>
+                                    </span>
+
+                                    
+                                      <span class="sell-btn-22">
+                                         <a class="csss77-histbtn ms-auto btnTrnsReset" id="btnReset">    <i class="fa fa-refresh" aria-hidden="true"></i></a>
+                                       </span>
+                                      @* <span class="sell-btn-22">
+                                          <a href="javascript:void(0)" class="css-subbtn44 mx-0" id="btnFReset"> Reset </a>
+                                      </span>*@
+
+                                </div>
+                                <div class="css33-rightpan">
+                                    <span class="sell-btn-22">
+                                        <span class="d-inline-block opencss11" tabindex="0"
+                                              data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                              data-bs-content="View transaction history older than 7 days" data-bs-original-title=""
+                                              title=""><a href="http://dev.TechnoApp.nsch.com/TechnoApp_blockchain0.2/index.html" target="_blank" type="button" class="css-subbtn44" id="liveToastBtn"> View on TechnoApp explorer </a> </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!----------------------------------------------->
+
+                    <div class="wallet-sectdiv33 px-3  placeholder-glow">
+                        <div id="comunity-css566-box" class="comunity-css566-box table-responsive">
+                            <div class="css33-rightpan mb-2">
+                                <form action=" " class="positionrelative" autocomplete="off">
+                                    <input type="search" class="market-search" placeholder="Search.." name="search" data-tab="tbOrderHist">
+                                    <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                </form>
+
+                            </div>
+                            <div id="orderHistoryTable">
+                            <div class="table-xscroll44">
+                                <table class="table table-sortable cssearn-table" id="wallerOrderHistoryTable">
+                                    <thead class="trasaction-table-title">
+                                        <tr>
+                                            <th nowrap="nowrap" class="css566-table-text th-sticky-left">Pair</th>
+                                            <th nowrap="nowrap" class=" text-left css566-table-text">Date &amp; Time </th>
+                                            <th nowrap="nowrap" class="css566-table-text">Order Id</th>
+                                            <th nowrap="nowrap" class="css566-table-text">Type </th>
+                                            <th nowrap="nowrap" class="css566-table-text">Side </th>
+                                            <th nowrap="nowrap" class="css566-table-text">Price </th>
+                                            <th nowrap="nowrap" class="css566-table-text">Amount </th>
+                                            <th nowrap="nowrap" class="css566-table-text"> Filled</th>
+                                            <th nowrap="nowrap" class="css566-table-text"> Total</th>
+                                            <th nowrap="nowrap" class="css566-table-text"> Asset Amount</th>
+                                            <th nowrap="nowrap" class="css566-table-text"> Swap Trade Value</th>
+                                            <th nowrap="nowrap" class="css566-table-text">Trigger Conditions</th>
+                                            <th nowrap="nowrap" class="css566-table-text">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbOrderHist" class="trasaction-table">
+
+                                        <tr>
+                                            <td class="text-left td-sticky-left">
+                                                <span class="placeholder" style="width:50px;height:5px;"></span>
+                                            </td>
+                                            <td>
+                                                <div class="css5datet44">
+                                                    <span class="placeholder" style="width:100px;height:5px;"></span>
+                                                </div>
+                                            </td>
+                                            <td> 
+                                                <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67" data-bs-original-title="" title="">
+                                                    <a href="#"> <span class="placeholder" style="width:100px;height:5px;"></span> </a></span> </td>
+                                            <td><span class="placeholder" style="width:50px;height:5px;"></span> </td>
+
+                                            <td><span class="css44-up"><span class="placeholder" style="width:50px;height:5px;"></span></span></td>
+                                            <td><div class="datettrade44"> <span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                                            <td><div class="datettrade44"><span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                                            <td><div class="datettrade44"><span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                                            <td><div class="datettrade44"><span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                                            <td>
+                                                <div class="datettrade44">
+                                                    <span class="placeholder" style="width:50px;height:5px;"></span>
+                                                </div>
+                                            </td>
+
+                                            <td><div class="datettrade44"><span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                                            <td><span class="placeholder" style="width:50px;height:5px;"></span></td>
+                                            <td><span class="placeholder" style="width:50px;height:5px;"></span></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left td-sticky-left">
+                                                <span class="placeholder" style="width:50px;height:5px;"></span>
+                                            </td>
+                                            <td>
+                                                <div class="css5datet44">
+                                                    <span class="placeholder" style="width:100px;height:5px;"></span>
+                                                </div>
+                                            </td>
+                                            <td> 
+                                                <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67" data-bs-original-title="" title="">
+                                                    <a href="#"> <span class="placeholder" style="width:100px;height:5px;"></span> </a></span> </td>
+                                            <td><span class="placeholder" style="width:50px;height:5px;"></span> </td>
+
+                                            <td><span class="css44-up"><span class="placeholder" style="width:50px;height:5px;"></span></span></td>
+                                            <td><div class="datettrade44"> <span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                                            <td><div class="datettrade44"><span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                                            <td><div class="datettrade44"><span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                                            <td><div class="datettrade44"><span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                                            <td>
+                                                <div class="datettrade44">
+                                                    <span class="placeholder" style="width:50px;height:5px;"></span>
+                                                </div>
+                                            </td>
+
+                                            <td><div class="datettrade44"><span class="placeholder" style="width:50px;height:5px;"></span></div></td>
+                                            <td><span class="placeholder" style="width:50px;height:5px;"></span></td>
+                                            <td><span class="placeholder" style="width:50px;height:5px;"></span></td>
+
+                                        </tr>
+
+                                        @*<tr>
+                                            <td class="text-left">BTC/USDT </td>
+                                            <td>
+                                                <div class="css5datet44">
+                                                    <span> 25/12/2022 </span> <span> <small class="me-0"> 14:00:00</small></span>
+                                                </div>
+                                            </td>
+                                            <td> <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67" data-bs-original-title="" title=""><a href="#"> 4fe73... </a></span> </td>
+                                            <td>S-Limit </td>
+
+                                            <td><span class="css44-down">Sell</span></td>
+                                            <td><div class="datettrade44"> <span>20000.00 </span> <small> USDT</small></div></td>
+                                            <td><div class="datettrade44"><span> 1.00 </span> <small> BTC</small></div></td>
+                                            <td><div class="datettrade44"><span> 0.8</span> <small> BTC</small></div></td>
+                                            <td><div class="datettrade44"> <span>20000.00 </span> <small> USDT</small></div></td>
+                                            <td>
+                                                <div class="datettrade44">
+                                                    <span> 0.9998</span>  <small>  BTC </small>
+                                                </div>
+                                            </td>
+
+                                            <td><div class="datettrade44"><span> 20002.00</span>  <small> USDT</small></div></td>
+                                            <td>19,500.00</td>
+                                            <td>Cloded</td>
+
+                                        </tr>*@
+
+                                    </tbody>
+                                <tfoot >
+                                    <tr>
+                                        <td colspan="13">
+                                            <div class="noheight54">
+                                                <div class="norecord-div44">
+                                                    <span><img src="../images/no-data.png"></span>
+                                                    <span> No records found</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                                </table>
+
+                            </div>
+                            <div class="my-navigation mt-4">
+		                        <div class="simple-pagination-first"></div>
+		                        <div class="simple-pagination-previous"></div>
+		                        <div class="simple-pagination-page-numbers"></div>
+		                        <div class="simple-pagination-next"></div>
+		                        <div class="simple-pagination-last"></div>
+	                        </div>
+                        </div>
+                            
+
+                        </div>
+                    </div>
+
+
+                    <!----------------------------------------------->
+                    <!----------------------------------------------------->
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+     <script>
+        @Html.Raw($"var myOrders = {Model.myOrders.ToJson()}")
+    </script>
+     @if (ConfigEx.ShouldMini)
+    {   
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script> 
+         <script src="~/minjs/sorting.min.js"></script>
+        <script src="~/minjs/ordersHistDetails.min.js"></script>
+    }
+    else
+    {    
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>  
+         <script src="~/js/sorting.js"></script>
+        <script src="~/js/ordersHistDetails.js"></script>
+    }
+       
+
+    <script>
+        
+           // LoadOrdersHist();
+        LoadCurrIfNot();
+        formateDate();
+        $(document).ready(function () {
+            $(".my-select").chosen({ width: "100%" });
+            formateAll();
+
+        });
+filterOrders();
+    </script>
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+    </script>
+}

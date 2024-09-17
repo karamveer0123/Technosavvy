@@ -1,0 +1,154 @@
+﻿@model vmKYCDocUploadStage
+
+<form class="was-validated" id="frmUpload" novalidate asp-action="Finish-KYC" asp-controller="KYCUser" autocomplete="off" enctype="multipart/form-data" method="post">
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x=>x._Theme)
+    @Html.HiddenFor(x=>x._CookieConsent)
+    @Html.HiddenFor(x=>x.Profile.ProfileId)
+    @Html.HiddenFor(x=>x.Profile.Address.Country.Abbri)
+    @Html.HiddenFor(x=>x.Profile.Address.Country.countryName)
+    <div class="row">
+        <div asp-validation-summary="All" class="text-danger"></div>
+    </div>
+    @for (int ii = 0; ii < Model.DocInstances.Count; ii++)
+    {
+
+        @Html.HiddenFor(x=>x.DocInstances[ii].CategoryName)
+        @Html.HiddenFor(x=>x.DocInstances[ii].CategoryId)
+        @Html.HiddenFor(x=>x.DocInstances[ii].PassScore)
+        <div class="col-md-12">
+            <div class="TechnoSavvy-kyc-doc">
+                <div class="row align-items-end">
+                    <div class="col-sm-9">
+                        <h3 class="mb-0">
+                            @Model.DocInstances[ii].CategoryName
+                        </h3>
+                        <p class="mb-0 p-0 " >
+                            Minimum @Model.DocInstances[ii].PassScore score
+                            points are required!
+                        </p>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="kyc-number-count cat" data-cat="@Model.DocInstances[ii].CategoryName" data-ps="@Model.DocInstances[ii].PassScore">
+                            <span class="carPt">0</span>/<span class="ptTotal">@Model.DocInstances[ii].PassScore</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="TechnoSavvy-kyc-upload" class="TechnoSavvy-kyc-upload-table mb-4">
+                    <div class="row align-items-center">
+                        <div class="col-sm-12">
+                            <div class="TechnoSavvy-kyc-div-table">
+                                @for (int i = 0; i < Model.DocInstances[ii].DocumentTemplates.Count; i++)
+                                {
+                                    @Html.HiddenFor(x=>x.DocInstances[ii].DocumentTemplates[i].PlaceHolderName)
+                                    @Html.HiddenFor(x=>x.DocInstances[ii].DocumentTemplates[i].PlaceHolderId)
+                                    @Html.HiddenFor(x=>x.DocInstances[ii].DocumentTemplates[i].PointValue)
+                                    @Html.HiddenFor(x=>x.DocInstances[ii].DocumentTemplates[i].IsBack)
+                                    @Html.HiddenFor(x=>x.DocInstances[ii].DocumentTemplates[i].IsFront)
+                                    @Html.HiddenFor(x=>x.DocInstances[ii].DocumentTemplates[i].MaxAllowedFileSize)
+                                    @Html.HiddenFor(x=>x.DocInstances[ii].DocumentTemplates[i].HelpInfo)
+
+                                    ///-----Start
+                                    <div class="TechnoSavvy-kyc-div-table-body">
+                                        <div class="row g-2 mb-2">
+                                            <div class="col-sm-10 col-lg-10">
+                                                <div class="row g-2">
+                                                    <div class="col-sm-6 col-lg-3 kyc-doc-name">
+                                                        <div class="mb-2">
+                                                            <label for="docName" class="form-label">
+                                                                Document Type
+                                                            </label>
+                                                            <input type="text"
+                                                           class="form-control  mb-0" readonly
+                                                           asp-for="DocInstances[ii].DocumentTemplates[i].PlaceHolderName">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3 kyc-doc-name">
+                                                        <div class="mb-2">
+                                                            <label for="docName" class="form-label">
+                                                                Document Identity Number
+                                                            </label>
+                                                            <input type="text"
+                                                           class="form-control  mb-0"
+                                                           asp-for="DocInstances[ii].DocumentTemplates[i].DocNumber">
+                                                        </div>
+                                                    </div>
+                                                    @if (Model.DocInstances[ii].DocumentTemplates[i].IsFront)
+                                                    {
+                                                        <div class="col-sm-6 col-lg-3 kyc-upload-front">
+                                                            <label for="selectDoc" class="form-label">
+                                                                Upload Front Image
+                                                            </label>
+                                                            <div class="upload__box">
+                                                                <div class="upload__btn-box">
+                                                                    <label class="upload__btn">
+                                                                        <i class="fa fa-upload" aria-hidden="true"></i>
+                                                                        <input type="file" data-max_size="@(Model.DocInstances[ii].DocumentTemplates[i].MaxAllowedFileSize*1024)" asp-for="DocInstances[ii].DocumentTemplates[i].Front" data-max_length="1" data-cat="@Model.DocInstances[ii].CategoryName" data-plh="@Model.DocInstances[ii].DocumentTemplates[i].PlaceHolderName" data-pt="@Model.DocInstances[ii].DocumentTemplates[i].PointValue"
+                                                                   class="upload__inputfile">
+                                                                    </label>
+                                                                </div>
+                                                                <div class="upload__img-wrap">
+                                                                </div>
+                                                                <div id="@($"DocInstances_{ii}__DocumentTemplates_{i}__Front_err")" class="text-bg-danger"></div>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                    @if (Model.DocInstances[ii].DocumentTemplates[i].IsBack)
+                                                    {
+                                                        <div class="col-sm-6 col-lg-3 kyc-upload-back">
+                                                            <label for="selectDoc" class="form-label">
+                                                                Upload Back Image
+                                                            </label>
+                                                            <div class="upload__box">
+                                                                <div class="upload__btn-box">
+                                                                    <label class="upload__btn">
+                                                                        <i class="fa fa-upload" aria-hidden="true"></i> <input type="file" asp-for="DocInstances[ii].DocumentTemplates[i].Back" data-max_size="@(Model.DocInstances[ii].DocumentTemplates[i].MaxAllowedFileSize*1024)" data-cat="@Model.DocInstances[ii].CategoryName" data-plh="@Model.DocInstances[ii].DocumentTemplates[i].PlaceHolderName" data-pt="@Model.DocInstances[ii].DocumentTemplates[i].PointValue"
+                                                                        data-max_files="1" data-max_length="1" class="upload__inputfile">
+                                                                    </label>
+                                                                </div>
+                                                                <div class="upload__img-wrap">
+                                                                </div>
+                                                            </div>
+                                                            <div id="@($"DocInstances_{ii}__DocumentTemplates_{i}__Back_err")" class="text-bg-danger"></div>
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-2 kyc-upload-addmore">
+                                                @Model.DocInstances[ii].DocumentTemplates[i].PointValue Pts
+                                                @*<button class="addmore-btn mt-4">
+                                        Add
+                                        Document
+                                        </button>*@
+                                            </div>
+                                            @*<span class="invalid-feedback">
+                                    Document numbers must have 14characters!
+                                    </span>*@
+                                        </div>
+                                    </div>
+
+                                    //---End
+                                }
+                                @if (Model.DocInstances[ii].CatErrorList!=null && Model.DocInstances[ii].CatErrorList.Count > 0)
+                                {
+                                    <span class="invalid-feedback">
+                                        <ul>
+                                            @foreach (var er in Model.DocInstances[ii].CatErrorList)
+                                            {
+                                                <li>@er</li>
+                                            }
+                                        </ul>
+                                    </span>
+
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</form>

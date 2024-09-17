@@ -1,0 +1,160 @@
+﻿@model vmDeposit
+
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+
+                <span>Deposit </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">
+                            <div class="acoun-box authenti-box">
+                                <!-- progressbar -->
+                                @if (Model.ActionMethod == "Currency")
+                                {
+                                    <div class="shadow_TechnoSavvy">
+                                        <ol class="progressdiv">
+                                            <li class="step  is-complete" data-step="1">                                            
+                                                    Enter Details                                            
+                                            </li>
+                                            <li class="step is-active" data-step="2">                                            
+                                                    Confirmation                                               
+                                            </li>
+                                        </ol>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="shadow_TechnoSavvy">
+                                        <ol class="progressdiv">
+                                            <li class="step  is-complete" data-step="1">                                          
+                                                    Choose Asset                                            
+                                            </li>
+                                            <li class="step is-complete" data-step="2">                                             
+                                                    Enter <br>Deposit from                                       
+                                            </li>
+                                            <li class="step is-active" data-step="3">                                            
+                                                    Verify <br>Information                                        
+                                            </li>
+                                            <li class="step" data-step="4">                                              
+                                                    Completed                                               
+                                            </li>
+                                        </ol>
+                                        <!---------------------------------------------->
+
+                                    </div>
+                                }
+                                <form novalidate class="was-validated" autocomplete="off" asp-action="@Model.ActionMethod" asp-controller="deposit" id="frmDeposit" enctype="multipart/form-data">
+                                    @Html.AntiForgeryToken()
+                                    @Html.HiddenFor(x=>x._Theme)
+                                    @Html.HiddenFor(x=>x.isBack)
+                                    @Html.HiddenFor(x=>x._CookieConsent)
+                                    @Html.HiddenFor(x=>x.inforBag)
+                                    @Html.HiddenFor(x=>x.selectedCoin)
+                                    @Html.HiddenFor(x=>x.IsBankDeposits)
+                                    @Html.HiddenFor(x=>x.IsUPI)
+                                    @Html.HiddenFor(x=>x.Amount)
+                                    @Html.HiddenFor(x=>x.IB.INRTechnoAppOption.selectedBankDeposits.AccountNumber)
+                                    @Html.HiddenFor(x=>x.IB.INRTechnoAppOption.selectedUPI.UPIid)
+
+                                    <div asp-validation-summary=All class="text-danger"></div>
+                                    <div id="Msg" class="text-danger"></div>
+                                   @if(Model.IsUPI)
+                                    {
+                                    <div id="dStep4">
+                                        <div class="css77-withdrawlS">
+                                            <div class="csssum-title55">Transaction method</div>
+                                            <div class="csssum-detail55"><span>UPI</span> </div>
+                                        </div>
+
+                                        <div class="css77-withdrawlS">
+                                            <div class="csssum-title55">Actual payment</div>
+                                            <div class="csssum-detail55"><span>₹ @Model.Amount.ToString("#,##0.00")</span> </div>
+                                        </div>
+                                        <div class="css77-withdrawlS">
+                                            <div class="csssum-title55">Transaction Fees</div>
+                                            <div class="csssum-detail55"><span>₹ @Model.IB.INRTechnoAppOption.selectedUPI.DepositFee </span> </div>
+                                        </div>
+                                        <div class="css77-ordersucc text-center">
+                                            <span class="css77-payno">
+                                                <span>
+                                                    <h4>You Receive</h4>
+                                                </span> <span class="orange">₹ @((Model.Amount - Model.IB.INRTechnoAppOption.selectedUPI.DepositFee).ToString("#,##0.00"))</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                        
+                                    }
+                                    else
+                                    {
+                                        @*---this Group is for BankDeposit---*@
+                                        <div id="dStep4">
+                                            <div class="css77-withdrawlS">
+                                                <div class="csssum-title55">Transaction method</div>
+                                                <div class="csssum-detail55"><span>Bank Deposit</span> </div>
+                                            </div>
+
+                                            <div class="css77-withdrawlS">
+                                                <div class="csssum-title55">Actual payment</div>
+                                                <div class="csssum-detail55"><span>₹ @Model.Amount.ToString("#,##0.00")</span> </div>
+                                            </div>
+                                            <div class="css77-withdrawlS">
+                                                <div class="csssum-title55">Transaction Fees</div>
+                                                <div class="csssum-detail55"><span>₹ @Model.IB.INRTechnoAppOption.selectedBankDeposits.DepositFee </span> </div>
+                                            </div>
+                                            <div class="css77-ordersucc text-center">
+                                                <span class="css77-payno">
+                                                    <span>
+                                                        <h4>You Receive</h4>
+                                                    </span> <span class="orange">₹ @((Model.Amount - Model.IB.INRTechnoAppOption.selectedBankDeposits.DepositFee).ToString("#,##0.00"))</span>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    }
+                                    
+                                    <span class="dflexdiv">
+                                        <input type="button" name="previous" class="d-dark action-button" value="Previous">
+                                        <input type="submit" name="next" class=" d-orange action-button float-right" value="Continue">
+                                    </span>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+            </div>
+        </div>
+    </div>
+   </section>
+    @section Scripts{
+
+        @if (ConfigEx.ShouldMini)
+        {
+            <script src="~/minjs/clipboard.min.js"></script>
+            <script src="~/minjs/qrcode.min.js"></script>
+            <script src="~/minjs/dep.min.js"></script>
+            <script src="~/minjs/select.min.js"></script>
+            <script src="~/minjs/images-select.min.js"></script>
+        }
+        else
+        {
+            <script src="~/js/clipboard.js"></script>
+            <script src="~/js/qrcode.min.js"></script>
+            <script src="~/js/dep.js"></script>
+            <script src="~/js/select.js"></script>
+            <script src="~/js/images-select.js"></script>
+        }
+
+
+    }

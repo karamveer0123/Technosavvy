@@ -1,0 +1,1303 @@
+﻿
+{
+    ViewData["Title"] = "AcademyTrade";
+}
+
+
+  <!-- ==== Page Name section ==== -->
+  <section class="page-section a-inner-head bg1 pt-5">
+    <div class="container-fluid">
+      <div class="row pt-4">
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="css566-heading mb-3">
+            <h2> TechnoApp Academy </h2>
+            <div class="divider"></div>
+          </div>
+        </div>
+        <!-- <div class="col-lg-6 col-md-6 col-12">
+                    <div class="index-links">
+                        <ul>
+                            <li> Home &nbsp; ></li>
+                            <li> Academy &nbsp; ></li>
+                            <li> Trade </li>
+                        </ul>
+                    </div>
+                </div> -->
+      </div>
+    </div>
+  </section>
+  <!-- // Page name section -->
+
+
+  <!-- tab and content section -->
+  <section class="tab-content-sec bg1 pt-5 pb-5">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- col 4 -->
+        <div class="col-lg-4 col-md-4 col-xxl-3">
+          <div class="accordion accordion-flush tab-col tab" id="accordionFlushExample">
+            <!-- Home tab -->
+            <div class="accordion-item home-tab">
+              <h2 class="accordion-header" id="home-headingOne">
+                <button class="accordion-button home-tab-button collapsed tablinks" onclick="openCity(event, 'homeTab')"
+                  id="defaultOpen" type="button" data-bs-toggle="collapse" data-bs-target="#home-collapseOne"
+                  aria-expanded="false" aria-controls="home-collapseOne"> Welcome to TechnoApp </button>
+              </h2>
+              <div id="home-collapseOne" class="accordion-collapse collapse" aria-labelledby="home-headingOne"
+                data-bs-parent="#accordionFlushExample">
+                <!-- Benefits of trade tab -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'homeOne')" type="button"> Benefits of Trade
+                    </button>
+                  </h2>
+                </div>
+                <!-- // Benefits of trade tab -->
+
+                <!-- What is Crypto tab -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'homeTwo')" type="button"> What is Crypto ?
+                    </button>
+                  </h2>
+                </div>
+                <!-- // What is Crypto tab -->
+              </div>
+            </div>
+            <!-- // Home Tab -->
+
+            <!-- Trade tab -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="trade-headingTwo">
+                <button class="accordion-button collapsed tablinks" onclick="openCity(event, 'Trade')" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#trade-collapseTwo" aria-expanded="false"
+                  aria-controls="trade-collapseTwo"> What Is Trading </button>
+              </h2>
+              <div id="trade-collapseTwo" class="accordion-collapse collapse" aria-labelledby="trade-headingTwo"
+                data-bs-parent="#accordionFlushExample">
+                <!-- Spot Trading  -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'spot-trading')" type="button"> Spot Trading
+                    </button>
+                  </h2>
+                </div>
+                <!-- // Spot Trading  -->
+
+                <!-- Trade Attributes  -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'trade-attributes')" type="button"> Trade
+                      Attributes </button>
+                  </h2>
+                </div>
+                <!-- // Trade Attributes  -->
+
+                <!-- Trading View tab -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'TradeOne')" type="button"> Trading View
+                    </button>
+                  </h2>
+                </div>
+                <!-- // Trading View tab -->
+
+                <!-- Technical Analysis tab -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'TradeTwo')" type="button"> Technical
+                      Analysis </button>
+                  </h2>
+                </div>
+                <!-- // Technical Analysis tab -->
+
+                <!-- Candle Stick Chart tab -->
+                <div class="accordion-body tab-subtab">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'TradeThree')" type="button"> Candle Stick
+                      Chart </button>
+                  </h2>
+                </div>
+                <!-- // Candle Stick Chart tab -->
+              </div>
+            </div>
+            <!-- // Trade tab -->
+
+            <!-- Order tab -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed tablinks" onclick="openCity(event, 'Order')" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false"
+                  aria-controls="flush-collapseThree"> What are Orders?
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                data-bs-parent="#accordionFlushExample">
+                <!-- Spot Order (Buy/Sell) -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'spot-order')" type="button"> Spot Order
+                      (Buy/Sell) </button>
+                  </h2>
+                </div>
+                <!-- // Spot Order (Buy/Sell) -->
+
+                <!-- Market Order tab -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'market-order')" type="button"> Market Order
+                    </button>
+                  </h2>
+                </div>
+                <!-- // Market Order tab -->
+
+                <!-- Loop Order tab -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'loop-order')" type="button"> Loop Order </button>
+                  </h2>
+                </div>
+                <!-- // Loop Order tab -->
+
+                <!-- IOC Order tab -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'ioc-order')" type="button"> IOC Order </button>
+                  </h2>
+                </div>
+                <!-- // IOC Order tab -->
+
+                <!-- Limit Order tab -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'limit-order')" type="button"> Limit Order
+                    </button>
+                  </h2>
+                </div>
+                <!-- // Limit Order tab -->
+
+                <!-- Stoploss Limit Order -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'stoploss-limit-order')" type="button"> Stoploss
+                      Limit Order </button>
+                  </h2>
+                </div>
+                <!-- // Stoploss Limit Order -->
+
+                <!-- Stoploss Market Order -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'stoploss-market-order')" type="button"> Stoploss
+                      Market Order </button>
+                  </h2>
+                </div>
+                <!-- // Stoploss Market Order -->
+
+                <!-- Iceberg Order -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'iceberg-order')" type="button"> Iceberg Order
+                    </button>
+                  </h2>
+                </div>
+                <!-- // Iceberg Order -->
+
+                <!-- AON(All or None) Order -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'aon-order')" type="button"> AON(All or None)
+                      Order </button>
+                  </h2>
+                </div>
+                <!-- // AON(All or None) Order -->
+
+                <!-- FOK(Fill or kill) Order -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'fok-order')" type="button"> FOK(Fill or kill)
+                      Order </button>
+                  </h2>
+                </div>
+                <!-- // FOK(Fill or kill) Order -->
+
+                <!-- Order Status -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'order-status')" type="button"> Order Status
+                    </button>
+                  </h2>
+                </div>
+                <!-- // Order Status -->
+
+                <!-- OCO(One Cancel Other Order) -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'oco-status')" type="button"> OCO(One Cancel Other
+                      Order) </button>
+                  </h2>
+                </div>
+                <!-- // OCO(One Cancel Other Order) -->
+
+                <!-- Calculation Of Cashback -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'calculation-of-cashback')" type="button">
+                      Calculation Of Cashback </button>
+                  </h2>
+                </div>
+                <!-- // Calculation Of Cashback -->
+
+                <!-- Transaction Charges -->
+                <div class="accordion-body">
+                  <h2>
+                    <button class="tablinks" onclick="openCity(event, 'transaction-charges')" type="button"> Transaction
+                      Charges </button>
+                  </h2>
+                </div>
+                <!-- // Transaction Charges -->
+              </div>
+            </div>
+            <!-- // Order tab -->
+
+            <!-- what is wallet tab -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="walletTab">
+                <button class="accordion-button collapsed tablinks" onclick="openCity(event, 'wallet')" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#wallet-collapse" aria-expanded="false"
+                  aria-controls="wallet-collapse"> What Is Wallet </button>
+              </h2>
+              <div id="wallet-collapse" class="accordion-collapse collapse" aria-labelledby="walletTab"
+                data-bs-parent="#accordionFlushExample"> </div>
+            </div>
+            <!-- // what is wallet tab -->
+
+            <!-- TechnoApp features tab -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="featuresTab">
+                <button class="accordion-button collapsed tablinks" onclick="openCity(event, 'features')" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#features-collapse" aria-expanded="false"
+                  aria-controls="features-collapse2"> TechnoApp Features </button>
+              </h2>
+              <div id="features-collapse" class="accordion-collapse collapse" aria-labelledby="featuresTab"
+                data-bs-parent="#accordionFlushExample"> </div>
+            </div>
+            <!-- // TechnoApp features tab -->
+
+            <!--  staking tab -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="stakingTab">
+                <button class="accordion-button collapsed tablinks" onclick="openCity(event, 'staking')" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#staking-collapse" aria-expanded="false"
+                  aria-controls="staking-collapse"> What is staking? </button>
+              </h2>
+              <div id="staking-collapse" class="accordion-collapse collapse" aria-labelledby="stakingTab"
+                data-bs-parent="#accordionFlushExample"> </div>
+            </div>
+            <!-- //  staking tab -->
+
+            <!--  KYC tab -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="kycTab">
+                <button class="accordion-button collapsed tablinks" onclick="openCity(event, 'kyc')" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#kyc-collapse" aria-expanded="false"
+                  aria-controls="kyc-collapse"> KYC </button>
+              </h2>
+              <div id="kyc-collapse" class="accordion-collapse collapse" aria-labelledby="kycTab"
+                data-bs-parent="#accordionFlushExample"> </div>
+            </div>
+            <!-- //  KYC tab -->
+
+            <!--  AML tab -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="amlTab">
+                <button class="accordion-button collapsed tablinks" onclick="openCity(event, 'aml')" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#aml-collapse" aria-expanded="false"
+                  aria-controls="aml-collapse"> Anti-money laundering (AML) </button>
+              </h2>
+              <div id="aml-collapse" class="accordion-collapse collapse" aria-labelledby="amlTab"
+                data-bs-parent="#accordionFlushExample"> </div>
+            </div>
+            <!-- //  AML tab -->
+
+            <!--  Country tab -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="countryTab">
+                <button class="accordion-button collapsed tablinks" onclick="openCity(event, 'country')" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#country-collapse" aria-expanded="false"
+                  aria-controls="country-collapse"> Operational Countries </button>
+              </h2>
+              <div id="country-collapse" class="accordion-collapse collapse" aria-labelledby="countryTab"
+                data-bs-parent="#accordionFlushExample"> </div>
+            </div>
+            <!-- //  Country tab -->
+          </div>
+        </div>
+        <!-- // col 4 -->
+
+        <!-- col 8 -->
+        <div class="col-lg-8 col-md-8 col-xxl-9">
+          <div class="col-8-tabs">
+            <!-- Home tab -->
+            <div id="homeTab" class="tabcontent tab-work">
+              <h3 class="heading-3">Welcome to TechnoApp ? </h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/welcome-TechnoApp.png" alt="image">
+              <p class="pt-4"> TechnoApp, The Next Generation CryptoCurrency Exchange. This future cryptocurrency exchange
+                offers the lowest transaction fees and rewards to all its participants in the form of cashback benefits
+                for participating in the market. TechnoApp provides a seamless trading experience to the traders trading on
+                the exchange with a smooth interface and next-generation features. </p>
+
+              <h5 class="heading-5"> Settlement engine : </h5>
+              <p> The Underlying algorithm used in TechnoApp Trading Engine ensures that TechnoSavvy Token is involved in every
+                transaction that is being executed on this exchange. When the transaction is routed through TechnoSavvy, it
+                creates the demand for the token. Increased demand and limited supply shot up the price of TechnoSavvy tokens.
+              </p>
+
+              <h5 class="heading-5"> Creating demand for TechnoSavvy </h5>
+              <p> Collective demand of all tokens equals to demand of TechnoSavvy - TechnoSavvy is a value variance inflationary token
+                and the price of this token appreciates each time a trade happens on TechnoApp because of the Automated
+                Market Maker (AMM) Algorithm. Having the lowest transaction fees and positive cashback benefits will
+                attract traders to trade on the exchange resulting in higher transactions. The utility of TechnoSavvy Token in
+                the transactions happening on TechnoApp will increase the demand for TechnoSavvy Tokens. Because of its utility,
+                unmatchable benefits, and rewards the TechnoSavvy demand will lead AMM to a continuous cycle of price
+                increment. That is why it is called “Value Variance Inflationary Token”. </p>
+            </div>
+            <!-- // Home tab -->
+
+            <!-- Benefits of trade tab -->
+            <div id="homeOne" class="tabcontent tab-work">
+              <h3 class="heading-3">Benefits of Trade</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/benefits-of-trade.png" alt="image">
+              <h5 class="heading-5 pt-4"> Benefits of trade on TechnoApp over other contemporary exchanges. </h5>
+              <p> <span> Low Impact Cost - </span> Impact cost is the cost of executing the order. It includes
+                transaction fees and any other charges levied by the platform while trading on the exchange. TechnoApp is
+                an excellent platform to reduce the impact cost. With the lowest transaction fee and cashback benefits,
+                Traders earn more than they pay each time, every time. </p>
+              <p> <span> Higher Risk Tolerance to Profit ratio - </span> TechnoApp native utility token TechnoSavvy is a value
+                variance inflationary token, and its utility makes it a low risk and high yield asset. TechnoSavvy tokens
+                offered in cashback work as a defense mechanism in adverse market conditions. The native utility token
+                increases your Risk Tolerance to Profit Ratio. </p>
+              <p> <span> Liquidity pool - </span> You get an augmented liquidity pool to trade on the next generation
+                exchange. TechnoApp cashback benefits enable traders to liquidate even their illiquid assets at a limited
+                trade loss. It becomes revenue positive because of the cashback benefits offered. All the benefits lead
+                to surged trade volume for even illiquid digital assets on the exchange, creating an extensive liquidity
+                pool resulting in faster trade settlement. </p>
+              <p> <span> Market Making - </span> Market making is an activity whereby a trader simultaneously provides
+                liquidity to both buyers and sellers in a financial market. Liquidity is the degree to which an asset
+                can be quickly bought or sold without notably affecting the stability of its price. </p>
+            </div>
+            <!-- // Benefits of trade tab -->
+
+            <!-- What is Crypto Tab -->
+            <div id="homeTwo" class="tabcontent tab-work">
+              <h3 class="heading-3">What is Crypto ?</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/what-is-crypto.png" alt="image">
+              <p class="pt-4"> A crypto currency is a digital form of cash that is maintained and circulated over a
+                blockchain network where no centralized authority is involved. Bitcoin, Ethereum, Steller Lumen, Bitcoin
+                Cash, Ethereum Classic and Z Cash are some of the examples of crypto currency. </p>
+
+              <h6 class="heading-6"> TechnoApp also has its base crypto currency that can be utilized to pay fees on the
+                exchange. </h6>
+
+              <h5 class="heading-5"> What is Blockchain ? </h5>
+              <p> Simply put, a blockchain is primarily a chain of blocks. These blocks store data, and all are linked
+                to one another. Thus, a blockchain can be described as a chain of records or data stored in the form of
+                blocks.
+                Blockchain is also known as decentralized public ledger. This new age technology makes immutable where
+                data stored in previous blocks cannot be hacked, cheated, or changed unless more than 50% validators of
+                the network agree to it. </p>
+
+              <h5 class="heading-5"> What is Trading ? </h5>
+              <p> Trading generally means purchasing a particular security, commodity or an asset and selling it with an
+                aim of generating profit. In the financial market trading is done with the objective of buying and
+                selling that particular asset in the short-term period. On the other hand, buying a particular asset
+                with an objective of holding it for a year or more is known as long term investing. </p>
+            </div>
+            <!-- // What is Crypto Tab -->
+
+            <!-- Trade tab -->
+            <div id="Trade" class="tabcontent tab-work">
+              <h3 class="heading-3"> What Is Trading ? </h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/trading-img.png" alt="image">
+              <p class="pt-4"> Cryptocurrency trading means taking a financial position on the price direction of
+                individual cryptocurrencies against the dollar (in crypto/dollar pairs) or against another crypto, via
+                crypto to crypto pairs. Cryptocurrency trading involves buying and selling cryptocurrencies for profit.
+              </p>
+            </div>
+            <!-- // Trade tab -->
+
+            <!-- Trading View -->
+            <div id="TradeOne" class="tabcontent tab-work">
+              <h3 class="heading-3"> Trading View / Trader Workstation :</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/trading-view.png" alt="image">
+              <p class="pt-4">Trading View is an interactive view for the users which includes graphic representation of
+                historical and real time price and volume action, option to set different parameters with which user can
+                see the graph, active and passive live orders in the market which creates market depth, option to place
+                orders according to the user preference, real time Notional or Booked P/L etc.. It helps users to get a
+                clear picture of the underlying asset, portfolio value and to implement Buy/Sell decision on it.</p>
+            </div>
+            <!-- // Trading View -->
+
+            <!-- Spot Trading -->
+            <div id="spot-trading" class="tabcontent tab-work">
+              <h3 class="heading-3"> Spot Trading </h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/spot-trading.png" alt="image">
+              <p class="pt-4">Spot trading in crypto is the process of buying and selling cryptocurrencies at real-time
+                prices with the aim of generating a trading profit. </p>
+            </div>
+            <!-- // Spot Trading) -->
+
+            <!-- Trade Attributes -->
+            <div id="trade-attributes" class="tabcontent tab-work">
+              <h3 class="heading-3"> Trade Attributes </h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/trade-attributes.png" alt="image">
+              <p class="pt-4"> Transaction Hash, Method, Block, Age, From, To, Value, Transaction Fee </p>
+              <ul class="tab-ul">
+                <li><span> Transaction Hash : </span> A transaction hash/id is a unique string of characters that is
+                  given to every transaction that is verified and added to the blockchain. In many cases, a transaction
+                  hash is needed in order to locate funds. E.g.: In transaction hash
+                  <span>"0xb3be368b28911b12c6f03e970b2a7f76b99b337c6e4c91c7cfbebae47f6ce5e8" </span> the following
+                  details are visible on Etherscan. </li>
+                <li><span> Method : </span> It defines the transaction type like “Transfer, Withdraw, Pay, Approve,
+                  Multisign, Multicall, Deposit, Deposit Native, Remove Liquidity etc.  </li>
+                <li><span> Block : </span> It is the block no. in which the transaction hash details have been recorded.
+                </li>
+                <li><span> Age : </span> It defines the time difference from current time stamp at which the transaction
+                  happened. </li>
+                <li><span> From : </span> It defines the seller wallet address. </li>
+                <li><span> To : </span> It defines the buyer wallet address. </li>
+                <li><span> Value : </span> It defines the value of the transaction in terms of the native token of that
+                  ecosystem. </li>
+                <li><span> Transaction Fee : </span> Transaction cost levied on for the transaction. </li>
+              </ul>
+            </div>
+            <!-- // Trade Attributes -->
+
+            <!--  Technical Analysis -->
+            <div id="TradeTwo" class="tabcontent tab-work">
+              <h3 class="heading-3">Technical Analysis</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/technical-analysis.png" alt="image">
+              <p class="pt-4">Technical analysis is a process used to verify and predict the future prices of any
+                securities by looking at the price movement, charts, trends, volume and other factors. There are
+                different ways in which users can see such graphic data like:</p>
+              <ul class="tab-ul">
+                <li> Candle Chart; </li>
+                <li> Line Chart; </li>
+                <li> Bar Chart; </li>
+                <li> Area Chart etc.; </li>
+              </ul>
+            </div>
+            <!-- // Technical Analysis -->
+
+            <!-- Candle Stick Chart -->
+            <div id="TradeThree" class="tabcontent tab-work">
+              <h3 class="heading-3"> Candle Stick Chart</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/candle-stick-chart.jpg" alt="image">
+              <p class="pt-4"><span> Candle Stick Chart : </span> A candlestick chart is a type of financial chart that
+                graphically represents the price moves of an asset for a given timeframe. As the name suggests, it’s
+                made up of candlesticks, each representing the same amount of time. The candlesticks can represent
+                virtually any period, from seconds to years. A single candle contains four pieces of information: O -
+                Open, H - High, L - Low, C - Close. (Place a diagram) </p>
+              <ul class="tab-ul">
+                <li> Open price </li>
+                <li> Maximum price </li>
+                <li> Minimum price </li>
+                <li> Close price </li>
+                <li> Apart from these four pieces, color is the fifth piece of information that comes into play. The
+                  color indicates whether the candle is rising or falling. </li>
+                <li> You can also adjust the color depending on your preference. The default setting is a white
+                  background, where green candles (with black borders to make them visible against a white background)
+                  are up candles. In contrast, red candles are down candles, indicating a bearish market behavior. </li>
+              </ul>
+              <h5 class="heading-5"> Body and wick </h5>
+              <p> The other important information is that each candle has its body and wick. the candle has the opening
+                price at the top and closing price at the bottom. The opening and closing prices determine the
+                boundaries of the candle body and its color. If the price has increased since the beginning of the
+                analyzed period, the candle’s body is green with the opening price at the bottom and the closing price
+                at the top. Alternatively, the candle is red if the price has fallen since the beginning of the analyzed
+                period. On the other hand, the length of the upper and lower wicks is determined by the lowest and
+                highest price values in the analyzed period. Traders use the candlestick charts to look for specific
+                formations. </p>
+            </div>
+            <!-- // Candle Stick Chart -->
+
+            <!-- order tab -->
+            <div id="Order" class="tabcontent tab-work">
+              <h3 class="heading-3">Order</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/technical-analysis.png" alt="image"> -->
+              <h5 class="heading-5"> Understand your Order: </h5>
+              <ul class="tab-ul">
+                <li><span> Spot Order : </span> Orders which are placed in spot market </li>
+                <li><span> Open Order : </span> Orders which are not yet executed and are pending in the market. </li>
+                <li><span> Order History : </span> Details of the orders which are placed, modified, cancelled, executed
+                  etc; with timestamp, order id etc. from the account. </li>
+                <li><span> Trade History : </span> Details of the historical transactions from the account. </li>
+              </ul>
+            </div>
+            <!-- // Order tab -->
+
+            <!-- Spot Order (Buy/Sell) -->
+            <div id="spot-order" class="tabcontent tab-work">
+              <h3 class="heading-3">Spot Order (Buy/Sell)</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/trading-view.png" alt="image"> -->
+              <p class="">A spot market allows traders to buy and sell an asset at prevailing market prices. Crypto spot
+                market transactions are settled on the 'spot' immediately after the order of both the buyer and seller
+                is filled. A spot market must include buyers, sellers, and an order book.</p>
+            </div>
+            <!-- // Spot Order (Buy/Sell) -->
+
+            <!-- Market Order -->
+            <div id="market-order" class="tabcontent tab-work">
+              <h3 class="heading-3"> Market Order</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/market-order.jpg" alt="image"> -->
+              <h5 class="heading-5 pt-4"> Market Order : </h5>
+              <p>A market order is used when an investor is prioritizing speed over cost. It indicates that the investor
+                wants their order to be filled immediately at the next available price. In other words, they will buy or
+                sell at the next opportunity they have, regardless of price. In a situation where prices are changing
+                quickly, this could mean that the cost at order fulfilment is different to what it was when it was
+                quoted. Market orders have the best chance to have their order filled; however, they also have a very
+                high probability of having a different price when bought or sold than at order placement. An example of
+                a market order could be the following:</p>
+              <ul class="tab-ul">
+                <li><span> Buy market order: </span>The value of a coin might be $1.20 when the order to buy is placed,
+                  but by the time the order is filled, the price might have rapidly increased to $1.35. If a market
+                  order has been placed, this order will go through despite the increase in cost, because it has been
+                  set to buy at the first opportunity, regardless of cost. </li>
+                <li><span> Sell market order: </span>The value of a coin might be $1.35 when the order to sell is
+                  placed, but by the time the order is placed, the price might have rapidly dropped to $1.20. If a
+                  market order has been placed, this order will go through despite the loss; because it has been set to
+                  sell at the first opportunity, regardless of cost. </li>
+                <li> The best time to set a market order is when the market is high liquid as this will help the order
+                  be filled in as short a time as possible and thus reduce the chance of a price change. </li>
+              </ul>
+            </div>
+            <!-- // Market Order -->
+
+            <!-- Loop Order -->
+            <div id="loop-order" class="tabcontent tab-work">
+              <h3 class="heading-3"> Loop Order</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/technical-analysis.png" alt="image"> -->
+              <h5 class="heading-5 pt-4"> Loop Order : </h5>
+              <p>First trade will be committed in the market - Based on the trade , Trade ProNote will be executed by
+                TechnoApp for the remaining number of trade cycles. User will always have assured trade in hand. The word
+                loop means the process cycle the end of which is connected to the beginning. Here it is a new type of
+                conditional order introduced by TechnoApp, where traders can repeat their Buy/Sell order multiple times and
+                can make money where total cost (impact cost + transaction cost) is less than the cashback gain.</p>
+              <ul class="tab-ul">
+                <li> E.g.: Bid/Ask of BTC/USDT in TechnoApp is 24000/24000.10 with 1 amount of BTC. <br>
+                  A trader have only balance to put Buy order of 0.10 BTC. </li>
+                <li> He can place Loop Buy Order of 0.10 BTC 5 times, which will effectively place 5 buy orders of 0.10
+                  BTC  24000.10 and after each buy order it will square off placing 4 loop sell order of 0.10 BTC
+                  24000.00. Same will effectively happen like this below:- </li>
+              </ul>
+              <!-- table -->
+              <div class="tab-table-sec">
+                <table class="table tab-table">
+                  <thead>
+                    <tr>
+                      <th> Buy Value </th>
+                      <th> Buy Qty </th>
+                      <th> Buying Price </th>
+                      <th> Selling Price </th>
+                      <th> Sell Qty </th>
+                      <th> Sell Value </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td> 2400.01 </td>
+                      <td> 0.10 </td>
+                      <td> 24000.10 </td>
+                      <td> 24000.00 </td>
+                      <td> 0.10 </td>
+                      <td> 2400.00 </td>
+                    </tr>
+                    <tr>
+                      <td> 2400.01 </td>
+                      <td> 0.10 </td>
+                      <td> 24000.10 </td>
+                      <td> 24000.00 </td>
+                      <td> 0.10 </td>
+                      <td> 2400.00 </td>
+                    </tr>
+                    <tr>
+                      <td> 2400.01 </td>
+                      <td> 0.10 </td>
+                      <td> 24000.10 </td>
+                      <td> 24000.00 </td>
+                      <td> 0.10 </td>
+                      <td> 2400.00 </td>
+                    </tr>
+                    <tr>
+                      <td> 2400.01 </td>
+                      <td> 0.10 </td>
+                      <td> 24000.10 </td>
+                      <td> 24000.00 </td>
+                      <td> 0.10 </td>
+                      <td> 2400.00 </td>
+                    </tr>
+                    <tr>
+                      <td> 2400.01 </td>
+                      <td> 0.10 </td>
+                      <td> 24000.10 </td>
+                      <td> </td>
+                      <td> </td>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <td> 12000.05 </td>
+                      <td> 0.50 </td>
+                      <td> </td>
+                      <td> </td>
+                      <td> 0.40 </td>
+                      <td> 9600.00 </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--- // table -->
+              <p class="pt-4"> Net value of the trader to Buy 0.10 BTC = $2400.05 </p>
+              <p> Trading fees= (12000.05+9600.00) * 0.02% = $ 4.32001 </p>
+              <p> Maximum Cashback = $4.32001 * 5 times * 60% = $12.96003 </p>
+              <p> Net Buy value after cashback = (2400.05+4.32001-12.96003) = $2391.40998. </p>
+            </div>
+            <!-- // Loop Order -->
+
+            <!-- IOC Order tab -->
+            <div id="ioc-order" class="tabcontent tab-work">
+              <h3 class="heading-3">IOC (Immediate or Cancel) Order:</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/ioc-order.jpg" alt="image"> -->
+              <p class="pt-4"> IOC Orders are placed so that either execution would happen on immediate basis as per the
+                criteria or would cancel immediately. Partial execution possible. </p>
+              <ul class="tab-ul">
+                <li> E.g.: Bid/Ask of BTC/USDT is $24000/24002 with buyer qty as 0.5 & seller qty as 0.3 at that price.
+                  If one places an IOC buy order 24002 of 0.8 qty, the 0.5 qty will execute and remaining 0.3 qty will
+                  get cancelled. </li>
+                <li> Result: May or may not execute. </li>
+              </ul>
+            </div>
+            <!-- // IOC Order tab -->
+
+            <!-- Limit Order tab -->
+            <div id="limit-order" class="tabcontent tab-work">
+              <h3 class="heading-3">Limit Order</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/limit-order.jpg" alt="image"> -->
+              <p class="pt-4"> Limit Orders are placed so that execution can happen as per user defined price only. </p>
+              <ul class="tab-ul">
+                <li> E.g.: Bid/Ask of BTC/USDT is $24000/24002. If one places a buy order below $24002; or places Sell
+                  order above $24000, it will be considered as Limit order. Result: Execution may or may not happen.
+                </li>
+              </ul>
+            </div>
+            <!-- // Limit Order tab -->
+
+            <!-- Stoploss Limit Order -->
+            <div id="stoploss-limit-order" class="tabcontent tab-work">
+              <h3 class="heading-3">Stoploss Limit Order</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/spotless-order.jpg" alt="image"> -->
+              <p class="pt-4"> These orders are placed to execute trade before further unfavorable movement. </p>
+              <ul class="tab-ul">
+                <li> E.g., Current Market price of BTC/USDT is $24000, and I already have purchased it  $25000. I want
+                  to restrict my loss within $2000. Therefore, I must square off my BTC buy position before its price
+                  going down below $23000. There are two prices to be specified in case of Stop Loss Limit order. One is
+                  stop price or trigger price, and the other is limit price. In case of Stop Loss Buy order the Trigger
+                  price >=Limit price. In our above example I can specify Trigger price as  $23005 and limit price 
+                  $23000. Once the LTP price of BTC comes to $23005 or below, the Limit sell order will be generated 
+                  $23000. </li>
+                <li> Result: Chances of execution are maximum, and it depends on the further movement after hitting the
+                  trigger price. If after hitting the trigger price the next BTC price moved to $22999 and below that,
+                  the sell order will remain open  $23000 and wait for its execution. </li>
+              </ul>
+            </div>
+            <!-- // Stoploss Limit Order -->
+
+            <!-- Stoploss Market Order -->
+            <div id="stoploss-market-order" class="tabcontent tab-work">
+              <h3 class="heading-3">Stoploss Market Order</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/stoploss-market.jpg" alt="image"> -->
+              <p class="pt-4">All are same as Stop loss limit order, except that instead of limit order it will place
+                market order after hitting the trigger price. Therefore, chances of execution are almost 100%.</p>
+            </div>
+            <!-- // Stoploss Market Order -->
+
+            <!-- Iceberg Order -->
+            <div id="iceberg-order" class="tabcontent tab-work">
+              <h3 class="heading-3">Iceberg Order</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/iceberg-order.jpg" alt="image"> -->
+              <p class="pt-4">It is a conditional order where trader wants to place orders with large quantity but don't
+                want to show the size of that order into the market. </p>
+            </div>
+            <!-- // Iceberg Order -->
+
+            <!-- AON(All or None) Order -->
+            <div id="aon-order" class="tabcontent tab-work">
+              <h3 class="heading-3">AON(All or None) Order</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/aon-order.jpg" alt="image"> -->
+              <p class="pt-4"> It is a conditional order where trader doesn't want partial trade. Either it will execute
+                fully, or will get cancelled. </p>
+            </div>
+            <!-- // AON(All or None) Order -->
+
+            <!-- FOK(Fill or kill) Order -->
+            <div id="fok-order" class="tabcontent tab-work">
+              <h3 class="heading-3">FOK(Fill or kill) Order</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/fok-order.jpg" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/technical-analysis.png" alt="image"> -->
+              <p class="pt-4">Same as AON order, in addition it requires on immediate basis.</p>
+              <ul class="tab-ul">
+                <li> Stop Limit Order : </li>
+                <li> Stop Limit Order (Buy/Sell) : </li>
+                <li> Settlement of Orders in FIFO : Orders use to settle based on price-time priority basis, i.e. If the
+                  CMP of the asset is $24000 and trader “A” placed a limit buy order  $23995 and trader “B” placed 
+                  $23990, if the first execution will happen for trader “A” as the quoted Buy price of trader “A”>”B”.
+                  If both have placed their Buy orders  $23990, the trader who have placed order earlier will get the
+                  opportunity of execution first. </li>
+              </ul>
+            </div>
+            <!-- // FOK(Fill or kill) Order -->
+
+            <!-- Order Status -->
+            <div id="order-status" class="tabcontent tab-work">
+              <h3 class="heading-3">Order Status</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/order-status.jpg" alt="image"> -->
+              <p class="pt-4">Order status can be Open/Pending, Executed/Traded, Rejected, Cancelled, Frozen, Unknown.
+              </p>
+            </div>
+            <!-- // Order Status -->
+
+            <!-- OCO(One Cancel Other Order) -->
+            <div id="oco-status" class="tabcontent tab-work">
+              <h3 class="heading-3">OCO(One Cancel Other Order)</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/technical-analysis.png" alt="image"> -->
+              <p class="pt-4">A “one cancels the other” (OCO) order is a sophisticated tool that allows you to combine
+                two conditional orders. As soon as one is triggered, the other is canceled. It is a pair of conditional
+                orders that if one order executes, then the other order is automatically canceled. An OCO order often
+                combines a stop order with a limit order on an automated trading platform. If trader have already a buy
+                position in BTC and wants to either book profit on its upward movement or will book loss with a stop
+                loss order, but both should not execute, then he can place OCO order. </p>
+              <ul class="tab-ul">
+                <li> E.g.: Current market price of BTC is $24000, Trader wants to either book profit  25000, or to stop
+                  loss 23500. He must put in Sell BTC section Price as 25000, Stop as 23500 or above it, and Limit
+                  order as 23500. If BTC price moves to 25000, then the profit order 25000 will execute and stop loss
+                  order  23500 will get cancelled. If it moves down to 23500, then the stop order will execute and
+                  profit order will get cancelled. </li>
+              </ul>
+            </div>
+            <!-- // OCO(One Cancel Other Order) -->
+
+            <!-- Calculation Of Cashback -->
+            <div id="calculation-of-cashback" class="tabcontent tab-work">
+              <h3 class="heading-3">Calculation Of Cashback</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/calculation-of-cashback.jpg" alt="image"> -->
+              <p class="pt-4"><span> When we will get the cashback : </span> Traders can view the maximum cashback
+                benefit on their trades on a real-time basis. </p>
+              <p><span> when will it be credited :- </span> Traders will get the cashback credited at their wallets
+                after 7 days of their transactions. </p>
+              <p><span> How can we withdraw - </span> Withdrawal Rules (this is for cashback)- Recent Charges : Cashback
+                tokens are restricted for withdrawal for x days from the credit date. Same can be withdrawn after x days
+                with y% charges. Whereas traders can withdraw cashback after x+n days without any charges. </p>
+              <h5 class="heading-5"> Selling TechnoSavvy Tokens  </h5>
+              <ul class="tab-ul">
+                <li> On TechnoApp - DPR. Not less than DPR. (Daily Price Range) There will be pairs available with TechnoSavvy
+                  Token where traders can buy/sell TechnoSavvy Tokens against stable coins and other cryptos. </li>
+                <li> Off TechnoApp - Other exchanges (Withdrawal then sale _ Following Withdrawal policy) </li>
+              </ul>
+            </div>
+            <!-- // Calculation Of Cashback -->
+
+            <!-- Transaction Charges -->
+            <div id="transaction-charges" class="tabcontent tab-work">
+              <h3 class="heading-3">Transaction Charges</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <!-- <img src="/images/transaction-charges.jpg" alt="image"> -->
+              <p class="pt-4">TechnoApp has the lowest transaction fees which is up to 0.02%.</p>
+              <p> During the initial launch, TechnoApp has a launching feature of Staking which further gives a discount of
+                50% and thus the transaction fees becomes up to 0.01% for the transaction during the ICO. Gas fees and
+                other network costs are additional to it. </p>
+            </div>
+            <!-- // Transaction Charges -->
+
+            <!-- what is wallet tab -->
+            <div id="wallet" class="tabcontent tab-work">
+              <h3 class="heading-3">What Is Wallet</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/wallet.jpg" alt="image">
+              <p class="pt-4"> A cryptocurrency wallet is a digital wallet that allows you to store the unique digital
+                codes needed to send and receive crypto assets.  </p>
+              <ul class="tab-ul">
+                <li><span> Funding Wallet: </span> Before initiating the crypto trading funds to be moved from fiat
+                  currency to stable coins through Funding Wallet. i.e. Pay-In & Pay-Out of funds to be done through
+                  Funding Wallets. </li>
+                <li><span> Spot Wallet: </span> To start trading in cryptos funds to be moved from Funding wallet to
+                  Spot wallet. </li>
+                <li><span> Earn Wallet: </span> One can move assets from Funding wallet to Earn wallet when he wants to
+                  stake and earn passive income as APY%. </li>
+                <li><span> Margin Wallet : </span> To get leverage benefit in trading one can transfer assets from
+                  Funding wallet to Margin wallet and borrow funds with borrowing fees and do trading. Once the leverage
+                  trading is done, trader can move back his fund to Funding wallet. </li>
+              </ul>
+            </div>
+            <!-- // what is wallet tab -->
+
+            <!-- TechnoApp features tab -->
+            <div id="features" class="tabcontent tab-work">
+              <h3 class="heading-3"> TechnoApp Features </h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/features.png" alt="image">
+              <h5 class="heading-5"> Cashback - </h5>
+              <p> TechnoApp offers a positive cashback benefit to all its participants on each trade. Traders can get a
+                cashback of up to 5 times the transaction fees spent on TechnoApp Trading Engine. </p>
+              <p> For example, on spending $20 as a transaction fee, the cashback earned by the trader will be up to
+                $100 ($20*5). </p>
+              <h5 class="heading-5"> Who is this cashback for? </h5>
+              <p> All the traders trading on the TechnoApp exchange are eligible to get cashback benefits. The total
+                cashback is distributed between maker and taker where 60% of the cashback is provided to Takers and 40%
+                of the cashback offered in the trade is provided to Makers. </p>
+              <p> Continuing the above example Takers and Makers will get a cashback of $12 and $8 respectively out of
+                $20 of total cashback </p>
+              <h5 class="heading-5"> Lowest Transaction Fees - </h5>
+              <p> TechnoApp offers the lowest transaction fees in the market, 0.02%. By trading on TechnoApp, traders can
+                enjoy the lowest transaction fee in the market, 0.02%. The transaction fees offered by TechnoApp is up to
+                10 times lower than any other contemporary exchange. </p>
+              <p> The next-gen crypto exchange is being built with a trader-first approach aiming to help all the
+                participants in maximizing their profit. </p>
+              <h5 class="heading-5"> Low Impact Cost: </h5>
+              <p> Trade on TechnoApp to reduce your impact cost. With the lowest transaction fee and cashback benefits, you
+                earn more than you paid each time, every time. </p>
+              <p> The TechnoApp low transaction cost and cashback benefit will increase its liquidity and as a result the
+                impact cost will be much lower than others. </p>
+              <h5 class="heading-5"> Investment Return Value (IRV)- </h5>
+              <p> Investment Return Value (IRV) - With the lowest transaction fee and cashback benefits, the demand of
+                TechnoSavvy tokens will increase its price as AMM and investors can enjoy capital appreciation benefits on TechnoSavvy
+                Token. By trading on TechnoApp you get TechnoSavvy token as cashback rewards. This token is expected to multiply
+                in value by multiple folds with an increment in the trading volume on the exchange. Considering the
+                TechnoApp benefits traders will be attracted to trade on the platform. </p>
+              <p> The more you trade on the next generation exchange, TechnoApp the more you appreciate your capital. </p>
+              <h5 class="heading-5"> Positive Return on Trade: </h5>
+              <p> TechnoApp makes your trade positive even if you sell your digital assets at a limited loss. <br> Let’s
+                understand it through an example. </p>
+              <p> A trader bought Bitcoin for $21000 and sold that coin for $20999. The combined transaction 0.02% fee
+                will be $8.4 <br> Loss incurred will be: ($21000 - $20999) + $8.4 = $9.4 <br> Cash back offered: 5 times
+                the transaction fee of $8.4*5 = $42 <br> Profit made: $42 - $ 9.4 = $33.6 <br> That means the total
+                earning will be $33.6 despite selling the Bitcoin at a loss. </p>
+              <h5 class="heading-5"> Get the capital appreciation benefit: </h5>
+              <p> Each trade on the TechnoApp will be routed through TechnoSavvy Token only, which in turn raises the demand of
+                the TechnoSavvy Token and captures the Cryptocurrency pair trading values as Capital Appreciation to the TechnoSavvy
+                Token. The more the trade, the higher the demand of TechnoSavvy and the more value appreciation of the token.
+              </p>
+              <h5 class="heading-5"> Make money in Arbitrage Trading : </h5>
+              <p> Arbitrage trading is an excellent option for traders to gain profits in the crypto market. Because of
+                different fee structure the price of cryptocurrency varies in different exchanges. Traders exploit this
+                opportunity to make profits. Buying from one crypto exchange at a lower cost and selling it to another
+                crypto exchange at a higher price is the general strategy followed by traders. </p>
+              <p> TechnoApp offers an Arbitrage opportunity within its trading ecosystem. </p>
+              <p> In the next-generation cryptocurrency exchange TechnoApp, the cashback benefit is higher than the
+                transaction fees each time. As a result, despite having Impact Cost the trader can find arbitrage
+                opportunities. </p>
+              <p><span> For example: </span></p>
+              <p> A trader buys bitcoin at $25000 and sells it for 24999. The total transaction fee  0.02% will be $10.
+                Loss incurred by the trader in this trade $11 [($25000 - $24999) + $10]. </p>
+              <p> However, TechnoApp offers cashback of up to 5 times the transaction fee i.e., $50 ($10*5). Total Profit
+                made by the trader in this trade will be $39 ($50 - $11). </p>
+              <p> By trading on TechnoApp the impact cost is reduced, and that creates an Arbitrage opportunity for you.
+              </p>
+            </div>
+            <!-- // TechnoApp features tab -->
+
+            <!-- What is staking? tab -->
+            <div id="staking" class="tabcontent tab-work">
+              <h3 class="heading-3">What is staking?</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/skating-img.png" alt="image">
+              <p class="pt-4">Staking means putting the cryptocurrency in a wallet so that the staked tokens can be
+                utilized in the project. Trading staking the crypto tokens get rewarded with benefits such as Discounts
+                and Cashback.</p>
+              <p> TechnoApp also offers staking benefits to its early investors. This is a Launching Feature of TechnoApp.
+              </p>
+              <h6 class="heading-6"> Some of them are mentioned below. </h6>
+              <h3 class="heading-3 mb-0"> Staking Benefit on TechnoApp: </h3>
+              <h5 class="heading-5"> 50% Discounted Transaction Fee: </h5>
+              <p> TechnoApp is offering a discount of 50% on the transaction fees for early TechnoSavvy investors. Traders
+                investing at this stage can trade with 0.01% transaction fees instead of 0.02%. </p>
+              <p> Let’s understand it through an example, Trader A invested in TechnoSavvy at an early stage and is eligible
+                for the staking benefit and Trader B joined the TechnoApp platform after its launch. Assuming both the
+                traders purchased Ether worth $1000000. The transaction fees for Trader A will be $100 ( at 0.01%) and
+                for Trader B, it will be $200 (at 0.02%) </p>
+              <h5 class="heading-5"> Assured Cashback of 10 times </h5>
+              <p> Traders get an assured cashback of 10 times when you stake 50000 TechnoSavvy Tokens for a month on unlimited
+                transactions. For example: On buying a bitcoin worth $25000, the transaction fee will be $2.5. The
+                trader will receive an assured cashback of $25 ($2.5*10) </p>
+              <h5 class="heading-5"> Assured Cashback of 5 Times </h5>
+              <p> When a trader stake 5000 TechnoSavvy tokens, you get a guaranteed cashback of 5 times the transaction fees
+                spent for five daily transactions. </p>
+              <p> Considering the above example the trader will receive an assured cashback of $12.5 ($2.5*5). </p>
+            </div>
+            <!-- // What is staking? tab -->
+
+            <!-- KYC tab -->
+            <div id="kyc" class="tabcontent tab-work">
+              <h3 class="heading-3">KYC</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/kyc.png" alt="image">
+              <h5 class="heading-5 pt-4"> Basic Definitions - </h5>
+              <p>KYC refers to a process that banks and other financial institutions use to gather identifying data and
+                contact information from current and potential customers. Its purpose is to prevent fraud, money
+                laundering, and other illicit activity, as well as the misuse of financial accounts. KYC processes are
+                an industry standard for financial services and crypto exchanges. It’s one of the most important
+                functions in the fight against money laundering and other crimes. KYC checks can feel like an annoyance,
+                but they provide a great deal of security. As part of wider AML measures, KYC allows you to trade crypto
+                on exchanges like TechnoApp with more confidence and security.</p>
+              <p> Some identifying documents required by KYC processes include: Driver’s License / Government-issued
+                photo ID, Passport, Social security number, PAN card, Voter ID Card </p>
+              <h5 class="heading-5"> Why is KYC Mandatory for Most Crypto Exchanges? </h5>
+              <p> Know Your Customer (KYC) regulations are mandatory for major cryptocurrency exchanges because it
+                ensures they comply with regulatory rules and laws. The goal of KYC is to curb illicit activities and to
+                highlight suspicious behavior as early as possible. Cryptocurrency exchanges utilize these data to track
+                transaction patterns to ensure safe and compliant transactions. Without KYC verification, a
+                cryptocurrency exchange may be held liable when a user gets away with committing a crime because they
+                failed to do due diligence. Henceforth, major exchanges prefer to remain anti-money laundering (AML)
+                compliant. However, KYC and AML, while sometimes related, do not refer to the same thing. </p>
+            </div>
+            <!-- // KYC tab -->
+
+            <!-- AML tab -->
+            <div id="aml" class="tabcontent tab-work">
+              <h3 class="heading-3">Anti-money laundering (AML)</h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/aml.png" alt="image">
+              <p class="pt-4">AML - Anti-money laundering (AML) is a broad term for laws and regulations put in place to
+                prevent criminals from making money illegally or moving illicit funds. While many illegal activities are
+                targeted by AML laws, some of the most important are tax evasion, public corruption, and market
+                manipulation through methods such as wash trading. AML is tightly linked to Know Your Customer (KYC)
+                requirements, which essentially involve verifying customers' identities and the sources of their income.
+                KYC also requires financial institutions to monitor their users' activity on an ongoing basis. Like AML,
+                modern KYC procedures are heavily automated, and many institutions use the client onboarding process as
+                an opportunity to acquire proper identification from new customers. </p>
+            </div>
+            <!-- // AML tab -->
+
+            <!-- country tab -->
+            <div id="country" class="tabcontent tab-work">
+              <h3 class="heading-3"> Operational Countries </h3>
+              <ul>
+                <li><a href="#"> Beginner </a></li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                <li> Published Oct 10, 2022 &nbsp;&nbsp;&nbsp;&nbsp; /</li>
+                <li> <img src="/images/clock.png" alt="image">&nbsp;&nbsp; 7m </li>
+              </ul>
+              <img src="/images/country.png" alt="image">
+              <h5 class="heading-5 pt-4"> Which countries cannot use TechnoApp? TechnoApp </h5>
+              <p> Which countries cannot use TechnoApp? TechnoApp is not operating in several countries due to restrictions
+                laid down by the jurisdiction or governing laws there. </p>
+              <h6 class="heading-6"> Reasons for exclusion from country could be for any of the following reason: </h6>
+              <ul class="tab-ul">
+                <li> No regulation, no operation: Since most financial market’s regulators do not supervise the crypto
+                  space, they may ban and even prohibit advertising from TechnoApp. </li>
+                <li> Lack of transparency: Many regulators believe that best effort is not made to alert for the risks
+                  associated with crypto trading, including that investors can lose all their money due to which
+                  exchange services gets restricted in such country. </li>
+                <li> Ban in country: Cryptocurrency is banned by monetary authorities of several countries. Here’s a
+                  list of countries whose traders are banned from trading on TechnoApp: China, Algeria, Bolivia, Burundi
+                  ,Iraq. </li>
+                <li> Besides, TechnoApp protects itself by stating the possibility of closing an account at their sole
+                  discretion in their terms of use. In other words, it means that at any moment, you may see your
+                  account closed for any reason. So, please keep this in mind. </li>
+              </ul>
+              <!-- faq accordion -->
+              <div class="accordion pt-4 country-faq" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> What countries is
+                      TechnoApp available in? </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p> Generally, conversion of crypto to fiat is restricted due to tight regulations. Since TechnoApp
+                        is initially crypto to crypto exchange, it could operate in almost every country worldwide –
+                        unless the country have its own crypto oriented regulations. At press time, TechnoApp does not have
+                        an official list of supported countries. The exchange continues to operate in several countries
+                        in the America, Europe, Asia, and others. However, due to strict financial regulations globally,
+                        TechnoApp has restricted its product offerings to customers in certain countries. </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> Is TechnoApp
+                      regulated? </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p> Yes. TechnoApp is regulated in some countries. However, due to increasing compliance
+                        requirements, TechnoApp is under the process to get regulated at global level in majority
+                        countries. </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> Does TechnoApp
+                      work in the US? </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p> Yes. TechnoApp launched its US operation in August 2022 as an extension of the international
+                        crypto brand. The new company was duly named TechnoApp LLC. The subsidiary was created separately
+                        from its parent company with only licensing software, and wallet technology binding both
+                        parties. TechnoApp LLC is an exchange registered with FinCEN as Money Service Business (MSB) in US
+                        and supports fewer cryptocurrencies which are allowed in the US market. </p>
+                      <p><span> TechnoApp LLC is available to traders throughout all states and territories of United
+                          States. </span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"> Can I use
+                      TechnoApp in the India? Is TechnoApp legal in the India? </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p> TechnoApp is neither legal nor illegal in India due to no regulation on cryptocurrencies
+                        currently in place. TechnoApp provides exchange platform for traders in India for buy, sale and
+                        storing of cryptocurrencies in accordance with the Terms & Conditions published on the website.
+                        Users/ Traders are advised to follow these terms and conditions while using TechnoApp portal. </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive"> Can I use
+                      TechnoApp in the Australia? Is TechnoApp legal in the Australia? </button>
+                  </h2>
+                  <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p> TechnoApp is operating in Australia as NS Capital Holdings Pty Ltd. and is in process to get
+                        licensed under Australian Financial Services License issued by Australian Securities and
+                        Investments Commission. Hence, it will be regulated in Australia on receiving such license. </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix"> Can I use TechnoApp
+                      in the Europe? Is TechnoApp legal in the Europe? </button>
+                  </h2>
+                  <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p> TechnoApp is available in Europe and is legal there but is under process of registration of
+                        corporation in Europe and registration with monetary authority to be regulated for crypto
+                        services. </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSeven">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven"> Can I use
+                      TechnoApp in the Singapore? Is TechnoApp legal in the Singapore? </button>
+                  </h2>
+                  <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p> TechnoApp is available in Singapore and is legal there but is under process of registration of
+                        corporation in Singapore and registration with monetary authority to be regulated for crypto
+                        services. </p>
+                      <p> TechnoApp is in the process to register its services in all countries at global level and be
+                        regulated under respective governing laws. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- // faq accordion -->
+            </div>
+            <!-- // country tab -->
+          </div>
+        </div>
+        <!-- // col 8 -->
+
+      </div>
+    </div>
+  </section>
+  <!-- // tab and content section -->
+
+

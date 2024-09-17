@@ -1,0 +1,71 @@
+﻿@model vmDeposit
+
+
+@if (Model.IB.INRUserOptions.BankDeposits != null && Model.IB.INRUserOptions.selBankDeposits != null)
+{
+    @*@Html.HiddenFor(x=>x.INRUserOptions.selUPI.UPIid)*@
+    <div class="divmethod342">
+        <div class="meticon"><img src="~/images/bank.png"> </div>
+        <div class="metname">
+            <span>Bank Account:</span>            
+        </div>
+        <span id="selUPI" class="metstate33">
+            @Model.IB.INRUserOptions.selBankDeposits.AccountNumber
+        </span>
+    </div>
+
+
+    @if (Model.IB.INRUserOptions.BankDeposits.Count > 1)
+    {
+        <div class="linksmall"><a href="javascript:void(0)" class="view-more">Change Bank Account</a></div>
+        <div class="form-group width100 mt-2">
+            @*---Start*@
+            <div class="form-select3 view-more-details" style="display: none;">
+                <select class="my-select " asp-for=IB.INRUserOptions.selBankDeposits.AccountNumber onchange="BankChanged()">
+                    <option>Select UPI</option>
+                    @foreach (var item in Model.IB.INRUserOptions.BankDeposits)
+                    {
+                        <option data-img-src="/images/UPI.png" value="@item.AccountNumber">
+                            <div class="checkbox">
+                                <div class="flexwsbox435">
+                                    <span>@item.AccountHolderName</span> <span>
+                                        Bank: @item.Bank
+                                    </span> <span>
+                                        Acc No: @item.AccountNumber
+                                    </span>
+                                </div>
+                            </div>
+                        </option>
+                    }
+                </select>
+            </div>
+            @*//---End*@
+        </div>
+    }
+    <div id="dStep4">
+        <div class="css77-withdrawlS">
+            <div class="csssum-title55">Transaction method</div>
+            <div class="csssum-detail55"><span>Bank Deposit</span> </div>
+        </div>
+
+        <div class="css77-withdrawlS">
+            <div class="csssum-title55">Actual payment</div>
+            <div class="csssum-detail55"><span>₹ @Model.Amount.ToString("#,##0.00")</span> </div>
+        </div>
+        <div class="css77-withdrawlS">
+            <div class="csssum-title55">Transaction Fees</div>
+            <div class="csssum-detail55"><span>₹ @Model.IB.INRTechnoAppOption.selectedBankDeposits.DepositFee </span> </div>
+        </div>
+        <div class="css77-ordersucc text-center">
+            <span class="css77-payno">
+                <span>
+                    <h4>You Receive</h4>
+                </span> <span class="orange">₹ @((Model.Amount - Model.IB.INRTechnoAppOption.selectedBankDeposits.DepositFee).ToString("#,##0.00"))</span>
+            </span>
+        </div>
+    </div>
+}
+else
+{
+    <div class="linksmall"> <a asp-controller="settings" asp-action="AddPaymentMethod">SetUp Your Bank Account</a></div>
+}

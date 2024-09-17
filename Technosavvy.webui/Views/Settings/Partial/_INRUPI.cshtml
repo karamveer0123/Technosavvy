@@ -1,0 +1,47 @@
+﻿@model vmPaymentMethodSetup
+<div class="bankgroupdiv">
+   @* <div class="form-group mt-3">
+        <label class="form-label lable-name">Enter User Name</label>
+        <input type="text" class="form-control" placeholder=" "
+               aria-describedby="spndHelp" disabled>
+    </div>*@
+
+    <div class="form-group mt-3">
+        <label class="form-label lable-name">Linked UPI Id</label>
+        <input type="text" class="form-control" placeholder="UPI ID " asp-for=UPI.UPIId
+               aria-describedby="spndHelp" >
+    </div>
+
+
+    <div class="row">
+        <div class="page-upload-box">
+        <div class="payqr332">
+            <div class="qrdiv332">
+                <label class="form-label lable-name">Upload QR Code</label>
+                <div class="upload-box88">
+                    <!------------------->
+                    <div class="drop-zone">
+                        <span class="drop-zone__prompt">
+                            <i class="fa fa-upload"
+                               aria-hidden="true"></i>
+                        </span>
+                        <input asp-for="UPI.QRCode" type="file"  
+                               class="drop-zone__input" data-val="true"
+                               data-val-required="The Logo field is required.">
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="uploadlist343 w65per">
+                <h3>Instruction:</h3>
+                <ul>
+                    @*    <li> Upload the transaction proof from the bank Statement.</li>
+                    <li>the amount and the transaction ID must be visible. </li> *@
+                    <li>The image must be clear.</li>
+                    <li>The size of image must be Max 200 KB. </li>
+                    <li>format of the document must be in .jpg/.jpeg/.png/.pdf. </li>
+                </ul>
+            </div>
+    </div>
+
+</div>

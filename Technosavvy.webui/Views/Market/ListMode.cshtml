@@ -1,0 +1,532 @@
+﻿@{
+    ViewData["Title"] = "TopGainers";
+}
+
+<!--------------------------------------------------------------------->
+
+<section class="market-section bg2">
+    <div class="container">
+        <div class="row">
+
+            <div class="market-title-div">
+
+                <span class="market-title-h2"> <a href="market.html"> <i class="fa fa-chevron-circle-left" aria-hidden="true"></i> </a>  Markets : Top Gainer Coins</span>
+
+
+
+
+
+
+                <div class="totitle324">
+
+                    <span>
+
+                        <div class="dropdowndiv">
+
+                            <button class="dropdown-toggle marketbtn221" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                Markets
+                            </button>
+
+                            <ul class="dropdown-menu dropdown-menu-bx" aria-labelledby="dropdownMenuButton1">
+
+                                <li><a class="dropdown-item marketitem" href="market-topvolume.html"> Top Volume </a></li>
+
+                                <li><a class="dropdown-item marketitem" href="market-highlightcoin.html">Highlight Coins </a></li>
+
+                                <li><a class="dropdown-item marketitem  active" href="market-gainercoins.html"> Top Gainer Coins </a></li>
+
+                                <li><a class="dropdown-item marketitem" href="market-new-listing.html"> New Listings </a></li>
+
+                            </ul>
+
+                        </div>
+                    </span>
+
+                    <span>
+                        <a href="#markert-overview-graph" class="market-title-h4 market-overview-text">
+                            <i class="fa fa-pie-chart" aria-hidden="true"></i> Market
+
+                            Overview
+                        </a>
+                    </span>
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!---------------------------------------------------------------------->
+
+
+            <div class="market-tabs-content  mt-3">
+                <div id="comunity-css566-box" class="comunity-css566-box">
+                    <span class="searchmd454">
+                        <form>
+                            <input type="text" class="market-search" id="myInput" placeholder="Search" name="search">
+                            <button type="submit" class="mar-sea-btn"><i class="fa fa-search"></i></button>
+                        </form>
+                    </span>
+
+
+                    <table id="myMarketTable" class="table table-responsive">
+                        <thead class="trasaction-table-title">
+                            <tr>
+                                <th nowrap="nowrap" class="css566-table-text">
+                                    <div class="name-css46">
+                                        <span>Name</span> <span class="arrow-css44">
+                                            <a href="#">
+                                                <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="#"> <i class="fa fa-long-arrow-down" aria-hidden="true"></i></a>
+                                        </span>
+                                    </div>
+                                </th>
+
+                                <th nowrap="nowrap" class="css566-table-text">
+                                    <div class="price-css46">
+                                        <span>Price</span> <span class="arrow-css44">
+                                            <a href="#">
+                                                <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="#"> <i class="fa fa-long-arrow-down" aria-hidden="true"></i></a>
+                                        </span>
+                                    </div>
+                                </th>
+
+                                <th nowrap="nowrap" class="css566-table-text">
+                                    <div class="change24-css46">
+                                        <span>7h Change</span> <span class="arrow-css44">
+                                            <a href="#">
+                                                <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="#"> <i class="fa fa-long-arrow-down" aria-hidden="true"></i></a>
+                                        </span>
+                                    </div>
+                                </th>
+
+                                <th nowrap="nowrap" class="css566-table-text">
+                                    <div class="volume-css46">
+                                        <span>24h Volume</span> <span class="arrow-css44">
+                                            <a href="#">
+                                                <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="#"> <i class="fa fa-long-arrow-down" aria-hidden="true"></i></a>
+                                        </span>
+                                    </div>
+                                </th>
+
+                                <th nowrap="nowrap" class="css566-table-text">
+                                    <div class="volume-css46">
+                                        <span>Market Cap</span> <span class="arrow-css44">
+                                            <a href="#">
+                                                <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="#"> <i class="fa fa-long-arrow-down" aria-hidden="true"></i></a>
+                                        </span>
+                                    </div>
+                                </th>
+
+                                <th nowrap="nowrap" class="css566-table-text">
+                                    <div class="volume-css46">
+                                        <span> Cashback</span> <span class="arrow-css44">
+                                            <a href="#">
+                                                <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="#"> <i class="fa fa-long-arrow-down" aria-hidden="true"></i></a>
+                                        </span>
+                                    </div>
+                                </th>
+                                <th nowrap="nowrap" class="css566-table-text">
+                                    <div class="volume-css46"><span> Action</span>  </div>
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="myTable" class="trasaction-table">
+
+                            <tr>
+
+                                <td nowrap="nowrap">
+                                    <div class="coin-name-css46">
+                                        <span><img src="../images/coin/ETH.png"> ETH <small> Ethereum</small></span>
+                                        <span class="graph-css444">
+                                            <svg viewBox="0 0 500 100" class="chart">
+
+                                                <polyline fill="none" stroke="#d5960f" stroke-width="10" points="
+                         00,120  20,60  40,80  60,20  80,80  100,80  120,60   140,100  160,90  180,80  200, 110    220, 10   240, 70
+                         260, 100     280, 100    300, 40    320, 0    340, 100    360, 100     380, 120     400, 60   420, 70    440, 80
+                       "></polyline>
+
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-24change-css46">$0.000000 </div>
+                                </td>
+                                <td>
+                                    <div class="coin-24change-css46 css44-up">$0.000000 </div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-24volume-css46">$0.000000</div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-cap-css46 css44-up"> $0,000000</div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="market-trade-css46">00.00M </div>
+                                </td>
+                                <td>
+                                    <div class="spot-trade-css44">
+                                        <span>
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#detail-model">
+                                                Detail
+                                            </a>
+                                        </span>
+                                        <span> <a href="index1.html"> Trade </a></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <div class="coin-name-css46">
+                                        <span><img src="../images/coin/BTC.png"> BTC <small> Bitcoin</small></span>
+                                        <span class="graph-css444">
+                                            <svg viewBox="0 0 500 100" class="chart">
+
+                                                <polyline fill="none" stroke="#d5960f" stroke-width="10" points="
+                       00,120  20,60  40,80  60,20  80,80  100,80  120,60   140,100  160,90  180,80  200, 110    220, 10   240, 70
+                       260, 100     280, 100    300, 40    320, 0    340, 100    360, 100     380, 120     400, 60   420, 70    440, 80
+                     "></polyline>
+
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-24change-css46">$0.000000 </div>
+                                </td>
+                                <td>
+                                    <div class="coin-24change-css46 css44-down">$0.000000 </div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-24volume-css46">$0.000000</div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-cap-css46 css44-up"> $0,000000</div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="market-trade-css46">00.00M </div>
+                                </td>
+                                <td>
+                                    <div class="spot-trade-css44">
+                                        <span>
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#detail-model">
+                                                Detail
+                                            </a>
+                                        </span>
+                                        <span> <a href="index1.html"> Trade </a></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <div class="coin-name-css46">
+                                        <span><img src="../images/coin/USDT.png"> USDT <small> Tether</small></span> <span class="graph-css444">
+                                            <svg viewBox="0 0 500 100" class="chart">
+
+                                                <polyline fill="none" stroke="#d5960f" stroke-width="10" points="
+                     00,120  20,60  40,80  60,20  80,80  100,80  120,60   140,100  160,90  180,80  200, 110    220, 10   240, 70
+                     260, 100     280, 100    300, 40    320, 0    340, 100    360, 100     380, 120     400, 60   420, 70    440, 80
+                   "></polyline>
+
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-24change-css46">$0.000000 </div>
+                                </td>
+                                <td>
+                                    <div class="coin-24change-css46 css44-up">$0.000000 </div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-24volume-css46">$0.000000</div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-cap-css46 css44-down"> $0,000000</div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="market-trade-css46">00.00M </div>
+                                </td>
+                                <td>
+                                    <div class="spot-trade-css44">
+                                        <span>
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#detail-model">
+                                                Detail
+                                            </a>
+                                        </span>
+                                        <span> <a href="index1.html"> Trade </a></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <div class="coin-name-css46">
+                                        <span><img src="../images/coin/USDC.png"> USDC <small> USD</small></span>
+                                        <span class="graph-css444">
+                                            <svg viewBox="0 0 500 100" class="chart">
+
+                                                <polyline fill="none" stroke="#d5960f" stroke-width="10" points="
+                   00,120  20,60  40,80  60,20  80,80  100,80  120,60   140,100  160,90  180,80  200, 110    220, 10   240, 70
+                   260, 100     280, 100    300, 40    320, 0    340, 100    360, 100     380, 120     400, 60   420, 70    440, 80
+                 "></polyline>
+
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-24change-css46">$0.000000 </div>
+                                </td>
+                                <td>
+                                    <div class="coin-24change-css46 css44-up">$0.000000 </div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-24volume-css46">$0.000000</div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-cap-css46 css44-down"> $0,000000</div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="market-trade-css46">00.00M </div>
+                                </td>
+                                <td>
+                                    <div class="spot-trade-css44">
+                                        <span>
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#detail-model">
+                                                Detail
+                                            </a>
+                                        </span>
+                                        <span> <a href="index1.html"> Trade </a></span>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    <div class="coin-name-css46">
+                                        <span>
+                                            <img src="../images/coin/BUSD.png"> BUSD <small>
+                                                Binance
+                                            </small>
+                                        </span> <span class="graph-css444">
+                                            <svg viewBox="0 0 500 100" class="chart">
+
+                                                <polyline fill="none" stroke="#d5960f" stroke-width="10" points="
+                 00,120  20,60  40,80  60,20  80,80  100,80  120,60   140,100  160,90  180,80  200, 110    220, 10   240, 70
+                 260, 100     280, 100    300, 40    320, 0    340, 100    360, 100     380, 120     400, 60   420, 70    440, 80
+               "></polyline>
+
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-24change-css46">$0.000000 </div>
+                                </td>
+                                <td>
+                                    <div class="coin-24change-css46 css44-down">$0.000000 </div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-24volume-css46">$0.000000</div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-cap-css46 css44-up"> $0,000000</div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="market-trade-css46">00.00M </div>
+                                </td>
+                                <td>
+                                    <div class="spot-trade-css44">
+                                        <span>
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#detail-model">
+                                                Detail
+                                            </a>
+                                        </span>
+                                        <span> <a href="index1.html"> Trade </a></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <div class="coin-name-css46">
+                                        <span><img src="../images/coin/MATIC.png"> MATIC<small> MATIC</small></span>
+                                        <span class="graph-css444">
+                                            <svg viewBox="0 0 500 100" class="chart">
+
+                                                <polyline fill="none" stroke="#d5960f" stroke-width="10" points="
+               00,120  20,60  40,80  60,20  80,80  100,80  120,60   140,100  160,90  180,80  200, 110    220, 10   240, 70
+               260, 100     280, 100    300, 40    320, 0    340, 100    360, 100     380, 120     400, 60   420, 70    440, 80
+             "></polyline>
+
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-24change-css46">$0.000000 </div>
+                                </td>
+                                <td>
+                                    <div class="coin-24change-css46 css44-down">$0.000000 </div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-24volume-css46">$0.000000</div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-cap-css46 css44-up"> $0,000000</div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="market-trade-css46">00.00M </div>
+                                </td>
+                                <td>
+                                    <div class="spot-trade-css44">
+                                        <span>
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#detail-model">
+                                                Detail
+                                            </a>
+                                        </span>
+                                        <span> <a href="index1.html"> Trade </a></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <div class="coin-name-css46">
+                                        <span><img src="../images/coin/LINK.png"> LTC <small> Lite</small></span> <span class="graph-css444">
+                                            <svg viewBox="0 0 500 100" class="chart">
+
+                                                <polyline fill="none" stroke="#d5960f" stroke-width="10" points="
+             00,120  20,60  40,80  60,20  80,80  100,80  120,60   140,100  160,90  180,80  200, 110    220, 10   240, 70
+             260, 100     280, 100    300, 40    320, 0    340, 100    360, 100     380, 120     400, 60   420, 70    440, 80
+           "></polyline>
+
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-24change-css46">$0.000000 </div>
+                                </td>
+                                <td>
+                                    <div class="coin-24change-css46 css44-up">$0.000000 </div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-24volume-css46">$0.000000</div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="coin-cap-css46 css44down"> $0,000000</div>
+                                </td>
+                                <td nowrap="nowrap">
+                                    <div class="market-trade-css46">00.00M </div>
+                                </td>
+                                <td>
+                                    <div class="spot-trade-css44">
+                                        <span>
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#detail-model">
+                                                Detail
+                                            </a>
+                                        </span>
+                                        <span> <a href="index1.html"> Trade </a></span>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <div class="row pagination">
+                        <nav id="pagination-css" aria-label="Page navigation example">
+                            <ul id="test1" class="blade-pagination" data-current="4" data-total="8">
+                                <li class="page first" data-page="1">|&lt;</li>
+                                <li class="page prev" data-page="3">&lt;</li>
+                                <li class="more" data-page="-1">...</li>
+                                <li class="page" data-page="2">2</li>
+                                <li class="page" data-page="3">3</li>
+                                <li class="page active" data-page="4">4</li>
+                                <li class="page" data-page="5">5</li>
+                                <li class="page" data-page="6">6</li>
+                                <li class="more" data-page="-1">...</li>
+                                <li class="page next" data-page="5">&gt;</li>
+                                <li class="page last" data-page="8">&gt;|</li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <!---------------------------------------------------------------------->
+
+    </div>
+
+
+</section>
+<!------------------------------->
+
+<section class="market-section bg1" id="markert-overview-graph">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <div class="market-line-graph">
+                    <div id="volumemarket-graph" style="height: 500px"></div>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+                <div class="market-line-graph">
+                    <div id="volume-piechart" style="height: 500px"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+@section Scripts{
+    <script src="~/js/Graph/src/GraphMain.js"></script>
+    <script src="~/js/Graph/marketpie1.js"></script>
+    <script src="~/js/Graph/marketCompare1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myMarketTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+}

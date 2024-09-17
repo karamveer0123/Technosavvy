@@ -1,0 +1,963 @@
+
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+    color: var(--bs-white);
+}
+
+
+/* ======= Sub Header Css ======= */
+
+.page-section {
+    border-bottom: 1px solid var(--bs-bordergrey);
+    margin-bottom: 35px;
+}
+
+.a-inner-head {
+    padding: 0px 50px 0px 50px;
+}
+
+.page-section .css566-heading {
+    float: unset;
+}
+
+.css566-heading {
+    color: var(--bs-white);
+    padding-bottom: 0px;
+}
+
+.page-section .css566-heading h2 {
+    font-size: 30px;
+}
+
+.css566-heading h2 {
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    font-weight: 500;
+}
+
+.divider {
+    width: 10%;
+    height: 4px;
+    border-radius: 10px;
+    text-align: center;
+    float: left;
+    margin: 10px 0px;
+    background-color: var(--bs-yellow);
+}
+
+/* ======= // Sub Header Css ======= */
+
+/* ==== Invite Your Friends ===== */
+
+.head-text{
+    color: var(--bs-yellow);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.invite-friend{
+    padding: 50px 0px;
+}
+
+.invite-text{
+    position: relative;
+    /* top: 19px; */
+}
+
+.invite-text a{
+    margin-top: 30px;
+    color: var(--bs-white);
+}
+
+.invite-friend h1{
+    line-height: 55px;
+    font-size: 37px;
+    font-weight: 500;
+    color: var(--bs-white);
+    margin-bottom: 0px;
+    text-align: initial;
+}
+
+.invite-friend h1 span{
+    font-weight: 400;
+    display: block;
+}
+
+.invite-friend button{
+    color: var(--bs-white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-top: 20px;
+    background-color: transparent;
+}
+
+.invite-form{
+    background: var(--bg-transgrey);
+    padding: 30px;
+    border-radius: 3px;
+}
+
+.invite-form input{
+    background-color: var(--bs-darkblak);
+    border: none;
+    padding: 14px 14px;
+}
+
+.invite-form p{
+    float: right;
+    margin-top: -41px;
+    position: relative;
+    right: 20px;
+    color: var(--bs-white);
+}
+
+.invite-form p:hover{
+    color: var(--bs-yellow);
+}
+
+::placeholder{
+    color: var(--bs-white) !important;
+}
+
+.invite-friend-btn{
+    background: var(--bg-main);
+    /* padding: 12px 19px; */
+    box-shadow: 0px 15px -5px var(--bs-shadow);
+    font-size: 21px;
+    color: var(--bs-white);
+    font-weight: 500;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.invite-friend-btn button{
+    padding: 14px 14px;
+    display: block;
+    font-size: 18px;
+    width: 100%;
+}
+
+.invite-friend-btn button:hover{
+    background-color: var(--bs-yellow);
+    color: var(--bs-white);
+}
+
+/* .second-input{
+    margin-top: 12px;
+} */
+
+.invite-form .form-control:focus{
+    background-color: var(--bs-darkblak) !important; 
+    color: var(--bs-white);
+}
+
+.invite-form input{
+    color: var(--bs-white);
+    width: 100%;
+    height: 55px;
+    line-height: 25px;
+}
+
+/* .second-input button{
+    float: right;
+    position: relative;
+    top: -42px;
+    background-color: transparent;
+    border: none;
+    color: var(--bs-white);
+    right: 10px;
+} */
+
+/* .second-input p{
+    cursor: pointer;
+} */
+/* ==== // Invite Your Friends ===== */
+
+/* ======== Timer section ====== */
+/* .timer-sec{
+    padding-bottom: 30px;
+    padding-top: 25px;
+}
+
+.timer-sec ul{
+    display: flex;
+    padding-left: 0px;
+}
+
+.timer-sec ul li {
+    display: flex;
+    list-style-type: none;
+    padding: 0px 6px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+    color: var(--bs-white);
+}
+  
+.timer-sec ul li span {
+    display: block;
+    background-color: var(--bg-transgrey);
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    line-height: 25px;
+    border-radius: 5px;
+    margin-right: 9px;
+    font-size: 24px;
+}
+  
+.emoji {
+    display: none;
+    padding: 1rem;
+}
+  
+.emoji span {
+    font-size: 4rem;
+    padding: 0 .5rem;
+}
+  
+@media all and (max-width: 768px) {  
+    .timer-sec ul li {
+        font-size: calc(1.125rem * var(--smaller));
+    }
+   
+    .timer-sec ul li span {
+        font-size: calc(3.375rem * var(--smaller));
+    }
+}
+
+.timer-sec p{
+    margin-bottom: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+    color: var(--bs-white);
+}
+
+.invited-text{
+    display: flex;
+    justify-content: space-around;
+}
+
+.invited-text p span{
+    font-size: 24px;
+    font-weight: 500;
+} */
+/* ======== Timer section ====== */
+
+
+/* number of referral section css */
+.ref-number{
+    padding-top: 50px;
+}
+
+.ref-num-box-1{
+    text-align: center;
+    background-image: url(../images/rewardcenter-img/bg-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+    padding: 30px 20px;
+    margin-top: 15px;
+}
+
+.ref-num-box-1 h3{
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--bs-white);
+}   
+
+.ref-num-box-1 p{
+    margin-bottom: 0px;
+}
+
+.ref-num-box-3{
+    text-align: initial;
+}
+
+.ref-num-box-3 ul{
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+.ref-num-box-3 ul li{
+    list-style: none;
+    color: var(--bs-white);
+}
+
+.ref-num-box-3 ul li span{
+    float: right;
+}
+/* // number of referral section css */
+
+
+/* ====== voucher section css ===== */
+
+.voucher-se{
+    margin-top: 55px;
+    margin-bottom: 30px;
+}
+
+/* voucher 1 */
+.voucher-box-1{
+    background-image: url(../images/rewardcenter-img/background-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 58px;
+}
+
+.voucher-box-1 h2{
+    color: var(--bs-white);
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.voucher-box-1 h2 div{
+    display: block;
+}
+
+.point-col-1{
+    display: flex;
+    background-color: var(--bs-yellow);
+    border-radius: 30px 30px 30px 30px;
+}
+
+.point-col-1 i{
+    color: var(--bg-main);
+    font-size: 30px;
+    background-color: var(--bs-white);
+    width: 63px;
+    height: 63px;
+    line-height: 63px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.point-col-1 h3{
+    color: var(--bs-white);
+    margin-left: 15px;
+    font-size: 23px;
+    margin-bottom: 0px;
+    position: relative;
+    top: 9px;
+}
+
+.point-col-1 span{
+    color: var(--bs-white);
+    font-size: 15px;
+    top: 0px;
+    display: block;
+}
+
+.voucher-box-1 p{
+    text-align: center;
+    margin-bottom: 0px;
+    padding-top: 10px;
+}
+/* // voucher 1 */
+
+/* voucher 2 */
+.voucher-box-2{
+    background-image: url(../images/rewardcenter-img/voucher-2-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 23px 100px;
+}
+
+.voucher-box-2 h2{
+    color: var(--bg-main);
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.voucher-box-2 h4{
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--bg-main);
+}
+
+.point-col-2 img{
+    width: 70% !important;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.point-col-2 p{
+    color: var(--bg-main);
+    margin-bottom: 0px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 23px;
+}
+
+.padd-class{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+/* // voucher 2 */
+
+/* voucher 3 */
+.voucher-box-3{
+    background-image: url(../images/rewardcenter-img/voucher-3-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 35px 100px;
+}
+
+.point-col-2{
+    position: relative;
+}
+
+.point-col-3 h4{
+    position: absolute;
+    left: 21px;
+    color: var(--bs-darkblak);
+    font-weight: 900;
+    font-size: 35px;
+}
+
+.point-col-3 img{
+    padding-top: 21px;
+}
+
+/* // voucher 3 */
+
+/* voucher 4 */
+.voucher-box-4{
+    background-image: url(../images/rewardcenter-img/voucher-4-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 12px 100px;
+}
+/* // voucher 4 */
+
+.point-col-2 a:hover h4{
+    color: var(--bs-yellow);
+}
+
+.point-col-2 a:hover p{
+    color: var(--bs-yellow);
+}
+
+/* .point-col-2 a:hover img{
+    transform: scaleX(-1);
+    transition: 1s;
+}
+
+.point-col-2 img{
+    transition: 1s;
+} */
+
+/*======= // voucher section css ======*/
+
+
+/* how to refer css */
+
+/* .step-to-earn-2 h3 {
+    color: var(--bs-yellow);
+    font-size: 30px;
+    font-weight: 600;
+} */
+
+.step-earn-col-1 {
+    background-color: var(--bg-main);
+    border-radius: 50%;
+    width: 265px;
+    height: 265px;
+    line-height: 350px;
+    border: 12px solid var(--bs-yellow);
+    margin-top: 30px;
+    padding: 22px;
+}
+
+.step-earn-col-1 h2 {
+    color: var(--bs-white);
+    font-family: poppins,sans-serif;
+    font-weight: 700;
+    font-size: 37px;
+    margin-top: 35px;
+}
+
+.refer-sec{
+    margin-top: 55px;
+}
+
+/* .step-earn-col-1 p {
+    font-family: roboto condensed,sans-serif;
+    color: #fff;
+    font-size: 20px;
+    line-height: 45px;
+} */
+/* // how to refer css */
+
+/* ==== Rewards Section Css === */
+.reward-sec{
+    padding-top: 70px;
+    margin-bottom: 15px;
+}
+
+.reward-img img{
+    margin: 0px !important;
+}
+
+.reward-tab-box{
+    display: unset;
+}
+
+.reward-table{
+    margin-top: 20px;
+}
+
+.reward-table a{
+    color: var(--bs-yellow);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-top: 30px !important;
+    background: var(--bs-darkblak);
+    box-shadow: 0px 15px -5px var(--bs-shadow);
+    font-size: 21px;
+    border-radius: 2px;
+    text-align: center;
+    padding: 14px;
+    width: 35%;
+    display: block;
+    margin: auto;
+}
+
+.reward-sec h3{
+    float: left;
+    margin-bottom: 20px;
+}
+
+.reward-sec h6{
+    float: right;
+    font-family: 'Roboto', sans-serif;
+    color: var(--bs-white);
+}
+
+.reward-sec i{
+    margin: 0px 0px;
+    color: var(--bs-lightgrey);
+}
+
+.reward-sec i:hover{
+    color: var(--bs-yellow);
+}
+
+.reward-sec ul{
+    padding-top: 0px;
+}
+
+.reward-sec ul li{
+    list-style: none;
+    float: left;
+    color: var(--bs-white);
+    /* padding-right: 55px; */
+}
+
+.reward-sec img{
+    width: 8%;
+    height: auto;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.reward-sec h5{
+    color: var(--bs-white);
+    position: relative;
+    right: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.reward-sec a:hover{
+    background-color: var(--bs-yellow);
+    color: var(--bs-white);
+}
+
+.reward-table{
+    /* padding: 30px 30px; */
+    border-radius: 5px;
+    background-color: var(--bg-transgrey);
+    /* padding-bottom: 20px; */
+    max-height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+.reward-table::-webkit-scrollbar {
+    width: 10px;
+}
+
+.reward-table::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px var(--bs-grey);
+    border-radius: 10px;
+}
+
+.reward-table::-webkit-scrollbar-thumb {
+    background:var(--bs-grey);
+    border-radius: 10px;
+}
+
+.reward-table th{
+    color: var(--bs-yellow);
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+    background: var(--bs-darkblak);
+    width: 0%;
+}
+
+.reward-table table{
+    border: none;
+    /* margin-left: 10px; */
+}
+
+.reward-sec .dropdown-menu{
+    width: auto;
+}
+
+.reward-sec .dropdown{
+    margin-bottom: 30px;
+}
+
+.reward-sec .dropdown ul li{
+    float: unset !important;
+}
+
+.reward-sec .dropdown-item{
+    background-color: var(--bs-yellow);
+    color: var(--bs-white);
+    border-bottom: 1px solid var(--bs-bordergrey);
+}
+
+.reward-sec .btn-secondary{
+    background-color: var(--bs-darkblak);
+    border: 1px solid var(--bs-darkblak);
+}
+
+/* .reward-sec .btn-secondary:hover{
+    background-color: var(--bs-yellow);
+} */
+
+.reward-box-1{
+    background-color: rgb(1 8 7 / 50%);
+    text-align: center;
+    border-radius: 10px;
+    padding: 3px 20px;
+    /* background-image: url(../images/rewardcenter-img/bg-1.png); */
+    height: 97px;
+    margin-top: 20px;
+}
+
+.follow-text{
+    position: relative;
+}
+
+.follow-text p{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+
+
+.trans-search {
+    background: transparent;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid var(--bs-bordergrey);
+    border-radius: 2px;
+    font-size: 15px;
+    padding: 3px 14px;
+    color: var(--bs-greytext);
+    position: relative;
+    top: 4px;
+}
+
+.mar-sea-btn {
+    background: transparent;
+    color: var(--bs-greytext);
+    border: 0px;
+    margin-left: -35px;
+	position: relative;
+    top: 6px;
+}
+
+.reset-btn {
+    background-color: var(--bs-orange);
+    padding: 8px 10px;
+    color: var(--bs-white);
+    font-size: 14px;
+    margin-left: 6px;
+    border-radius: 2px;
+    float: left;
+    position: relative;
+    top: 4px;
+}
+
+.export-btn{
+    background-color: var(--bs-orange);
+    padding: 8px 10px;
+    color: var(--bs-white);
+    font-size: 14px;
+    margin-left: 6px;
+    border-radius: 2px;
+    float: right;
+    position: relative;
+    right: 25px;
+    top: 4px;
+}
+
+.date-colum input{
+    font-size: 13px;
+    background: var(--bg-form)!important;
+    cursor: pointer;
+    color: var(--bs-lightgrey)!important;
+    border: 1px solid var(--bs-bordergrey);
+    padding: 7px 5px;
+    border-radius: 2px;
+    width: 95%;
+}
+
+.date-colum label{
+    color: var(--bs-white);
+    margin-bottom: 5px;
+}
+
+.referrals-sec{
+    margin-bottom: 50px;
+}
+
+.referral-img img{
+    width: 10%;
+    height: auto;
+    margin-top: 12px;
+}
+
+.tab-select{
+    padding: 8px 0px;
+    position: relative;
+    top: 4px;
+}
+
+.tab-select select option{
+    padding: 8px !important;
+}
+
+.btn-secondary:focus{
+    box-shadow: none !important;
+}
+
+.reward-sec .btn-secondary:focus-visible{
+    border: none !important;
+}
+
+/* === // Rewards Section Css ==== */
+
+
+/* ================ Responsive Css ================== */
+@media (max-width: 767px){
+    .a-inner-head{
+        padding: 0px;
+    }
+    .invite-friend h1{
+        line-height: 36px;
+        font-size: 23px;
+    }
+    .invite-form{
+        margin-top: 50px;
+    }
+    .invite-friend{
+        padding: 30px 0px;
+    }
+    .timer-sec ul li{
+        display: unset;
+    }
+    .invited-text{
+        display: unset;
+    }
+    .col-6-box-1 img{
+        width: 16%;
+    }
+    .reward-sec h6{
+        float: unset;
+    }
+    .reward-sec h3{
+        margin-bottom: 20px;
+    }
+    .reward-sec ul li{
+        padding-right: 15px;
+    }
+    .reward-sec a{
+        width: 50%;
+        text-align: center;
+    }
+    .reward-sec img{
+        margin-top: 18px;
+        width: 10%;
+    }
+    .voucher-box-2{
+        padding: 23px 25px;
+    }
+    .point-col-2 img{
+        width: 50% !important;
+    }
+    .point-col-3 h4{
+        left: 36px;
+        top: 5px;
+    }
+    .step-earn-col-1{
+        width: 185px;
+        height: 185px;
+    }
+    .step-earn-col-1 h2{
+        font-size: 25px;
+        margin-top: -13px;
+    }
+    .step-earn-col-1 p{
+        font-size: 13px;
+        line-height: 25px;
+    }
+    .ref-num-box-1{
+        margin-bottom: 12px;
+    }
+    .reward-table{
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px){
+    .a-inner-head{
+        padding: 0px;
+    }
+    .page-section .css566-heading h2{
+        font-size: 25px;
+    }
+    .invite-friend h1{
+        line-height: 43px;
+        font-size: 27px;
+    }
+    .reward-sec ul li{
+        padding-right: 40px;
+    }
+    .step-earn-col-1{
+        width: unset;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 991px){
+    .a-inner-head{
+        padding: 0px;
+    }
+    .timer-sec ul li span{
+        width: 26px;
+    }
+    .voucher-box-2{
+        padding: 23px 20px;
+    }
+    .voucher-box-4{
+        padding: 11px 20px;
+    }
+    .owl-carousel{
+        margin-left: 12px;
+    }
+    .step-earn-col-1{
+        width: 230px;
+        height: 230px;
+        padding: 4px;
+    }
+    .owl-carousel .owl-item{
+        margin: -4px;
+    }
+}
+/* ================ // Responsive Css ================== */
+
+.owl-carousel span{
+    top: 0;
+}
+
+.url-1 {
+    color: var(--bs-yellow);
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.url-1:hover{
+    color: var(--bs-white);
+}
+
+
+sup{
+    font-size: 8px;
+    position: relative;
+    top: -10px;
+}
+
+.reward-table tbody td{
+    font-size: 12px;
+    color: var(--bs-white);
+    border-bottom: 1px solid var(--bs-bordergrey);
+    padding-left: 50px;
+}
+
+
+.reward-table th {
+    top: 0;
+    position: sticky;
+    padding-left: 50px;
+}
+
+.form-control[readonly] {
+    background-color: var(--bs-darkblak);
+    opacity: 1;
+    border-radius: 0px;
+}
+
+.input-group-copy .btn{
+    position: absolute;
+    z-index: 9;
+    /* float: right; */
+    top: 51px;
+    right: 0px;
+}
+
+.invite-social-icon ul{
+    padding-left: 0px;
+    position: relative;
+    top: 25px;
+    text-align: center;
+    left: 9px;
+}
+
+.invite-social-icon ul li{
+    list-style: none;
+    float: left;
+    display: contents;
+}
+
+.invite-social-icon img{
+    width: 6%;
+    height: auto;
+    margin-right: 20px;
+}
+
+.reward-owl span{
+    /* top: -25px; */
+}

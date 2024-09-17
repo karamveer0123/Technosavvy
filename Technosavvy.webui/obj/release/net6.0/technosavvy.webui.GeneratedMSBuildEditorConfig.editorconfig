@@ -1,0 +1,1624 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = technosavvy.webui
+build_property.RootNamespace = technosavvy.webui
+build_property.ProjectDir = C:\Project01\officepro\Office\Technosavvy.webui\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Project01\officepro\Office\Technosavvy.webui
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/AboutNavc/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXROYXZjXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Academy/a-detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhZGVteVxhLWRldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Academy/academydetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhZGVteVxhY2FkZW15ZGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Academy/AcademyTrade.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhZGVteVxBY2FkZW15VHJhZGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Academy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhZGVteVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Academy/Index0.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhZGVteVxJbmRleDAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Academy/Index2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhZGVteVxJbmRleDIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Airdrop/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWlyZHJvcFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Appendix/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwZW5kaXhcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/1anintroductiontonavexmblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1wxYW5pbnRyb2R1Y3Rpb250b25hdmV4bWJsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/8whatisvalueblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1w4d2hhdGlzdmFsdWVibG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/bestcryptocurrencyexchangeblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xiZXN0Y3J5cHRvY3VycmVuY3lleGNoYW5nZWJsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/cryptoarbitrageopportunityblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xjcnlwdG9hcmJpdHJhZ2VvcHBvcnR1bml0eWJsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/cryptotradingfeesblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xjcnlwdG90cmFkaW5nZmVlc2Jsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/earnhighreturnsstakingblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xlYXJuaGlnaHJldHVybnNzdGFraW5nYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/endlessopportunitiesblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xlbmRsZXNzb3Bwb3J0dW5pdGllc2Jsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/exploringexcitingutilityblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xleHBsb3JpbmdleGNpdGluZ3V0aWxpdHlibG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/fastestgrowingcryptocurrencyblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xmYXN0ZXN0Z3Jvd2luZ2NyeXB0b2N1cnJlbmN5YmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/howbecomecommunitymemberblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xob3diZWNvbWVjb21tdW5pdHltZW1iZXJibG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/hownavcencapsulatestradedpairblog .cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xob3duYXZjZW5jYXBzdWxhdGVzdHJhZGVkcGFpcmJsb2cgLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/howtradecryptocurrencyblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xob3d0cmFkZWNyeXB0b2N1cnJlbmN5YmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/mostrewardingcryptoblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xtb3N0cmV3YXJkaW5nY3J5cHRvYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/mostrewardingcryptoexchangeblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xtb3N0cmV3YXJkaW5nY3J5cHRvZXhjaGFuZ2VibG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/mostrewardingcryptotradingblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xtb3N0cmV3YXJkaW5nY3J5cHRvdHJhZGluZ2Jsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/navcfloorpricefixedblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xuYXZjZmxvb3JwcmljZWZpeGVkYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/navcvelocityrealnavexmblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xuYXZjdmVsb2NpdHlyZWFsbmF2ZXhtYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/preserveyourcapitalinflationblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xwcmVzZXJ2ZXlvdXJjYXBpdGFsaW5mbGF0aW9uYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/typesstakers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1x0eXBlc3N0YWtlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/whatisnavcblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1x3aGF0aXNuYXZjYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Blog/_blogSide.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xfYmxvZ1NpZGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/buynavc/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcYnV5bmF2Y1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Buy/buyconfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5XGJ1eWNvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Buy/buysummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5XGJ1eXN1bW1hcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Buy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Buy/Partial/_RightFAQ.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5XFBhcnRpYWxcX1JpZ2h0RkFRLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/career/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY2FyZWVyXGluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Cashback/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzaGJhY2tcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Convert/confirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVydFxjb25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Convert/ConvertAndWithdraw.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVydFxDb252ZXJ0QW5kV2l0aGRyYXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Convert/convertconfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVydFxjb252ZXJ0Y29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Convert/conwithdrawconfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVydFxjb253aXRoZHJhd2NvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Convert/conwithdrawprocess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVydFxjb253aXRoZHJhd3Byb2Nlc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Convert/conwithdrawsummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVydFxjb253aXRoZHJhd3N1bW1hcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Convert/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Convert/Partial/_RightFAQ.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVydFxQYXJ0aWFsXF9SaWdodEZBUS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Dashboard/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXERhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Dashboard/Partial/_WalletSummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFBhcnRpYWxcX1dhbGxldFN1bW1hcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Dashboard/_WalletTransaction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXF9XYWxsZXRUcmFuc2FjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/choosebankaccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxjaG9vc2ViYW5rYWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/CliamTran.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxDbGlhbVRyYW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/CliamTran_v2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxDbGlhbVRyYW5fdjIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/depositfiat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxkZXBvc2l0ZmlhdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/INRStep3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxJTlJTdGVwMy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/INRStep4.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxJTlJTdGVwNC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/INRStep5.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxJTlJTdGVwNS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/INRStep6.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxJTlJTdGVwNi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/Partial/_CurrencyTokenINRMethod.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxQYXJ0aWFsXF9DdXJyZW5jeVRva2VuSU5STWV0aG9kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/Partial/_myBank.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxQYXJ0aWFsXF9teUJhbmsuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/Partial/_myUPI.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxQYXJ0aWFsXF9teVVQSS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/Partial/_RightFAQ.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxQYXJ0aWFsXF9SaWdodEZBUS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/Partial/_SelectAssetStep1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxQYXJ0aWFsXF9TZWxlY3RBc3NldFN0ZXAxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/Partial/_SelectAssetStep2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxQYXJ0aWFsXF9TZWxlY3RBc3NldFN0ZXAyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/requestsubmited.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxyZXF1ZXN0c3VibWl0ZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/transferproceed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFx0cmFuc2ZlcnByb2NlZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/transferproceedupi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFx0cmFuc2ZlcnByb2NlZWR1cGkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Deposit/uploadreciept.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFx1cGxvYWRyZWNpZXB0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/FeesCharges/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlc0NoYXJnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Header/Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVhZGVyXEhlYWRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Header/sHeader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVhZGVyXHNIZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Home/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Home/Index0.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleDAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Home/IndexPre.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleFByZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Home/inprivacypolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbnByaXZhY3lwb2xpY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Home/LogIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dJbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Home/MinimumProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNaW5pbXVtUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Home/NoService.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOb1NlcnZpY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Home/NoURL404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOb1VSTDQwNC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Home/RegisterUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3RlclVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Institutional/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdGl0dXRpb25hbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Institutional/tokenlist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdGl0dXRpb25hbFx0b2tlbmxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Institutional/tokensubmit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdGl0dXRpb25hbFx0b2tlbnN1Ym1pdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Inst/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Inst/tokenlist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdFx0b2tlbmxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Internaltransfer/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWx0cmFuc2ZlclxpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Internaltransfer/internaltransferconfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWx0cmFuc2ZlclxpbnRlcm5hbHRyYW5zZmVyY29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Internaltransfer/internaltransfersummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWx0cmFuc2ZlclxpbnRlcm5hbHRyYW5zZmVyc3VtbWFyeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Internaltransfer/internaltransferverification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWx0cmFuc2ZlclxpbnRlcm5hbHRyYW5zZmVydmVyaWZpY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Internaltransfer/Partial/_RightFAQ.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWx0cmFuc2ZlclxQYXJ0aWFsXF9SaWdodEZBUS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/KYCUser/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS1lDVXNlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/KYCUser/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS1lDVXNlclxpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/KYCUser/KycUploadConfirm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS1lDVXNlclxLeWNVcGxvYWRDb25maXJtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/KYCUser/KycUploadDocument.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS1lDVXNlclxLeWNVcGxvYWREb2N1bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/KYCUser/KycUploadSelfie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS1lDVXNlclxLeWNVcGxvYWRTZWxmaWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/KYCUser/KycVerification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS1lDVXNlclxLeWNWZXJpZmljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/KYCUser/partial/_docGroup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS1lDVXNlclxwYXJ0aWFsXF9kb2NHcm91cC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/KYCUser/PersonalIdentity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS1lDVXNlclxQZXJzb25hbElkZW50aXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/KYCUser/UserMinProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS1lDVXNlclxVc2VyTWluUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Library/Index3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyeVxJbmRleDMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Library/Index4.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyeVxJbmRleDQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Library/medialibrary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyeVxtZWRpYWxpYnJhcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Login/LogIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9nSW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Login/TwoFactorSecurity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cVHdvRmFjdG9yU2VjdXJpdHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Market/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2V0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Market/Index2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2V0XEluZGV4Mi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Market/othertoken.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2V0XG90aGVydG9rZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Market/Partial/_bigTile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2V0XFBhcnRpYWxcX2JpZ1RpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/mypurchase/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcbXlwdXJjaGFzZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Notification/announcement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uXGFubm91bmNlbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Notification/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uXGluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/auamlpolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XGF1YW1scG9saWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/auLicences.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XGF1TGljZW5jZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/auprivacypolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XGF1cHJpdmFjeXBvbGljeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/autermsofuse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XGF1dGVybXNvZnVzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/cookiespreference.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XGNvb2tpZXNwcmVmZXJlbmNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/disclaimer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XGRpc2NsYWltZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/inamlpolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XGluYW1scG9saWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/inprivacypolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XGlucHJpdmFjeXBvbGljeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/intermsofuse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XGludGVybXNvZnVzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/ncamlpolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XG5jYW1scG9saWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/ncLicences.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XG5jTGljZW5jZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/ncprivacypolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XG5jcHJpdmFjeXBvbGljeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/nctermsofuse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XG5jdGVybXNvZnVzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/referralpolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XHJlZmVycmFscG9saWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/referralprogram.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XHJlZmVycmFscHJvZ3JhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/riskdisclosure.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XHJpc2tkaXNjbG9zdXJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/stakingpolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XHN0YWtpbmdwb2xpY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/tradingrulesus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XHRyYWRpbmdydWxlc3VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/usamlpolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XHVzYW1scG9saWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/usLicences.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XHVzTGljZW5jZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/usprivacypolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XHVzcHJpdmFjeXBvbGljeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Policy/ustermsofuse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5XHVzdGVybXNvZnVzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/pressrelease/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NccHJlc3NyZWxlYXNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/ReferralProgram/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJyYWxQcm9ncmFtXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/ReferralProgram/indexpre.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJyYWxQcm9ncmFtXGluZGV4cHJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/ReferralProgram/Reward.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJyYWxQcm9ncmFtXFJld2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Roadmap/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZG1hcFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/accountactivity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcYWNjb3VudGFjdGl2aXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/addaccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcYWRkYWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/AddPaymentMethod.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcQWRkUGF5bWVudE1ldGhvZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/addressmanagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcYWRkcmVzc21hbmFnZW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/addressmanagementform.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcYWRkcmVzc21hbmFnZW1lbnRmb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/Auth2F.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcQXV0aDJGLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/devicemanagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcZGV2aWNlbWFuYWdlbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/Partial/_DisableMultiFactor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcUGFydGlhbFxfRGlzYWJsZU11bHRpRmFjdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/Partial/_EnableMultiFactor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcUGFydGlhbFxfRW5hYmxlTXVsdGlGYWN0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/Partial/_GAuth.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcUGFydGlhbFxfR0F1dGguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/Partial/_INRBankDeposit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcUGFydGlhbFxfSU5SQmFua0RlcG9zaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/Partial/_INRPayOption.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcUGFydGlhbFxfSU5SUGF5T3B0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/Partial/_INRUPI.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcUGFydGlhbFxfSU5SVVBJLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/Partial/_ProfileSetting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcUGFydGlhbFxfUHJvZmlsZVNldHRpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/Partial/_SetUPAuthenticator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcUGFydGlhbFxfU2V0VVBBdXRoZW50aWNhdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/paymentdeposit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NccGF5bWVudGRlcG9zaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/paymentdepositupi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NccGF5bWVudGRlcG9zaXR1cGkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/securityverification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3Ncc2VjdXJpdHl2ZXJpZmljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/x_bankaccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NceF9iYW5rYWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Settings/x_bankaccountupi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NceF9iYW5rYWNjb3VudHVwaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Shared/Partial/_kycStatus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxcX2t5Y1N0YXR1cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Shared/Partial/_RightFAQ.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxcX1JpZ2h0RkFRLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Shared/Partial/_Tranhash.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxcX1RyYW5oYXNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Shared/Partial/_userNameMasked.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxcX3VzZXJOYW1lTWFza2VkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Shared/Partial/_WalletLeftMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxcX1dhbGxldExlZnRNZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Shared/_CurrOption.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DdXJyT3B0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Shared/_LayoutPre.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRQcmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Shared/_LayoutTrade.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRUcmFkZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/SignUp/ForgetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2lnblVwXEZvcmdldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/SignUp/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2lnblVwXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/SignUp/RegisterUser1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2lnblVwXFJlZ2lzdGVyVXNlcjEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/stake/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3Rha2VcaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/stake/index2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3Rha2VcaW5kZXgyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/stake/redeem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3Rha2VccmVkZWVtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/stake/redeemconfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3Rha2VccmVkZWVtY29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/stake/stakeconfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3Rha2Vcc3Rha2Vjb25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/stake/stakeopportunities.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3Rha2Vcc3Rha2VvcHBvcnR1bml0aWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/stake/stakesummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3Rha2Vcc3Rha2VzdW1tYXJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/stake/unstake.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3Rha2VcdW5zdGFrZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/stake/unstakeconfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3Rha2VcdW5zdGFrZWNvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/staking/stakeopportunities.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc3Rha2luZ1xzdGFrZW9wcG9ydHVuaXRpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Support/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcG9ydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/anintroductiontonavexmblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcYW5pbnRyb2R1Y3Rpb250b25hdmV4bWJsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/appendix.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcYXBwZW5kaXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/bestaltcoinblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcYmVzdGFsdGNvaW5ibG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/cryptotradingblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcY3J5cHRvdHJhZGluZ2Jsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/disclaimer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcZGlzY2xhaW1lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/earnhighreturnsblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcZWFybmhpZ2hyZXR1cm5zYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/encouraginggenzinvestorsblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcZW5jb3VyYWdpbmdnZW56aW52ZXN0b3JzYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/forgetpassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcZm9yZ2V0cGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/goodtimetoinvest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcZ29vZHRpbWV0b2ludmVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/howtoearncryptoblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcaG93dG9lYXJuY3J5cHRvYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/inamlpolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcaW5hbWxwb2xpY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/Indexus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcSW5kZXh1cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/inprivacypolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcaW5wcml2YWN5cG9saWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/intermsofuse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcaW50ZXJtc29mdXNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/isitsafetotrade.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcaXNpdHNhZmV0b3RyYWRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/licences.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcbGljZW5jZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcbG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/loginbetarelease.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcbG9naW5iZXRhcmVsZWFzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/loginotp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcbG9naW5vdHAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/medialibrary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcbWVkaWFsaWJyYXJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/mostrewardingcryptoblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcbW9zdHJld2FyZGluZ2NyeXB0b2Jsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/navcannouncesitsicolaunchblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcbmF2Y2Fubm91bmNlc2l0c2ljb2xhdW5jaGJsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/newpassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcbmV3cGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/nextgencryptoblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcbmV4dGdlbmNyeXB0b2Jsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/reasonstoinvestblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJccmVhc29uc3RvaW52ZXN0YmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/referralpolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJccmVmZXJyYWxwb2xpY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/referralprogram.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJccmVmZXJyYWxwcm9ncmFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/riskdisclosure.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJccmlza2Rpc2Nsb3N1cmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcc2lnbnVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/signupotp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcc2lnbnVwb3RwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/signuppassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcc2lnbnVwcGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/thenewtrendsblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcdGhlbmV3dHJlbmRzYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/thingstoconsiderblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcdGhpbmdzdG9jb25zaWRlcmJsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/top10reasonsblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcdG9wMTByZWFzb25zYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/tradingrulesus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcdHJhZGluZ3J1bGVzdXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/wallet.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcd2FsbGV0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/whatisnavcblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcd2hhdGlzbmF2Y2Jsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/whatisvalueblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcd2hhdGlzdmFsdWVibG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/whatmakesnavcgoldblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcd2hhdG1ha2VzbmF2Y2dvbGRibG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t2/whyshouldyouinvestblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDJcd2h5c2hvdWxkeW91aW52ZXN0YmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/airdropprogram.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcYWlyZHJvcHByb2dyYW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/anintroductiontonavexmblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcYW5pbnRyb2R1Y3Rpb250b25hdmV4bWJsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/appendix.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcYXBwZW5kaXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/bestaltcoinblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcYmVzdGFsdGNvaW5ibG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/cryptotradingblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcY3J5cHRvdHJhZGluZ2Jsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/disclaimer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcZGlzY2xhaW1lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/earnhighreturnsblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcZWFybmhpZ2hyZXR1cm5zYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/encouraginggenzinvestorsblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcZW5jb3VyYWdpbmdnZW56aW52ZXN0b3JzYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/feescharges.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcZmVlc2NoYXJnZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/forgetpassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcZm9yZ2V0cGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/goodtimetoinvest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcZ29vZHRpbWV0b2ludmVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/howtoearncryptoblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcaG93dG9lYXJuY3J5cHRvYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/inamlpolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcaW5hbWxwb2xpY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/Indexus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcSW5kZXh1cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/inprivacypolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcaW5wcml2YWN5cG9saWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/intermsofuse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcaW50ZXJtc29mdXNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/isitsafetotrade.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcaXNpdHNhZmV0b3RyYWRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/license.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbGljZW5zZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/loginbetarelease.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbG9naW5iZXRhcmVsZWFzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/loginotp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbG9naW5vdHAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/market.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbWFya2V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/marketdetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbWFya2V0ZGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/marketfavourites.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbWFya2V0ZmF2b3VyaXRlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/marketgainercoins.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbWFya2V0Z2FpbmVyY29pbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/markethighlightcoin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbWFya2V0aGlnaGxpZ2h0Y29pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/marketlistings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbWFya2V0bGlzdGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/marketmostpurchase.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbWFya2V0bW9zdHB1cmNoYXNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/marketnewlisting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbWFya2V0bmV3bGlzdGluZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/markettopvolume.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbWFya2V0dG9wdm9sdW1lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/medialibrary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbWVkaWFsaWJyYXJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/mostrewardingcryptoblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbW9zdHJld2FyZGluZ2NyeXB0b2Jsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/navcannouncesitsicolaunchblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbmF2Y2Fubm91bmNlc2l0c2ljb2xhdW5jaGJsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/ncamlpolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbmNhbWxwb2xpY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/ncprivacypolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbmNwcml2YWN5cG9saWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/nctermscondition.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbmN0ZXJtc2NvbmRpdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/newpassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbmV3cGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/nextgencryptoblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcbmV4dGdlbmNyeXB0b2Jsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/pressrelease.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNccHJlc3NyZWxlYXNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/reasonstoinvestblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNccmVhc29uc3RvaW52ZXN0YmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/referralpolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNccmVmZXJyYWxwb2xpY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/referralprogram.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNccmVmZXJyYWxwcm9ncmFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/riskdisclosure.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNccmlza2Rpc2Nsb3N1cmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcc2lnbnVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/signupotp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcc2lnbnVwb3RwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/signuppassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcc2lnbnVwcGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/thenewtrendsblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcdGhlbmV3dHJlbmRzYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/thingstoconsiderblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcdGhpbmdzdG9jb25zaWRlcmJsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/top10reasonsblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcdG9wMTByZWFzb25zYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/tradingrulesus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcdHJhZGluZ3J1bGVzdXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/usamlpolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcdXNhbWxwb2xpY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/usprivacypolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcdXNwcml2YWN5cG9saWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/ustermsconditions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcdXN0ZXJtc2NvbmRpdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/wallet.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcd2FsbGV0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/whatisnavcblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcd2hhdGlzbmF2Y2Jsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/whatisvalueblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcd2hhdGlzdmFsdWVibG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/whatmakesnavcgoldblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcd2hhdG1ha2VzbmF2Y2dvbGRibG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t3/whyshouldyouinvestblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDNcd2h5c2hvdWxkeW91aW52ZXN0YmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/aboutnavc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcYWJvdXRuYXZjLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/academy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcYWNhZGVteS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/academydetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcYWNhZGVteWRldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/accountactivity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcYWNjb3VudGFjdGl2aXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/accountstatement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcYWNjb3VudHN0YXRlbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/accountverify.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcYWNjb3VudHZlcmlmeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/airdropprogram.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcYWlyZHJvcHByb2dyYW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/anintroductiontonavexmblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcYW5pbnRyb2R1Y3Rpb250b25hdmV4bWJsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/appendix.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcYXBwZW5kaXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/basicinformation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcYmFzaWNpbmZvcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/bestaltcoinblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcYmVzdGFsdGNvaW5ibG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/candlesticktouch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcY2FuZGxlc3RpY2t0b3VjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/cashback.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcY2FzaGJhY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/cashbackmain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcY2FzaGJhY2ttYWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/countryresidence.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcY291bnRyeXJlc2lkZW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/coverthistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcY292ZXJ0aGlzdG9yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/createpersonalaccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcY3JlYXRlcGVyc29uYWxhY2NvdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/cryptotradingblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcY3J5cHRvdHJhZGluZ2Jsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcZGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/dashboard2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcZGFzaGJvYXJkMi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/dashboard3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcZGFzaGJvYXJkMy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/dashboardnotification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcZGFzaGJvYXJkbm90aWZpY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/dashboardnotificationdetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcZGFzaGJvYXJkbm90aWZpY2F0aW9uZGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/deposit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcZGVwb3NpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/depositaccepted.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcZGVwb3NpdGFjY2VwdGVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/devicemanagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcZGV2aWNlbWFuYWdlbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/disclaimer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcZGlzY2xhaW1lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/goodtimetoinvest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcZ29vZHRpbWV0b2ludmVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/howtoearncryptoblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcaG93dG9lYXJuY3J5cHRvYmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/whatisnavcblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcd2hhdGlzbmF2Y2Jsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t4/whatisvalueblog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDRcd2hhdGlzdmFsdWVibG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t5/aboutbtc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDVcYWJvdXRidGMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t5/academydetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDVcYWNhZGVteWRldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t5/airdropprogram.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDVcYWlyZHJvcHByb2dyYW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t5/appendix.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDVcYXBwZW5kaXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t5/cashbackmain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDVcY2FzaGJhY2ttYWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t5/changepassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDVcY2hhbmdlcGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t5/faq.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDVcZmFxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t5/feescharges.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDVcZmVlc2NoYXJnZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/t5/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdDVcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Test/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Token/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9rZW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Advance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcQWR2YW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Classic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcQ2xhc3NpYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/FullScreen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcRnVsbFNjcmVlbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/index-register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcaW5kZXgtcmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Partial/Classic/_Limit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcUGFydGlhbFxDbGFzc2ljXF9MaW1pdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Partial/Classic/_Market.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcUGFydGlhbFxDbGFzc2ljXF9NYXJrZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Partial/Classic/_OpenOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcUGFydGlhbFxDbGFzc2ljXF9PcGVuT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Partial/Classic/_OrderHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcUGFydGlhbFxDbGFzc2ljXF9PcmRlckhpc3RvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Partial/Classic/_StopLimit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcUGFydGlhbFxDbGFzc2ljXF9TdG9wTGltaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Partial/Classic/_StopMarket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcUGFydGlhbFxDbGFzc2ljXF9TdG9wTWFya2V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Partial/Classic/_TradeHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcUGFydGlhbFxDbGFzc2ljXF9UcmFkZUhpc3RvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Partial/_MarketBuy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcUGFydGlhbFxfTWFya2V0QnV5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Partial/_MarketFunds.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcUGFydGlhbFxfTWFya2V0RnVuZHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Partial/_MarketSell.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcUGFydGlhbFxfTWFya2V0U2VsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Partial/_OpenOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcUGFydGlhbFxfT3Blbk9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Partial/_OrderHistroy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcUGFydGlhbFxfT3JkZXJIaXN0cm95LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/Partial/_TradeHistroy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcUGFydGlhbFxfVHJhZGVIaXN0cm95LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/secClassic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcc2VjQ2xhc3NpYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/toSecAdvance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcdG9TZWNBZHZhbmNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/toSecClassic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcdG9TZWNDbGFzc2ljLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Trade/toSecFullScreen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcdG9TZWNGdWxsU2NyZWVuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/AccountStatement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XEFjY291bnRTdGF0ZW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/EarnWallet.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XEVhcm5XYWxsZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/FundingWallet.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XEZ1bmRpbmdXYWxsZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/Index3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XEluZGV4My5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/inter-wallet-transfer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XGludGVyLXdhbGxldC10cmFuc2Zlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/navexm-user-transfer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XG5hdmV4bS11c2VyLXRyYW5zZmVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/OpenOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XE9wZW5PcmRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/OrderDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XE9yZGVyRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/OrderHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XE9yZGVySGlzdG9yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/Partial/_LeftOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XFBhcnRpYWxcX0xlZnRPcmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/Partial/_RightFAQ.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XFBhcnRpYWxcX1JpZ2h0RkFRLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/Partial/_TopMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XFBhcnRpYWxcX1RvcE1lbnUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/Partial/_TopUserDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XFBhcnRpYWxcX1RvcFVzZXJEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/Partial/_WalletBalanceTab.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XFBhcnRpYWxcX1dhbGxldEJhbGFuY2VUYWIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/Partial/_WalletLeftMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XFBhcnRpYWxcX1dhbGxldExlZnRNZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/RequestDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XFJlcXVlc3REZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/RequestHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XFJlcXVlc3RIaXN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/SpotWallet1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XFNwb3RXYWxsZXQxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/TradeHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XFRyYWRlSGlzdG9yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/Transaction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XFRyYW5zYWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/transactiondata.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XHRyYW5zYWN0aW9uZGF0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Wallet/Transaction_v2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XFRyYW5zYWN0aW9uX3YyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/webinar/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncd2ViaW5hclxpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/Auth2F.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcQXV0aDJGLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/confirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcY29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/factorverification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcZmFjdG9ydmVyaWZpY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/fiatchooseaccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcZmlhdGNob29zZWFjY291bnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/fiatconfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcZmlhdGNvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/fiatsummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcZmlhdHN1bW1hcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/fiattransferprocess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcZmlhdHRyYW5zZmVycHJvY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/Partial/_CurrencyTokenINRMethod.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcUGFydGlhbFxfQ3VycmVuY3lUb2tlbklOUk1ldGhvZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/Partial/_myINRBankAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcUGFydGlhbFxfbXlJTlJCYW5rQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/Partial/_myINRUPIAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcUGFydGlhbFxfbXlJTlJVUElBY2NvdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/Partial/_NetAddress.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcUGFydGlhbFxfTmV0QWRkcmVzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/Partial/_RightFAQ.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcUGFydGlhbFxfUmlnaHRGQVEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/Partial/_SelectAssetStep1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcUGFydGlhbFxfU2VsZWN0QXNzZXRTdGVwMS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/summary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcc3VtbWFyeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Withdraw/withdrawfiat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2l0aGRyYXdcd2l0aGRyYXdmaWF0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-aew383cjlr
+
+[C:/Project01/officepro/Office/Technosavvy.webui/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-a9ohkspdwo

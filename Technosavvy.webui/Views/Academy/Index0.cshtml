@@ -1,0 +1,348 @@
+﻿@{
+    ViewData["Title"] = "TechnoApp Academy: Empowering Your Crypto Knowledge";
+}
+@section Header {
+    <meta name="description" content="Explore TechnoApp Academy for in-depth insights into crypto. Elevate your understanding and make informed decisions with our comprehensive educational resources." />
+}
+
+<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top" style="display: block;">
+    <i class="fa fa-arrow-up"></i>
+</button>
+<section class="TechnoApp-sec bg1">
+    <div class="container">
+        <div class="row align-items-center align-items-lg-start">
+            <div class="col-lg-7 col-md-7 text-center text-md-start">
+                <div class="TechnoApp-sec-text">
+                    <h1> TechnoApp Academy</h1>
+                    <p class="mb-lg-5">
+                        TechnoApp Academy is your one-stop solution to make you well acquainted with TechnoApp Crypto Trading
+                        Platform. The Academy is categorically designed for Novice, Intermediate and Advance Traders by Crypto
+                        Experts.
+                    </p>
+                </div>
+                <div class="css566-user-no pb-lg-5 text-center text-md-start">
+                    <span><strong> 11k+ </strong> Trusted Users </span>
+                </div>
+                <a asp-controller="Academy" asp-action="detail" class="start-btn">
+                 Start Here  
+                </a>
+            </div>
+            <div class="col-lg-5 col-md-5  d-none d-md-block" data-aos="fade-left" data-aos-duration="1500">
+                <img src="~/images/TechnoApp-about.png" alt="image">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="beginner-lesson bg2 d-none d-lg-block">
+    <div class="container">
+
+        <div class="row">
+            <div class="css566-heading mb-3">
+                <h2 class="text-center ">Trade on TechnoApp</h2>
+                <span class="text-center "> <div class="divider"></div> </span>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="css566-slide">
+                <div class="owl-slider">
+                    <div id="carousel" class="owl-carousel owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+                                <div class="owl-item">
+                                    <div class="beginner-box-1">
+                                        <img src="~/images/trade-img-1.png" alt="image">
+                                        <div class="beginner-textarea  beginner-tit55">
+                                            <h5> Most Rewarding Crypto Trading Experience, TechnoApp Community </h5>
+                                            <span class="academyText">Join TechnoApp Community to elevate your crypto trading with insights, support, and growth opportunities. The ultimate rewarding experience in crypto trading.</span>                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item">
+                                    <div class="beginner-box-1">
+                                        <img src="~/images/trade-img-2.jpg" alt="image">
+                                        <div class="beginner-textarea  beginner-tit55">
+                                            <h5> How TechnoApp Provides an Augmented Liquidity Pool? </h5>
+                                            <span class="academyText">The liquidity in any crypto market determines the profitability of any trade. The higher the liquidity, the better price you will get as a buyer or a seller.</span>
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item">
+                                    <div class="beginner-box-1">
+                                        <img src="~/images/trade-img-3.jpg" alt="image">
+                                        <div class="beginner-textarea  beginner-tit55">
+                                            <h5> How to Earn Maximum Cashback on TechnoApp exchange? </h5>
+                                            <span class="academyText">Each time as a community member, you trade, you get an assured Cashback of up to 0.10% of trading volume.</span>
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item">
+                                    <div class="beginner-box-1">
+                                        <img src="~/images/trade-img-4.jpg" alt="image">
+                                        <div class="beginner-textarea  beginner-tit55">
+                                            <h5> Everything you need to know about the Next-Generation Crypto TechnoSavvy </h5>
+                                            <span class="academyText">TechnoApp aims to solve the complex crypto trading system with a simple process, enhance the participation of people in crypto without fearing higher impact costs.                                               
+                                            </span>                                                                                       
+                                        </div>
+                                    </div></div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="blockchain-glossary bg1">
+    <div class="container">
+
+        <div class="row">
+            <div class="css566-heading mb-3">
+                <h2 class="text-center ">TechnoApp Glossary  </h2>
+                <span class="text-center "> <div class="divider"></div> </span>
+                <p class="text-center ">
+                    Get complete knowledge about the most rewarding features of the exchange. Cashback Rewards,<br>
+                    Zero SWAP Fees, High Liquidity, Low Impact Cost &amp; Much More.
+                </p>
+            </div>
+        </div>
+
+         <div class="d-none d-lg-block">
+        <div class="row">
+            <div class="col-md-4 col-12">
+                    <a asp-controller="Academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featurecashback">
+                    <div class="css566-trade-box zoom-out">
+                        <div class="css566-trade-img">  <img src="~/images/cashback.png"> </div>
+                        <div class="css566-trade-text">
+                            Cashback
+                            <p> TechnoApp offers a positive Cashback of up to 0.10% of the transaction volume. </p>
+                        </div>
+                    </div>
+                </a>
+                    <a asp-controller="Academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featurezero">
+                    <div class="css566-trade-box zoom-out ">
+                        <div class="css566-trade-img">  <img src="~/images/uniqe-icon.png"> </div>
+                        <div class="css566-trade-text">
+                                Zero SWAP Fees
+                                <p> Trade on TechnoApp without any SWAP Fees. </p>
+                        </div>
+                    </div>
+                </a>
+
+
+                    <a asp-controller="Academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featureimpact">
+                    <div class="css566-trade-box zoom-out ">
+                        <div class="css566-trade-img">  <img src="~/images/reduce.png"> </div>
+                        <div class="css566-trade-text">
+                            Low Impact Cost <p>Trade on TechnoApp to reduce your impact cost. You earn Cashback instead of paying fees each time, every time. </p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="col-md-4 col-12">
+                <div class="blockchain-img"><img src="~/images/blockchain-img.png" alt="image"></div>
+            </div>
+
+            <div class="col-md-4 col-12">
+                    <a asp-controller="Academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featureliquidity">
+                    <div class="css566-trade-box zoom-out">
+                        <div class="css566-trade-text">Augmented Liquidity Pool <p> Augmented Liquidity Pool help faster trade settlement at the most apt price.</p></div>
+                        <div class="css566-trade-img-right">  <img src="~/images/liuidity-pool.png"> </div>
+
+                    </div>
+                </a>
+
+                    <a asp-controller="Academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featuremoney">
+                    <div class="css566-trade-box zoom-out">
+                        <div class="css566-trade-text">Make money in Arbitrage Trading <p>Because of the Cashback benefits you get the arbitrage opportunity on the platform itself.</p></div>
+                        <div class="css566-trade-img-right">  <img src="~/images/genrate-profile.png" alt="image"> </div>
+
+                    </div>
+                </a>
+                    <a asp-controller="Academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featureappreciate">
+                    <div class="css566-trade-box zoom-out">
+                        <div class="css566-trade-text">Get the Capital Appreciation Benefit <p>The more you hold your Cashback bonus, the higher it will appreciate in value. </p></div>
+                        <div class="css566-trade-img-right">  <img src="~/images/demand-icon.png" alt="image"> </div>
+
+                    </div>
+                </a>
+
+            </div>
+
+
+        </div>
+        </div>
+
+        <div class="d-block d-lg-none">
+        <div class="row g-3">
+          <div class="col-6 col-sm-4">
+                    <a asp-controller="Academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featurecashback">
+            <div class="css566-trade-box zoom-out">
+              <div class="css566-trade-img"> <img src="~/images/cashback.png"> </div>
+              <div class="css566-trade-text">Cashback <span>TechnoApp offers a positive Cashback of up to 0.10% of the transaction volume.</span> </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="col-6 col-sm-4">
+                    <a asp-controller="Academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featureliquidity">
+            <div class="css566-trade-box zoom-out ">
+              <div class="css566-trade-img"> <img src="~/images/liuidity-pool.png"> </div>
+              <div class="css566-trade-text">Augmented Liquidity Pool 
+                <span>Augmented Liquidity Pool help faster trade settlement at the most apt price.</span> 
+              </div>
+            </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-sm-4">
+                    <a asp-controller="Academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featurezero">
+            <div class="css566-trade-box zoom-out ">
+              <div class="css566-trade-img"> <img src="~/images/uniqe-icon.png"> </div>
+                            <div class="css566-trade-text">Zero SWAP Fees <span> Trade on TechnoApp without any SWAP Fees.</span></div>
+            </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-sm-4">
+                    <a asp-controller="Academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featureimpact">
+            <div class="css566-trade-box zoom-out">
+              <div class="css566-trade-img"> <img src="~/images/reduce.png"> </div>
+              <div class="css566-trade-text">Low Impact Cost <span> Trade on TechnoApp to reduce your impact cost. You earn cashback instead of paying fees each time, every time. </span></div>
+       
+            </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-sm-4">
+                    <a asp-controller="Academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featuremoney">
+            <div class="css566-trade-box zoom-out">
+              <div class="css566-trade-img"> <img src="~/images/genrate-profile.png"> </div>
+              <div class="css566-trade-text">Make money in Arbitrage Trading 
+                <span> Because of the Cashback benefits you get the arbitrage opportunity on the platform itself.</span> </div>            
+            </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-sm-4">
+                    <a asp-controller="Academy" asp-action="detail" asp-route-tab="feature-heading" asp-route-name="featureappreciate">
+            <div class="css566-trade-box zoom-out">
+              <div class="css566-trade-img"> <img src="~/images/demand-icon.png"> </div>    
+              <div class="css566-trade-text">Get the capital appreciation benefit <span>The more you hold your Cashback bonus, the higher it will appreciate in value.</span> </div>                
+            </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</section>
+<section class="bg2 pt-5">
+    <div class="container  mb-5 mb-xl-0">
+        <div class="banner-sec">
+        <div class="row">
+            <div class="col-lg-7 col-md-12" data-aos="fade-up" data-aos-duration="1500">
+                <div class="banner-sec-textarea text-center text-lg-start">
+                    <div class="css566-invest-div  mb-3">
+                        <h2>
+                            Invite Your Friend To Learn On <span>  TechnoApp </span>
+                        </h2>
+                        <p>
+                            Learn on TechnoApp academy to reap the maximum benefit out of the exchange.
+                            Refer your friend & Earn TechnoSavvy Instantly.
+                        </p>
+                    </div>
+                    <a asp-controller="referral-program" asp-action="index" class="start-btn">
+                    Refer Now 
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12 d-none d-lg-block" data-aos="fade-down" data-aos-duration="1500">
+                <img src="~/images/refer-and-earn.png" alt="image">
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<section class="beginner-lesson bg2 d-none d-lg-block">
+    <div class="container">
+        <div class="row">
+            <div class="css566-heading mb-3">
+                <h2 class="text-center "> TechnoApp Insights </h2>
+                <span class="text-center "> <div class="divider"></div> </span>
+            </div>
+            <div class="css566-slide">
+                <div class="owl-slider">
+                    <div id="carousel1" class="owl-carousel owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+                                <div class="owl-item active">
+                                    <a asp-controller="academy" asp-action="detail" asp-route-tab="automatedmarketmaker" asp-route-name="AMM">
+                                    <div class="beginner-box-1 beginner-box-2">                                     
+                                            <img src="../images/amm1.png" alt="Automated Market Maker" >                                     
+                                        <div class="beginner-textarea">                                        
+                                                <h5> What is Automated Market Maker? </h5>                                          
+                                            <p>
+                                                An Automated Market Maker (AMM) is a mechanism in Decentralized Exchanges that replaces traditional order books. It uses an algorithm to set asset prices according to token pair supply and demand.
+                                            </p>
+                                            <!-- <a href="#"> Learn More </a> -->
+                                        </div>
+                                        </div>
+                                    </a>
+                                </div>
+                               
+                                <div class="owl-item active">
+                                    <a asp-controller="academy" asp-action="detail" asp-route-tab="welcomeTechnoApp" asp-route-name="cryptotrading">
+                                    <div class="beginner-box-1 beginner-box-2">                                     
+                                            <img src="../images/what-is-crypto.png" alt="crypto trading" >                                       
+                                        <div class="beginner-textarea">                                           
+                                                <h5> What is crypto trading?  </h5>                                          
+                                            <p>
+                                                Crypto trading refers to the act of buying and selling cryptocurrencies in the financial markets. It can involve various trading strategies, including day trading, swing trading, and long-term investing.
+                                            </p>
+                                        </div>
+                                    </div></a>
+                                </div>
+                                <div class="owl-item active">
+                                    <a asp-controller="academy" asp-action="detail" asp-route-tab="stakingTab" asp-route-name="staking">
+                                    <div class="beginner-box-1 beginner-box-2">                                      
+                                            <img src="../images/What-is-staking.png" alt="What is staking"  >
+                                      
+                                        <div class="beginner-textarea">                                        
+                                                <h5> What is staking?  </h5>                                         
+                                            <p>
+                                                Staking is a process in which individuals or entities lock up a certain amount of cryptocurrency in a wallet to support the operations of a blockchain network.
+                                            </p>
+                                        </div>
+                                    </div></a>
+                                </div>
+
+                            </div>
+                        </div>
+                       @*  <div class="owl-nav">
+                            <button type="button" role="presentation" class="owl-prev">
+                                <span aria-label="Previous">‹</span>
+                            </button><button type="button" role="presentation"
+                                             class="owl-next">
+                                <span aria-label="Next">›</span>
+                            </button>
+                        </div> *@
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+@section Scripts{
+     
+}

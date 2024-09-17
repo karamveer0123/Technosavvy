@@ -1,0 +1,168 @@
+﻿@model vmClaimTranDeposit
+@{
+    ViewData["Title"] = "TechnoApp  Deposit Claim: Retrieve Your Digital Assets with Ease";
+}
+
+@section Header {
+    <meta name="description" content="Experience a seamless process for retrieving your digital assets. Explore hassle-free claims for a streamlined financial experience." />
+
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Deposit </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+
+                @*---- Transaction Hash Form ----*@
+                @if (Model.status == vmTranStatus.NewClaim)
+                {
+                    <div class="css77-buyc-outer">
+                        <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                            <div class="css77buy-box">
+                                <!---===================================================-->
+                                <form asp-action="ClaimTran" asp-controller="deposit" class="was-validated" novalidate>
+                                    <!------===================asset=========================================------>
+                                    <div class="form-group mt-3">
+                                        <label class="lable-name22">
+                                            Network
+                                        </label>
+                                        <div class="form-select3">
+                                            <select class="my-select " asp-for=NetworkId>
+                                                <option>Select Network</option>
+                                                @foreach (var item in Model.NetworkList)
+                                                {
+                                                    <option data-img-src="/images/coin/coin/@string.Concat(item.NativeCurrencyCode.ToUpper(),".png")" value="@item.SupportedNetworkId">  @item.Name </option>
+                                                }
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-3">
+                                        <label class="lable-name22 pb-1">Enter Transaction Hash</label>
+                                        <input type="text" class="form-control" asp-for="TranHash" placeholder="0x..." id="exampleInputSpend" aria-describedby="spndHelp">
+                                    </div>
+                                    <!------------------------------------------------>
+
+                                    <div class="dflexdiv mt-3">
+                                        <input type="submit" name="Submit" class=" d-orange  gent-btn float-right" value="Confirm">
+                                    </div>
+                                    <!---===================================================-->
+                                </form>
+                                <!---===================================================-->
+                            </div>
+                        </div>
+
+                    </div>
+                }
+                else
+                {
+                    @*---- Message View of this Page ----*@
+                    <div class="css77-buyc-outer">
+                        <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                            <div class="css77buy-box">
+                                <!---===================================================-->
+                                <div id="msform">
+                                    <div class="css77buy-box">
+                                        <!-------confirmation on process------------------------>
+                                        @if (Model.status == vmTranStatus.ClaimAccepted)
+                                        {
+                                            <div class="confpenddiv">
+                                                <div class="modegred34">
+                                                    <div class="vericond432"> <i class="fa fa-check d-green" aria-hidden="true"></i></div>
+
+                                                    <div class="csstime55-text mt-2">
+                                                        @Model.Msg
+                                                    </div>
+                                                </div>
+                                                <a asp-action="claimTran" asp-controller="deposit" class="linkcolor">Go To Wallet</a>
+
+                                            </div>
+                                        }
+
+                                        <!--------------why Deposit success show this div----------------------->
+                                        @if (Model.status == vmTranStatus.ClaimAlreadyActioned && Model.AssetCode.IsNOT_NullorEmpty())
+                                        {
+                                            @*ToDo:Naveen, Below is Template Msg, It must be changed*@
+                                            <div class="confpenddiv">
+                                                <div class="modegred34">
+                                                    <div class="vericond432"> <i class="fa fa-check d-green" aria-hidden="true"></i></div>
+
+                                                    <h5 class="green">Fund have Arrived!</h5>
+                                                    <div class="specdivid mb-1">
+                                                        <span>Transaction ID </span>
+                                                        <span><a asp-controller="wallet" asp-action="RequestDetail">45bghjdf2145</a></span>
+                                                    </div>
+                                                    <div class="csstime55-text mt-1">
+                                                        <span class="orange">10 ETH </span> deposit has been already credited to your Funding Wallet Successfully!
+                                                    </div>
+
+                                                </div>
+                                                <div class="dflexcenter2">
+                                                    <button class="btn withsumm-btn  mb-3 " type="button" onclick="window.location.href='wallet.html'">Confirm &amp; Verify</button>
+                                                </div>
+                                            </div>
+                                        }
+
+                                        @if (Model.status == vmTranStatus.ClaimAlreadyActioned && Model.AssetCode.IsNullOrEmpty())
+                                        {
+                                            <div class="confpenddiv">
+                                                <div class="modegred34">
+                                                    <div class="vericond432"> <i class="fa fa-info d-orange" aria-hidden="true"></i></div>
+
+                                                    <div class="csstime55-text mt-2">
+                                                        This transaction hash #@Model.TranHash either is not valid or is not related to your wallet.
+                                                    </div>
+                                                    <br/>
+                                                    @if (Model.Msg.IsNOT_NullorEmpty())
+                                                    {
+                                                        <div class="csstime55-text mt-2">
+                                                            @Model.Msg
+                                                        </div>
+                                                    }
+                                                    <br />
+                                                    <a asp-action="claimTran" asp-controller="deposit" class="linkcolor">Go To Wallet</a>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+            </div>
+
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+@section Scripts{
+    
+    @if (ConfigEx.ShouldMini)
+    {
+         <script src="~/minjs/dep.min.js"></script>
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {
+         <script src="~/js/dep.js"></script>
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script> 
+    }
+   
+ 
+}

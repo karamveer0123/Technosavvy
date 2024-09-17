@@ -1,0 +1,569 @@
+﻿@model vmPBTechnoSavvyBuy
+@{
+    Layout = "_LayoutPre";
+    ViewData["Title"] = "Buy TechnoSavvy";
+
+}
+
+<section class="beta-buy-TechnoSavvy beta-section  bg1" id="beta-buy-TechnoSavvy">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <div class="col-md-12 col-12">
+                <div class="css566-banner-box banner-text mt-0 pt-0">
+                    <h3 class="texth6 orange">Join TechnoApp Community </h3>
+                    <h1 class="fsz-heading">Secure TechnoSavvy in TechnoApp to Join community for Cashback and other rewards </h1>
+
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-11 col-lg-9 col-xl-8">
+                        <div id="wallet-tabdiv" class="buytab435 mt-4">
+                            @*<h2> To access exchange benefits , consider exploring the choices offered for <span class="orange"> Buy TechnoSavvy</span>.</h2>*@
+                            <div class="slide-form-div">
+                                <div id="login-tab" class="login_area">
+                                    <div class="acc-log-box">
+
+                                        <div class="depo-div">
+                                            <div class=" w-100 clearfix">
+
+                                                <div class="hideMatamaskClick">
+                                                    <h6 class="orange fw-bold">
+                                                        Deposit
+                                                        <img src="~/pr/images/coin/ETH.png" width="17" />
+                                                        <span class="coinImg" @*data-bs-toggle="popover"
+                                                              data-bs-trigger="hover focus"
+                                                              data-bs-content="@Model.frm.ethNetWalletAddress"
+                                                              data-bs-original-title="" title=""*@>
+                                                            ETH
+                                                        </span> or
+
+                                                        <img src="~/pr/images/coin/USDT.png" width="17" />
+                                                        <span class="coinImg" data-bs-toggle="popover"
+                                                              data-bs-trigger="hover focus"
+                                                              data-bs-content="@Model.frm.ethNetWalletAddress"
+                                                              data-bs-original-title="" title="">
+                                                            USDT
+                                                        </span> to buy TechnoSavvy Tokens
+                                                    </h6>
+                                                    <div class="form-group clearfix buyDepositWalletAddress mb-0">
+                                                        <label class="lable-name22">Deposit Wallet Address </label>
+                                                        <div class="input-group ethNetAddress">
+                                                            <input type="text" class="form-control5  js-copytextarea "
+                                                                   value="@Model.frm.ethNetWalletAddress">
+                                                            <div class="btn btn-copy js-textareacopybtn">
+                                                                <i class="fa fa-copy" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="notemeta22 clearfix mt-1 text-center">
+                                                            This is the <span class="orange" data-bs-toggle="popover"
+                                                                              data-bs-trigger="hover focus"
+                                                                              data-bs-content="It is important to ensure that only an equivalent amount of tokens are deposited. Depositing an incorrect token, transferring funds to an incorrect address with an inappropriate network could result in loss of funds."
+                                                                              data-bs-original-title="" title="">Ethereum ERC-20 Network</span> address.
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="notemeta22 clearfix mt-1 text-center">
+                                                        It is recommended to secure a minimum of <a href="#buyTechnoSavvyTypes" class="orange" id="buyTechnoSavvyTypes" onclick="activaTab('TechnoSavvy500');"> 500 <img src="~/pr/images/coin/TechnoSavvy.png" width="14" /> TechnoSavvy </a> tokens in order to access exchange benefits and additional rewards; however, the minimum purchase required to secure TechnoSavvy is 20 <img src="~/pr/images/coin/USDT.png" width="13" /> USDT.
+                                                    </div>
+
+                                                    <div class="row justify-content-center">
+                                                        
+                                                        @*<div class="col-md-6 col-lg-5" id="metaMaskBtnSection">
+                                                            <div class="form-group clearfix">
+                                                                <div class="msgCopied btn btn-buynav" id="btnMetamask" onclick="if (!window.__cfRLUnblockHandlers) return false;">
+                                                                    Continue With MetaMask
+                                                                    <img src="~/pr/images/metamask-icon.svg" width="30" class="metamask-icon" />
+                                                                </div>
+                                                            </div>
+                                                        </div>*@
+                                                        
+                                                        <div class="col-md-6 col-lg-5">
+                                                            <div class="form-group clearfix acceptInputDiv">
+                                                                <input class="form-check-input" type="checkbox" value="" hidden id="i-accept">
+                                                                <label class="txtAccept  btn btn-buynav" for="i-accept">I Have Deposited</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                            <div class="receipt-box " id="transactionHash">
+                                                <div class="receipt-box" id="hashForm">
+                                                    @await Html.PartialAsync("../shared/partial/_TranHash",Model.frm)
+                                                </div>
+
+
+                                                <span class="depositNotes">
+                                                    Note:-
+                                                    <ul>
+                                                        <li>
+                                                            <span>                                                               
+                                                                Please ensure to input valid Transaction hash.
+                                                            </span>
+                                                        </li>
+                                                        <li><span>Maximum 20 transactions are allowed per user till Beta Launch.</span></li>
+                                                    </ul>
+                                                </span>
+                                            </div>
+                                            @* <div id="fineSecondTimer" class="white text-center">
+                                            <span id="numberText">10</span>
+                                            <h5 class="orange mt-4">Waiting for confirmation!</h5>
+                                            </div>*@
+
+                                             
+    
+                                            <div id="messageBox" class="w-100">
+                                                <!--Confirmation Pending -->
+                                                <div class="confpenddiv w-100" id="trnsPending">
+                                                    <div class="modegred34 p-0  px-md-5">
+                                                        <div class="vericond432"> <i class="fa fa-exclamation d-orange" aria-hidden="true"></i></div>
+                                                        <h5 class="orange">Confirmation Pending!</h5>
+                                                        <div class="csstime55-text mt-1 text-center">
+                                                            Awaited confirmation associated with this Txn Hash <span class="lightgrey3" id="txtAccId1"></span>. Upon confirmation, an email will be sent to your registered email address.
+                                                            <span class="cnfBtnSection">
+                                                                <a href="/" class="btn withsumm-btn">Back To Home</a>
+                                                                @*<span id="numberText2"></span><span class="btn-reconnect" id="btnReconnect">Reconnect!</span>*@
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="depositNotes">
+                                                        Note:-
+                                                        <ul>
+                                                            <li>
+                                                                <span>
+                                                                    You can verify your confirmation status after one hour or get in touch with our customer support team for assistance. <a href="https://t.me/TechnoApp_Support" class="url-1" 
+                                                                    target="_blank">Support team</a>
+                                                                </span>
+                                                            </li>
+                                                        </ul>
+                                                    </span>
+                                                </div>
+                                                <!--Purchase Confirmed -->
+                                                <div class="confpenddiv w-100" id="trnsConfirmed">
+                                                    <div class="modegred34 p-0  px-md-5">
+                                                        <div class="vericond432"><i class="fa fa-check d-green" aria-hidden="true"></i></div>
+                                                        <h5 class="green">Purchase Confirmed!</h5>
+                                                        <div class="text-div44 text-center">
+                                                            <div class="csstime55-text mt-3">
+                                                                You have successfully received <spna class="orange"><span id="idTechnoSavvy"></span> TechnoSavvy</spna> Tokens against this Txn Hash <spna class="lightgrey3" id="txtAccId3"></spna>, which corresponds to a deposit of <span class="orange" id="depCoin"></span>. A confirmation email has been sent to your registered email address.
+
+                                                                @*<span class="cnfBtnSection"> <small>Not received?</small>  <a href="#" class="btn withsumm-btn">Resend Email</a></span>*@
+                                                                <span class="cnfBtnSection"> <a asp-action="index" asp-controller="my-TechnoSavvy" class="url-1">Go to My TechnoSavvy</a></span>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <span class="depositNotes">
+                                                        Note:-
+                                                        <ul>
+                                                            <li>
+                                                                <span>
+                                                                    All the tokens you have purchase will be accessible within your TechnoApp Wallet, and you will be able to access your Tokens during an after Beta release.
+                                                                </span>
+                                                            </li>
+                                                            <li><span>All tokens that have been purchased will become available for withdrawal or trading from the exchange starting with the Beta release.</span></li>
+                                                            <li><span>If you find any inconsistency in your wallet after Beta, kindly get in touch with our customer <a href="https://t.me/TechnoApp_Support" class="url-1" target="_blank">support team</a>.</span></li>
+                                                        </ul>
+                                                    </span>
+                                                </div>
+                                                    </div>
+                                              
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-12">
+
+                <div id="wallet-tabdiv" class="buytab435 ">
+                    <h2 class="mb-0"> What quantity of TechnoSavvy Tokens should you consider holding?</h2>
+                    <span class="text-center w-100 d-flex justify-content-center">
+                        <div class="divider"></div>
+                    </span>
+                    <div class="clearfix mb-5"></div>
+                    <ul class="nav nav-tabs" id="buyTechnoSavvyTypes">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#TechnoSavvy500">500 TechnoSavvy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#TechnoSavvy5000">5,000 TechnoSavvy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#TechnoSavvy50000">50,000 TechnoSavvy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#TechnoSavvycustom">Custorm</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content mt-3">
+                        <div class="tab-pane active show" id="TechnoSavvy500">
+                            <div class="showBuyPrice__content">
+                                <h5 class=" orange fw-bold">500 TechnoSavvy</h5>
+                                <ul class="beta-list44">
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                        <span>
+                                            By holding 500 <span class="orange"> <img src="~/pr/images/coin/TechnoSavvy.png" width="14" /> TechnoSavvy </span> Tokens, you become a community member and are eligible
+                                            for cashback on trades.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                        <span>
+                                            This opportunity is open to the <span class="orange">
+                                                Maximum 52,000
+                                                members
+                                            </span> only.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                        <span>As a community member, you enjoy a <span class="orange">assured Cashback reward.</span></span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                        <span>
+                                            The cashback reward is based on transaction value and capital appreciation of TechnoSavvy and can be up to <span class="orange">   0.05% of capital appreciation spread between maker & taker</span>.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                        <spna>
+                                            As a community member, you are also eligible to participate in different
+                                            rewards program of TechnoApp.
+                                        </spna>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="TechnoSavvy5000">
+                            <div class="showBuyPrice__content">
+                                <h5 class="orange fw-bold">5,000 TechnoSavvy</h5>
+                                <ul class="beta-list44">
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                        <span>
+                                            By holding 5,000 <span class="orange"><img src="~/pr/images/coin/TechnoSavvy.png" width="14" /> TechnoSavvy</span> Tokens, you become a community member and are eligible
+                                            for cashback on trades.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                        <span>
+                                            This opportunity is open to the <span class="orange">
+                                                Maximum 5,200
+                                                members
+                                            </span> only.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                        <span>
+                                            As a community member, you enjoy an <span class="orange">
+                                                assured positive
+                                                Cashback reward.
+                                            </span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                        <span>
+                                            The cashback reward is assured <span class="orange"> 0.05% of capital appreciation, for first 5 transactions</span> of the day & then revert to standard community cashback rule for all other transactions of the day.
+                                            </span>
+                                        
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                            As a
+                                            community member, you are also eligible to participate in different rewards
+                                            program of TechnoApp.
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="TechnoSavvy50000">
+                            <div class="showBuyPrice__content">
+                                <h5 class="orange fw-bold">50,000 TechnoSavvy</h5>
+                                <ul class="beta-list44">
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                        <span>
+                                            By holding 50,000 <span class="orange"> <img src="~/pr/images/coin/TechnoSavvy.png" width="14" /> TechnoSavvy </span> Tokens, you become a community member and are
+                                            eligible for cashback on trades.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                            This
+                                            opportunity is open to the <span class="orange">Maximum 520 members</span>
+                                            only.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                            As a
+                                            community member, you enjoy an <span class="orange">
+                                                assured positive Cashback
+                                                reward.
+                                            </span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                            The cashback reward is assured <span class="orange">0.10% of capital appreciation, for unlimited  transactions </span> & then revert to standard community cashback rule for all other transactions of the day.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                            As a
+                                            community member, you are also eligible to participate in different rewards
+                                            programs of TechnoApp.
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="TechnoSavvycustom">
+                            <div class="showBuyPrice__content">
+                                <h5 class="orange fw-bold">Custom</h5>
+                                <ul class="beta-list44">
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                        <span>
+                                            You can secure TechnoSavvy tokens with a minimum of
+                                            20 <span class="orange"> <img src="~/pr/images/coin/USDT.png" width="14" /> USDT </span> and a maximum of
+                                            100,000 <span class="orange"> <img src="~/pr/images/coin/TechnoSavvy.png" width="14" /> TechnoSavvy  </span> in each transaction.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                            Secure a
+                                            minimum of 500 <span class="orange"> <img src="~/pr/images/coin/TechnoSavvy.png" width="14" /> TechnoSavvy </span> tokens to become a community member and earn cashback on
+                                            each transaction.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                            TechnoSavvy token will be the most prominent unique token that will increase in value with each transaction on this exchange
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                            As a community member, user will be eligible for cashback and multitude of benefits with beta access
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                            More TechnoSavvy token held in user's wallet more priority will be given to access
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script type="text/javascript" src="~/js/select.js"></script>
+    <script type="text/javascript" src="~/js/images-select.js"></script>
+    <script type="text/javascript" src="~/pr/js/clipboard.js"></script>
+    <script type="text/javascript" src="~/pr/js/buyTechnoSavvy.js"></script>
+
+    <script type="text/javascript">$(".my-select").chosen({ width: "100%" });</script>
+    <script>
+        function fiveSecondTimer(sec) {
+            const timeCount = sec
+            let timing = timeCount
+            let interval = null
+            numberText.innerText = sec;
+            numberText2.innerText = sec;
+            interval = setInterval(() => {
+                timing--
+                numberText.innerText = timing;
+                numberText2.innerText = timing;
+
+                if (timing < 1) {
+                    clearInterval(interval);
+                    numberText2.innerText = ' ';
+                    $('#numberText2').css({ 'display': 'none' });
+                    hideTimer()
+                }
+            }, 1000)
+        }
+        function hideTimer() {
+            numberText.style.display = 'none'
+            $('#fineSecondTimer').css({ 'display': 'none' });
+            $('#messageBox').css({ 'display': 'block' });
+        }
+
+        $('#btnMetamask').on('click', function () {
+
+            connectAccount();
+            $('.hideMatamaskClick').css({ 'display': 'none' });
+            $('.banner-text').css({ 'display': 'none' });
+            $('#messageBox').css({ 'display': 'block' });
+        });
+        
+        $('.tokendiv-beta').hide();
+        $('#txtSwitch').hide();
+        $('#btnConnect').on('click', function () {
+            $('#txtSwitch').show(500);
+            $('#txtAccId').attr("disabled", true)
+            $('.tokendiv-beta').slideDown();
+        });
+
+        // show content on 500,5000,50000 TechnoSavvy
+        function showButPriceContent(id) {
+            var content = $(id).html();
+            $('#showBuyPrice__content').html(content);
+            $('#showBuyPrice__content2').html(content);
+
+        }
+        // Input price value change
+        $('.buyPrice label').on('click', function () {
+            $('.buyPrice').removeClass('active');
+            $(this).parent().addClass('active');
+            var inputValue = $(this).children('span').text();
+            console.log(inputValue);
+            btnClock();
+            if (inputValue == 'Custom') {
+                $('#txtAccId2').val('');
+                $('#txtAccId2').attr("readonly", false)
+                $('#txtAccId2').focus();
+            } else {
+                $('#txtAccId2').val(inputValue);
+                $('#txtAccId2').attr("readonly", true);
+
+            }
+        });
+
+        $("#txtAccId2, #txtAccId3").keypress(function (e) {
+            if (String.fromCharCode(e.keyCode).match(/[^0-9]/g)) return false;
+        });
+
+
+        $('#txtSwitch').on('click', function () {
+            $('#txtAccId').attr("disabled", false)
+            $('#txtAccId').focus();
+        });
+
+        $('.buyWalletAddress').css({ 'display': 'none' });
+        $('#i-accept').on('click', function (e) {
+
+            var accept = $('#i-accept').prop('checked');
+            if (accept) {
+                $('.hideMatamaskClick').css({ 'display': 'none' });
+                $('.receipt-box').css({ 'display': 'block' });;
+                //$('#transactionHash').toggle();
+                processTwoMin();
+
+            } else {
+                $('.buyWalletAddress').css({ 'display': 'none' });
+
+                $('#btnreceipt').css({ "display": "flex" });
+                $('.receipt-box').hide();
+            }
+        })
+
+
+    </script>
+    @if (Model.frm.isAwaiting||Model.frm.failCount>0)
+    {
+        <script>
+            $('.receipt-box').css({ 'display': 'block' });
+            $('.hideMatamaskClick').css({ 'display': 'none' });
+            processTwoMin();
+            var txHash = $('#TxHash').val();
+            i = 0;
+            var isDone=false;
+            function hittxHash() {
+                 i++;
+                $.ajax({
+                    url: '/home/IsTranForPurchases?trId=' + txHash, 
+                    success: function(result){
+                        console.log('result is:', result == null);
+                        console.log('i is:', );
+                        if (result != null) {
+                            IsDone=true;
+                             var depCoinAmount = GetFormatedValWithSep(result.TechnoSavvyAmountPurchased * result.TechnoSavvyUnitRate,4)+ " " + result.buyWith;
+                        var  idTechnoSavvyAmount= GetFormatedValWithSep(result.TechnoSavvyAmountPurchased,4) ;
+                            $('#transactionHash').addClass('d-none');
+                            $('#messageBox').removeClass('d-none');
+                            $('#trnsPending').addClass('d-none');
+                            $('#idTechnoSavvy').text(idTechnoSavvyAmount);
+                            $('#depCoin').text(depCoinAmount);
+                        } 
+                    }
+                });
+
+                if(i >= 24||isDone){
+                    clearInterval(timerHitTxHash);
+                    return false;
+                }
+            }
+            
+            $('#txtAccId1').text(txHash);
+            $('#txtAccId3').text(txHash);
+            
+            var timerHitTxHash  = setInterval(function () {
+                hittxHash();
+            }, 5000);
+        </script>
+    }
+    else
+    {
+        <script>
+            $('.receipt-box').css({ 'display': 'none' });
+            $('.hideMatamaskClick').css({ 'display': 'block' });
+        </script>
+    }
+    <script>
+        $('#messageBox').addClass('d-none');
+        function btnClock() {
+            $('.btnClose').on('click', function () {
+                $(this).parent().children('.showBuyPrice__content').remove();
+                $(this).css({ 'display': 'none' });
+                $('.buyPrice').removeClass('active');
+            });
+        }
+        btnClock();
+        var i = 1;
+        $('#btnReconnect').on('click', function () {
+            $(this).text('Connecting...').click(false);
+            connectAccount();
+            fiveSecondTimer(30);
+            $(this).addClass('connecting');
+            $('#numberText2').show();
+            ReconnectBtnText()
+            if (i >= 4) {
+                $(this).hide();
+                $('#numberText2').css({ 'display': 'none' });
+            }
+            i += 1;
+        });
+        function ReconnectBtnText() {
+            setTimeout(function () {
+                $('#btnReconnect').removeClass('connecting');
+                $('#btnReconnect').text('Try to reconnect!').click(true);
+            }, 30000);
+        }
+        function activaTab(tab) {
+            $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+        };
+
+    </script>
+}

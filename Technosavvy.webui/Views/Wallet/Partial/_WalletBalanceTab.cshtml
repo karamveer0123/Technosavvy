@@ -1,0 +1,147 @@
+﻿@model vmWalletHome
+
+<div class="css77asses-table" id="pageParent">
+
+    <div id="comunity-css566-box" class="comunity-css566-box ">
+@*         <div class="css11-wallect-range mb-2">
+            <div class="css33-leftpan">
+                <div class="mb-2 ">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Hide Zero Balance
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="css33-rightpan">
+                <form>
+                    <input type="search" class="market-search" data-tab="myMktTaball-566" placeholder="Search" name="search">
+                </form>
+                <div id="topScroll" class="topscroll" style="">
+                    <a href="#topscroll1"><i class="fa fa-long-arrow-up" aria-hidden="true"></i> </a>
+                </div>
+            </div>
+        </div> *@
+        <div id="myassetdata1" class="table-parent">
+            <table  class="table-child table table-responsive" >
+                <thead class="trasaction-table-title">
+                    <tr>
+                        <th class="css566-table-text text-left">Assets</th>
+                        <th class="css566-table-text ">Balance</th>
+                        <th class="css566-table-text">Graph</th>
+                        <th class="css566-table-text">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody class="trasaction-table placeholder-glow" id="myAssetTabal-01">
+                    <tr>
+                        <td style="min-width: 250px;">
+                            <div class="row g-0 align-items-center">
+                                <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                <div class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                        </td>
+                        <td  style="width: 130px;">
+                            <div class="placeholder w-100" style="height: 15px; width:130px;"></div>
+                        </td>
+                        <td>
+                            <div class="placeholder w-100" style="height: 15px;"></div>
+                        </td>
+                        <td>
+                            <div class="placeholder w-100" style="height: 15px;"></div>
+                        </td>
+                    </tr>
+@*
+                    @foreach (var tk in Model.Assets)
+                    {
+                        <tr>
+                            <td>   <div class="coin-name-css46"><span><img src="/images/coin/coin/@string.Concat(tk.Code.ToUpper(),".png")"></span> <span>@tk.Code </span> <small> @tk.ShortName</small><span class="dyfavb" data-tcode="@tk.Code"></span></div></td>
+                            <td>
+                                <div class="coin-24change-css46">
+                                    <div class="css5waltab44">
+                                        <span class="dyVal" data-dval="@tk.tokenPrecision" data-oval="@tk.Amt">@tk.Amt</span> <span> <small class="dyCur" data-oval="@tk.BaseVal"> @tk.BaseVal</small></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="graph-css444 coin-24change-css46">
+                                    <svg viewBox="0 0 500 100" class="chart" data-tcode="@tk.Code">
+                                        <polyline fill="none" stroke="#d5960f" stroke-width="10" points="
+                 00,120  20,60  40,80  60,20  80,80  100,80  120,60   140,100  160,90  180,80  200, 110    220, 10   240, 70
+                 260, 100     280, 100    300, 40    320, 0    340, 100    360, 100     380, 120     400, 60   420, 70    440, 80
+               "></polyline>
+                                    </svg>
+                                </span>
+                            </td>
+                            <td class="linkoverflow">
+                                <div class="tablediv432">
+                                    <div class="spot-trade-css44">                                        
+                                        <span> <a asp-controller="buy" asp-action="index"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Buy cryptocurrency effortlessly and conveniently with Fiat." data-bs-original-title="" title="">Buy</span></a></span>                                        
+                                        <span> <a asp-controller="trade" asp-action="index"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Buy cryptocurrency effortlessly and conveniently with Fiat." data-bs-original-title="" title="" aria-describedby="popover531066">Trade</span></a></span>                                        
+                                        <span> <a asp-controller="stake" asp-action="index"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Buy cryptocurrency effortlessly and conveniently with Fiat." data-bs-original-title="" title=""  aria-describedby="popover531066">Stake</span></a></span>
+                                        <span> <a asp-controller="Deposit" asp-action="index"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Conveniently deposit crypto from another account to your TechnoApp account." data-bs-original-title="" title="" aria-describedby="popover531066">Deposit</span></a></span>
+                                        <span> <a asp-controller="withdraw" asp-action="index"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Withdraw your crypto from your TechnoApp account to another account." data-bs-original-title="" title="" aria-describedby="popover531066">Withdraw</span></a></span>
+                                        <span> <a asp-controller="wallet" asp-action="inter-wallet-transfer"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Transfers crypto Internal wallet. Internal transfers are free on TechnoApp." data-bs-original-title="" title="" aria-describedby="popover531066">Transfer</span></a></span>
+                                        <span> <a asp-controller="convert" asp-action="index"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Convert your crypto into your desired asset, from as low as 10 USD to multi-million USD." data-bs-original-title="" title="" aria-describedby="popover531066">Convert</span></a></span>
+                                        <span> <a asp-controller="convert" asp-action="convertwithdraw"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Convert &amp; withdraw your crypto into your desired asset, from as low as 10 USD to multi-million USD." data-bs-original-title="" title="" aria-describedby="popover531066">Convert &amp; Widthdraw</span></a></span>
+                                    </div>
+
+                                    <span class="smalldevice332">
+                                        <div id="market-more" class="market-more-css45">
+                                            <div class="dropdowndiv togglenone">
+                                                <button type="button" class="btn btn-more-css44 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <ul class="dropdown-menu  dropdown-content">
+                                                    <li><a class="dropdown-item" asp-controller="buy" asp-action="index">Buy  </a></li>
+                                                    <li><a class="dropdown-item" asp-controller="trade" asp-action="index">Trade</a></li>
+                                                    <li><a class="dropdown-item" asp-controller="stake" asp-action="index"> Stake</a></li>
+                                                    <li><a class="dropdown-item" asp-controller="Deposit" asp-action="index"> Deposit</a></li>
+                                                    <li><a class="dropdown-item" asp-controller="withdraw" asp-action="index">Withdraw  </a></li>
+                                                    <li><a class="dropdown-item" asp-controller="wallet" asp-action="inter-wallet-transfer">Transfer</a></li>
+                                                    <li><a class="dropdown-item" asp-controller="convert" asp-action="index"> Convert</a></li>
+                                                    <li><a class="dropdown-item" asp-controller="convert" asp-action="convertwithdraw"> Convert &amp; Withdraw</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </span>
+
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                *@
+                </tbody>
+                <tfoot class="d-none">
+                    <tr>
+                        <td colspan="4">
+                            <div class="noheight54">
+                                <div class="norecord-div44">
+                                    <span><img src="images/no-data.png"></span>
+                                    <span> No records found</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            
+        </div>
+    </div>
+    
+
+    <div class="row">
+        <div class="col-12">
+        <div class="my-navigation mt-4">
+        <div class="simple-pagination-first"></div>
+        <div class="simple-pagination-previous"></div>
+        <div class="simple-pagination-page-numbers"></div>
+        <div class="simple-pagination-next"></div>
+        <div class="simple-pagination-last"></div>
+    </div>
+    </div>
+    </div>
+</div>

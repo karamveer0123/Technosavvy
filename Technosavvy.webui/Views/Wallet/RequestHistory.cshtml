@@ -1,0 +1,192 @@
+﻿@{
+    ViewData["Title"] = "Wallet Request History | TechnoApp - View Transaction Details";
+}
+@section Header {
+    <meta name="description" content="Track and manage wallet requests effortlessly with our detailed history feature. View transaction details and stay in control of your financial activities on TechnoApp" />
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/responsive-wattet.css">
+}
+<section class="section-wallet bg2">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            @await Html.PartialAsync("Partial/_WalletLeftMenu","index")
+            <!----------------------------------------------->
+
+            <div class="col-md-10 col-lg-10 col-xxl-10">
+                <div id="walletdiv801" class="wallet-right33 wallet-maindiv4 ">
+                    <div class="wallet-sectdiv33">
+                        <div id="wallet-tabdiv" class="wallet-tabdiv">
+                            <div class="heading"> Request History </div>                            
+                        </div>
+                    </div>
+
+                    <!----------------------------------------------->
+                    <div class="wallet-sectdiv33 p-md-3">
+                        <div id="comunity-css566-box" class="comunity-css566-box table-responsive">
+                            <div class="css33-rightpan mb-2">
+                                <form class="positionrelative">
+                                    <input type="search" class="market-search" placeholder="Search.." name="search" data-tab="myMktTaball-566">
+                                    <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                </form>
+
+                            </div>
+                            <div class="table-xscroll44">
+                                <table class="table  cssearn-table">
+                                    <thead class="trasaction-table-title">
+                                        <tr>                                            
+                                            <th nowrap="nowrap" class="text-left css566-table-text">Asset </th>
+                                            <th nowrap="nowrap" class="css566-table-text">Request ID </th>
+                                            <th nowrap="nowrap" class="css566-table-text">Date Time</th>
+                                            <th nowrap="nowrap" class="css566-table-text">Type</th>
+                                            <th nowrap="nowrap" class="css566-table-text">Amount </th>                                           
+                                            <th nowrap="nowrap" class="css566-table-text">Status</th>
+                                            <th nowrap="nowrap" class="css566-table-text">Txn Hash </th>
+                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody class="trasaction-table">
+
+                                        <tr>                                         
+                                            <td>
+                                                <div class="coin-name-css46 ">
+                                                    <span><img src="/images/coin/coin/ETH.png"></span>
+                                                    <span>ETH</span>
+                                                </div>
+                                            </td>
+                                            <td> <a asp-controller="wallet" asp-action="RequestDetail" class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67" data-bs-original-title="" title="">4fe73...</a>  </td>
+                                            <td>
+                                                <div class="css5datet44">
+                                                    <span> 25/12/2022 </span> <span> <small> 10:00:00</small></span>
+                                                </div>
+                                            </td>
+                                            <td>Deposit </td>
+                                            <td>0.1</td>                                           
+                                            <td><span class="basegreen">Successful</span> </td>
+                                            <td> <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Ox254574df237456dsf247df" data-bs-original-title="" title="">Ox254574df237456dsf247df"</span>  </td>
+                                            </tr>
+                                        <tr>
+                                            <td>  <div class="coin-name-css46 ">
+                                                        <span><img src="/images/coin/coin/ETH.png"></span>
+                                                        <span>ETH</span>
+                                                    </div>
+                                            </td>
+                                            <td> <a asp-controller="wallet" asp-action="RequestDetail" class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67" data-bs-original-title="" title="">4fe73...</a>  </td>
+                                            <td>
+                                                <div class="css5datet44">
+                                                    <span> 25/12/2022 </span> <span> <small> 10:00:00</small></span>
+                                                </div>
+                                            </td>
+                                            <td>Deposit </td>
+                                            <td>5000</td>
+                                            <td><span class="basegreen">Successful</span> </td>
+                                            <td> <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Ox254574df237456dsf247df" data-bs-original-title="" title="">Ox254574df237456dsf247df"</span>  </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left">
+                                                <div class="coin-name-css46 ">
+                                                    <span><img src="/images/coin/coin/INR.png"></span>
+                                                    <span>INR</span>
+                                                </div>
+                                            </td>
+                                            <td> <a asp-controller="wallet" asp-action="RequestDetail" class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67" data-bs-original-title="" title="">4fe73...</a>  </td>
+                                            <td>
+                                                <div class="css5datet44">
+                                                    <span> 25/12/2022 </span> <span> <small> 10:00:00</small></span>
+                                                </div>
+                                            </td>
+                                            <td>Deposit </td>
+                                            <td>5000</td>
+                                            <td><span class="orange">Pending</span> </td>
+                                            <td> </td>
+                                        </tr>
+                                                    <tr>
+                                            <td>
+                                                <div class="coin-name-css46 ">
+                                                    <span><img src="/images/coin/coin/ETH.png"></span>
+                                                    <span>ETH</span>
+                                                </div>
+                                            </td>
+                                            <td> <a asp-controller="wallet" asp-action="RequestDetail" class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67" data-bs-original-title="" title="">4fe73...</a>  </td>
+                                            <td>
+                                                <div class="css5datet44">
+                                                    <span> 25/12/2022 </span> <span> <small> 10:00:00</small></span>
+                                                </div>
+                                            </td>
+                                            <td>Deposit </td>
+                                            <td>5000</td>
+                                           <td><span class="basegreen">Successful</span> </td>
+                                            <td> <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Ox254574df237456dsf247df" data-bs-original-title="" title="">Ox254574df237456dsf247df"</span>  </td>
+                                            </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="coin-name-css46 ">
+                                                    <span><img src="/images/coin/coin/ETH.png"></span>
+                                                    <span>ETH</span>
+                                                </div>
+                                            </td>
+
+                                            <td> <a asp-controller="wallet" asp-action="RequestDetail" class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67" data-bs-original-title="" title="">4fe73...</a>  </td>
+                                            <td>
+                                                <div class="css5datet44">
+                                                    <span> 25/12/2022 </span> <span> <small> 10:00:00</small></span>
+                                                </div>
+                                            </td>
+                                            <td>Deposit </td>
+                                            <td>5000</td>
+                                            <td><span class="basegreen">Successful</span> </td>
+                                            <td> <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Ox254574df237456dsf247df" data-bs-original-title="" title="">Ox254574df237456dsf247df"</span>  </td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <!-- ==== Pagination ==== -->
+                            <div class="row">
+                                <div class="row">
+                                    <nav id="pagination-css" aria-label="Page navigation example">
+                                        <ul class="pagination">
+                                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+                                            <li class="page-item"><a class="page-link " href="#">1</a></li>
+                                            <li class="page-item  active"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!-- ==== // Pagination ==== -->
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+ @if (ConfigEx.ShouldMini)
+    {   
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/minjs/EarnWallet.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+        <script src="~/js/EarnWallet.js"></script>
+    }
+<script>
+    LoadCurrIfNot();
+    $(document).ready(function () {
+        $(".my-select").chosen({ width: "100%" });
+        formateAll();
+    });
+</script>
+}

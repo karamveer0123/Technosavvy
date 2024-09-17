@@ -1,0 +1,36 @@
+﻿@model vmDeposit
+    <div class="form-group mt-3">
+        <label class="lable-name22">Select the asset you would like to deposit</label>
+        <div class="form-select3">
+            <select class="my-select " asp-for=selectedCoin style="display: none;" onchange="AssetSelected()" >
+            <option>Select Asset</option>
+                <optgroup label="Token">
+                    @foreach (var item in Model.TokenList)
+                    {
+                        if (Model.selectedCoin.HasValue && Model.selectedCoin == @item.TokenId)
+                        {
+                            <option selected="" data-img-src="/images/coin/coin/@string.Concat(item.Code.ToUpper(),".png")" value="@item.TokenId"> @item.Code</option>
+                        }
+                        else
+                        {
+                            <option data-img-src="/images/coin/coin/@string.Concat(item.Code.ToUpper(),".png")" value="@item.TokenId"> @item.Code</option>
+                        }
+                    }
+                </optgroup>
+                <optgroup label="Currency">
+                    @foreach (var item in Model.CurrencyList)
+                    {
+                        if (Model.selectedCoin.HasValue && Model.selectedCoin == @item.token.TokenId)
+                        {
+                            <option selected="" data-img-src="/images/coin/coin/@string.Concat(item.token.Code.ToUpper(),".png")" value="@item.token.TokenId">  @item.token.Code - @item.Symbole</option>
+                        }
+                        else
+                        {
+                            <option data-img-src="/images/coin/coin/@string.Concat(item.token.Code.ToUpper(),".png")" value="@item.token.TokenId"> @item.token.Code - @item.Symbole</option>
+                        }
+                    }
+                </optgroup>
+            </select>
+        </div>
+    </div>
+

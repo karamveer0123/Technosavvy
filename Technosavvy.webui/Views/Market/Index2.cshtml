@@ -1,0 +1,2901 @@
+﻿@model vmMarketInfo
+@{
+    var isLog = false;
+    ViewData["Title"] = "TechnoApp Market: Explore Opportunities in the Digital Financial ";
+    var toplst = Model.Info.OrderByDescending(x => x.Volumn).ToArray();
+    var favlst = Model.Info.Where(x => x.Category.Contains("Fav")).OrderByDescending(x => x.TokenCode).ToArray();
+    var myPurchases = Model.Info.Where(x => x.Category.Contains("my")).OrderByDescending(x => x.TokenCode).ToArray();
+}
+@section Header {
+    <meta name="description" content="Stay informed, trade securely, and navigate the ever-evolving landscape of cryptocurrencies and assets." />
+}
+
+
+<section class="market-section bg2">
+    <div class="container">
+        <div class="row">
+           
+            <div id="market-tabs" class="market-tabs">
+                <span>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active " data-bs-toggle="tab" href="#gain-market"> Top Gainer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#volume-market"> Top Volume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#cashback24-market"> Most Cashback</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#highlight-coin"> Highlight Coins</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#new-listing">New Listing</a>
+                        </li>
+
+                        <li class="nav-item d-none">
+                            <a class="nav-link " data-bs-toggle="tab" href="#favorites-market">Favourites </a>
+                        </li>
+                    </ul>
+                </span>
+                
+            </div>
+
+            <div class="market-tabs-content  mt-3">
+                <div class="tab-content">
+                    <div class="tab-pane fade active show" id="gain-market">
+                        <div id="mktGainer" class="market-tab-box">
+
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                           
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                           
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                        
+                        </div>
+                       
+                    </div>
+                    <div class="tab-pane fade" id="volume-market">
+                        <div id="mktTopV" class="market-tab-box">
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                           
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                               <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                           
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+
+                        </div>
+                       
+                    </div>
+                    <div class="tab-pane fade" id="cashback24-market">
+                        <div id="mktCashback24" class="market-tab-box">
+                            <div class="market-detail22 positionrelative33">
+                               <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                 <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    <div class="tab-pane fade" id="highlight-coin">
+                         <div id="mktHighLightCoin" class="market-tab-box">
+                             
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                           
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                           
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                        
+                         </div>
+
+
+                       @*  <a asp-controller="market" asp-action="explore" class="see-more-m33">
+                            <i class="fa fa-caret-right"
+                               aria-hidden="true"></i> Explore
+                        </a> *@
+                    </div>
+                    <div class="tab-pane fade" id="new-listing">
+                        <div id="mktNewListing" class="market-tab-box">
+                            
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                           
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                           
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                            <div class="market-detail22 positionrelative33">
+                                <div class="overlay-div placeholder-glow">                    
+                        <div class="row mb-3 align-items-center">
+                          <div class="col-8">
+                            <div class="row g-0 align-items-center">
+                              <div  class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                              <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                              <div  class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-7"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div>
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                        <div class="row my-3">
+                          <div class="col-6">
+                            <div class="row g-0">
+                              <div  class="placeholder col-5"></div>                             
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row g-0 justify-content-end">
+                              <div  class="placeholder col-5 "></div>                            
+                            </div>
+                          </div>                          
+                        </div> 
+                      </div>
+
+                            </div>
+                        
+                          
+                        </div>
+                      
+                    </div>
+                    <div class="tab-pane fade d-none" id="favorites-market">
+                        @if (!isLog)
+                        {
+                            <div class="col-mid-12">
+                                <div class="market-logindiv">
+                                    <div class="register_link_div"> <a data-bn-type="link" asp-controller="signup" asp-action="registeruser" class="css-m39jj3">Signup</a> / <a data-bn-type="link" asp-controller="login" asp-action="login" class="css-m39jj3"> Login </a></div>
+                                </div>
+                            </div>
+
+                        }
+                        else
+                        {
+                            <div id="mktfav" class="market-tab-box">
+                                <div Class="text-danger">This iS RED</div>
+                               
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@*
+<section class="market33-section bg1">
+    <div class="container">
+        <div class="row">
+
+            <div class="market-title-div">
+                <span class="market-title-h2">
+                    Markets
+                </span>
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="market-tabs" class="market-tabs">
+                <span>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#highlight-coin"> Highlight Coins</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#top-coin">Top Gainer Coins</a>
+                        </li>
+
+                        <li class="nav-item d-none">
+                            <a class="nav-link" data-bs-toggle="tab" href="#listing-coin">New Listings </a>
+                        </li>
+                    </ul>
+                </span>
+
+                <span> </span>
+
+                
+
+            </div>
+
+            <div class="market-tabs-content  mt-3">
+                <div class="tab-content">
+                    <div class="tab-pane fade active show" id="highlight-coin">
+                        <div class="market-tab-box">
+                           <div class="market33-box-css positionrelative33 placeholder-glow">
+                  <div class="row mb-3 align-items-center">
+                    <div class="col-9">
+                      <div class="row g-0 align-items-center">
+                        <div  class="placeholder col-2 rounded-circle" style="width: 30px; height: 30px;"></div>
+                        <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                        
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder" style="width: 30px; height: 30px;"></div>                        
+                      </div>
+                    </div>                          
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <div class="row g-0">
+                        <div  class="placeholder" style="height: 45px;"></div>                             
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder col-8 mb-2"></div>                            
+                        <div  class="placeholder col-6 "></div>                            
+                      </div>
+                    </div>                          
+                  </div>
+                </div>
+                 <div class="market33-box-css positionrelative33 placeholder-glow">
+                  <div class="row mb-3 align-items-center">
+                    <div class="col-9">
+                      <div class="row g-0 align-items-center">
+                        <div  class="placeholder col-2 rounded-circle" style="width: 30px; height: 30px;"></div>
+                        <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                        
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder" style="width: 30px; height: 30px;"></div>                        
+                      </div>
+                    </div>                          
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <div class="row g-0">
+                        <div  class="placeholder" style="height: 45px;"></div>                             
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder col-8 mb-2"></div>                            
+                        <div  class="placeholder col-6 "></div>                            
+                      </div>
+                    </div>                          
+                  </div>
+                </div>
+                 <div class="market33-box-css positionrelative33 placeholder-glow">
+                  <div class="row mb-3 align-items-center">
+                    <div class="col-9">
+                      <div class="row g-0 align-items-center">
+                        <div  class="placeholder col-2 rounded-circle" style="width: 30px; height: 30px;"></div>
+                        <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                        
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder" style="width: 30px; height: 30px;"></div>                        
+                      </div>
+                    </div>                          
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <div class="row g-0">
+                        <div  class="placeholder" style="height: 45px;"></div>                             
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder col-8 mb-2"></div>                            
+                        <div  class="placeholder col-6 "></div>                            
+                      </div>
+                    </div>                          
+                  </div>
+                </div>
+                 <div class="market33-box-css positionrelative33 placeholder-glow">
+                  <div class="row mb-3 align-items-center">
+                    <div class="col-9">
+                      <div class="row g-0 align-items-center">
+                        <div  class="placeholder col-2 rounded-circle" style="width: 30px; height: 30px;"></div>
+                        <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                        
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder" style="width: 30px; height: 30px;"></div>                        
+                      </div>
+                    </div>                          
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <div class="row g-0">
+                        <div  class="placeholder" style="height: 45px;"></div>                             
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder col-8 mb-2"></div>                            
+                        <div  class="placeholder col-6 "></div>                            
+                      </div>
+                    </div>                          
+                  </div>
+                </div>
+                 <div class="market33-box-css positionrelative33 placeholder-glow">
+                  <div class="row mb-3 align-items-center">
+                    <div class="col-9">
+                      <div class="row g-0 align-items-center">
+                        <div  class="placeholder col-2 rounded-circle" style="width: 30px; height: 30px;"></div>
+                        <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                        
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder" style="width: 30px; height: 30px;"></div>                        
+                      </div>
+                    </div>                          
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <div class="row g-0">
+                        <div  class="placeholder" style="height: 45px;"></div>                             
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder col-8 mb-2"></div>                            
+                        <div  class="placeholder col-6 "></div>                            
+                      </div>
+                    </div>                          
+                  </div>
+                </div>
+                            
+
+                        </div>
+                        <a asp-controller="market" asp-action="explore" class="see-more-m33">
+                            <i class="fa fa-caret-right"
+                               aria-hidden="true"></i> Explore
+                        </a>
+                    </div>
+                    <div class="tab-pane fade" id="top-coin">
+                        <div class="market-tab-box">
+                            <div class="market33-box-css positionrelative33 placeholder-glow">
+                  <div class="row mb-3 align-items-center">
+                    <div class="col-9">
+                      <div class="row g-0 align-items-center">
+                        <div  class="placeholder col-2 rounded-circle" style="width: 30px; height: 30px;"></div>
+                        <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                        
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder" style="width: 30px; height: 30px;"></div>                        
+                      </div>
+                    </div>                          
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <div class="row g-0">
+                        <div  class="placeholder" style="height: 45px;"></div>                             
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder col-8 mb-2"></div>                            
+                        <div  class="placeholder col-6 "></div>                            
+                      </div>
+                    </div>                          
+                  </div>
+                </div>
+                 <div class="market33-box-css positionrelative33 placeholder-glow">
+                  <div class="row mb-3 align-items-center">
+                    <div class="col-9">
+                      <div class="row g-0 align-items-center">
+                        <div  class="placeholder col-2 rounded-circle" style="width: 30px; height: 30px;"></div>
+                        <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                        
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder" style="width: 30px; height: 30px;"></div>                        
+                      </div>
+                    </div>                          
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <div class="row g-0">
+                        <div  class="placeholder" style="height: 45px;"></div>                             
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder col-8 mb-2"></div>                            
+                        <div  class="placeholder col-6 "></div>                            
+                      </div>
+                    </div>                          
+                  </div>
+                </div>
+                 <div class="market33-box-css positionrelative33 placeholder-glow">
+                  <div class="row mb-3 align-items-center">
+                    <div class="col-9">
+                      <div class="row g-0 align-items-center">
+                        <div  class="placeholder col-2 rounded-circle" style="width: 30px; height: 30px;"></div>
+                        <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                        
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder" style="width: 30px; height: 30px;"></div>                        
+                      </div>
+                    </div>                          
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <div class="row g-0">
+                        <div  class="placeholder" style="height: 45px;"></div>                             
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder col-8 mb-2"></div>                            
+                        <div  class="placeholder col-6 "></div>                            
+                      </div>
+                    </div>                          
+                  </div>
+                </div>
+                 <div class="market33-box-css positionrelative33 placeholder-glow">
+                  <div class="row mb-3 align-items-center">
+                    <div class="col-9">
+                      <div class="row g-0 align-items-center">
+                        <div  class="placeholder col-2 rounded-circle" style="width: 30px; height: 30px;"></div>
+                        <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                        
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder" style="width: 30px; height: 30px;"></div>                        
+                      </div>
+                    </div>                          
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <div class="row g-0">
+                        <div  class="placeholder" style="height: 45px;"></div>                             
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder col-8 mb-2"></div>                            
+                        <div  class="placeholder col-6 "></div>                            
+                      </div>
+                    </div>                          
+                  </div>
+                </div>
+                 <div class="market33-box-css positionrelative33 placeholder-glow">
+                  <div class="row mb-3 align-items-center">
+                    <div class="col-9">
+                      <div class="row g-0 align-items-center">
+                        <div  class="placeholder col-2 rounded-circle" style="width: 30px; height: 30px;"></div>
+                        <div  class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                        
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder" style="width: 30px; height: 30px;"></div>                        
+                      </div>
+                    </div>                          
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <div class="row g-0">
+                        <div  class="placeholder" style="height: 45px;"></div>                             
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="row g-0 justify-content-end">
+                        <div  class="placeholder col-8 mb-2"></div>                            
+                        <div  class="placeholder col-6 "></div>                            
+                      </div>
+                    </div>                          
+                  </div>
+                </div>
+
+                        </div>
+                      
+                    </div>
+
+                    <div class="tab-pane d-none fade" id="listing-coin">
+                        <div class="market-tab-box">
+                            
+                            <div class="market33-box-css positionrelative33">
+                                <div class="loading"></div>
+                                <div class="overlay-div">
+                                    <div class="name-m22">
+                                        <span> <img src="images/coin/ETH.png"> ETH</span>
+                                        <span>
+                                            <a href="#" class="icon-m22"> <img src="images/cash.png"></a>
+                                        </span>
+                                    </div>
+                                    <div class="mareket-head-33">
+                                        <span>
+                                            <svg viewBox="0 0 500 100" class="chart">
+
+                                                <polyline fill="none" stroke="#d5960f" stroke-width="10" points="
+                   00,120
+                   20,60
+                   40,80
+                   60,20
+                   80,80
+                   100,80
+                   120,60
+                   140,100
+                   160,90
+                   180,80
+                   200, 110
+                   220, 10
+                   240, 70
+                   260, 100
+                   280, 100
+                   300, 40
+                   320, 0
+                   340, 100
+                   360, 100
+                   380, 120
+                   400, 60
+                   420, 70
+                   440, 80
+                 "></polyline>
+
+                                            </svg>
+                                        </span> <span>
+                                            <span class=" ">--</span> <span class="css44-down">-- </span>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            
+                            <div class="market33-box-css positionrelative33">
+                                <div class="loading"></div>
+                                <div class="overlay-div">
+                                    <div class="name-m22">
+                                        <span> <img src="images/coin/USDT.png"> USDT</span>
+                                        <span>
+                                            <a href="#" class="icon-m22"><img src="images/cash.png"></a>
+                                        </span>
+                                    </div>
+                                    <div class="mareket-head-33">
+                                        <span>
+                                            <svg viewBox="0 0 500 100" class="chart">
+
+                                                <polyline fill="none" stroke="#d5960f" stroke-width="10" points="
+                   00,120
+                   20,60
+                   40,80
+                   60,20
+                   80,80
+                   100,80
+                   120,60
+                   140,100
+                   160,90
+                   180,80
+                   200, 110
+                   220, 10
+                   240, 70
+                   260, 100
+                   280, 100
+                   300, 40
+                   320, 0
+                   340, 100
+                   360, 100
+                   380, 120
+                   400, 60
+                   420, 70
+                   440, 80
+                 "></polyline>
+
+                                            </svg>
+                                        </span> <span>
+                                            <span class=" ">--</span> <span class="css44-down">-- </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="market33-box-css positionrelative33">
+                                <div class="loading"></div>
+                                <div class="overlay-div">
+                                    <div class="name-m22">
+                                        <span> <img src="images/coin/BTC.png"> BTC</span>
+                                        <span>
+                                            <a href="#" class="icon-m22"> <img src="images/cash.png"></a>
+                                        </span>
+                                    </div>
+                                    <div class="mareket-head-33">
+                                        <span>
+                                            <svg viewBox="0 0 500 100" class="chart">
+
+                                                <polyline fill="none" stroke="#d5960f" stroke-width="10" points="
+                     00,120
+                     20,60
+                     40,80
+                     60,20
+                     80,80
+                     100,80
+                     120,60
+                     140,100
+                     160,90
+                     180,80
+                     200, 110
+                     220, 10
+                     240, 70
+                     260, 100
+                     280, 100
+                     300, 40
+                     320, 0
+                     340, 100
+                     360, 100
+                     380, 120
+                     400, 60
+                     420, 70
+                     440, 80
+                   "></polyline>
+
+                                            </svg>
+                                        </span> <span>
+                                            <span class=" ">--</span> <span class="css44-down">-- </span>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            
+                            <div class="market33-box-css positionrelative33">
+                                <div class="loading"></div>
+                                <div class="overlay-div">
+                                    <div class="name-m22">
+                                        <span> <img src="images/coin/LINK.png"> LTC</span>
+                                        <span>
+                                            <a href="#" class="icon-m22"><img src="images/cash.png"></a>
+                                        </span>
+                                    </div>
+                                    <div class="mareket-head-33">
+                                        <span>
+                                            <svg viewBox="0 0 500 100" class="chart">
+
+                                                <polyline fill="none" stroke="#d5960f" stroke-width="10" points="
+                   00,120
+                   20,60
+                   40,80
+                   60,20
+                   80,80
+                   100,80
+                   120,60
+                   140,100
+                   160,90
+                   180,80
+                   200, 110
+                   220, 10
+                   240, 70
+                   260, 100
+                   280, 100
+                   300, 40
+                   320, 0
+                   340, 100
+                   360, 100
+                   380, 120
+                   400, 60
+                   420, 70
+                   440, 80
+                 "></polyline>
+
+                                            </svg>
+                                        </span> <span>
+                                            <span class=" ">--</span> <span class="css44-down">-- </span>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            
+
+                            <div class="market33-box-css positionrelative33">
+                                <div class="loading"></div>
+                                <div class="overlay-div">
+                                    <div class="name-m22">
+                                        <span> <img src="images/coin/USDT.png"> USDC</span>
+                                        <span>
+                                            <a href="#" class="icon-m22"><img src="images/cash.png"></a>
+                                        </span>
+                                    </div>
+                                    <div class="mareket-head-33">
+                                        <span>
+                                            <svg viewBox="0 0 500 100" class="chart">
+
+                                                <polyline fill="none" stroke="#d5960f" stroke-width="10" points="
+                   00,120
+                   20,60
+                   40,80
+                   60,20
+                   80,80
+                   100,80
+                   120,60
+                   140,100
+                   160,90
+                   180,80
+                   200, 110
+                   220, 10
+                   240, 70
+                   260, 100
+                   280, 100
+                   300, 40
+                   320, 0
+                   340, 100
+                   360, 100
+                   380, 120
+                   400, 60
+                   420, 70
+                   440, 80
+                 "></polyline>
+
+                                            </svg>
+                                        </span> <span>
+                                            <span class=" ">--</span> <span class="css44-down">-- </span>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            
+
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+*@
+<section class="market-section bg2">
+    <div class="container">
+        <div class="row">
+
+            <div id="market-tabs" class="market-tabs">
+                <span>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#all-crypto">All Cryptos </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#spot-market"> Spot Markets </a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#highlight-market">
+                                Highlight
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" data-bs-toggle="tab" href="#new-listing-table">New Listing </a>
+                        </li>
+                       
+                        <li class="nav-item d-none">
+                            <a class="nav-link " data-bs-toggle="tab" href="#most-favourit">Most Favourit </a>
+                        </li>
+                    </ul>
+                </span>
+
+            </div>
+
+            <div class="market-tabs-content  mt-3">
+                <div class="tab-content">
+                    <div class="tab-pane fade active show" id="all-crypto">
+                        
+                        <div id="crypto-css466" class="all-crypto-css466">
+                            <div class="row">
+                                <div class="col-sm-7 col-md-9">
+                                    <div class="scroller scroller-left" style="display: none;"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+                            <div class="scroller scroller-right" style="display: none;"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                            <div class="wrapper">
+                                <ul class="nav nav-tabs list" id="myTab">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#all-566">All </a>
+                                    </li>
+                                </ul>
+                            </div>
+                                </div>
+                                <div class="col-sm-5 col-md-3">
+                                     <span class="css33-rightpan mb-3">
+                                        <form  class="positionrelative" autocomplete="off">
+                                            <input type="search" class="market-search" placeholder="Search.." name="search" data-tab="myTableAllCropto-1">
+                                            <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                        </form>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="crypto-detail-css466">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="all-566">
+                                        <div id="comunity-css566-box" class="comunity-css566-box">
+                                           
+                                            <div id="all-crypto-data" >
+                                                <div class="table-responsive">
+                                            <table id="myMktTaball-566" class="table table-sortable  placeholder-glow">
+                                                <thead class="trasaction-table-title">
+                                                    <tr>
+                                                        <th nowrap="nowrap" rowspan="2"  class="css566-table-text th-sticky-left">
+                                                            <div class="name-css46">
+                                                                <span>Name</span>
+                                                            </div>
+                                                        </th>
+                                                         <th nowrap="nowrap" rowspan="2" >
+                                                            <div class="text-center">
+                                                                <span>Last 7 Days</span>
+                                                            </div>
+                                                        </th>
+                                                        <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                                            <div class="volume-css46">
+                                                                <span>Price</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                                            <div class="price-css46">
+                                                                <span>24h Change(%)</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                                            <div class="change24-css46">
+                                                                <span>24h Volume</span>
+                                                            </div>
+                                                        </th>
+
+                                                        @*<th nowrap="nowrap"  class="css566-table-text">
+                                                            <div class="change24-css46">
+                                                                <span>Market Cap</span>
+                                                            </div>
+                                                        </th>*@
+                                                        <th nowrap="nowrap" colspan="2" >
+                                                            <div class="volume-css467 text-center orange"><span> Cashback</span> </div>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                         <th nowrap="nowrap"  class="css566-table-text w-150">
+                                                            <div class="volume-css46"><span> 24h</span> </div>
+                                                        </th>
+                                                         <th nowrap="nowrap" class="css566-table-text w-150">
+                                                            <div class="volume-css46"><span> YTD</span> </div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="myTableAllCropto-1" class="trasaction-table">
+
+                                                   <tr>
+                                                       <td class="td-sticky-left" style="min-width: 250px;">
+                                                           <div class="row g-0 align-items-center">
+                                                               <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                               <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                               <div class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                                                           </div>
+                                                       </td>
+                                                       <td  style="width: 130px;">
+                                                           <div class="placeholder w-100" style="height: 15px; width:130px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                            <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                    </tr>
+                                                     <tr>
+                                                       <td class="td-sticky-left" style="width: 250px;">
+                                                           <div class="row g-0 align-items-center">
+                                                               <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                               <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                               <div class="placeholder col-3 ms-2" style=" height: 15px;"> </div>
+                                                           </div>
+                                                       </td>
+                                                       <td  style="width: 130px;">
+                                                           <div class="placeholder w-100" style="height: 15px; width:130px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                            <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                    </tr>
+                                                </tbody>
+                                               <tfoot style="display:none">
+                    <tr>
+                        <td colspan="6">
+                            <div class="noheight54">
+                                <div class="norecord-div44">
+                                    <span><img src="../images/no-data.png"></span>
+                                    <span> No records found</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+                                            </table>
+                                            </div>
+                                            <div class="my-navigation">
+        <div class="simple-pagination-first"></div>
+        <div class="simple-pagination-previous"></div>
+        <div class="simple-pagination-page-numbers"></div>
+        <div class="simple-pagination-next"></div>
+        <div class="simple-pagination-last"></div>
+    </div>
+    </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+
+                    </div>
+
+                    <div class="tab-pane fade placeholder-glow" id="spot-market">
+                        <div id="crypto-css466" class="all-crypto-css466">
+                            <div class="row">
+                                <div class="col-sm-7 col-md-9">
+                                    <ul id="spot-market-ul" class="nav nav-tabs mb-3">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-bs-toggle="tab" href="#TechnoSavvy-566">
+                                            <span class="placeholder" style="width:50px"></span>
+                                            </a>
+                                        </li>
+
+                                       @* <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#USDT-566">
+                                                <span class="placeholder" style="width:50px"></span>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#ETH-566">
+                                                <span class="placeholder" style="width:50px"></span>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#BTC-566">
+                                                <span class="placeholder" style="width:50px"></span>
+                                                </a>
+                                        </li>*@
+
+                                    </ul>
+                                </div>
+                                <div class="col-sm-5 col-md-3">
+                                    <div id="spot-market-search" class="tab-content">
+                                        <span class="css33-rightpan mb-3">
+                                            <form action="" class="positionrelative" autocomplete="off">
+                                                <input type="search" class="market-search" placeholder="Search.." name="search" data-tab="myMktTaball-566">
+                                                <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </form>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="crypto-detail-css466">
+                                <div id="spot-market-tab-content" class="tab-content">
+                                    <div class="tab-pane active" id="TechnoSavvy-566">
+                                        <div id="comunity-css566-box" class="comunity-css566-box">
+                                            
+                                            <table id="myMktTaball-567" class="table table-responsive">
+                                               <thead class="trasaction-table-title">
+                                                   <tr>
+                                                       <th nowrap="nowrap" rowspan="2" class="css566-table-text text-start th-sticky-left">Name</th>
+                                                       <th nowrap="nowrap" rowspan="2" class="css566-table-text">Price</th>
+                                                       <th nowrap="nowrap" rowspan="2" class="css566-table-text">24h Change(%)</th>
+                                                       <th nowrap="nowrap" rowspan="2" class="css566-table-text">24h Volume</th>
+                                                       <th nowrap="nowrap" rowspan="2" class="css566-table-text">24h High/24h Low</th>
+                                                       <th nowrap="nowrap" colspan="2" class="css566-table-text text-center orange">Cashback</th>
+                                                   </tr> 
+                                                   <tr>
+                                                       <th nowrap="nowrap" class="css566-table-text w-150"><div class="volume-css46"><span> 24h</span> </div></th>
+                                                        <th nowrap="nowrap" class="css566-table-text w-150"><div class="volume-css46"><span>YTD</span> </div></th>
+                                                    </tr> 
+                                                </thead>
+                                                <tbody id="myTable" class="trasaction-table">
+                                                   <tr>
+                                                       <td class="td-sticky-left" style="width: 250px;">
+                                                           <div class="row g-0 align-items-center">
+                                                               <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                               <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                           </div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                            <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                    </tr>
+
+
+                                                </tbody>
+                                            </table>
+
+
+
+                                        </div>
+
+                                    </div>
+                                   @* <div class="tab-pane fade" id="USDT-566">
+                                        <div id="comunity-css566-box" class="comunity-css566-box">
+                                            <span class="css33-rightpan mb-3">
+                                                <form action="" class="positionrelative" autocomplete="off">
+                                                    <input type="search" class="market-search" placeholder="Search.." name="search" data-tab="myMktTaball-566">
+                                                    <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                </form>
+                                            </span>
+                                            <table id="myMktTaball-567" class="table table-responsive">
+                                                <thead class="trasaction-table-title">
+                                                    <tr>
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="name-css46">
+                                                                <span>Name</span>
+                                                            </div>
+                                                        </th>
+
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="volume-css46">
+                                                                <span>Price</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="price-css46">
+                                                                <span>7h Change(%)</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="change24-css46">
+                                                                <span>24h Volume</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="change24-css46">
+                                                                <span>24h High/24h Low</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="change24-css46">
+                                                                <span>Market Cap</span>
+                                                            </div>
+                                                        </th>
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="volume-css46"><span> Cashback</span>  </div>
+                                                        </th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="myTable" class="trasaction-table">
+
+                                                   
+
+
+                                                </tbody>
+                                            </table>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="ETH-566">
+                                        <div id="comunity-css566-box" class="comunity-css566-box">
+                                            <span class="css33-rightpan mb-3">
+                                                <form action="" class="positionrelative" autocomplete="off">
+                                                    <input type="search" class="market-search" placeholder="Search.." name="search" data-tab="myMktTaball-566">
+                                                    <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                </form>
+                                            </span>
+                                            <table id="myMktTaball-567" class="table table-responsive">
+                                                <thead class="trasaction-table-title">
+                                                    <tr>
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="name-css46">
+                                                                <span>Name</span>
+                                                            </div>
+                                                        </th>
+
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="volume-css46">
+                                                                <span>Price</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="price-css46">
+                                                                <span>7h Change(%)</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="change24-css46">
+                                                                <span>24h Volume</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="change24-css46">
+                                                                <span>24h High/24h Low</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="change24-css46">
+                                                                <span>Market Cap</span>
+                                                            </div>
+                                                        </th>
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="volume-css46"><span> Cashback</span>  </div>
+                                                        </th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="myTable" class="trasaction-table">
+
+                                                   
+
+
+                                                </tbody>
+                                            </table>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="BTC-566">
+                                        <div id="comunity-css566-box" class="comunity-css566-box">
+                                            <span class="css33-rightpan mb-3">
+                                                <form action="" class="positionrelative" autocomplete="off">
+                                                    <input type="search" class="market-search" placeholder="Search.." name="search" data-tab="myMktTaball-566">
+                                                    <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                </form>
+                                            </span>
+                                            <table id="myMktTaball-567" class="table table-responsive">
+                                                <thead class="trasaction-table-title">
+                                                    <tr>
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="name-css46">
+                                                                <span>Name</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="volume-css46">
+                                                                <span>Price</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="price-css46">
+                                                                <span>7h Change(%)</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="change24-css46">
+                                                                <span>24h Volume</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="change24-css46">
+                                                                <span>24h High/24h Low</span>
+                                                            </div>
+                                                        </th>
+
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="change24-css46">
+                                                                <span>Market Cap</span>
+                                                            </div>
+                                                        </th>
+                                                        <th nowrap="nowrap" class="css566-table-text">
+                                                            <div class="volume-css46"><span> Cashback</span>  </div>
+                                                        </th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="myTable" class="trasaction-table">
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>*@
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="tab-pane  fade" id="highlight-market">
+
+                         <div class="row">
+                             <div class="col-sm-7 col-md-9"></div>
+                             <div class="col-sm-5 col-md-3">
+                                 <span class="css33-rightpan mb-3">
+                                    <form action="" class="positionrelative" autocomplete="off">
+                                        <input type="search" class="market-search" placeholder="Search.." name="search" data-tab="highLightMarket-566">
+                                        <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                    </form>
+                                </span>
+                             </div>
+                         </div>
+                        <div id="comunity-css566-box" class="comunity-css566-box placeholder-glow">
+                            
+                            <div id="highlightmarket-main" >
+                                <div class="table-responsive">
+                            <table id="highLightMarket-table" class="table table-sortable ">
+                                <thead class="trasaction-table-title">
+                                    <tr>
+                                        <th nowrap="nowrap" rowspan="2" colspan="2" class="css566-table-text">
+                                            <div class="name-css46">
+                                                <span>Name</span>
+                                            </div>
+                                        </th>
+
+                                        <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                            <div class="volume-css46">
+                                                <span>Price</span>
+                                            </div>
+                                        </th>
+
+                                        <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                            <div class="price-css46">
+                                                <span>24h Change(%)</span>
+                                            </div>
+                                        </th>
+
+                                        <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                            <div class="change24-css46">
+                                                <span>24h Volume</span>
+                                            </div>
+                                        </th>
+
+                                       @* <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                            <div class="change24-css46">
+                                                <span>Market Cap</span>
+                                            </div>
+                                        </th>*@
+                                        <th nowrap="nowrap" colspan="2" class="css566-table-text">
+                                            <div class="volume-css467 text-center orange"><span> Cashback</span> </div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                            <th nowrap="nowrap"  class="css566-table-text w-150">
+                                            <div class="volume-css46"><span> 24h</span> </div>
+                                        </th>
+                                            <th nowrap="nowrap" class="css566-table-text w-150">
+                                            <div class="volume-css46"><span> YTD</span> </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="highLightMarket-566" class="trasaction-table">
+                                     <tr>
+                                                       <td class="td-sticky-left" style="min-width: 250px;">
+                                                           <div class="row g-0 align-items-center">
+                                                               <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                               <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                               
+                                                           </div>
+                                                       </td>
+                                                       <td  style="width: 130px;">
+                                                           <div class="placeholder w-100" style="height: 15px; width:130px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                            <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       
+                                                    </tr>
+                                                     <tr>
+                                                       <td class="td-sticky-left" style="width: 250px;">
+                                                           <div class="row g-0 align-items-center">
+                                                               <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                               <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                               
+                                                           </div>
+                                                       </td>
+                                                       <td  style="width: 130px;">
+                                                           <div class="placeholder w-100" style="height: 15px; width:130px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                            <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                      
+                                                    </tr>
+                                </tbody>
+                                <tfoot style="display:none">
+                    <tr>
+                        <td colspan="6">
+                            <div class="noheight54">
+                                <div class="norecord-div44">
+                                    <span><img src="../images/no-data.png"></span>
+                                    <span> No records found</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+                            </table>
+                            <div class="nomarket-11"></div>
+                        </div>
+                            <div class="my-navigation">
+        <div class="simple-pagination-first"></div>
+        <div class="simple-pagination-previous"></div>
+        <div class="simple-pagination-page-numbers"></div>
+        <div class="simple-pagination-next"></div>
+        <div class="simple-pagination-last"></div>
+    </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="tab-pane fade" id="new-listing-table">
+                         <div class="row">
+                             <div class="col-sm-7 col-md-9"></div>
+                             <div class="col-sm-5 col-md-3">
+                                 <span class="css33-rightpan mb-3">
+                                    <form action="" class="positionrelative" autocomplete="off">
+                                        <input type="search" class="market-search" placeholder="Search.." name="search" data-tab="new-listing-body-566">
+                                        <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                    </form>
+                                </span>
+                             </div>
+                         </div>
+                        <div id="comunity-css566-box" class="comunity-css566-box placeholder-glow">
+                            <div id="newlisting-main">
+                            <div class="table-responsive">
+                                <table id="new-listing--566" class="table table-sortable ">
+                                <thead class="trasaction-table-title">
+                                    <tr>
+                                        <th nowrap="nowrap" rowspan="2" colspan="2" class="css566-table-text th-sticky-left">
+                                            <div class="name-css46">
+                                                <span>Name</span>
+                                            </div>
+                                        </th>
+                                        <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                            <div class="volume-css46">
+                                                <span>Price</span>
+                                            </div>
+                                        </th>
+                                        <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                            <div class="price-css46">
+                                                <span>24h Change(%)</span>
+                                            </div>
+                                        </th>
+
+                                        <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                            <div class="change24-css46">
+                                                <span>24h Volume</span>
+                                            </div>
+                                        </th>
+
+                                        <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                            <div class="change24-css46">
+                                                <span>24h High / 24h low</span>
+                                            </div>
+                                        </th>
+                                        <th nowrap="nowrap" colspan="2" class="css566-table-text">
+                                            <div class="volume-css467 text-center orange"><span> Cashback</span> </div>
+                                        </th>
+
+                                    </tr>
+                                     <tr>
+                                        <th nowrap="nowrap"  class="css566-table-text w-150">
+                                        <div class="volume-css46"><span> 24h</span> </div>
+                                    </th>
+                                        <th nowrap="nowrap" class="css566-table-text w-150">
+                                        <div class="volume-css46"><span> YTD</span> </div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="new-listing-body-566" class="trasaction-table">
+                                    <tr>
+                                                       <td class="td-sticky-left" style="min-width: 250px;">
+                                                           <div class="row g-0 align-items-center">
+                                                               <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                               <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                               
+                                                           </div>
+                                                       </td>
+                                                       <td  style="width: 130px;">
+                                                           <div class="placeholder w-100" style="height: 15px; width:130px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                            <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                    </tr>
+                                                     <tr>
+                                                       <td class="td-sticky-left" style="width: 250px;">
+                                                           <div class="row g-0 align-items-center">
+                                                               <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                               <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                               
+                                                           </div>
+                                                       </td>
+                                                       <td  style="width: 130px;">
+                                                           <div class="placeholder w-100" style="height: 15px; width:130px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                            <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                       <td>
+                                                           <div class="placeholder w-50" style="height: 15px;"></div>
+                                                       </td>
+                                                    </tr>
+
+                                </tbody>
+                                <tfoot style="display:none">
+                    <tr>
+                        <td colspan="7">
+                            <div class="noheight54">
+                                <div class="norecord-div44">
+                                    <span><img src="../images/no-data.png"></span>
+                                    <span> No records found</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+                            </table>
+                            <div class="nomarket-11"></div>
+                             </div>
+                            <div class="my-navigation">
+        <div class="simple-pagination-first"></div>
+        <div class="simple-pagination-previous"></div>
+        <div class="simple-pagination-page-numbers"></div>
+        <div class="simple-pagination-next"></div>
+        <div class="simple-pagination-last"></div>
+    </div>
+                           
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane d-none fade" id="most-favourit">
+                        <div id="comunity-css566-box" class="comunity-css566-box">
+                            <span class="css33-rightpan mb-3">
+                                <form action="" class="positionrelative" autocomplete="off">
+                                    <input type="search" class="market-search" placeholder="Search.." name="search" data-tab="myMktTaball-566">
+                                    <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                </form>
+                            </span>
+                            <table id="myMktTaball-566" class="table table-sortable table-responsive">
+                                <thead class="trasaction-table-title">
+                                    <tr>
+                                        <th nowrap="nowrap" rowspan="2" colspan="2" class="css566-table-text th-sticky-left">
+                                            <div class="name-css46">
+                                                <span>Name</span>
+                                            </div>
+                                        </th>
+
+
+                                        <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                            <div class="volume-css46">
+                                                <span>Price</span>
+                                            </div>
+                                        </th>
+
+                                        <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                            <div class="price-css46">
+                                                <span>24h Change(%)</span>
+                                            </div>
+                                        </th>
+
+                                        <th nowrap="nowrap" rowspan="2" class="css566-table-text">
+                                            <div class="change24-css46">
+                                                <span>24h Volume</span>
+                                            </div>
+                                        </th>
+
+                                       
+                                        <th nowrap="nowrap" colspan="2" class="css566-table-text">
+                                            <div class="volume-css46 text-center orange"><span> Cashback</span> </div>
+                                        </th>
+
+
+                                    </tr>
+                                   <tr>
+                                        <th nowrap="nowrap"  class="css566-table-text w-150">
+                                        <div class="volume-css46"><span> 24h</span> </div>
+                                    </th>
+                                        <th nowrap="nowrap" class="css566-table-text w-150">
+                                        <div class="volume-css46"><span> YTD</span> </div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="myTable" class="trasaction-table">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+
+        </div>
+
+
+
+    </div>
+</section>
+
+@section Scripts{
+      
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/minjs/sorting.min.js"></script>
+        <script src="~/minjs/cMarketclient.min.js"></script>
+    }
+    else
+    {          
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+        <script src="~/js/sorting.js"></script>
+        <script src="~/js/cMarketclient.js"></script>
+    }
+   
+   
+    
+    <script>
+
+       loadFormatAll();
+    </script>
+}

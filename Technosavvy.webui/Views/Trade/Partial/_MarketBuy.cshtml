@@ -1,0 +1,36 @@
+﻿@model vmTradeOrder
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="green-bg buy-form-css">
+    <div class="">
+        <div class="buy-css-44"> <span> Buy</span> <span>@Model.QuoteName</span></div>
+        <div class="buy-css-44"> <span> </span><span class="small">Available</span> <span id="mbqa" class="small"> @string.Format(@Model.QuoteFormat,@Model.AvailableQuote)<span class="small"> @Model.QuoteName</span> <span class="css44add-buy"> <a href="#"> <i class="fa fa-plus-circle" aria-hidden="true"></i> </a></span></span></div>
+    </div>
+    <div class="buy-form-css-box reletive_1">
+
+        <form>
+            @Html.AntiForgeryToken()
+            <div class="input-css mb-3">
+                <input type="number" id="mbPrice" autocomplete="off" class="form-control-green search-box" placeholder="Price (Leave blank for Market Order)" aria-label="Price" aria-describedby="button-addon2">
+                <span class=" buy-text-input" type="button"> @Model.QuoteName </span>
+            </div>
+            <div class="d-none " id="mbPriceV">price</div>
+            <div class="input-css mb-3">
+                <input type="number" id="mbAmount" autocomplete="off" class="form-control-green search-box" placeholder="Amount" aria-label="Amount" aria-describedby="button-addon2">
+                <span class=" buy-text-input" type="button"> @Model.BaseName </span>
+            </div>
+            <div class="d-none " id="mbAmountV">amt</div>
+
+            <div class="input-css mb-3">
+                <input type="number" id="mbTotal" autocomplete="off" class="form-control-green search-box" placeholder="Total" aria-label="Total" aria-describedby="button-addon2">
+                <span class=" buy-text-input" type="button"> @Model.QuoteName </span>
+            </div>
+            <div class="d-none" id="mbTotalV">total</div>
+
+            <div class="input-btn-css"> <a type="button" id="btnBuyMarket" class="buy-sub-btn-55 green-btn"> Submit </a> <a type="button" id="btnBuyMarketReset" class="buy-sub-btn-55 green-btn"> Reset </a> </div>
+        </form>
+    </div>
+</div>

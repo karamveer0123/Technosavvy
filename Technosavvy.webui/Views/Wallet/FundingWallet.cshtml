@@ -1,0 +1,409 @@
+﻿@model vmFundingWallet
+@{
+    ViewData["Title"] = "Secure and Swift Wallet Funding";
+}
+@section Header {
+    <meta name="description" content="Our user-friendly interface ensures secure and swift transactions, providing you with a hassle-free experience. Fund your wallet with confidence today." />
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/responsive-wattet.css">
+}
+<section class="section-wallet bg2">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            @await Html.PartialAsync("Partial/_WalletLeftMenu","funding")
+
+            <!----------------------------------------------->
+            <div class="col-lg-10 col-xxl-10">
+                <div id="walletdiv801" class="wallet-right33 wallet-maindiv4 ">
+                    @await Html.PartialAsync("Partial/_TopUserDetails",Model.UserDetails)
+                    @await Html.PartialAsync("Partial/_TopMenu","Funding Wallet")
+                    @*<div class="wallet-sectdiv33">
+                    <div class="wallet-userdiv33">
+                    <div class="css22-walletleftpan ">
+                    <div class="userdiv33-wal"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> </div>
+                    <div class="iddiv33-wa">
+                    <span>User Name: @Model.UserDetails.Name</span>
+                    <span>Account Id : @Model.UserDetails.AccountNo </span>
+                    <span class="kyc22-text"> KYC Status:<span class="statusdiv33 orange"> @Model.UserDetails.KYCStatus<i class="fa fa-circle" aria-hidden="true"></i></span></span>
+                    </div>
+                    </div>
+                    <div class="css33-rightpan">
+                    <div class="logindiv33-wa">Last Login Session :11.09.2022 | 2:00 PM</div>
+                    </div>
+                    </div>
+                    </div>*@
+
+                    <div class="wallet-sectdiv33">
+                        <div id="wallet-tabdiv" class="wallet-tabdiv">
+                            <div class="css77-wall-acc ">
+                                <span class="css77-abal">Account Balance </span>
+                                <span class="css77-baldiv" id="id_funding">
+                                    <span  id="id_password" class=" dyCryo" data-dval="@Model.Details[0].tokenPrecision" data-oval="@Model.AccountBalance_baseV">@Model.AccountBalance_CryotoV @Model.selectedCryptoCoin  </span>
+                                    <small class="dyCur" data-dval="@Model.Details[0].tokenPrecision" data-oval="@Model.AccountBalance_baseV"> -- </small>
+                                </span>
+                               @* <span><i class="fa fa-eye" id="togglePassword" aria-hidden="true"></i> </span>*@
+                            </div>
+                            <div class="css77-sel">
+                                <div class=" form-select2 form444">
+                                    <select asp-for="selectedCryptoCoin" onchange="CryptoValMatrxChange()" class="my-select">
+                                        
+                                        @foreach (var tk in Model.TokenList)
+                                        {
+                                            if (tk.token.Code == Model.selectedCryptoCoin)
+                                            {
+                                                <option data-bval="@tk.basePrice" selected data-img-src="/images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")">@tk.token.Code </option>
+
+                                            }
+                                            else
+                                            {
+                                                <option data-bval="@tk.basePrice" data-img-src="/images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")">@tk.token.Code </option>
+
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="wallet-sectdiv33 d-none d-lg-block">
+                        <div class="css77asses-div" id="fundingWalletTable-main">
+                            <div id="comunity-css566-box" class="comunity-css566-box">
+                                <div class="sell-right-but p-0">
+                                    <div class="css33-leftpan">   
+                                        <span class="sell-btn-22">                                                  
+                                            <lable class="label857">No. of rows</lable>
+                                            <select class="form-select simple-pagination-items-per-page" ></select>
+                                        </span>                                                 
+                                    </div>
+                               
+                                    <div class="css33-rightpan">
+                                        <form  class="positionrelative">
+                                            <input type="search" autocomplete="off"  class="market-search" placeholder="Search.." name="search" data-tab="myMktTaball-566">
+                                            <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                        </form>
+                                    </div>                               
+                                </div>
+                                <div id="fundingWalletTable">
+                                <div id="overdiv443">                       
+                                    <table class="table table-responsive mt-2">
+                                        <thead class="trasaction-table-title">
+                                            <tr>
+                                                <th nowrap="nowrap" class="css566-table-text text-left">
+                                                    Coin
+                                                </th>
+
+                                                <th nowrap="nowrap" class="css566-table-text">
+                                                    Total Balance
+                                                </th>
+
+                                                <th nowrap="nowrap" class="css566-table-text">
+                                                    Available Balance
+                                                </th>
+
+                                                <th nowrap="nowrap" class="css566-table-text">
+                                                    Action
+                                                </th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody id="myMktTaball-566" class="trasaction-table">
+                                             @{int i = 0;}
+                                            @foreach (var tk in Model.Details)
+                                            {
+                                                  Console.Write("Index=" + tk);
+                                                <tr>
+                                                    <td>
+                                                         @if(tk.Code == "TechnoSavvy"){
+                                                            <a href="/about-TechnoSavvy">
+                                                                <div class="coin-name-css46 ">
+                                                                <span><img src="/images/coin/coin/@string.Concat(tk.Code.ToUpper(),".png")"></span>
+                                                                <span>@tk.Code </span> <small> @tk.ShortName</small>
+                                                            </div>
+                                                        </a>
+                                                        }else {
+                                                            <a href="/token/?tname=@string.Concat(tk.Code.ToLower())">                                                                   
+                                                                <div class="coin-name-css46 ">
+                                                                    <span><img src="/images/coin/coin/@string.Concat(tk.Code.ToUpper(),".png")"></span>
+                                                                    <span>@tk.Code </span> <small> @tk.ShortName</small>
+                                                                </div>
+                                                            </a>
+                                                        }
+                                                       
+                                                    </td>
+                                                    <td>
+                                                        <div class="coin-24change-css46 dyVal" data-dval="@tk.tokenPrecision" data-oval="@tk.TotalAmount">@tk.TotalAmount</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="coin-24change-css46 dyVal" data-dval="@tk.tokenPrecision" data-oval="@tk.AvailableAmount">@tk.AvailableAmount</div>
+                                                    </td>
+
+                                                    @*   <td>
+                                                <div class="spot-trade-css44">
+                                                <span><a href="buy-crypto.html">Buy</a> </span>
+                                                <span><a href="index1.html">Trade</a> </span>
+                                                <span><a href="staking.html"> Stake </a> </span>
+                                                <span> <a href="deposit.html"> Deposit </a></span>
+                                                <span> <a href="withdraw.html">Withdraw </a></span>
+                                                <span> <a href="internaltransfer.html"> Transfer </a></span>
+                                                <span> <a href="convert.html"> Convert </a></span>
+                                                <span> <a href="convertwithdraw.html"> Convrt &amp; Withdraw </a></span>
+
+                                                </div>
+                                                </td>*@
+
+                                                    <td class="linkoverflow">
+                                                        <div class="tablediv432">
+                                                            <div class="spot-trade-css44">
+                                                                <!---------------------->
+                                                                <span> <a  href="/buy?code=@string.Concat(tk.Code.ToLower())"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Buy cryptocurrency effortlessly and conveniently with Fiat." data-bs-original-title="" title="" aria-describedby="popover531066">Buy</span></a></span>
+                                                                <span> <a href="/deposit?code=@string.Concat(tk.Code.ToLower())"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Conveniently deposit crypto from another account to your TechnoApp account." data-bs-original-title="" title="" aria-describedby="popover531066">Deposit</span></a></span>
+                                                                 <span class="stakeitem-@string.Concat(@i)" > <a href="/stake?code=@string.Concat(tk.Code.ToLower())"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Buy cryptocurrency effortlessly and conveniently with Fiat." data-bs-original-title="" title="" aria-describedby="popover531066">Stake</span></a></span>
+                                                                <span> <a href="/withdraw?code=@string.Concat(tk.Code.ToLower())"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Withdraw your crypto from your TechnoApp account to another account." data-bs-original-title="" title="" aria-describedby="popover531066">Withdraw</span></a></span>
+                                                                <span> <a href="/wallet/inter-wallet-transfer?code=@string.Concat(tk.Code.ToLower())"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Transfers crypto Internal wallet. Internal transfers are free on TechnoApp." data-bs-original-title="" title="" aria-describedby="popover531066">Transfer</span></a></span>
+                                                                <span> <a href="/convert?code=@string.Concat(tk.Code.ToLower())"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Convert your crypto into your desired asset, from as low as 10 USD to multi-million USD." data-bs-original-title="" title="" aria-describedby="popover531066">Convert</span></a></span>
+                                                                <span> <a href="/convert/convertwithdraw?code=@string.Concat(tk.Code.ToLower())"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Convert &amp; withdraw your crypto into your desired asset, from as low as 10 USD to multi-million USD." data-bs-original-title="" title="" aria-describedby="popover531066">Convert &amp; Widthdraw</span></a>
+
+                                                </span>
+                                                                     </div>
+
+                                                            <span class="smalldevice332">
+                                                                <div id="market-more" class="market-more-css45">
+                                                                    <div class="dropdowndiv togglenone">
+                                                                        <button type="button" class="btn btn-more-css44 dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">
+                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu dropdown-menu-css44" data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 25px);">
+                                                                            <li><a class="dropdown-item"  href="/buy?code=@string.Concat(tk.Code.ToLower())">Buy  </a></li>
+                                                                            <li><a class="dropdown-item" href="/deposit?code=@string.Concat(tk.Code.ToLower())"> Deposit</a></li>
+                                                                            <li><a class="dropdown-item stakeitem2-@string.Concat(@i)" href="/stake?code=@string.Concat(tk.Code.ToLower())"> Stake</a></li>
+                                                                            <li><a class="dropdown-item" href="/withdraw?code=@string.Concat(tk.Code.ToLower())">Withdraw  </a></li>
+                                                                            <li><a class="dropdown-item" href="/wallet/inter-wallet-transfer?code=@string.Concat(tk.Code.ToLower())">Transfer</a></li>
+                                                                            <li><a class="dropdown-item" href="/convert?code=@string.Concat(tk.Code.ToLower())"> Convert</a></li>
+                                                                            <li><a class="dropdown-item" href="/convert/convertwithdraw?code=@string.Concat(tk.Code.ToLower())"> Convert & Withdraw</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                 i++;
+                                            }
+                                        </tbody>
+                                        <tfoot >
+                                            <tr>
+                                                <td colspan="4">
+                                                    <div class="noheight54">
+                                                        <div class="norecord-div44">
+                                                            <span><img src="../images/no-data.png"></span>
+                                                            <span> No records found</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>                               
+                                </div>
+                                <!-- ==== Pagination ==== -->
+                                 <div class="row">
+                                    <div class="col-12">
+                                            <div class="my-navigation">
+                                                <div class="simple-pagination-first"></div>
+                                                <div class="simple-pagination-previous"></div>
+                                                <div class="simple-pagination-page-numbers"></div>
+                                                <div class="simple-pagination-next"></div>
+                                                <div class="simple-pagination-last"></div>
+                                            </div>
+                                        </div>
+                                </div>   
+                                <!-- ==== // Pagination ==== -->
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="d-block d-lg-none">
+                        <div class="col-md-12 col-12">
+                      <div class="py-3 width100">
+                        <!-- <div class="heading">My Assets </div> -->
+                        <!-- Search Box -->
+                      <form class="position-relative pt-2">
+                        <input type="search"  class="market-search" autocomplete="off" placeholder="Search.." name="search" data-search>
+                        <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                      </form>                          
+                      <!-- Search Box -->
+                      <div id="mobileMyAssets">
+                        <!-- wallet Assets List -->
+                        <div class="wallet__assets">
+                            <div class="wallet__assets--heading">
+                              <div class="wallet__assets--item-top">
+                                <div class="wallet__assets--item-top-name">
+                                  Coin
+                                </div>
+                                <div class="wallet__assets--item-top-amount">
+                                    Total Balance
+                                </div>
+                                <div class="wallet__assets--item-top-action">
+                                  Action
+                                </div>                              
+                              </div>
+                            </div>
+                            <!-- Assets List items -->
+                                <div id="myMktTaball-m-566">
+                                    @foreach (var tk in Model.Details)
+                                            {
+                            <div class="wallet__assets--items" data-filter-item data-filter-name="@tk.Code.ToLower()">
+                                <div class="wallet__assets--item-top">
+                                  <div class="wallet__assets--item-top-name">
+                                      <span class="image">
+                                        <img src="/images/coin/coin/@string.Concat(tk.Code.ToUpper(),".png")">
+                                      </span>
+                                      <span class="assets__name">
+                                        @tk.Code 
+                                        <small>@tk.ShortName</small>
+                                      </span>
+                                  </div>
+                                  <div class="wallet__assets--item-top-amount"> 
+                                      <span class="dyVal" data-dval="@tk.tokenPrecision" 
+                                      data-oval="@tk.TotalAmount">@tk.TotalAmount</span>
+                                     <span class="amountToggle">
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                      </span>
+                                  </div>
+                                  <div class="wallet__assets--item-top-action">                                 
+                                    <div class="dropdown walletDropdown dropstart">
+                                      <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                      </a>                                  
+                                      <ul class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
+                                           <li><a class="dropdown-item" asp-controller="buy" asp-action="index">Buy  </a></li>
+                                            <li><a class="dropdown-item" asp-controller="Deposit" asp-action="index"> Deposit</a></li>
+                                            <li><a class="dropdown-item" asp-controller="withdraw" asp-action="index">Withdraw  </a></li>
+                                            <li><a class="dropdown-item" asp-controller="wallet" asp-action="inter-wallet-transfer">Transfer</a></li>
+                                            <li><a class="dropdown-item" asp-controller="convert" asp-action="index"> Convert</a></li>
+                                            <li><a class="dropdown-item" asp-controller="convert" asp-action="convertwithdraw"> Convert & Withdraw</a></li>
+                                       
+                                      </ul>
+                                    </div>
+                                  </div>                                
+                                </div>
+                                <div class="wallet__assets--item-bottom">
+                                  <div class="wallet__assets--item--bottom-item">
+                                    <span class="wallet__assets--item--bottom-text">Available Balance</span>
+                                    <span class="wallet__assets--item--bottom-data dyVal" data-dval="@tk.tokenPrecision" data-oval="@tk.AvailableAmount">@tk.AvailableAmount</span>
+                                  </div>
+                                </div>
+                            </div>
+                           }
+                        </div>
+                            <!-- ./ Assets List items -->
+                            @*
+                          <!-- Assets List items -->
+                          <div class="wallet__assets--items">
+                            <div class="wallet__assets--item-top">
+                              <div class="wallet__assets--item-top-name">
+                                  <span class="image">
+                                    <img src="images/coin/USDC.png">
+                                  </span>
+                                  <span class="assets__name">
+                                    USDC 
+                                    <small>USC Coin</small>
+                                  </span>
+                              </div>
+                              <div class="wallet__assets--item-top-amount">
+                                1,248.42 <span class="amountToggle">
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                  </span>
+                              </div>
+                              <div class="wallet__assets--item-top-action">                                 
+                                <div class="dropdown walletDropdown dropstart">
+                                  <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink3" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                  </a>                                  
+                                  <ul class="dropdown-menu"  aria-labelledby="dropdownMenuLink3">
+                                    <li><a class="dropdown-item" href="buy-crypto.html">Buy </a></li>
+                                    
+                                    <li><a class="dropdown-item" href="deposit.html"> Deposit</a></li>
+                                    <li><a class="dropdown-item " href="withdraw.html">Withdraw </a></li>
+                                    <li><a class="dropdown-item" href="internaltransfer.html">Transfer</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="convert.html"> Convert</a></li>
+                                    <li><a class="dropdown-item" href="convertwithdraw.html"> Convert &amp;
+                                        Withdraw</a></li>
+                                  </ul>
+                                </div>
+                              </div>                                
+                            </div>
+                            <div class="wallet__assets--item-bottom">
+                             
+                              <div class="wallet__assets--item--bottom-item">
+                                <span class="wallet__assets--item--bottom-text">Available Balance</span>
+                                <span class="wallet__assets--item--bottom-data">248.42</span>
+                              </div>
+                            </div>
+                        </div>
+                        <!-- ./ Assets List items -->*@
+                         <div id="myAssetNoRecodes4" class="trasaction-table" style="display:none">
+                                <div class="noheight54">
+                                    <div class="norecord-div44">
+                                        <span><img src="~/images/no-data.png"></span>
+                                        <span> No records found</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./ wallet Assets List -->
+                         <div class="my-navigation">
+                            <div class="simple-pagination-first"></div>
+                            <div class="simple-pagination-previous"></div>
+                            <div class="simple-pagination-page-numbers"></div>
+                            <div class="simple-pagination-next"></div>
+                            <div class="simple-pagination-last"></div>
+                        </div> 
+                          </div>  
+                        
+                      </div>
+                    </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------------------------------->
+    </div>
+
+</section>
+@section Scripts{
+    @if (ConfigEx.ShouldMini)
+    {   
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/minjs/FundingWallet.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+        <script src="~/js/FundingWallet.js"></script>
+    }    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            LoadCurrIfNot();
+            formateAll();
+            $(".my-select").chosen({ width: "100%" });           
+      $('.amountToggle').on('click', function () {
+        $(this).closest('.wallet__assets--items').children('.wallet__assets--item-bottom').slideToggle();
+      });
+    });
+    </script>
+   }

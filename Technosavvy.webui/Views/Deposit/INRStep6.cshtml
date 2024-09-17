@@ -1,0 +1,372 @@
+﻿@model vmDeposit
+@{
+    ViewData["Title"] = "Secure Deposit Process | Easy Banking Documents Upload";
+}
+
+@section Header {
+    <meta name="description" content="Simplify deposit processes with our secure receipt upload feature. Experience seamless transactions | Uploading banking statements." />
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+
+                <span>Deposit </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">                      
+                            <!-- progressbar -->
+                                @if (Model.ActionMethod == "Currency")
+                                {
+                                <div class="shadow_TechnoSavvy">
+                                    <ol class="progressdiv">
+                                        <li class="step  is-complete" data-step="1">                                        
+                                                Enter Details                                           
+                                        </li>
+                                        <li class="step is-active" data-step="2">                                           
+                                                Confirmation                                           
+                                        </li>
+                                    </ol>
+                                </div>
+                                }
+                                else
+                                {
+                                <div class="shadow_TechnoSavvy">
+                                    <ol class="progressdiv">
+                                        <li class="step  is-complete" data-step="1">                                          
+                                                Choose Asset                                          
+                                        </li>
+                                        <li class="step is-complete" data-step="2">                                           
+                                                Enter <br> Deposit from                                            
+                                        </li>
+                                        <li class="step is-active" data-step="3">
+                                            Verify<br> Information
+                                        </li>
+                                        <li class="step" data-step="4">                                        
+                                                Completed                                          
+                                        </li>
+                                    </ol>
+                                    <!---------------------------------------------->
+
+                                </div>
+                                }
+
+                            <form novalidate class="was-validated" autocomplete="off" asp-action="@Model.ActionMethod" asp-controller="deposit" id="frmDeposit" enctype="multipart/form-data">
+                                    @Html.AntiForgeryToken()
+                                    @Html.HiddenFor(x=>x._Theme)
+                                    @Html.HiddenFor(x=>x.isBack)
+                                    @Html.HiddenFor(x=>x._CookieConsent)
+                                    @Html.HiddenFor(x=>x.inforBag)
+                                    @Html.HiddenFor(x=>x.selectedCoin)
+                                    @Html.HiddenFor(x=>x.IsBankDeposits)
+                                    @Html.HiddenFor(x=>x.IsUPI)
+                                    @Html.HiddenFor(x=>x.Amount)
+                                <div asp-validation-summary=All class="text-danger"></div>
+                                <div id="Msg" class="text-danger"></div>
+                                @if(Model.IsUPI)
+                                    {
+                                    <div class="css77buy-box">
+
+                                        <!-- <div class="csstime55-text mt-3">Note: Please use PayTM App to execute the transfer.
+                                                                         </div> -->
+                                        <div class="css77-ordersucc text-center">
+                                            <span class="css77-payno">
+                                                <span>
+                                                    <h4>₹ INR</h4>
+                                                </span> <span> ₹ @Model.Amount.ToString("#,##0.00") </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="csspaydiv mt-2">
+                                            <div class="head csspaytitle"> TechnoApp Information </div>
+                                            <div class="css77-withdrawlS">
+                                                <div class="csssum-title55">Receiver Name</div>
+                                                <div class="csssum-detail55"><span>@Model.IB.INRTechnoAppOption.selectedUPI.AccountHolderName</span> </div>
+                                            </div>
+                                            <div class="css77-withdrawlS">
+                                                <div class="specdivid mt-1 mb-2">
+                                                    <div class="csssum-title55">UPI ID</div>
+                                                    <div class="csssum-detail55"><span>@Model.IB.INRTechnoAppOption.selectedUPI.UPIid</span> </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!------------->
+
+                                        <div class="payqr332">
+                                            <div class="qrdiv332">
+                                                <div class="css33check-text">QR Code</div>
+                                                <img src="@Model.IB.INRTechnoAppOption.selectedUPI.QRCode">
+                                                <div class="overlay">
+                                                    <a href="#" class="icon" title="zoom">
+                                                        <span data-bs-toggle="modal" data-bs-target="#qrModal"> <i class="fa fa-search-plus" aria-hidden="true"></i></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!------------------->
+                                        <div class="css77-ordersucc mt-2">
+                                            <div class="page-upload-box">
+                                                <div class="form-group uploaddflex w35per">
+                                                    <lable class="form-label"> Upload Receipt</lable>
+                              @* <span><a href="#"><i class="fa fa-times" aria-hidden="true"></i></a></span> *@
+                                                    <div class="drop-zone">
+                                                        <span class="drop-zone__prompt">
+                                                            <i class="fa fa-upload" aria-hidden="true"></i>
+                                                        </span>
+                                                        <input asp-for="Receipt" type="file" class="drop-zone__input" data-val="true" data-val-required="The Receipt is required.">
+                                                    </div>
+
+                                                </div>
+                                           
+                                            <div class="uploadlist343 w65per">
+                                                <h3>Instruction:</h3>
+                                                <ul>
+                                                    <li> Upload the transaction proof from the bank Statement.</li>
+                                                    <li>the amount and the transaction ID must be visible. </li>
+                                                    <li>The image must be clear.</li>
+                                                    <li>The size of image must be Max 250 KB. </li>
+                                                    <li>format of the document must be in .jpg/.jpeg/.png. </li>
+                                                </ul>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    }
+                                    else
+                                    {
+                                        @*---this Group is for BankDeposit---*@
+                                        <div class="css77buy-box">
+                          <h5>Transfer money to proceed with order</h5>
+                          <div class="notediv mt-3">Note: Use the bank details below to make tranfer through your online
+                            banking or mobile app to TechnoApp account.
+                          </div>
+                          <div class="css77-ordersucc text-center">
+                            <span class="css77-payno"><span>
+                                <h4>₹ INR</h4>
+                              </span> <span><i class="fa fa-inr" aria-hidden="true"></i> @Model.Amount.ToString("#,##0.00") </span> </span>
+                          </div>
+
+                          <div class="csspaydiv mt-2">
+
+                            <div class="head csspaytitle">Bank Receiver Information </div>
+                            <div class="csspaymentbox aboutTechnoSavvy-clipboard">
+                              <input class="css77-paydet ms-0 js-copytextarea" value="Receiver Name: @Model.IB.INRTechnoAppOption.selectedBankDeposits.AccountHolderName">
+                              <button  type="button" class="js-textareacopybtn "><i class="fa fa-files-o"></i></button>
+                            </div>
+
+                            <div class="csspaymentbox aboutTechnoSavvy-clipboard">
+                             <input  class="css77-paydet ms-0 js-copytextarea2" value="Account No: @Model.IB.INRTechnoAppOption.selectedBankDeposits.AccountNumber">
+                             <button  type="button" class="js-textareacopybtn2 "><i class="fa fa-files-o"></i></button>
+                            </div>
+                          </div>
+
+                          <div class="csspaydiv">
+                            <div class="head csspaytitle">Additional Information</div>
+                            <div class="csspaymentbox aboutTechnoSavvy-clipboard">
+                                                <input class="css77-paydet ms-0 js-copytextarea3" value="Account IFSCCode: @Model.IB.INRTechnoAppOption.selectedBankDeposits.IFSCCode">
+                              <button type="button" class="js-textareacopybtn3 "><i class="fa fa-files-o"></i></button>
+                            </div>
+                            <div class="csspaymentbox aboutTechnoSavvy-clipboard">
+                                                <input class="css77-paydet ms-0 js-copytextarea4" value="Bank Name: @Model.IB.INRTechnoAppOption.selectedBankDeposits.Bank">
+                              <button type="button" class="js-textareacopybtn4"><i class="fa fa-files-o"></i></button>
+                            </div>
+                            <div class="csspaymentbox aboutTechnoSavvy-clipboard">
+                                                <input class="css77-paydet ms-0 js-copytextarea5" value="Branch: @Model.IB.INRTechnoAppOption.selectedBankDeposits.BranchAddress">
+                              <button type="button" class="js-textareacopybtn5"><i class="fa fa-files-o"></i></button>
+                            </div>
+
+                          </div>
+                          <!----------===========================================------------>
+                          <div class="form-group mt-3">
+                            <label for="exampleInputSpend" class="lable-name22">Select the transfer method used for
+                              Deposit:</label>
+                            <div class="form-select3">
+                              <select class="my-select " asp-for="TransferMethod" aria-label="transfer-method" >
+                                <option>Select</option>
+                                <option>IMPS</option>
+                                <option>NEFT</option>
+                                <option>RTGS</option>
+                              </select>
+                            </div>
+                          </div>
+                          <!---------------------------------------->
+                          <div class="page-upload-box">
+                            <div class="form-group uploaddflex w35per">
+                              <lable class="form-label"> Upload Receipt</lable>
+                           @*    <span><a href="#"><i class="fa fa-times" aria-hidden="true"></i></a></span> *@
+                              <div class="drop-zone">
+                                <span class="drop-zone__prompt"> <i class="fa fa-upload" aria-hidden="true"></i> </span>
+                                                    <input asp-for="Receipt" type="file" class="drop-zone__input" data-val="true" data-val-required="The Receipt is required.">
+                              </div>
+
+                            </div>
+                            <div class="uploadlist343 w65per">
+                              <h3>Instruction:</h3>
+                              <ul>
+                                <li> Upload the transaction proof from the bank Statement.</li>
+                                <li>The amount and the transaction ID must be visible. </li>
+                                <li>The image must be clear.</li>
+                                <li>The size of image must be Max 250 KB. </li>
+                                <li>The format of the document must be in .jpg/.jpeg/.png. </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <!--------------------------------------------------->
+             
+                          <!-----============================================================================--------->
+                        </div>
+
+                                    }
+
+                                <span class="dflexdiv">
+                                    <input type="button" name="previous" class="d-dark action-button" value="Previous">
+                                    <input type="submit" name="next" class=" d-orange action-button float-right" value="Continue">
+                                </span>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+        <div class="col-md-4 col-12">
+            @await Html.PartialAsync("partial/_RightFAQ")
+        </div>
+    </div>
+    </div>
+    </section>
+    <div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content mod-sec221">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modalimg4"> <img src="@Model.IB.INRTechnoAppOption.selectedUPI.QRCode"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @section Scripts{
+
+        @if (ConfigEx.ShouldMini)
+        {
+            <script src="~/minjs/clipboard.min.js"></script>
+            <script src="~/minjs/qrcode.min.js"></script>
+            <script src="~/minjs/dep.min.js"></script>
+            <script src="~/minjs/select.min.js"></script>
+            <script src="~/minjs/images-select.min.js"></script>
+            <script src="~/js/upload-file.min.js"></script>
+
+        }
+        else
+        {
+            <script src="~/js/clipboard.js"></script>
+            <script src="~/js/qrcode.min.js"></script>
+            <script src="~/js/dep.js"></script>
+            <script src="~/js/select.js"></script>
+            <script src="~/js/images-select.js"></script>
+            <script src="~/js/upload-file.js"></script>
+
+        }
+        <script>
+            function ValidateAndSubmit() {
+                //Do Validation here
+                $('#frmUpload').submit();
+            }
+            jQuery(document).ready(function () {
+                ImgUpload();
+            });
+
+            function ImgUpload() {
+
+
+                $('.upload__inputfile').each(function () {
+                    $(this).on('change', function (e) {
+                        var imgWrap = "";
+                        var imgArray = [];
+                        var dId = $(this).prop('id');
+                        imgWrap = $(this).closest('.upload__box').find('.upload__img-wrap');
+                        var maxLength = $(this).attr('data-max_length');
+                        var maxSize = $(this).attr('data-max_size');
+
+                        var files = e.target.files;
+                        var filesArr = Array.prototype.slice.call(files);
+                        var iterator = 0;
+                        filesArr.forEach(function (f, index) {
+
+                            if (!f.type.match('image.*')) {
+                                $('#Msg').html('Image file expected..');
+                                $('#Receipt').val('').clone(true);
+                                return;
+                            }
+                            if (f.size > maxSize) {
+                                $('#' + dId).val('').clone(true);
+                                $('#Msg').html('file too large..');
+                                $('#Receipt').val('').clone(true);
+                                return;
+                            }
+                            else {
+                                $('#ReceiptErr').html('');
+                            }
+
+                            if (imgArray.length > maxLength) {
+                                return false
+                            } else {
+                                var len = 1;
+                                for (var i = 0; i < imgArray.length; i++) {
+                                    if (imgArray[i] !== undefined) {
+                                        len++;
+                                    }
+                                }
+                                if (len > maxLength) {
+                                    return false;
+                                } else {
+                                    imgArray.push(f);
+
+                                    var reader = new FileReader();
+                                    reader.onload = function (e) {
+                                        var html = "<div class='upload__img-box'><div style='background-image: url(" + e.target.result + ")' data-number='" + $(".upload__img-close").length + "' data-id='" + dId + "' data-file='" + f.name + "' class='img-bg'><div class='upload__img-close'></div></div></div>";
+                                        imgWrap.html(html);
+                                        iterator++;
+                                    }
+                                    reader.readAsDataURL(f);
+                                }
+                            }
+                        });
+                    });
+                });
+
+                $('body').on('click', ".upload__img-close", function (e) {
+                    var file = $(this).parent().data("file");
+                    var dId = $(this).parent().data("id");
+                    //for (var i = 0; i < imgArray.length; i++) {
+                    //    if (imgArray[i].name === file) {
+                    //        imgArray.splice(i, 1);
+                    //        break;
+                    //    }
+                    //}
+
+                    $(this).parent().parent().remove();
+                    $('#' + dId).val('').clone(true);
+                });
+            }
+        </script>
+        <script>
+        function copyToClipboard(target) {
+            var copy = document.getElementById(target);
+            copy.select();
+            document.execCommand("Copy");
+            alert("Copied the text: " + copy.value);
+        }
+        </script>
+    }

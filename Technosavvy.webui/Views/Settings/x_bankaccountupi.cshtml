@@ -1,0 +1,169 @@
+﻿<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33 px-0">
+            <span class="market-title-h2 headcss33">
+                <span> <a asp-controller="settings" asp-action="bankaccount"><i class="fa fa-angle-double-left" aria-hidden="true"></i> </a></span>
+                <span>Add Bank Account</span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+
+        <div class="row">
+            <div class="csscenterscreen mt-4">
+                <div class="row">
+                    <!-------------------------------------------------------->
+                    <div class="css77-buyc-div">
+                        <div class="css77buy-box">
+                            <!-------------------------------------------------------->
+                            <form autocomplete="off">
+                                <!-------------------------------------------------------->
+                                <div class="form-group mt-3">
+                                    <label class="form-label lable-name">Name of the Person</label>
+                                    <input type="text" class="form-control" placeholder="Shashank Jain"
+                                           aria-describedby="spndHelp" disabled>
+                                </div>
+                                <!-------------------------------------------------------->
+
+                                <div id="select100per" class="form-group mt-3">
+                                    <label class="form-label lable-name">Select Currency</label>
+                                    <div class="formselect2P">
+                                        <select class="my-select" aria-label="Select Currency">
+                                            <option>Select Currency</option>
+                                            <option>INR - ₹</option>
+                                            <option>CHF - FR</option>
+                                            <option>BRL - R$</option>
+                                            <option>USD - $</option>
+                                            <option>AUD - $</option>
+                                            <option>CAD - $</option>
+                                            <option>CLP - $</option>
+                                            <option>CNY - ¥</option>
+                                            <option>CZK - KČ</option>
+                                            <option>DKK - KR</option>
+                                            <option>EUR - €</option>
+                                            <option>GBP - £</option>
+                                            <option>MYR - RM</option>
+                                            <option>HKD - $</option>
+                                            <option>HUF - FT</option>
+                                            <option>IDR - RP</option>
+                                            <option>ILS - ₪</option>
+                                            <option>INR - ₹</option>
+                                            <option>JPY - ¥</option>
+                                            <option>KRW - ₩</option>
+                                            <option>MXN - $</option>
+                                        </select>
+                                    </div>
+                                </div>
+                               
+
+                                <div id="select100per" class="form-group mt-3">
+                                    <label class="form-label lable-name">Choose Payment Method</label>
+                                        <select class="form-select " aria-label="Payment Method">
+                                            <option>Select Payment Method</option>
+                                            <option>Bank Transfer</option>
+                                            <option>UPI</option>                                          
+                                        </select>
+                                  
+                                </div>
+                                <!-------------------------------------------------------->
+                                <div class="bankgroupdiv">
+                                    <div class="form-group mt-3">
+                                        <label class="form-label lable-name">Enter User Name</label>
+                                        <input type="text" class="form-control" placeholder=" "
+                                               aria-describedby="spndHelp" disabled>
+                                    </div>
+
+                                    <div class="form-group mt-3">
+                                        <label class="form-label lable-name">Enter UPI ID</label>
+                                        <input type="text" class="form-control" placeholder=" "
+                                               aria-describedby="spndHelp" disabled>
+                                    </div>
+
+
+                                    <div class="row">
+                                         <div class="payqr332">
+                                                        <div class="qrdiv332">
+                                                <label class="form-label lable-name">Upload QR Cdde</label>
+                                                <div class="upload-box88">
+                                                    <!------------------->
+                                                    <div class="drop-zone">
+                                                        <span class="drop-zone__prompt">
+                                                            <i class="fa fa-upload"
+                                                               aria-hidden="true"></i>
+                                                        </span>
+                                                        <input id="tokenlogo" type="file" name="myFile"
+                                                               class="drop-zone__input" data-val="true"
+                                                               data-val-required="The Logo field is required.">
+                                                    </div>                                                    
+                                                </div>
+                                                        </div>
+                                                    </div>
+                                    </div>
+
+                                </div>
+                                <!-------------------------------------------------------->
+
+                                <div class="css4amtbox-left widdes445">
+                                    <h5>Tips:</h5>
+                                    <span>
+                                        The added payment method will be shown to the buyer during the transaction to accept fiat
+                                        transfers. Please ensure that the information is correct, real, and matches your KYC information
+                                        on TechnoApp.
+                                    </span>
+                                </div>
+                                <!-------------------------------------------------------->
+                                <div class="dflexdiv">
+                                    <a class="btn withsumm-btn  d-dark  mt-4 " type="button"
+                                       asp-controller="settings" asp-action="bankaccount">
+                                        Close
+                                    </a>
+                                    <a class="btn withsumm-btn  mt-4 " type="button"
+                                       asp-controller="settings" asp-action="twofactorauthentication">
+                                        Confirm
+                                    </a>
+                                </div>
+                                <!-------------------------------------------------------->
+                            </form>
+                            <!-------------------------------------------------------->
+                        </div>
+                    </div>
+                    <!-------------------------------------------------------->
+                </div>
+            </div>
+
+            <!----------------------------------------------->
+        </div>
+        <!-------------------------------------------------------->
+    </div>
+</section>
+<div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog qrdiv445">
+        <div class="modal-content mod-sec221">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modalimg4"> <img src="/images/qr-code.png"></div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/upload-file.min.js"></script>
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/upload-file.js"></script>
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+    }
+
+
+    <script>
+        $('my-select').chosen({ width: "100%" });
+    </script>
+    }

@@ -1,0 +1,154 @@
+﻿<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Convert & Withdraw</span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">                       
+                                <form id="msform">
+                                    <!-- progressbar -->
+
+                                    <div class="shadow_TechnoSavvy">
+                                        <ol class="progressdiv">
+                                            <li class="step  is-complete" data-step="1">
+                                                <a href="#">
+                                                    Convert
+                                                </a>
+                                            </li>
+                                            <li class="step  is-complete" data-step="2">
+                                                <a href="#">
+                                                    Convert<br> Confirmation
+                                                </a>
+                                            </li>
+                                            <li class="step  is-complete" data-step="3">
+                                                <a href="#">
+                                                    Withdraw
+                                                </a>
+                                            </li>
+                                            <li class="step  is-complete" data-step="4">
+                                                <a href="#">
+                                                    Withdraw <br>Summary
+                                                </a>
+                                            </li>
+                                            <li class="step is-active" data-step="5">
+                                                <a href="#">
+                                                    Confirmation
+                                                </a>
+                                            </li>
+
+                                        </ol>
+                                        <!-- -->
+
+                                    </div>
+                                    <!-- -->
+                                    <!-- fieldsets -->
+                                    <div class="row">   
+                                        <div class="form-card">
+
+                                            <div class="css77buy-box">
+                                                <div class="confpenddiv">
+                                                    <div class="modegred34">
+                                                        <div class="vericond432">
+                                                            <i class="fa fa-exclamation d-orange"
+                                                               aria-hidden="true"></i>
+                                                        </div>
+                                                        <h5 class="orange">Withdraw Pending!</h5>
+                                                        <div class="specdivid mb-1">
+                                                            <span>Request ID </span>
+                                                            <span><a href="#">45bghjdf2145 </a></span>
+                                                        </div>
+                                                        <div class="csstime55-dep mt-2 text-center">
+                                                            Your convert & withdraw request for <span class="orange">1 BTC</span> has been accepted!
+                                                        </div>
+                                                        <div class="csstime55-text cssfun44-div text-center">
+                                                            We may hold your request for up
+                                                            to 24hrs for internal review & <br>for safety, security & compliance purposes.
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- why Deposit success show this div -->
+                                                <div class="confpenddiv">
+                                                    <div class="modegred34">
+                                                        <div class="vericond432"> <i class="fa fa-check d-green" aria-hidden="true"></i></div>
+
+                                                        <h5 class="basegreen">Withdraw Confirmation</h5>
+                                                        <div class="specdivid mb-1">
+                                                            <span>Transaction ID </span>
+                                                            <span><a href="#">45bghjdf2145 </a></span>
+                                                        </div>
+                                                        <div class="csstime55-dep mt-2 text-center">
+                                                            Your convert & withdrawl request has been
+                                                            confirmed for <span class="orange">1 BTC</span>.
+                                                        </div>
+                                                        <div class="text-div44">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-------------------------------------------------------------------->
+                                                <div class="dflexcenter2">
+                                                    <a class="btn withsumm-btn  mt-3 " type="button"
+                                                       asp-controller="wallet" asp-action="index">
+                                                        Acknowledge
+                                                    </a>
+                                                </div>
+                                                <!-------------------------------------------------------------------->
+
+                                            </div>
+
+                                        </div>
+                                        <!------------===================================---------------------------------->
+
+
+
+
+                                    </div>
+                                </form>
+                                                  </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+
+            </div>
+
+        </div>
+
+        <!----------------------------------------------->
+
+    </div>
+</section>
+@section Scripts{
+
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+    }
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            LoadCurrIfNot();
+            formateAll();
+            $(".my-select").chosen({ width: "100%" });
+        });
+    </script>
+}

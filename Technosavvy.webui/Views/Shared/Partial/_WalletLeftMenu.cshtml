@@ -1,0 +1,158 @@
+﻿@model string
+ 
+          <div id="wallet-left33" class="col-md-2 col-md-2 col-lg-2  col-xxl-2 px-0 wallet-left-bg">
+                <div class="d-flex flex-column align-items-center align-items-sm-start   text-white min-vh-100">
+                
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        @if(Model.IsNullOrEmpty() || Model.ToLower()=="index")
+            {
+                 <li class="nav-item">
+                            <a asp-action="index" class="nav-link align-middle active">
+                              <i class="fa fa-search" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">Overview  </span>
+                            </a>
+                        </li>
+            }
+            else
+            {
+                 <li class="nav-item">
+                            <a asp-action="index" class="nav-link align-middle">
+                              <i class="fa fa-search" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">Overview  </span>
+                            </a>
+                        </li>
+            }
+            @*--------New Menu Items---------*@
+            @if (Model.ToLower() == "deposit")
+            {
+                <li class="nav-item">
+                    <a asp-controller="Deposit" asp-action="DepositCrypto" class="nav-link align-middle active">
+                        <i class="fa fa-search" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">Deposit </span>
+                    </a>
+                </li>
+
+            }
+            else
+            {
+                <li class="nav-item">
+                    <a asp-controller="Deposit" asp-action="DepositCrypto" class="nav-link align-middle ">
+                        <i class="fa fa-search" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">Deposit </span>
+                    </a>
+                </li>
+            }
+
+            @if (Model.ToLower() == "withdrawal")
+            {
+
+                <li class="nav-item">
+                    <a asp-controller="Withdraw" asp-action="WithdrawCrypto" class="nav-link  align-middle active">
+                        <i class="fa fa-credit-card" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline">Withdrawal</span>
+                    </a>
+                </li>
+
+            }
+            else
+            {
+                <li class="nav-item">
+                    <a asp-controller="Withdraw" asp-action="WithdrawCrypto" class="nav-link  align-middle">
+                        <i class="fa fa-credit-card" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline">Withdrawal</span>
+                    </a>
+                </li>
+            }
+             @if (Model.ToLower() == "inter-wallet-transfer")
+            {
+                <li class="nav-item">
+                    <a asp-controller="wallet" asp-action="inter-wallet-transfer" class="nav-link  align-middle active">
+                        <i class="fa fa-money" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline">Internal Wallet Transfer</span>
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item">
+                    <a asp-controller="wallet" asp-action="inter-wallet-transfer" class="nav-link  align-middle ">
+                        <i class="fa fa-money" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline">Internal Wallet Transfer</span>
+                    </a>
+                </li>
+
+            }
+            @*--------New Menu Items---------*@
+          
+                        @if(Model.ToLower()=="spot")
+            {
+                <li class="nav-item">
+                            <a asp-action="spotwallet" class="nav-link  align-middle active">
+                              <i class="fa fa-credit-card" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline">Spot Wallet</span></a>
+                        </li class="nav-item">
+            }
+            else
+            {
+                <li class="nav-item">
+                            <a asp-action="spotwallet" class="nav-link  align-middle">
+                              <i class="fa fa-credit-card" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline">Spot Wallet</span></a>
+                        </li >
+            }
+            
+                        @if(Model.ToLower()=="funding")
+            {
+                
+                      <li class="nav-item">   <a asp-action="fundingwallet" class="nav-link  align-middle active">
+        <i class="fa fa-money" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline">Funding Wallet</span> </a>
+                        </li>
+
+            }
+            else
+            {
+                  <li class="nav-item">   <a asp-action="fundingwallet" class="nav-link  align-middle">
+        <i class="fa fa-money" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline">Funding Wallet</span> </a>
+                        </li>
+
+            }
+
+ 
+                        @if(Model.ToLower()=="earn")
+                    {
+                         <li class="nav-item">   <a asp-action="earnwallet" class="nav-link  align-middle active">
+                          <i class="fa fa-folder-open" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">Earn Wallet</span> </a>
+                        </li>
+
+                    }
+                    else {
+                     <li class="nav-item">   <a asp-action="earnwallet" class="nav-link  align-middle">
+                          <i class="fa fa-folder-open" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">Earn Wallet</span> </a>
+                        </li>
+
+                    }
+
+                       
+                        @if(Model.ToLower()=="transaction")
+                            {
+                                <li class="nav-item">   <a asp-action="transaction" class="nav-link align-middle active">
+                    <i class="fa fa-table" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">Transaction History</span> </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">   <a asp-action="transaction" class="nav-link align-middle">
+                    <i class="fa fa-table" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">Transaction History</span> </a>
+            </li>
+                            }
+
+                
+                        @if(Model.ToLower()=="accountstatement")
+                            {
+                           <li class="nav-item">   <a asp-action="accountstatement" class="nav-link  align-middle active">
+              <i class="fa fa-file-text-o" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">Account Statement</span> </a>
+      </li>
+                            }
+                            else
+                            {
+                  <li class="nav-item">   <a asp-action="accountstatement" class="nav-link  align-middle">
+              <i class="fa fa-file-text-o" aria-hidden="true"></i> <span class="ms-1 d-none d-sm-inline">Account Statement</span> </a>
+      </li>
+                            }
+                            
+                    </ul>
+           
+       
+                </div>
+            </div>
+           <!------------x----->

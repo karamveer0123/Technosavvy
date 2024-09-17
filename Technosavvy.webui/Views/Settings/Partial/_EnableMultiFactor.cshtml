@@ -1,0 +1,68 @@
+﻿@model vmSettingsMultiFactorMain
+<div class="css55-security-box ">
+    <div class="css55-security-left">
+        <span><i class="fa fa-google-plus" aria-hidden="true"></i> </span>
+        <span>
+            <div class="css55-security-title">
+                Google Authenticator
+                <p>Secure Your Account and Transactions</p>
+            </div>
+        </span>
+
+    </div>
+    <div class="css55-security-center"> <span>  <i class="fa fa-times" aria-hidden="true"></i> off</span></div>
+    <div class="css55-security-right">
+        <form asp-action="MultiFactorEnabled" asp-controller="Settings" autocomplete="off" id="formMultiEnable" data-ajax="true" data-ajax-method="POST" data-ajax-update="#gauth">
+            <span>
+                <a href="javascript:void(0)" class="css55-enable-btn">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" asp-for="IsMultiFactorEnabled" type="checkbox" id="ismulti" role="switch">
+                        <input type="hidden" asp-for="Email">
+                    </div>
+                </a>
+            </span>
+        </form>
+    </div>
+</div>
+
+
+@*
+<div class="css55-security-box2">
+    <div class="css55-google-down">
+        <span class="css5-downloadG-text">
+            <ul>
+                <li>1. Download the Google Authenticator</li>
+                <li>2.  Scan the QR Code</li>
+                <li>3.  Enter the Code</li>
+                <li>4.   Submit the Code</li>
+            </ul>
+        </span>
+        <span class="css5-downloadG-qr"><img src="images/bar.png"> </span>
+        <span class="css55-security-center">  <input type="password" autocomplete="off"  class="form-control" placeholder=" 4545"></span>
+        <span> <a href="#" class="css55-remove-btn">Submit</a></span>
+    </div>
+</div>
+
+<div class="css55-security-box">
+    <div class="css55-security-left">
+        <span><i class="fa fa-google-plus" aria-hidden="true"></i> </span>
+        <span>
+            <div class="css55-security-title">
+                Google Authenticator
+                <p>Secure Your Account and Transactions</p>
+            </div>
+        </span>
+
+    </div>
+    <div class="css55-security-center"> <span>  <i class="fa fa-check" aria-hidden="true"></i>  On</span></div>
+    <div class="css55-security-right">
+        <span>
+            <a href="#" class="css55-enable-btn">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id=" ">
+
+                </div>
+            </a>
+        </span>
+    </div>
+</div>*@

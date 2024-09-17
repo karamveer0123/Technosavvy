@@ -1,0 +1,456 @@
+﻿@{
+    Layout = "_LayoutPre";
+    ViewData["Title"] = "Buy TechnoSavvy";
+    
+}
+
+
+
+<section class="beta-buy-TechnoSavvy beta-section  bg1" id="beta-buy-TechnoSavvy">
+    <div class="container">
+        <div class="row ">
+
+            <div class="col-md-6 col-12">
+                <div class="css566-banner-box banner-text mt-0 pt-0">
+                    <h3 class="texth6 orange">Join TechnoApp Community </h3>
+                    <h1>Buy TechnoSavvy in TechnoApp for<br> Future Growth and <br> Cashback Rewards </h1>
+
+                </div>
+                <div id="showBuyPrice__content" class="d-none d-md-block">
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="slide-form-div mb-5">
+                    <div id="login-tab" class="login_area">
+                        <ul class="nav nav-tabs mb-3" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link  active" data-bs-toggle="tab" href="#buywith2"> Buy With</a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#deposit2"> Deposit</a> </li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div id="buywith2" class="tab-pane  active">
+                                <div class="acc-log-box">
+                                    <form>
+                                        <div class="buy-beta-main__form">
+                                            <div class="buyEthereum">
+                                                <div class="mb-3 form-group">
+                                                    <input type="text" class="form-control txtDisabled errInput" id="txtNetworkId"
+                                                           placeholder="Network" disabled>
+                                                    <small class="errMsg">
+                                                        Please correct your network, only Ethereum Mainnet is
+                                                        supported. <small class="mb-0 switchTxt">Switch To Mainnet</small>
+                                                    </small>
+
+                                                </div>
+                                                <div class="mb-3 form-group">
+                                                    <input type="text" class="form-control  txtDisabled" id="txtAccId"
+                                                           placeholder="Wallet Address" disabled>
+                                                    <small class="pull-right mb-0" id="txtSwitch">Switch Wallet</small>
+                                                </div>
+                                            </div>
+                                            <div class="connetMetamask">
+                                                <p class="redInstructions">
+                                                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Install
+                                                    Metamask & connect your wallet. If you do not have metamask
+                                                    wallet, please proceed with deposit option.
+                                                </p>
+                                            </div>
+                                            <div class="mb-3">
+                                                <button type="button" class="btn gent-btn" id="btnConnect">
+                                                    <img src="~/pr/images/metamask-icon.svg" alt="" width="40" class="metamask-icon"> Connect to
+                                                    MetaMask
+                                                </button>
+                                            </div>
+                                            <!--  -->
+                                        </div>
+                                        <!--  -->
+                                        <div class="tokendiv-beta">
+
+                                            <!--  -->
+                                            <div class="mb-3 form-group">
+                                                <div id="searchbox435" class="search-bx form-control">
+                                                    <select class="my-select">
+                                                        <option data-img-src="~/pr/images/coin/eth.png" selected>ETH (ERC-20 Network)</option>
+                                                        <option data-img-src="~/pr/images/coin/usdc.png">USDT (ERC-20 Network)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 form-group">
+                                                <ul class="list-unstyled d-flex mb-0">
+                                                    <li class="buyPrice">
+                                                        <label onclick="showButPriceContent(buyPriceContent1)"><span>500</span> TechnoSavvy</label>
+                                                        <div id="buyPriceContent1" class="buyPriceContent d-none">
+                                                            <div class="showBuyPrice__content">
+                                                                <h3 class="texth6 orange fw-bold">500 TechnoSavvy</h3>
+                                                                <ul class="beta-list44">
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                                                        <span>
+                                                                            By holding 500 TechnoSavvy Tokens, you become a community member and are eligible
+                                                                            for cashback on trades.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                                                        <span>
+                                                                            This opportunity is open to the <span class="orange">
+                                                                                Maximum 52,000
+                                                                                members
+                                                                            </span> only.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                                                        <span>As a community member, you enjoy a Positive Cashback reward.</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                                                        <span>
+                                                                            The cashback reward is based on transaction value and capital appreciation
+                                                                            of TechnoSavvy and can be up to 0.05% times the Trading Volume on First 5
+                                                                            Transaction.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                                                        <spna>
+                                                                            As a community member, you are also eligible to participate in different
+                                                                            rewards program of TechnoApp.
+                                                                        </spna>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="buyPrice">
+                                                        <label onclick="showButPriceContent(buyPriceContent2)"><span>5000</span> TechnoSavvy</label>
+
+                                                        <div id="buyPriceContent2" class="buyPriceContent d-none">
+                                                            <div class="showBuyPrice__content">
+                                                                <h3 class="texth6 orange fw-bold">5000 TechnoSavvy</h3>
+                                                                <ul class="beta-list44">
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                                                        <span>
+                                                                            By holding 5,000 TechnoSavvy Tokens, you become a community member and are eligible
+                                                                            for cashback on trades.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                                                        <span>
+                                                                            This opportunity is open to the <span class="orange">
+                                                                                Maximum 5,200
+                                                                                members
+                                                                            </span> only.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                                                        <span>
+                                                                            As a community member, you enjoy an <span class="orange">
+                                                                                assured positive
+                                                                                Cashback reward
+                                                                            </span>.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                                                        <span>
+                                                                            The cashback reward is based on transaction value and capital appreciation
+                                                                            of TechnoSavvy and can be up to <span class="orange">
+                                                                                0.05% times the Trading
+                                                                                Volume
+                                                                            </span>.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                                                            As a
+                                                                            community member, you are also eligible to participate in different rewards
+                                                                            program of TechnoApp.
+                                                                        </span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="buyPrice">
+                                                        <label onclick="showButPriceContent(buyPriceContent3)"><span>50000</span> TechnoSavvy</label>
+                                                        <div id="buyPriceContent3" class="buyPriceContent d-none">
+                                                            <div class="showBuyPrice__content">
+                                                                <h3 class="texth6 orange fw-bold">50000 TechnoSavvy</h3>
+                                                                <ul class="beta-list44">
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                                                        <span>
+                                                                            By holding 50,000 TechnoSavvy Tokens, you become a community member and are
+                                                                            eligible for cashback on trades.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                                                            This
+                                                                            opportunity is open to the <span class="orange">Maximum 520 members</span>
+                                                                            only.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                                                            As a
+                                                                            community member, you enjoy an <span class="orange">
+                                                                                assured positive Cashback
+                                                                                reward
+                                                                            </span>.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                                                            The
+                                                                            cashback reward is based on transaction value and capital appreciation of TechnoSavvy
+                                                                            and can be up to <span class="orange">
+                                                                                0.10% times the Trading
+                                                                                Volume
+                                                                            </span>.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                                                            As a
+                                                                            community member, you are also eligible to participate in different rewards
+                                                                            programs of TechnoApp.
+                                                                        </span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="buyPrice">
+                                                        <label onclick="showButPriceContent(buyPriceContent4)"><span>Custom</span></label>
+
+                                                        <div id="buyPriceContent4" class="buyPriceContent d-none">
+                                                            <div class="showBuyPrice__content">
+                                                                <h3 class="texth6 orange fw-bold">Custom</h3>
+                                                                <ul class="beta-list44">
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span>
+                                                                        <span>
+                                                                            You can buy TechnoSavvy tokens with a minimum of 20 USDT and a maximum of 100,000
+                                                                            TechnoSavvy in each transaction.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                                                            Buy a
+                                                                            minimum of 500 TechnoSavvy tokens to become a community member and earn cashback on
+                                                                            each transaction.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                                                            Owning
+                                                                            TechnoSavvy tokens diversifies your cryptocurrency portfolio, potentially mitigating
+                                                                            risks associated with a single asset.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                                                            Your
+                                                                            involvement as a community member extends beyond just cashback benefits.
+                                                                        </span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span><span>
+                                                                            Buy
+                                                                            more TechnoSavvy tokens to gain early access as a beta user to TechnoApp Beta.
+                                                                        </span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="mb-3 form-group">
+                                                <div class="position-relative">
+                                                    <input type="text" class="form-control" id="txtAccId2" value=""
+                                                           placeholder="Enter min Amt. 20 USDT.">
+                                                    <!-- <span class="txtUsdt">USDT</span> -->
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <button type="button" class="btn gent-btn">Confirm</button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div id="deposit2" class="tab-pane">
+                                <div class="acc-log-box">
+                                    <form class=" " novalidate="">
+                                        <div class="depo-div">
+                                            <div class="form-group ">
+                                                <label class="lable-name22">Enter the amount you want to deposit </label>
+                                                <div class="want-deposit">
+                                                    <input type="text" class="form-control errInput"
+                                                           placeholder="Enter amount equal to 20 USDT - 1000,000 USDT">
+                                                    <div id="searchbox435" class="search-bx form-control">
+                                                        <select class="my-select">
+                                                            <option data-img-src="~/pr/images/coin/eth.png" selected>ETH</option>
+                                                            <option data-img-src="~/pr/images/coin/usdc.png">USDT</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <small class="errMsg">Minimum amount required 20 USDT!</small>
+                                            </div>
+                                            <div class="w-100">
+                                                <div class="form-check">
+
+
+                                                    <input class="form-check-input" type="checkbox" value="" id="i-accept">
+                                                    <label class="txtAccept" for="i-accept" data-bs-toggle="popover"
+                                                           data-bs-trigger="hover focus"
+                                                           data-bs-content="The following address exist on the Ethereum [ERC-20] Network. It is important to ensure that only an equivalent amount of tokens are deposited. Depositing an incorrect token, transferring funds to an incorrect address with an inappropriate network could result in loss of funds"
+                                                           data-bs-original-title="" title="">
+                                                        I accept.
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                            <div class="buyWalletAddress w-100">
+                                                <div class="form-group ">
+                                                    <label class="lable-name22">Deposit Wallet Address </label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control5  js-copytextarea "
+                                                               value="0x6E77ceC9acdf510E89Bf1b3ac0AC89E1D34Cc222">
+                                                        <div class="btn btn-copy js-textareacopybtn">
+                                                            <i class="fa fa-copy" aria-hidden="true"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="notemeta22">
+                                                        This is the address of <span class="orange">Ethereum (ERC-20) network</span>
+                                                        <small class="msgCopied text-white"> </small>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-0 form-group">
+
+                                                    <button type="button" class="btn gent-btn buttonProcess" id="btnreceipt">
+                                                        Confirm Transaction
+                                                        Hash
+
+                                                        <div class="timer-progress">
+                                                            <svg class="timer">
+                                                                <circle class="progress-frame" cx="30" cy="30" r="15"></circle>
+                                                                <circle class="progress-time" cx="30" cy="30" r="15"></circle>
+                                                            </svg>
+                                                            <div class="time">
+                                                                <span class="seconds1">120</span><span>sec</span>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="receipt-box">
+
+                                                <div class="mb-3 form-group">
+                                                    <label class="lable-name22">Enter Transaction Hash </label>
+                                                    <input type="text" class="form-control errInput" id="txtAccId4"
+                                                           placeholder="Transaction Hash">
+                                                    <small class="errMsg">Please enter valid transaction hash.</small>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <button type="button" class="btn gent-btn">Confirm Your Deposit</button>
+                                                </div>
+                                                <span class="depositNotes">
+                                                    Note:-
+                                                    <ul>
+                                                        <li>
+                                                            <span>
+                                                                Your TechnoApp account will be locked after 3 failed attempts.
+                                                                Please ensure to input valid Transaction hash.
+                                                            </span>
+                                                        </li>
+                                                        <li><span>Maximum 20 transactions are allowed per user till Beta Launch.</span></li>
+                                                    </ul>
+                                                </span>
+                                            </div>
+                                        </div>
+
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div id="showBuyPrice__content2" class="showBuyPrice__content d-block d-md-none">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="what-TechnoSavvy-section bg2">
+    <div class="container">
+        <div class="row">
+            <div class="why-div55 col-md-7">
+                <div class="css566-heading w-100">
+                    <h2 class="mb-3">What is TechnoSavvy ? </h2>
+                    <div class="divider"></div>
+                </div>
+                <h4 class="text44">
+                    TechnoSavvy Token is the native utility token of the TechnoApp exchange built on ERC- 20 standard.
+                    All the transactions on the exchange route through TechnoSavvy token itself. Which means it acts as the underlying
+                    currency of the exchange. Further, by holding the minimum 500 TechnoSavvy tokens, you become eligible for a
+                    cashback of up to 0.1% of the transaction value on the platform.
+                </h4>
+                <ul class="beta-list44">
+                    <li>
+                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span> <span>
+                            Claim up to 50% bonus on
+                            Pre-sale.
+                        </span>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span> <span>
+                            Earn rewards every time you
+                            trade on TechnoApp.
+                        </span>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span> <span>
+                            Fixed Supply Value Variance
+                            Inflationary Token.
+                        </span>
+                    </li>
+                    <li>
+                        <span> <i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span> <span>
+                            TechnoSavvy Price will be
+                            appreciated with every trade of any currency or coin in TechnoApp exchange.
+
+                        </span>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-md-5">
+                <div class="buy-nav44">
+                    <img src="~/pr/images/why-nav.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

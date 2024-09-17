@@ -1,0 +1,108 @@
+﻿@model vmPaymentDeposits
+@{
+    ViewData["Title"] = " Explore TechnoApp   Payment Deposit Settings ";
+}
+@section Header {
+    <meta name="description" content="Dive into UPI deposit settings for seamless and efficient payment management. Click to elevate your financial experience today." />
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <!-----========================================----->
+        <div class="wallet-userdiv33 px-0">
+            <div class="market-title-h2 headcss33">
+                <span> <a asp-controller="settings" asp-action="index"><i class="fa fa-angle-double-left" aria-hidden="true"></i> </a></span>
+                <span>Payment & Deposit </span>
+            </div>
+        </div>
+        @if (!Model._Is2FAEnabled)
+        {
+            <div id="topbar" class="noti55box">
+                <div class="container">
+                    <span class="css44-cross"> <i class="fa fa-times" aria-hidden="true"></i></span>
+                    <strong class="orange">
+                        Note: You haven’t enabled 2FA yet.<br>
+                        Please enable 2FA to add a payment method and deposit funds.
+                    </strong><br>
+                </div>
+            </div>
+        }
+        <!-----========================================----->
+        <div class="row">
+            <!-----========================================----->
+            <div class="addban4354 dflex20div mt-3">
+                <div class="index-links float-left  ">
+                    <ul class="px-0">
+                        <li><a asp-controller="settings" asp-action="paymentdeposit" class="active">Bank Transfer</a> </li>
+                        <li>|</li>
+                        <li><a asp-controller="settings" asp-action="paymentdepositupi">UPI </a> </li>
+                    </ul>
+
+                </div>
+                <!-----========================================----->
+                @if (Model._Is2FAEnabled)
+                {
+                    <div class="dropdowndiv  float-right">
+                        <a asp-controller="settings" asp-action="AddPaymentMethod" type="button" class="btn csss77-histbtn">Add New </a>
+                    </div>
+                }
+
+            </div>
+
+            <!-----========================================----->
+            <div class="bankdiv354box  placeholder-glow" id="bankDetailsList">
+                @foreach (var item in Model.BankDeposits)
+                {
+                    <div class="bankbox543">
+                        <div class="banktitle433">
+                            <div>@item.MethodName </div>
+                            <div class="bankedbt654">@item.SupportCurrency</div>
+                        </div>
+                        <div class="bandivde233">
+                            <div class="css77-withdrawlS">
+                                <div class="csssum-title55">Name</div>
+                                <div class="csssum-detail55"><span>@item.AccountHolderName</span> </div>
+                            </div>
+
+                            <div class="css77-withdrawlS">
+                                <div class="csssum-title55">Bank Account Number</div>
+                                <div class="csssum-detail55"><span>@item.AccountNumber</span> </div>
+                            </div>
+
+                            <div class="css77-withdrawlS">
+                                <div class="csssum-title55">IFSC</div>
+                                <div class="csssum-detail55"><span>@item.IFSCCode</span> </div>
+                            </div>
+
+                            <div class="css77-withdrawlS">
+                                <div class="csssum-title55">Bank Name</div>
+                                <div class="csssum-detail55"><span>@item.Bank</span> </div>
+                            </div>
+
+                            <div class="css77-withdrawlS">
+                                <div class="csssum-title55">Account Branch</div>
+                                <div class="csssum-detail55"><span>@item.BranchAddress</span> </div>
+                            </div>
+                            <div class="addupi4354 text-right   text">
+                                <div class="bankedbt654">  <a asp-controller="settings" asp-action="deletebankDeposit" asp-route-did="@item.ID" class="basered">Delete</a></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+
+
+
+            <!----------------------------------------------->
+        </div>
+        <!-----========================================----->
+    </div>
+</section>
+@section Scripts{
+    <script>
+        $('.css44-cross').on('click', function () {
+            $('.noti55box').hide();
+        })
+    </script>
+}

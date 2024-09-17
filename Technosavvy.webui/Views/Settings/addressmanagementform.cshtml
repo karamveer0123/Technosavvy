@@ -1,0 +1,68 @@
+﻿<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span> <a asp-controller="settings" asp-action="index"><i class="fa fa-angle-double-left" aria-hidden="true"></i> </a></span>
+                <span>Address Management </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="csscenterscreen mt-4">
+                <div class="row"> 
+                    <div class="css77-buyc-div">
+                        <div class="css77buy-box">
+                            <form autocomplete="off">
+                                <div class="form-group mt-3">
+                                    <label  class="lable-name22">Address Label</label>
+                                    <input type="text" class="form-control" placeholder="Enter your name/short name/phone number" >
+                                </div>
+
+                                <div id="select100per" class="form-group mt-3">
+                                    <label  class="form-label lable-name">Select Network</label>
+                                    <div class="formselect2P">
+                                        <select class="my-select" aria-label="Select Network">
+                                            <option>Select Network</option>
+                                            <option data-img-src="/images/coin/coin/ETH.png">Ethereum Network</option>
+                                            <option data-img-src="/images/coin/coin/BTC.png">BTC Network</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label  class="lable-name22">Wallet Address</label>
+                                    <input type="text" class="form-control" placeholder="Enter Wallet Address" >
+                                </div>
+                                <span class="dflexdiv">
+                                    <a class="btn withsumm-btn  d-dark  mt-4 " type="button" asp-controller="settings"> Cancel</a>
+                                    <a class="btn withsumm-btn  mt-4 " type="button" asp-controller="settings" asp-action="securityverification">Submit</a>
+                                </span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!----------------------------------------------->
+        </div>
+    </div>
+</section>
+@section Scripts{
+     @if (ConfigEx.ShouldMini)
+    {        
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {
+       <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+    }
+
+    
+    
+
+    <script type="text/javascript">
+
+        $(".my-select").chosen({ width: "100%" });
+    </script>
+       }

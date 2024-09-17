@@ -1,0 +1,1196 @@
+﻿@model vmEarnWallet
+@{
+    ViewData["Title"] = "Unlock Earning Potential with TechnoApp  Wallet ";
+}
+@section Header {
+    <meta name="description" content="Discover the power of earning with TechnoApp  Wallet. Experience seamless transactions while unlocking lucrative opportunities." />
+}
+ @section Styles {
+    <link rel="stylesheet" href="~/css/responsive-wattet.css">
+}
+<section class="section-wallet bg2">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            @await Html.PartialAsync("Partial/_WalletLeftMenu","index")
+            <div class="col-lg-10 col-xxl-10">
+                <div id="walletdiv801" class="wallet-right33 wallet-maindiv4 ">
+                  
+                    @await Html.PartialAsync("Partial/_TopUserDetails",Model.UserDetails)
+                    @await Html.PartialAsync("Partial/_TopMenu","Earn Wallet")
+                    <div class="wallet-sectdiv33">
+                        <div id="wallet-tabdiv" class="wallet-tabdiv">
+                            <div class="css77-wall-acc ">
+                                <span class="css77-abal">Account Balance </span>
+                                <span class="csss77-walinp">
+                                    <span class="css77-walinp css77-baldiv" id="id_earn">
+                                        <span id="id_password" class=" dyCryo" data-dval="@Model.Details[0].tokenPrecision" data-oval="@Model.AccountBalance_baseV">@Model.AccountBalance_CryotoV @Model.selectedCryptoCoin  </span><small class="dyCur" data-dval="@Model.Details[0].tokenPrecision" data-oval="@Model.AccountBalance_baseV"> -- </small>
+                                    </span>
+                                 
+                                </span>
+                            </div>
+                            <div class="css77-sel">
+                                <div class=" form-select2 form444">
+                                    <select asp-for="selectedCryptoCoin" onchange="CryptoValMatrxChange(this)" class="my-select">
+                                        
+                                        @foreach (var tk in Model.TokenList)
+                                        {
+                                            if (tk.token.Code == Model.selectedCryptoCoin)
+                                            {
+                                                <option data-bval="@tk.basePrice" selected data-img-src="/images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")">@tk.token.Code </option>
+
+                                            }
+                                            else
+                                            {
+                                                <option data-bval="@tk.basePrice" data-img-src="/images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")">@tk.token.Code </option>
+
+                                            }
+                                        }
+                                    </select>
+
+                                </div>
+                            </div>
+                           
+
+                        </div>
+                    </div>
+                    <!-------------------   @*Mobile Staking Area*@--------------------->
+
+                    @*<div class="d-block d-lg-none">*@
+
+               @* <div class="col-12">
+                    <div class="col-md-12 col-12">
+                        <div class=" p-0 px-md-3 py-3 width100">
+                            <div class="tabs-mobileview wallet-tabdiv px-0">
+                            <ul class="nav nav-tabs border-0" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" role="tab" data-bs-toggle="pill" href="#myAssets" aria-selected="true">My Assets</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" role="tab" data-bs-toggle="pill" href="#MyStaking33" aria-selected="false" tabindex="-1">My All Staking</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" role="tab" data-bs-toggle="pill" href="#StakingOpportunities " aria-selected="false" tabindex="-1">Staking Opportunities </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" role="tab" data-bs-toggle="pill" href="#MyCashback33" aria-selected="false" tabindex="-1">
+                                        Cashback
+                                    </a>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+
+
+                  <div class="wallet-sectdiv33 p-0 p-md-3">
+                        <div id="wallet-tabdiv" class="tab-content ">
+                            
+                                 <div id="wallet-tabdiv" class="wallet-tabdiv px-0">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a class="nav-link  active" data-bs-toggle="tab" href="#myAssets" >My Assets</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#MyStaking33"> My Staking</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#StakingOpportunitiesTabs"> Staking Opportunities</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#MyCashback33"> Cashback</a>
+                                        </li>
+
+                                    </ul>
+                                </div>                               
+                        </div>
+
+                    <div class="col-md-12 mt-3">                        
+                         <div class="tab-content" id="myWalletOverview-Mobile">
+                            <div id="myAssets" class="tab-pane fade active show" role="tabpanel">
+                                @*My Assets Mobile*@
+                                <div class="d-block d-lg-none">
+                                       <div class="py-3 width100">
+                                  <!-- <div class="heading">My Assets </div> -->
+                                   <!-- Search Box -->
+                                  <form class="position-relative pt-2">
+                                    <input type="search"  class="market-search" autocomplete="off" placeholder="Search.." name="search" data-search>
+                                    <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                  </form>                          
+                                  <!-- Search Box -->
+                                  <div id="mobileMyAssets">
+                                  <!-- wallet Assets List -->
+                                  <div class="wallet__assets">
+                                      <div class="wallet__assets--heading">
+                                        <div class="wallet__assets--item-top">
+                                          <div class="wallet__assets--item-top-name">
+                                            Asstes
+                                          </div>
+                                          <div class="wallet__assets--item-top-amount">
+                                            Total Balance	
+                                          </div>
+                                          <div class="wallet__assets--item-top-action">
+                                            Action
+                                          </div>                              
+                                        </div>
+                                      </div>
+                                       <div id="myMktTaball-m-566">
+                          
+                                       @foreach (var tk2 in Model.Details){
+                                          <div class="wallet__assets--items" data-filter-item data-filter-name="@tk2.Code.ToLower()">
+                                              <div class="wallet__assets--item-top">
+                                                <div class="wallet__assets--item-top-name">
+                                                    <span class="image">
+                                                      <img src="/images/coin/coin/@string.Concat(tk2.Code.ToUpper(),".png")">
+                                                    </span>
+                                                    <span class="assets__name">
+                                                      @tk2.Code 
+                                                      <small>@tk2.ShortName </small>
+                                                    </span>
+                                                </div>
+                        
+                                                <div class="wallet__assets--item-top-amount">
+                                                    <span class="dyVal" data-dval="@tk2.tokenPrecision" data-oval="@tk2.TotalAmount">
+                                                  @tk2.TotalAmount</span> <span class="amountToggle">
+                                                      <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="wallet__assets--item-top-action">                                 
+                                                  <div class="dropdown walletDropdown dropstart">
+                                                    <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                      <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                    </a>                                  
+                                                    <ul class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
+                                                      <li><a class="dropdown-item" href="/transfer?code=@string.Concat(tk2.Code.ToLower())">Transfer</a>
+                                                      </li>                                      
+                                                    </ul>
+                                                  </div>
+                                                </div>                                
+                                              </div>
+                                              <div class="wallet__assets--item-bottom">
+                                                <div class="wallet__assets--item--bottom-item">
+                                                  <span class="wallet__assets--item--bottom-text">Available Balance</span>
+                                                  <span class="wallet__assets--item--bottom-data">
+                                                      <span class="dyVal" data-dval="@tk2.tokenPrecision" data-oval="@tk2.AvailableAmount">@tk2.AvailableAmount</span>
+                                                      </span>
+                                                </div>
+                                              </div>
+                                          </div>
+                                          }
+                          
+                                      </div>
+                                        <div id="myAssetNoRecodes4" class="trasaction-table" style="display:none">
+                                            <div class="noheight54">
+                                                <div class="norecord-div44">
+                                                    <span><img src="~/images/no-data.png"></span>
+                                                    <span> No records found</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                         
+                       
+                        
+                                  </div>
+                                  <!-- ./ wallet Assets List -->
+                                    <div class="my-navigation">
+                                        <div class="simple-pagination-first"></div>
+                                        <div class="simple-pagination-previous"></div>
+                                        <div class="simple-pagination-page-numbers"></div>
+                                        <div class="simple-pagination-next"></div>
+                                        <div class="simple-pagination-last"></div>
+                                    </div> 
+                      
+                                </div>
+                  
+             
+
+                                    </div>
+                                </div> 
+                                 @*End My Assets Mobile*@
+                                @*My Assets Desktop*@
+                                <div class="d-none d-lg-block" id="earnWalletTable-main">
+                                    <div id="comunity-css566-box" class="comunity-css566-box">
+                                         <div class="sell-right-but p-0">
+                                        <div class="css33-leftpan">   
+                                            <span class="sell-btn-22">                                                  
+                                                <lable class="label857">No. of rows</lable>
+                                                <select class="form-select simple-pagination-items-per-page" ></select>
+                                            </span>                                                 
+                                        </div>
+                                        <div class="css33-rightpan">
+                                            <form class="positionrelative">
+                                                <input type="search" autocomplete="off" class="market-search" placeholder="Search.." name="search" data-tab="myMktTaball-566">
+                                                <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </form>
+                                        </div>
+                                        </div>
+                                        <div id="earnWalletTable">
+                                            <div id="overdiv443">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead class="trasaction-table-title">
+                                                            <tr>
+                                                                <th nowrap="nowrap" class="css566-table-text">
+                                                                    <div class="name-css46"> <span>Coin</span> </div>
+                                                                </th>
+                                                                <th nowrap="nowrap" class="css566-table-text">
+                                                                    <div class="price-css46"><span>Total Balance</span> </div>
+                                                                </th>
+                                                                <th nowrap="nowrap" class="css566-table-text">
+                                                                    <div class="change24-css46"><span>Available Balance</span> </div>
+                                                                </th>
+                                                                <th nowrap="nowrap" class="css566-table-text">
+                                                                    <div class="volume-css46"><span>Action</span> </div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="myMktTaball-566" class="trasaction-table">
+                                                            @foreach (var tk in Model.Details)
+                                                            {
+                                                                <tr>
+                                                                    <td>
+                                                                        @if(tk.Code == "TechnoSavvy"){
+                                                                            <a href="/about-TechnoSavvy">
+                                                                                <div class="coin-name-css46 ">
+                                                                                <span><img src="/images/coin/coin/@string.Concat(tk.Code.ToUpper(),".png")"></span>
+                                                                                <span>@tk.Code </span> <small> @tk.ShortName</small>
+                                                                            </div>
+                                                                        </a>
+                                                                        }else {
+                                                                            <a href="/token/?tname=@string.Concat(tk.Code.ToLower())">                                                                   
+                                                                                <div class="coin-name-css46 ">
+                                                                                    <span><img src="/images/coin/coin/@string.Concat(tk.Code.ToUpper(),".png")"></span>
+                                                                                    <span>@tk.Code </span> <small> @tk.ShortName</small>
+                                                                                </div>
+                                                                            </a>
+                                                                        }
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="coin-24change-css46 dyVal" data-dval="@tk.tokenPrecision" data-oval="@tk.TotalAmount">@tk.TotalAmount</div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="coin-24change-css46 dyVal" data-dval="@tk.tokenPrecision" data-oval="@tk.AvailableAmount">@tk.AvailableAmount</div>
+                                                                    </td>
+
+                                                                    <td class="linkoverflow">
+                                                                        <div class="tablediv432">
+                                                                            <div class="spot-trade-css44">
+                                                                                <span> <a  href="/wallet/inter-wallet-transfer?code=@string.Concat(tk.Code.ToLower())"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Transfers crypto Internal wallet. Internal transfers are free on TechnoApp." data-bs-original-title="" title="" aria-describedby="popover531066">Transfer</span></a></span>
+                                                                                                                                            </div>
+                                                                             
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            }
+
+                                                        </tbody>
+                                                        <tfoot >
+                                                                <tr>
+                                                                    <td colspan="4">
+                                                                        <div class="noheight54">
+                                                                            <div class="norecord-div44">
+                                                                                <span><img src="../images/no-data.png"></span>
+                                                                                <span> No records found</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tfoot>
+                                                    </table>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                          <div class="my-navigation">
+                                                             <div class="simple-pagination-first"></div>
+                                                             <div class="simple-pagination-previous"></div>
+                                                             <div class="simple-pagination-page-numbers"></div>
+                                                             <div class="simple-pagination-next"></div>
+                                                             <div class="simple-pagination-last"></div>
+                                                          </div>
+                                                     </div>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @*End My Assets Desktop*@
+                            </div>
+                            <div id="MyStaking33" class="tab-pane fade" role="tabpanel">
+                                <p class="text-white"> </p>
+                                <div class="clearfix"></div>
+                                <div id="comunity-css566-box" class="comunity-css566-box">
+                                    <div class="sell-right-but pt-0">
+                                        <div class="css33-leftpan">   
+                                            <span class="sell-btn-22">                                                  
+                                                <lable class="label857">No. of rows</lable>
+                                                <select class="form-select simple-pagination-items-per-page" ></select>
+                                            </span>                                                 
+                                        </div>
+                                        <div class="css33-rightpan">
+                                            <form class="positionrelative mb-2">
+                                                <input type="search" autocomplete="off" class="market-search" data-tab="allStaking" placeholder="Search" name="search">
+                                                <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </form>
+                                        </div>   
+                                    </div>
+                                    <div id="allStaking-table">
+                                    <div class="table-xscroll44  table-responsive">
+                                        <table class="table">
+                                            <thead class="trasaction-table-title">
+                                                <tr>
+                                                    <th nowrap="nowrap" class="css566-table-text text-left th-sticky-left">Name  </th>
+                                                    <th nowrap="nowrap" class="css566-table-text"><div class="earnflex44"><span>Auto Subscribe </span>  <span>(Yes/No)</span></div>  </th>
+                                                    <th nowrap="nowrap" class="css566-table-text"> Subscription Date </th>
+                                                    <th nowrap="nowrap" class="css566-table-text">Subscription Amount </th>
+                                                    <th nowrap="nowrap" class="css566-table-text"> Interest Amount </th>
+                                                    <th nowrap="nowrap" class="css566-table-text"> Est. APR </th>
+                                                    <th nowrap="nowrap" class="css566-table-text"> Locked Period(Days) </th>
+                                                    <th nowrap="nowrap" class="css566-table-text">Subscription End Date </th>
+                                                    @* <th nowrap="nowrap" class="css566-table-text"> Accrued Days </th>
+                                                    <th nowrap="nowrap" class="css566-table-text">  Next Subscription Amount </th>
+                                                    <th nowrap="nowrap" class="css566-table-text">Interest  Date </th>
+                                                    <th nowrap="nowrap" class="css566-table-text"> Interest Period </th>
+                                                    <th nowrap="nowrap" class="css566-table-text"> Redemption Date </th>*@
+                                                    @*<th nowrap="nowrap" class="css566-table-text"> Status </th>*@
+                                                    <th nowrap="nowrap" class="css566-table-text"> Action</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody id="allStaking" class="trasaction-table earn-wallet-tab-img">
+
+                                                    @foreach (var tk in Model.Stakings)
+                                                    {
+                                                        <tr>
+                                                            <td class="td-sticky-left">
+
+                                                                    @if(tk.StakingSlot.Token.Code == "TechnoSavvy"){
+                                                                        <a href="/about-TechnoSavvy">
+                                                                            <div class="coin-name-css46 ">
+                                                                                <span><img src="/images/coin/coin/@string.Concat(tk.StakingSlot.Token.Code.ToUpper(),".png")"></span>
+                                                                                <span>@tk.StakingSlot.Token.Code </span> <small> @tk.StakingSlot.Token.ShortName</small>
+                                                                            </div>
+                                                                    </a>
+                                                                    }else {
+                                                                        <a href="/token/?tname=@string.Concat(tk.StakingSlot.Token.Code.ToLower())">                                                                   
+                                                                            <div class="coin-name-css46 ">
+                                                                                <span><img src="/images/coin/coin/@string.Concat(tk.StakingSlot.Token.Code.ToUpper(),".png")"></span>
+                                                                                <span>@tk.StakingSlot.Token.Code </span> <small> @tk.StakingSlot.Token.ShortName</small>
+                                                                            </div>
+                                                                        </a>
+                                                                    }
+                                                                @* <a href="about-btc.html">
+                                                                    <div class="coin-name-css46 ">
+                                                                        <span><img src="/images/coin/coin/@string.Concat(tk.StakingSlot.Token.Code.ToUpper(),".png")"></span>
+                                                                        <span>@tk.StakingSlot.Token.Code </span> <small> @tk.StakingSlot.Token.ShortName</small>
+                                                                    </div>
+                                                                </a>*@
+                                                            </td>
+                                                            <td>@(tk.AutoRenew ? "Yes" : "No") </td>
+                                                            <td> @(tk.StartedOn.ToString("dd-MMM-yyyy"))</td>
+                                                            <td nowrap="nowrap">@(tk.Amount.ToString("#,##0.###")) </td>
+                                                            <td nowrap="nowrap"> @((tk.MatureAmount - tk.Amount).ToString("#,##0.###"))</td>
+                                                            <td>@(tk.StakingSlot.AYPOffered)% </td>
+                                                            <td>@(tk.StakingSlot.Duration) Days </td>
+                                                            <td>@(tk.ExpectedEndData.ToString("dd-MMM-yyyy")) </td>
+                                                                       
+                                                            <td class="spot-trade-css44"><a asp-controller="stake" asp-action="unstake" asp-route-sid="@tk.StakeId"> Redeem</a> </td>
+
+                                                        </tr>
+                                                    }
+
+                                                @* <tr>
+
+                                                        <td class="td-sticky-left">
+                                                        <div class="row g-0 align-items-center" style="width: 125px;">
+                                                            <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                            <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                                       
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                            <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                    </td>
+                                                    <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                    <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                    <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                    <td>
+                                                        <div class="placeholder " style="height: 15px; width:70px;"></div>
+                                                    </td>
+
+                                                    <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                    <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+
+
+                                                </tr>
+                                                <tr>
+
+                                                        <td class="td-sticky-left">
+                                                        <div class="row g-0 align-items-center" style="width: 125px;">
+                                                            <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                            <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                                       
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                            <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                    </td>
+                                                    <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                    <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                    <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                    <td>
+                                                        <div class="placeholder " style="height: 15px; width:70px;"></div>
+                                                    </td>
+
+                                                    <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                    <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+
+
+                                                </tr>
+*@
+                                            </tbody>
+                                            <tfoot >
+                                                <tr>
+                                                    <td colspan="8">
+                                                        <div class="noheight54">
+                                                            <div class="norecord-div44">
+                                                                <span><img src="../images/no-data.png"></span>
+                                                                <span> No records found</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+
+                                    </div>
+                                        <div class="row">
+                                        <div class="col-12">
+                                                <div class="my-navigation">
+                                                    <div class="simple-pagination-first"></div>
+                                                    <div class="simple-pagination-previous"></div>
+                                                    <div class="simple-pagination-page-numbers"></div>
+                                                    <div class="simple-pagination-next"></div>
+                                                    <div class="simple-pagination-last"></div>
+                                                </div>
+                                            </div>
+                                    </div>  
+                                    </div>
+
+                                </div>
+                               @*<div id="crypto-css466" class="css77asses-div px-0 earnStakingTabs">
+                                    <div class="row">
+                                        <div class="col-ms-7 col-md-9">
+                                             <ul id="myStaking" class="nav nav-tabs">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-bs-toggle="tab" href="#all44" data-bs-target=".stak-s1, .stak-c1">My all Staking</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#flexible44" data-bs-target=".stak-s2, .stak-c2">My Flexible Staking</a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#locked44" data-bs-target=".stak-s3, .stak-c3">My Locked Staking</a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                        <div class="col-ms-5 col-md-3">
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade show active stak-s1">
+                                                                                                
+                                                </div>
+                                                <div class="tab-pane fade stak-s2">
+                                                     <div class="css33-rightpan">
+                                                        <form  class="positionrelative mb-2">
+                                                            <input type="search" autocomplete="off" class="market-search" data-tab="FlexibleStaking" placeholder="Search" name="search">
+                                                            <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade stak-s3">
+                                                     <div class="css33-rightpan">
+                                                        <form class="positionrelative mb-2">
+                                                            <input type="search" autocomplete="off" class="market-search" data-tab="lockedStaking" placeholder="Search" name="search">
+                                                            <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                   
+                                </div>                                                   
+                                  <div class="tab-content placeholder-glow">
+                                        <div class="tab-pane active stak-c1" >                                       
+                                        </div>
+                                        <div class="tab-pane fade stak-c2">
+                                            <div id="comunity-css566-box" class="comunity-css566-box">
+                                               
+                                                <div id="flexibleStaking-table">
+                                                <div class="table-xscroll44  table-responsive">
+                                                    <table class="table ">
+                                                        <thead class="trasaction-table-title">
+                                                            <tr>
+                                                                <th nowrap="nowrap" class="css566-table-text text-left th-sticky-left">Name  </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Subscription Amount</th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Subscription Date </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"><div class="earnflex44"><span>Auto Subscribe </span>  <span>(Yes/No)</span></div>  </th>
+                                                                <th nowrap="nowrap" class="css566-table-text">Accrued Interest </th>
+                                                                <th nowrap="nowrap" class="css566-table-text">  Cumulative Interest </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Est. APR </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Action</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="FlexibleStaking" class="trasaction-table earn-wallet-tab-img">
+
+                                                             @foreach (var tk in Model.Details)  
+                                             {
+                                                            <tr>
+                                                                <td class="td-sticky-left">
+                                                                        <a href="about-btc.html">
+                                                                            <div class="coin-name-css46 ">
+                                                                                <span><img src="/images/coin/coin/@string.Concat(tk.Code.ToUpper(),".png")"></span>
+                                                                                <span>@tk.Code </span> <small> @tk.ShortName</small>
+                                                                            </div>
+                                                                        </a>
+                                                                </td>
+                                                                <td> 1.000200 </td>
+                                                                <td>12-01-2022 </td>
+                                                                <td>Yes </td>
+                                                                <td>0.000200</td>
+                                                                <td>0.000400</td>
+                                                                <td>4.00% </td>
+                                                                    <td class="spot-trade-css44"><a asp-controller="stake" asp-action="unstake"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Unstake your asset, it may affect your cashback and interest rewards." data-bs-original-title="" title="" aria-describedby="popover531066">Unstake</span></a> </td>
+
+                                                            </tr>
+
+                                                           }
+                                                           <tr>
+                                                                  <td class="td-sticky-left">
+                                                                    <div class="row g-0 align-items-center" style="width: 125px;">
+                                                                       <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                                       <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                                       
+                                                                   </div>
+                                                                </td>
+                                                                <td>
+                                                                     <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                                </td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td>
+                                                                    <div class="placeholder " style="height: 15px; width:70px;"></div>
+                                                                </td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                            </tr>
+                                                            <tr>
+
+                                                                  <td class="td-sticky-left">
+                                                                    <div class="row g-0 align-items-center" style="width: 125px;">
+                                                                       <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                                       <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>                                                                       
+                                                                   </div>
+                                                                </td>
+                                                                <td>
+                                                                     <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                                </td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td>
+                                                                    <div class="placeholder " style="height: 15px; width:70px;"></div>
+                                                                </td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                                <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                            </tr>
+                                                        </tbody>
+                                                        <tfoot >
+                                                            <tr>
+                                                                <td colspan="8">
+                                                                    <div class="noheight54">
+                                                                        <div class="norecord-div44">
+                                                                            <span><img src="../images/no-data.png"></span>
+                                                                            <span> No records found</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                          <div class="my-navigation">
+                                                             <div class="simple-pagination-first"></div>
+                                                             <div class="simple-pagination-previous"></div>
+                                                             <div class="simple-pagination-page-numbers"></div>
+                                                             <div class="simple-pagination-next"></div>
+                                                             <div class="simple-pagination-last"></div>
+                                                          </div>
+                                                     </div>
+                                                </div> 
+                                                </div>
+                                            </div>
+                                        </div>                                      
+                                        <div class="tab-pane fade stak-c3">
+                                            <div id="comunity-css566-box" class="comunity-css566-box">                                               
+                                                <div id="lockedStaking-table">
+                                                <div class="table-xscroll44  table-responsive">
+                                                    <table class="table ">
+                                                        <thead class="trasaction-table-title">
+                                                            <tr>
+                                                                <th nowrap="nowrap" class="css566-table-text text-left th-sticky-left">Name  </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"><div class="earnflex44"><span>Auto Subscribe </span>  <span>(Yes/No)</span></div>  </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Subscription Date </th>
+                                                                <th nowrap="nowrap" class="css566-table-text">Subscription Amount </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Interest Amount </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Est. APR </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Locked Period(Days) </th>
+                                                                <th nowrap="nowrap" class="css566-table-text">Subscription End Date </th>
+                                                               <!-- <th nowrap="nowrap" class="css566-table-text"> Accrued Days </th>
+                                                                <th nowrap="nowrap" class="css566-table-text">  Next Subscription Amount </th>
+                                                                <th nowrap="nowrap" class="css566-table-text">Interest  Date </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Interest Period </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Redemption Date </th>
+                                                                <th nowrap="nowrap" class="css566-table-text"> Status </th>-->
+                                                                <th nowrap="nowrap" class="css566-table-text"> Action</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="lockedStaking" class="trasaction-table earn-wallet-tab-img">
+                                                               @foreach (var tk in Model.Stakings)
+                                                {
+                                                           <tr>
+                                                                <td class="td-sticky-left">
+                                                                     @if(tk.StakingSlot.Token.Code == "TechnoSavvy"){
+                                                                        <a href="/about-TechnoSavvy">
+                                                                            <div class="coin-name-css46 ">
+                                                                                <span><img src="/images/coin/coin/@string.Concat(tk.StakingSlot.Token.Code.ToUpper(),".png")"></span>
+                                                                                <span>@tk.StakingSlot.Token.Code </span> <small> @tk.StakingSlot.Token.ShortName</small>
+                                                                            </div>
+                                                                        </a>
+                                                                     } else {
+                                                                                
+                                                                        <a href="/token/?tname=@string.Concat(tk.StakingSlot.Token.Code.ToLower())">
+                                                                            <div class="coin-name-css46 ">
+                                                                                <span><img src="/images/coin/coin/@string.Concat(tk.StakingSlot.Token.Code.ToUpper(),".png")"></span>
+                                                                                <span>@tk.StakingSlot.Token.Code </span> <small> @tk.StakingSlot.Token.ShortName</small>
+                                                                            </div>
+                                                                        </a>
+                                                                     }
+                                                                </td>
+                                                                <td>@(tk.AutoRenew?"Yes":"No") </td>
+                                                                <td> @(tk.StartedOn.ToString("dd-MMM-yyyy"))</td>
+                                                                <td nowrap="nowrap">@(tk.Amount.ToString("#,##0.###")) </td>
+                                                                <td nowrap="nowrap"> @((tk.MatureAmount - tk.Amount).ToString("#,##0.###"))</td>
+                                                                <td>@(tk.StakingSlot.AYPOffered)% </td>
+                                                                <td>@(tk.StakingSlot.Duration) Days </td>
+                                                                <td>@(tk.ExpectedEndData.ToString("dd-MMM-yyyy")) </td>
+                                                                <td class="spot-trade-css44"><a asp-controller="stake" asp-action="redeem" asp-route-sid="@tk.StakeId"  > Redeem</a> </td>
+                                                            </tr>
+                                                        }                                                    
+                                                        </tbody>
+                                                        <tfoot >
+                                                            <tr>
+                                                                <td colspan="16">
+                                                                    <div class="noheight54">
+                                                                        <div class="norecord-div44">
+                                                                            <span><img src="../images/no-data.png"></span>
+                                                                            <span> No records found</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                          <div class="my-navigation">
+                                                             <div class="simple-pagination-first"></div>
+                                                             <div class="simple-pagination-previous"></div>
+                                                             <div class="simple-pagination-page-numbers"></div>
+                                                             <div class="simple-pagination-next"></div>
+                                                             <div class="simple-pagination-last"></div>
+                                                          </div>
+                                                     </div>
+                                                </div> 
+                                                </div>
+                                            </div>
+                                        </div>                                       
+                                    </div>*@      
+
+                            </div>
+
+                            @*Staking Opportunities*@
+                            <div id="StakingOpportunitiesTabs" class="tab-pane fade" role="tabpanel">   
+                                <p class="text-white"> </p>
+                                <div class="clearfix"></div>
+                                 <div id="comunity-css566-box" class="comunity-css566-box">
+                                     <div class="sell-right-but pt-0">
+                                        <div class="css33-leftpan">   
+                                            <span class="sell-btn-22">                                                  
+                                                <lable class="label857"> No. of rows</lable>
+                                                <select class="form-select simple-pagination-items-per-page" ></select>
+                                            </span>                                                 
+                                        </div>
+                                        <div class="css33-rightpan">
+                                           <form class="positionrelative mb-2">
+                                                <input type="search" autocomplete="off" class="market-search" data-tab="StakingOpportunities" placeholder="Search" name="search">
+                                                <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!------------------------>
+                                    <div id="StakingOpportunities-table">
+                                        <div class="table-xscroll44  table-responsive ">
+                                            <table class="table">
+                                                <thead class="trasaction-table-title">
+                                                    <tr>
+                                                        <th nowrap="nowrap" class="css566-table-text text-left th-sticky-left"> Token </th>
+                                                        <th nowrap="nowrap" class="css566-table-text text-left"> APY %</th>
+                                                        <th nowrap="nowrap" class="css566-table-text text-left"> Minimum</th>
+                                                        <th nowrap="nowrap" class="css566-table-text text-left"> Maximum</th>
+                                                        <th nowrap="nowrap" class="css566-table-text text-left">  Durations (Days) </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="StakingOpportunities" class="trasaction-table earn-wallet-tab-img">
+                                                        @foreach (var tk in Model.StakeOpportunity)
+                                                        {
+                                                            <tr>
+                                                                <td class="td-sticky-left">
+                                                                    <a href="javascript:void(0)">
+                                                                        <div class="coin-name-css46 ">
+                                                                            <span><img src="/images/coin/coin/@string.Concat(tk.Token.Code.ToUpper(),".png")"></span>
+                                                                            <span>@tk.Token.Code </span> <small> @tk.Token.ShortName</small>
+                                                                        </div>
+                                                                    </a>
+                                                                </td>
+
+                                                                @if (tk.Community == eCommunityCategory.None)
+                                                                {
+                                                                    <td class="text-left"> @tk.AYPOffered% </td>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <td class="text-left"> @tk.Community.ToString() </td>
+
+                                                                }
+                                                                <td><div class="text-left">@(tk.MinAmount.Value.ToString("#,##0.##")) </div></td>
+                                                                <td><div class="text-left">@(tk.MaxAmount.Value.ToString("#,##0.##")) </div></td>
+                                                                <td>
+                                                                    <div class="stakinflex432 text-left">
+                                                                        <span class="stakingno432 me-2"><a asp-controller="Stake" asp-action="Commit" asp-route-sid="@tk.StakingOpportunityId" class="active">@tk.Duration Days</a> </span>
+                                                                        @if (tk.IsHardFixed == false)
+                                                                        {
+                                                                            <span class="title ms-2"> Flexible</span>
+                                                                        }
+
+                                                                        
+                                                                        @*<span class="stakingno432"><a href="#">20</a> </span>
+                                                                    <span class="stakingno432"><a href="#">30</a> </span>
+                                                                    <span class="stakingno432"><a href="#" class="active">120</a> </span>*@
+                                                                    </div>
+                                                                </td>
+                                                                        
+
+                                                            </tr>
+                                                        }
+
+                                                    @*  <tr>
+                                                            <td class="td-sticky-left">
+                                                            <div class="row g-0 align-items-center" style="width: 125px;">
+                                                                <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                                <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                                       
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-left">
+                                                                <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                        </td>
+                                                        <td class="text-left"><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                    </tr>
+                                                        <tr>
+                                                            <td class="td-sticky-left">
+                                                            <div class="row g-0 align-items-center" style="width: 125px;">
+                                                                <div class="placeholder col-2 rounded-circle" style="width: 25px; height: 25px;"></div>
+                                                                <div class="placeholder col-5 ms-2" style=" height: 15px;"> </div>
+                                                                       
+                                                            </div>
+                                                        </td>
+                                                        <td  class="text-left">
+                                                                <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                        </td>
+                                                        <td  class="text-left"><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                    </tr>*@
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="5">
+                                                            <div class="noheight54">
+                                                                <div class="norecord-div44">
+                                                                    <span><img src="../images/no-data.png"></span>
+                                                                    <span> No records found</span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div> 
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="my-navigation">
+                                                    <div class="simple-pagination-first"></div>
+                                                    <div class="simple-pagination-previous"></div>
+                                                    <div class="simple-pagination-page-numbers"></div>
+                                                    <div class="simple-pagination-next"></div>
+                                                    <div class="simple-pagination-last"></div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            @*Staking Opportunities*@
+                            @*Cashback*@
+                            <div id="MyCashback33" class="tab-pane fade" role="tabpanel">
+                                  
+                                 @* <div id="wallet-tabdiv">
+                                        <div class="sell-right-but pt-0">
+                                            <div class="css33-leftpan">   
+                                                <span class="sell-btn-22">
+                                                    @*<lable class="label857"> Period</lable>
+                                                    <select class="form-select filter" aria-label="Period" id="fPeriod">
+                                                        <option value="" selected>All</option>
+                                                        <option value="1">Past 24 hrs</option>
+                                                        <option value="3">Past 3 Days</option>
+                                                        <option value="7">Past 7 Days </option>  
+                                                    </select>
+                                                    <lable class="label857"> Transaction Per Page</lable>
+                                                        <select class="form-select simple-pagination-items-per-page" >
+                                                            
+                                                        </select>
+                                                </span> 
+                                                @*<span class="sell-btn-22">
+                                                <a class="csss77-histbtn ms-auto btnTrnsReset" id="btnReset">    <i class="fa fa-refresh" aria-hidden="true"></i></a>
+                                            </span>
+                                            </div>
+                                            <div class="css33-rightpan justify-content-end">
+
+                                                <form action=" " class="positionrelative">
+                                                    <input type="search" autocomplete="off" class="market-search" data-tab="CashbackStaking" placeholder="Search" name="search">
+                                                    <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div> *@
+                                    <!------------------------->
+                                    <div id="comunity-css566-box" class="comunity-css566-box">
+                                         <div class="sell-right-but pt-0">
+                                             <div class="css33-leftpan">
+                                                 <span class="sell-btn-22">
+                                                   
+                                                    <lable class="label857"> No. of rows</lable>
+                                                        <select class="form-select simple-pagination-items-per-page" >
+                                                            
+                                                        </select>
+                                                </span>
+                                             </div>
+                                        <div class="css33-rightpan">
+                                              
+                                            <form class="positionrelative mb-2">
+                                                <input type="search" autocomplete="off" class="market-search" data-tab="CashbackStaking" placeholder="Search" name="search">
+                                                <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                            </form>
+                                        </div>
+                                        </div>
+                                       <div id="earnCashback-table">
+                                        <div class="table-xscroll44 ">
+                                            <table class="table ">
+                                                <thead class="trasaction-table-title">
+                                                    <tr>
+                                                        <th nowrap="nowrap" class="text-left css566-table-text th-sticky-left">Date &amp; Time </th>
+                                                        <th nowrap="nowrap" class="css566-table-text">Trade Id</th>
+                                                        <th nowrap="nowrap" class="css566-table-text">Trade Amount</th>
+                                                        <th nowrap="nowrap" class="css566-table-text">Cashback [TechnoSavvy]</th>
+                                                        <th nowrap="nowrap" class="css566-table-text"> Pool Refund</th>
+                                                        <th nowrap="nowrap" class="css566-table-text">Cashback status</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="CashbackStaking" class="trasaction-table">
+
+                                                     <tr>
+                                                         <td>
+                                                        <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                    </td>
+                                                     <td>
+                                                        <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                    </td>
+                                                     <td>
+                                                        <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                    </td> <td>
+                                                        <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                    </td>
+                                                    <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                </tr>
+                                                <tr>
+                                                         <td>
+                                                        <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                    </td>
+                                                     <td>
+                                                        <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                    </td>
+                                                     <td>
+                                                        <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                    </td> <td>
+                                                        <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="placeholder" style="height: 15px; width:70px;"></div>
+                                                    </td>
+                                                    <td><div class="placeholder " style="height: 15px; width:50px;"></div></td>
+                                                </tr>
+
+                                                   @* <tr>
+                                                        <td class="text-left td-sticky-left">
+                                                            <div class="css5datet44-left">
+                                                                <span> 25/12/2022 </span> <span> <small> 23:00:00</small></span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover"
+                                                                  data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67"
+                                                                  data-bs-original-title="" title="">4fe73...</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dflex22"> <span>20000.00 </span> <small> USDT</small></div>
+                                                        </td>
+                                                        <td nowrap>
+                                                            <div class="datettrade44">
+                                                                <div class="dflex22"><span class="px-3">-</span> <small> TechnoSavvy</small> </div>
+                                                                <div class="dflex22"><span> 1200</span> <small>USDT </small></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dflex22"> <span class="px-3">- </span> <small>TechnoSavvy</small></div>
+                                                        </td>
+                                                        <td>In Process</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="text-left td-sticky-left">
+                                                            <div class="css5datet44-left">
+                                                                <span> 25/12/2022 </span> <span> <small> 23:00:00</small></span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover"
+                                                                  data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67"
+                                                                  data-bs-original-title="" title="">4fe73...</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dflex22"> <span>20000.00 </span> <small> USDT</small></div>
+                                                        </td>
+                                                        <td nowrap>
+                                                            <div class="datettrade44">
+                                                                <div class="dflex22"><span>100.000000</span> <small> TechnoSavvy</small> </div>
+                                                                <div class="dflex22"><span> 1200.0000</span> <small>USDT </small></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dflex22"> <span>100.000000 </span> <small>TechnoSavvy</small></div>
+                                                        </td>
+                                                        <td>Paid</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="text-left td-sticky-left">
+                                                            <div class="css5datet44-left">
+                                                                <span> 25/12/2022 </span> <span> <small> 23:00:00</small></span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover"
+                                                                  data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67"
+                                                                  data-bs-original-title="" title="">4fe73...</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dflex22"> <span>20000.00 </span> <small> USDT</small></div>
+                                                        </td>
+                                                        <td nowrap>
+                                                            <div class="datettrade44">
+                                                                <div class="dflex22"><span class="px-3">-</span> <small> TechnoSavvy</small> </div>
+                                                                <div class="dflex22"><span> 1200</span> <small>USDT </small></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dflex22"> <span>~ 20000.00 </span> <small>TechnoSavvy</small></div>
+                                                        </td>
+                                                        <td>In Process</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="text-left td-sticky-left">
+                                                            <div class="css5datet44-left">
+                                                                <span> 25/12/2022 </span> <span> <small> 23:00:00</small></span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover"
+                                                                  data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67"
+                                                                  data-bs-original-title="" title="">4fe73...</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dflex22"> <span>20000.00 </span> <small> USDT</small></div>
+                                                        </td>
+                                                        <td nowrap>
+                                                            <div class="datettrade44">
+                                                                <div class="dflex22"><span class="px-3">-</span> <small> TechnoSavvy</small> </div>
+                                                                <div class="dflex22"><span> 1200</span> <small>USDT </small></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dflex22"> <span class="px-3">-</span> <small>TechnoSavvy</small></div>
+                                                        </td>
+                                                        <td>Paid</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="text-left td-sticky-left">
+                                                            <div class="css5datet44-left">
+                                                                <span> 25/12/2022 </span> <span> <small> 23:00:00</small></span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover"
+                                                                  data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67"
+                                                                  data-bs-original-title="" title="">4fe73...</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dflex22"> <span>20000.00 </span> <small> USDT</small></div>
+                                                        </td>
+                                                        <td nowrap>
+                                                            <div class="datettrade44">
+                                                                <div class="dflex22"><span>~ 20000.00</span> <small> TechnoSavvy</small> </div>
+                                                                <div class="dflex22"><span> 1200</span> <small>USDT </small></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dflex22"> <span>~ 20000.00 </span> <small>TechnoSavvy</small></div>
+                                                        </td>
+                                                        <td>In Process</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="text-left td-sticky-left">
+                                                            <div class="css5datet44-left">
+                                                                <span> 25/12/2022 </span> <span> <small> 23:00:00</small></span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover"
+                                                                  data-bs-trigger="hover focus" data-bs-content="4fe73-728e-44ec-94b4-1103brfc1a67"
+                                                                  data-bs-original-title="" title="">4fe73...</span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dflex22"> <span>20000.00 </span> <small> USDT</small></div>
+                                                        </td>
+                                                        <td nowrap>
+                                                            <div class="datettrade44">
+                                                                <div class="dflex22"><span>100.000000</span> <small> TechnoSavvy</small> </div>
+                                                                <div class="dflex22"><span> 1200</span> <small>USDT </small></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dflex22"> <span>100.000000 </span> <small>TechnoSavvy</small></div>
+                                                        </td>
+                                                        <td>Paid</td>
+                                                    </tr>
+*@
+                                         
+                                                </tbody>
+                                                <tfoot >
+                                                    <tr>
+                                                        <td colspan="6">
+                                                            <div class="noheight54">
+                                                                <div class="norecord-div44">
+                                                                    <span><img src="../images/no-data.png"></span>
+                                                                    <span> No records found</span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+
+                                        </div>
+                                         <div class="row">
+                                            <div class="col-12">
+                                                  <div class="my-navigation">
+                                                     <div class="simple-pagination-first"></div>
+                                                     <div class="simple-pagination-previous"></div>
+                                                     <div class="simple-pagination-page-numbers"></div>
+                                                     <div class="simple-pagination-next"></div>
+                                                     <div class="simple-pagination-last"></div>
+                                                  </div>
+                                             </div>
+                                        </div>  
+                                        </div>
+                                        <!-- ==== Pagination ==== -->
+                                        <!-- ==== // Pagination ==== -->
+
+                                    </div>
+
+                            </div>
+                            @*Cashback*@
+                        </div>
+                   </div>
+                 
+            @*    </div>*@
+
+                    <!-------------------   @*End Mobile Staking Area*@--------------------->
+
+
+                  
+                
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+@section Scripts{
+ @if (ConfigEx.ShouldMini)
+    {   
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/minjs/EarnWallet.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+        <script src="~/js/EarnWallet.js"></script>
+    }
+    <script type="text/javascript">
+    $(document).ready(function () {
+        LoadCurrIfNot();
+        formateAll();
+        $(".my-select").chosen({ width: "100%" });            
+          $('.amountToggle').on('click', function () {
+            $(this).closest('.wallet__assets--items').children('.wallet__assets--item-bottom').slideToggle();
+          });
+    }); 
+    </script>
+}

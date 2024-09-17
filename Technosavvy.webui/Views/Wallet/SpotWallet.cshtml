@@ -1,0 +1,199 @@
+﻿@model vmSpotWallet
+
+<section class="section-wallet bg2">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            @await Html.PartialAsync("Partial/_WalletLeftMenu","spot")
+
+            <!----------------------------------------------->
+
+            <div class="col-md-10 col-lg-10 col-xxl-10 py-3">
+                <div class="wallet-right33">
+                    <div class="wallet-sectdiv33">
+                        <div class="wallet-userdiv33">
+                            <div class="userdiv33-wal"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> </div>
+                            <div class="iddiv33-wa"><a href="#"> UserId: @Model.UserDetails.Name<i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a> </div>
+                            <div class="logindiv33-wa">Last Login Session : @Model.UserDetails.LastLogin</div>
+                            <div class="kycdiv33-wa"> <span> KYC Status:</span> <span class="statusdiv33"> In Progress </span></div>
+                        </div>
+                    </div>
+
+                    <div class="wallet-sectdiv33">
+                        <div id="wallet-tabdiv" class="wallet-tabdiv">
+                            <div class="heading"> Spot Wallet</div>
+                            <div class="css77-wall-acc">
+                                <span class="css77-abal">Account Balance:   </span>
+                                <span class="csss77-walinp">
+                                    <span class="css77-baldiv">@Model.AccountBalance.Item1 <small> @Model.AccountBalance.Item2 </small> </span>
+                                    <span><i class="fa fa-eye-slash" aria-hidden="true"></i> </span>
+                                </span>
+                            </div>
+                            <div class="css77-sel">
+                                <div class=" form-select4 form444">
+                                        @Html.DropDownListFor(model => model.selectedCoin, Model.SelectTokenList, new { @class = "my-select Default select example", id = "SpotValueType",Name="xzx" })
+
+                                    @*<select class="my-select" aria-label="Default select example">
+                                        <option>Select Coin</option>
+                                        <option data-img-src="/images/1.png">BTC</option>
+                                        <option data-img-src="/images/2.png">ETH</option>
+                                        <option data-img-src="/images/nav-icon.png">TechnoSavvy</option>
+                                        <option data-img-src="/images/3.png">USDT</option>
+                                    </select>*@
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="wallet-sectdiv33">
+
+                        <div id="comunity-css566-box" class="comunity-css566-box">
+                            <div class="css77-search">
+                                <form>
+                                    <input type="text" class="market-search" placeholder="Search" name="search">
+                                    <button type="submit" class="mar-sea-btn"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                            <table class="table table-responsive">
+                                <thead class="trasaction-table-title">
+                                    <tr>
+                                        <th class="css566-table-text">
+                                            <div class="name-css46">
+                                                <span>Coin</span> <span class="arrow-css44">
+                                                    <a href="#"> <i class="fa fa-long-arrow-up" aria-hidden="true"></i> </a>
+                                                    <a href="#"> <i class="fa fa-long-arrow-down" aria-hidden="true"></i></a>
+                                                </span>
+                                            </div>
+                                        </th>
+
+                                        <th class="css566-table-text">
+                                            <div class="price-css46">
+                                                <span>Total</span> <span class="arrow-css44">
+                                                    <a href="#"> <i class="fa fa-long-arrow-up" aria-hidden="true"></i> </a>
+                                                    <a href="#"> <i class="fa fa-long-arrow-down" aria-hidden="true"></i></a>
+                                                </span>
+                                            </div>
+                                        </th>
+
+                                        <th class="css566-table-text">
+                                            <div class="change24-css46">
+                                                <span>Available</span> <span class="arrow-css44">
+                                                    <a href="#"> <i class="fa fa-long-arrow-up" aria-hidden="true"></i> </a>
+                                                    <a href="#"> <i class="fa fa-long-arrow-down" aria-hidden="true"></i></a>
+                                                </span>
+                                            </div>
+                                        </th>
+
+                                        <th class="css566-table-text">    <div class="volume-css46"><span>Action</span>       </div></th>
+
+                                        <th class="css566-table-text">
+                                            <div class="volume-css46">
+                                                <span>Graph</span> <span class="arrow-css44">
+                                                    <a href="#"> <i class="fa fa-long-arrow-up" aria-hidden="true"></i> </a>
+                                                    <a href="#"> <i class="fa fa-long-arrow-down" aria-hidden="true"></i></a>
+                                                </span>
+                                            </div>
+                                        </th>
+
+
+
+                                    </tr>
+                                </thead>
+                                <tbody class="trasaction-table">
+                                    @foreach (var item in Model.Details)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <div class="coin-name-css46">
+                                                    <span><img src="/images/eth.png"></span> <span class="ethcss44"> @item.Code  <small> xEthereum</small> </span>
+                                                    <span class="arrow-css444">
+                                                        <a href="#"> <i class="fa fa-smile-o" aria-hidden="true"></i> </a>   <a href="#"> <i class="fa fa-retweet" aria-hidden="true"></i> </a>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td><div class="coin-24change-css46">@item.AvailableAmount </div></td>
+                                            <td><div class="coin-24change-css46 css44-up">@item.TotalAmount </div></td>
+                                            <td>
+                                                <span class="coin-24change-css46">
+                                                    <div id="market-more" class="market-more-css45">
+                                                        <div class="dropdown">
+                                                            <button type="button" class="btn btn-more-css44 dropdown-toggle" data-bs-toggle="dropdown">
+                                                                More
+                                                            </button>
+                                                            <ul class="dropdown-menu dropdown-menu-css44">
+                                                                <li><a class="dropdown-item dropdown-item-css44" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy</a></li>
+                                                                <li><a class="dropdown-item" href="#"><i class="fa fa-credit-card" aria-hidden="true"></i> Sell</a></li>
+                                                                <li><a class="dropdown-item" href="#"><i class="fa fa-recycle" aria-hidden="true"></i>Trade</a></li>
+                                                                <li><a class="dropdown-item" href="#"><i class="fa fa-credit-card" aria-hidden="true"></i> Withdraw</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </td>
+
+                                            <td>
+
+                                                <span class="graph-css444 coin-24change-css46">
+                                                    <svg viewBox="0 0 500 100" class="chart">
+
+                                                        @*<polyline fill="none" stroke="#d5960f" stroke-width="10" points="
+                                                    00,120  20,60  40,80  60,20  80,80  100,80  120,60   140,100  160,90  180,80  200, 110    220, 10   240, 70
+                                                    260, 100     280, 100    300, 40    320, 0    340, 100    360, 100     380, 120     400, 60   420, 70    440, 80
+                                                    "></polyline>*@
+
+                                                        <polyline fill="none" stroke="#d5960f" stroke-width="10" points=@item.PolyPoints></polyline>
+                                                    </svg>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    }
+
+
+
+                                </tbody>
+                            </table>
+
+                            <div class="row">
+                                <nav id="pagination-css" aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <!----------------------------------------------->
+    </div>
+
+
+
+
+</section>
+    @section Styles{
+    <link rel="stylesheet" href="~/css/dashboard.css">
+    <link rel="stylesheet" href="~/css/style.css">
+}
+@section Scripts{
+    <script type="text/javascript">
+        $(".my-select").chosen({ width: "100%" });
+    </script>
+   }

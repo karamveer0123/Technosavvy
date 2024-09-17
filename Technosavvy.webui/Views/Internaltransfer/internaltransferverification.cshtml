@@ -1,0 +1,68 @@
+﻿<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Internal Transfer </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="verificationwithdraw-form">
+
+                            <h5>2F Verification</h5>
+
+                            <div class="css33withformdiv">
+                                <!-------==========================================--------->
+                                <form id="msform"  autocomplete="off">
+                                    <!-------==========================================--------->
+                                    <div class="form-group mt-4 clear">
+                                        <label class="form-label" for="pwd">E-mail verification code</label>
+                                        <input type="text" class="form-control" placeholder=" " name="pswd">
+                                        <span class="eye182">
+                                            <a href="#">Get Code </a> <span class="d-inline-block opencss11" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Havn't receive the code? Request again.
+                        " data-bs-original-title="" title="">
+                                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                            </span>
+                                        </span>
+                                        <div class="enter56"> Enter the 6-digit code received by ashu****</div>
+                                        <span class="resend112 gettimer"> Resend OTP in <span id="countdowntimer">25</span> Seconds</span>
+                                    </div>
+                                    <!-------==========================================--------->
+
+                                    <div class="form-group mt-4 clear">
+                                        <label class="form-label" for="pwd">Google verification code</label>
+                                        <input type="text" class="form-control" placeholder=" " name="pswd">
+                                        <div class="enter56"> Enter the 6-digit code from Google Authenticator.</div>
+                                        <span class="resend112 gettimer"> Resend OTP in <span id="countdowntimer">25</span> Seconds</span>
+                                    </div>
+                                    <!-------==========================================--------->
+                                    <div class="dflexdiv">
+                                        <a class="d-dark action-button mt-4 " type="button" asp-controller="Internaltransfer" asp-action="internaltransfersummary"> Previous</a>
+                                        <a class="d-orange action-button float-right mt-4 " type="button" asp-controller="Internaltransfer" asp-action="internaltransferconfirmation">Submit</a>
+                                    </div>
+                                    <!-------==========================================--------->
+
+                                </form>
+                                <!-------==========================================--------->
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+            </div>
+        </div>
+        <!----------------------------------------------->
+
+    </div>
+</section>

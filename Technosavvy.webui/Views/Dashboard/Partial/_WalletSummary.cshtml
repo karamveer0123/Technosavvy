@@ -1,0 +1,61 @@
+﻿@model TechnoApp.Ext.Web.UI.ViewModels.vmWalletSummery
+@{
+
+}
+
+<div class="row">
+    <div class="col-md-6 col-12">
+        <div class="css33-wallet">
+            <div class="css33-wallet-div">
+                <span class="title">Wallet Summary </span>
+                <span class="css33-wallet-list">
+                    <span> <a asp-action="index"  asp-controller="wallet" class="redirect44-btn"><i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+                    <span> <a href="#"> <i class="fa fa-ellipsis-v" aria-hidden="true"></i></a></span>
+                </span>
+            </div>
+
+            <div class="css33-wallet-box">
+                <span class="css33-wallet-detail">
+                    <div class="sub-title-wallet">SPOT </div>
+                    <div class="css33-spot-list">
+                        <span class="token-det44">
+                            @Model.SpotTokens.Item1
+                        </span>
+                    </div>
+                    <div class="token-totalcsss33"><span>@Model.SpotTokens.Item2 </span> <span class="css44-valuett">@string.Format("{0:N2}",@Model.SpotTokens.Item3)</span> </div>
+                </span>
+
+
+
+                <span class="css33-wallet-detail">
+                    <div class="sub-title-wallet">EARNED  </div>
+                    <div class="css33-spot-list">
+                         <span class="token-det44">
+                            @Model.EarnTokens.Item1
+                        </span>
+                    </div>
+                    <div class="token-totalcsss33"><span>@Model.EarnTokens.Item2 </span> <span class="css44-valuett">@string.Format("{0:N2}",@Model.EarnTokens.Item3)</span> </div>
+                </span>
+
+                <span class="css33-wallet-detail">
+                    <div class="sub-title-wallet">FUNDING </div>
+                    <div class="css33-spot-list">
+                         <span class="token-det44">
+                            @Model.FundTokens.Item1
+                        </span>
+                    </div>
+                    <div class="token-totalcsss33"><span>@Model.FundTokens.Item2 </span> <span class="css44-valuett">@string.Format("{0:N2}",@Model.FundTokens.Item3)</span> </div>
+                </span>
+
+            </div>
+            <div class="css33-walle-Trans">
+                <span>Total Balance</span>
+                <div class="css33inr">
+                    <span>@Model.FundTokens.Item2</span>
+                    <span> @string.Format("{0:N2}",Model.TotalBalance)</span>
+                </div>
+            </div>
+
+            <a asp-action="index" asp-controller="wallet" class="css33-wallet-btn" type="button">Details</a>
+        </div>
+    </div>

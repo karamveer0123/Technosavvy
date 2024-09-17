@@ -1,0 +1,484 @@
+﻿@model vmBase
+@{
+    var vmCurrOptions = new vmCurrencyOptions { CurrencyNames = Model._CurrencyList, SelectedCurrency = Model._Curr };
+    var mktVal = $"{ConfigEx.Config.GetSection("DataStream").Value}/Stream/";
+    var mktAPI = $"{ConfigEx.Config.GetSection("DataStream").Value}/Market/";
+    var ethScanPre = $"{ConfigEx.Config.GetSection("ethScanPre").Value}";
+    var pc = (100 / Model.PrebetaBase.TotalStages);
+    var rs = Model.PrebetaBase.TotalStages - Model.PrebetaBase.CompletedStages;
+    var total = 26000000;
+    var ts = Model.PrebetaBase.TokenTotal <= total ? (1 - (Model.PrebetaBase.TokenTotal / total) * 100) : (100);
+    if (ts 
+    < 10)
+        ts = 10;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @await RenderSectionAsync("Header",required:false)
+
+    <meta name="description"
+          content="TechnoApp is a secure cryptocoun-flags exchange that allows you to secure, sell, and trade crypto." />
+    <title>@ViewData["Title"] - Pre-Beta Version</title>
+    <! -- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WLPSTFS');</script>
+    <!-- End Google Tag Manager -->
+    <!--favicon-->
+    <link rel="icon" href="~/images/TechnoSavvy-token.png" type="image/png">
+    <!--My-Style-CSS-->
+    <link href="~/pr/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/pr/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/pr/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/pr/css/select-1.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/toastr.css">
+    <!--theme css -->
+    <link href="~/pr/css/darktheme.css" rel="stylesheet">
+    <link href="~/pr/css/style.css" rel="stylesheet">
+    <link href="~/pr/css/dashboard.css" rel="stylesheet">
+
+    @await RenderSectionAsync("Styles", required: false)
+
+    @if (Model._Theme == eThemeName.Dark.ToString())
+    {
+        <!--My-Style-CSS Light-->
+        <link rel="stylesheet" id="themeChange" href="~/css/dark-theme-root.css">
+    }
+    else
+    {
+        <!--My-Style-CSS Dark-->
+        <link rel="stylesheet" id="themeChange" href="~/css/light-theme-root.css">
+    }
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLPSTFS"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <!-------------------------------------------->
+    <!-----------------top section start ----------->
+    @if (Model._SessionHash.IsNullOrEmpty())
+    {
+        <!-----------------top section start ----------->
+        @* <section class="top-section">
+    <div class="container-fluid">
+    <div class="row">
+    <div class="reward-div">
+    <a asp-controller="signup" asp-action="RegisterUser">
+    <i class="fa fa-gift" aria-hidden="true"></i>  Register now - Enjoy Welcome Rewards
+    @Model._Theme|@Model._Page|@Model._Curr|@Model._Lang|@Model._Country|@Model._CookieConsent
+    </a><span class="css44-cross"> <i class="fa fa-times" aria-hidden="true"></i></span>
+    </div>
+    </div>
+    </div>
+    </section>*@
+
+    }
+
+    @if (!Model._CookieConsent)
+    {
+        <!-- Accept All Cookie Html -->
+        <div class="modal bottom token  fade show" id="TechnoSavvy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body cookie-text">
+                        <p> "TechnoApp and selected third parties use cookies or similar technologies for technical purposes, to enhance site navigation, analyze site usage, assist in all marketing efforts, and for other purposes as specified in the <a id="btnAcceptAll" asp-controller="policy" asp-action="privacy-policy"> Privacy Policy" </a>  <a class="default-btn_all-cookies forward-btn" data-ajax="true" data-ajax-method="POST" id="btnAcceptCookie" asp-action="AcceptCookie" asp-controller="Home" data-bs-dismiss="modal" aria-label="Close">Accept all cookies <i class="fa fa-arrow-circle-right"></i><span></span> </a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <!----------------------menu section---------------------------->
+    <section id="myHeader" class="menu-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="top-meu-box">
+                    <div class="top-menu-left">
+                        @if (Model._Theme == eThemeName.Light.ToString())
+                        {
+                            <div class="logo-top "> <a class="navbar-brand" href="/"><img id="mlogo" src="../images/w-logo.png"></a></div>
+                        }
+                        else
+                        {
+                            <div class="logo-top "> <a class="navbar-brand" href="/"><img id="mlogo" src="../images/b-logo.png"></a></div>
+                        }
+                        <div class="menu-top">
+                            <nav class="navbar navbar-expand-lg navbar-light">
+                                <div class="menu">
+                                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse menu-collapse" id="navbarSupportedContent">
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="Secure-TechnoSavvy" asp-action="index">Secure TechnoSavvy</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="~/pr/images/WhitePaper-TechnoSavvy-Version-3.pdf" target="_blank"> Whitepaper </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="roadmap" asp-action="index">Roadmap</a>
+                                            </li>
+
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="top-menu-center">
+                        <div id="coundown-header" class="countdown-box-top  position-relative">
+                            <p> Beta Live in  </p>
+                            <div id="countdown">
+                                <div id='tiles2'></div>
+                                <div class="labels">
+                                    <li>Days</li>
+                                    <li>Hours</li>
+                                    <li>Mins</li>
+                                    <li>Secs</li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-menu-right">
+                        <div id="top-navbar" class="top-navbar">
+                            <div class="top-navbar">
+                                <form>
+                                    <div class="tooltip">
+                                        <div class="navsale33" data-bs-toggle="tooltip" title="">
+                                            <div class="token44Aq">
+                                                <div class="ncoin77"><img src="~/pr/images/buynav-icon.png" width="16px"></div>
+                                                <div class="navpr77"><span>TechnoSavvy Token Secured </span> <span class="orange">@string.Concat(@Model.PrebetaBase.TokenTotal.ToString("#,##0.00").Split('.')[0],".")<small>@string.Concat(Model.PrebetaBase.TokenTotal.ToString("0.00").Split('.')[1])</small> </span> </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-striped d-orange" role="progressbar" style="width: @string.Concat(ts)%"> </div>
+                                            </div>
+                                        </div>
+                                        <span class="tooltiptext">
+                                            <div class="tooldiv44">
+                                                <span>Token Name: TechnoSavvy </span>
+                                                <span>Token Type: ERC 20 </span>
+                                                <span>Secured TechnoSavvy Token: 26,000,000 (0.02%) </span>
+                                                <span>Total Token Supply: 112.50 Billion </span>
+                                                <span>Supported Token: ETH, USDT</span>
+                                            </div>
+                                        </span>
+                                    </div>
+
+                                    <div class="tooltip">
+                                        <div class="navsale33" data-bs-toggle="tooltip" title="">
+                                            <div class="token44Aq">
+                                                <div class="ncoin77"><img src="~/pr/images/buynav-icon.png" width="16px"></div>
+                                                <div class="navpr77"><span>TechnoSavvy Price </span>  <span class="orange">@string.Concat(Model.PrebetaBase.NavVCurrentPrice.ToString("0.00").Split('.')[0],".")<small>@Model.PrebetaBase.NavVCurrentPrice.ToString("0.00").Split('.')[1]</small><img src="~/pr/images/tether.png" width="13px"> USDT </span> </div>
+                                            </div>
+                                           <div class="miniBar">
+                                                @for (int i = 0; i < Model.PrebetaBase.CompletedStages; i++)
+                                                {
+                                                    <div class="miniBarProgress active" style="width: @pc%; "></div>
+                                                }
+                                                @for (int i = 0; i < rs; i++)
+                                                {
+                                                    <div class="miniBarProgress" style="width: @pc%; "></div>
+                                                }
+                                                  
+                                           </div>
+                                        </div>
+                                        <span class="tooltiptext">
+                                            <div class="tooldiv44">
+                                                @foreach (var item in Model.PrebetaBase.TechnoSavvyPriceInfo)
+                                                {
+                                                    <span>@item</span>
+
+                                                }
+                                                @*<span>Next Price will increase on 15 days,</span>
+                                                <span>Beta Public Secured</span>
+                                                <span>1 Sept - 15 Sept 2023, Price is $1.15</span>
+                                                <span> 16 Sept - 30 Sept 2023, Price will be $1.25</span>
+                                                <span>1 Oct - 15 Oct 2023, Price will be $1.45</span>*@
+                                            </div>
+                                        </span>
+                                    </div>
+                                </form>
+                                <div class="headerLoginPart">
+                                    @if (Model._SessionHash.IsNullOrEmpty()||Model._UserName.IsNullOrEmpty())
+                                    {
+                                        <span class="login-top"><a asp-action="LogIn" asp-controller="Login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login </a></span>
+                                        <span class="login-top"><a asp-action="RegisterUser" asp-controller="Signup"><i class="fa fa-file-text-o" aria-hidden="true"></i> Signup </a></span>
+                                    }
+                                    else
+                                    {
+                                        @*<span class="login-top"><a asp-action="LogOut" asp-controller="Login"><i class="fa fa-sign-in" aria-hidden="true"></i> LogOut </a></span>*@
+
+
+                                        <span class="wallet-top">
+                                            <div id="wallet-top" class="dropdown">
+                                                <a class="btn  dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="true">
+                                                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                                  @string.Concat($"{Model._UserName.Substring(0,2)}","***@",$"{Model._UserName.Split('@')[1]}")
+                                                </a>
+                                                @*----*@
+                                                <ul class="dropdown-menu dropdown-menu-css44 css-inline" data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 29px);">
+                                                    <li><a class="dropdown-item   dropdown-item-css44" asp-action="index" asp-controller="my-TechnoSavvy"> <i class="fa fa-user" aria-hidden="true"></i>My TechnoSavvy</a></li>
+
+                                                    <li><a class="dropdown-item" asp-action="LogOut" asp-controller="Login"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                                                </ul>
+                                                @*----*@
+                                            </div>
+                                        </span>
+                                        @*<span class="profile-top"><a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i> </a></span>*@
+
+                                    }
+                                    <span>
+                                        <div class="dropdown widcu54">
+                                            <a class=" dropdown-toggle" type="button" id="drpCountry" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <img src="../images/coun-flags/@string.Concat(Model._Country.ToLowerCaseTrimWhiteSpace(),".png")" class="topflag"> <span id="countryTxt" class="ms-1 text-uppercase headt765">@Model._Country</span>
+                                            </a>
+                                            <div id="curCuntry">
+                                            </div>
+                                        </div>
+                                    </span>
+                                    @* <span>
+                                    <a class="btn-top34 ">  ENG </a>
+                                    </span>*@
+                                    <span>
+
+                                        <a role="button" data-ajax="true" data-ajax-method="POST" data-ajax-success="Themechange" asp-action="ThemeChange" asp-controller="Home">
+                                            @if (Model._Theme == eThemeName.Light.ToString())
+                                            {
+                                                <i id="chMoon" class="fa fa-moon-o" aria-hidden="true"></i>
+                                                <i id="chSun" class="fa fa-sun-o d-none" aria-hidden="true"></i>
+                                            }
+                                            @if (Model._Theme == eThemeName.Dark.ToString())
+                                            {
+                                                <i id="chMoon" class="fa fa-moon-o d-none" aria-hidden="true"></i>
+                                                <i id="chSun" class="fa fa-sun-o" aria-hidden="true"></i>
+                                            }
+
+                                        </a>
+
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!----------------------menu section---------------------------->
+    @RenderBody()
+
+    <div id="backdrop" class="d-none">
+        <div class="ring">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+            <div class="loadlogo">
+                <img src="~/images/b-logo.png" width="60px" />
+            </div>
+        </div>
+    </div>
+
+    <!--------------------------------------------------------------------->
+    <section class="section-footer bg1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 co-xs-12">
+                    <div class="footer-box">
+                        <div class="footer-list">
+                            <ul>
+                                <li><a asp-controller="library" asp-action="faq"> FAQs</a></li>
+                                <li class="greyline">|</li>
+                                <li><a asp-controller="Policy" asp-action="terms-of-use">Terms of Use </a></li>
+                                <li class="greyline">|</li>
+                                <li><a asp-controller="Policy" asp-action="Privacy-Policy"> Privacy Policy</a></li>
+                                <li class="greyline">|</li>
+                                <li><a asp-controller="Policy" asp-action="aml-policy">AML/KYC Policy</a></li>
+                                <li class="greyline">|</li>
+                                <li><a asp-controller="Policy" asp-action="Licences">Licenses</a></li>
+                                <li class="greyline">|</li>
+                                <li><a asp-controller="Policy" asp-action="disclaimer">Disclaimer</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 co-xs-12">
+                    <div class="footer-box mb-3">
+                        <div class="footer-list">
+                            <div class="social-link">
+                                <span>
+                                    <a href="https://www.facebook.com/TechnoApp " target="blank">
+                                        <i class="fa fa-facebook"
+                                           aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                                <span>
+                                    <a href="https://www.twitter.com/TechnoApp" target="blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                                    </a>
+                                </span>
+                                <span>
+                                    <a href="https://www.linkedin.com/company/TechnoApp/" target="blank">
+                                        <i class="fa fa-linkedin"
+                                           aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                                <span>
+                                    <a href="https://www.youtube.com/channel/UCT0rYEpfAv-xZJDtxRBDE-Q" target="blank">
+                                        <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                                    </a>
+                                </span>
+
+                                <span>
+                                    <a href="https://t.me/TechnoApp" target="blank">
+                                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                    </a>
+                                </span>
+
+                                <span>
+                                    <a href="https://www.medium.com/@@TechnoApp" target="blank">
+                                        <i class="fa fa-medium" aria-hidden="true"></i>
+                                    </a>
+                                </span>
+
+
+                                <span>
+                                    <a href="https://www.reddit.com/r/TechnoAppCommunity/" target="blank">
+                                        <i class="fa fa-reddit-alien" aria-hidden="true"></i>
+                                    </a>
+                                </span>
+
+
+                                <span>
+                                    <a href="https://www.quora.com/profile/TechnoApp-Exchange" target="blank">
+                                        <i class="fa fa-quora" aria-hidden="true"></i>
+                                    </a>
+                                </span>
+
+
+                                <span>
+                                    <a href="https://instagram.com/TechnoApp" target="blank">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                </span>
+
+                                <span>
+                                    <a href="https://discord.gg/KqCBRBqQ2F" target="blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+                                            <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" />
+                                        </svg>
+                                    </a>
+                                </span>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-------------------------------------------------->
+            <!-------------------------------------------------->
+        </div>
+        <div class="container">
+            <div class="x__footer__content-center row">
+                <div class="col col-md-12 col-12">
+                    <div class="x__copyright">
+                        <!--        <div class="x__copyright__logo"> <img src="~/pr/images/logo.png" alt="Exodus Logo"> </div>-->
+                        <div class="x__copyright__copy">
+                            Copyright ©@DateTime.UtcNow.ToString("yyyy") <a href="/"> TechnoApp</a>. All rights reserved.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @*This should only in Public Pages*@
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+    <!-- // back to top button -->
+    <script>
+
+
+    </script>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="~/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.unobtrusive-ajax.js"></script>
+    <script type="text/javascript" src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="~/pr/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/eyeopenclose.js"></script>
+    <script src="~/pr/js/owl.carousel.min.js"></script>
+    <script src="~/pr/js/owl-carosol.js"></script>
+    <script>
+        @Html.Raw($"var _tobeta = {(Model.PrebetaBase.BetaLiveIn-DateTime.UtcNow).TotalMilliseconds}")
+        @Html.Raw($"var MktAPI = '{mktAPI}'")
+        @Html.Raw($"var selCur='{Model._Curr}'")
+        @Html.Raw($"var _selLang='{Model._LangShort}'")
+        @Html.Raw($"var _selCountry='{Model._Country}'")
+        @Html.Raw($"var ethScanPre='{ethScanPre}'")
+
+          @Html.Raw($"var __qf = 4")
+    @Html.Raw($"var __bf = 4")
+    @Html.Raw($"var __nf = 18")
+    @Html.Raw($"var __uf = 6")
+    </script>
+    <script src="~/pr/js/beta-time.js"></script>
+    <script src="~/pr/js/timmer-deposit.js"></script>
+    <script src="~/pr/js/popper.min.js"></script>
+    <script src="~/pr/js/header-fixed.js"></script>
+    <script src="~/pr/js/tooltip.js"></script>
+    <script src="~/pr/js/moment.js"></script>
+    <script src="~/js/toastr.js"></script>
+    <script src="~/pr/js/GeneralConfig.js"></script>
+    <script src="~/pr/js/onetimeLoad.js"></script>
+    @if (TempData["ToastMsg"] != null)
+    {
+        <script>
+            var success = @((TempData["ToastMsg"] != null).ToString().ToLower());
+            if (success == true) {
+                var jsonToast = JSON.parse(decodeHtml('@TempData["ToastMsg"]'));
+                CreateToasterMessage(jsonToast.MsgTitle, jsonToast.MsgBody, jsonToast.MsgType);
+            }
+        </script>
+    }
+    @if (!Model._CookieConsent)
+    {
+        <script src="~/js/cookie.js"></script>
+    }
+   
+    @await RenderSectionAsync("Scripts", required: false)
+    @*These Scripts should be called at the end of Page Rendering*@
+    @* <script>formateAll();</script>*@
+
+</body>
+</html>

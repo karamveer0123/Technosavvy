@@ -1,0 +1,211 @@
+﻿@model vmWithdraw
+@{
+    ViewData["Title"] = "WithdrawCrypto";
+    var Amt = Model.Amount;
+    var extA = Model.AddBalance;
+    var na = Model.Token != null ? Model.Token.Code : "";
+    Console2.WriteLine_Green($"IsAll - {Model.IsAll}");
+    Console2.WriteLine_Green($"Model.IsToken :{Model.IsToken } && Model.AddBalance:{Model.AddBalance}");
+}
+@{
+    ViewData["Title"] = "Withdraw Fiat Easily | Secure and Convenient Transactions";
+}
+
+@section Header {
+    <meta name="description" content="Experience seamless fiat withdrawals. Our secure platform ensures easy and convenient transactions for your financial needs. Start withdrawing now!" />
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Withdraw</span>
+            </span>
+
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">
+                            <div class="acoun-box authenti-box">
+                                <div class="shadow_TechnoSavvy">
+                                    <ol class="progressdiv">
+                                        <li class="step is-active" data-step="1">  Enter Details</li>
+                                        <li class="step" data-step="2"> Summary </li>
+                                        <li class="step" data-step="3"> 2F Verification </li>
+                                        <li class="step" data-step="4"> Confirmation </li>
+                                    </ol>
+                                </div>
+                                <!---------------------------------------------->
+                                <form novalidate class="was-validated" autocomplete="off" asp-action="@Model.ActionMethod" asp-controller="Withdraw" id="frmWithdraw" enctype="multipart/form-data">
+                                    @Html.AntiForgeryToken()
+                                    @Html.HiddenFor(x=>x._Theme)
+                                    @Html.HiddenFor(x=>x.IsFiat)
+                                    @Html.HiddenFor(x=>x.IsToken)
+                                    @Html.HiddenFor(x=>x.RefNarration)
+                                    @Html.HiddenFor(x=>x._CookieConsent)
+                                    @Html.Hidden("na",na)
+                                    @Html.Hidden("bal",Amt)
+                                    @Html.Hidden("AddB",extA)
+                                    <div id="sMsg" asp-validation-summary=All class="text-danger"></div>
+                                    <div id="Msg" class="text-danger"></div>
+                                    <!-- fieldsets -->
+                                    <div class="row">
+                                        <div class="form-card">
+                                            <div class="assetseprate">
+                                                @await Html.PartialAsync("partial/_SelectAssetStep1",Model)
+
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                @if (Model.SupportedNetwork.Count > 0)
+                                                {
+                                                    <div id="dNetwork" class=" form-group mt-3">
+                                                        <label class="form-label">
+                                                            Network
+                                                        </label>
+                                                        <div class="form-select3">
+                                                            <select asp-for=selectedNetwork class="my-select" onchange="NetworkSelected()">
+                                                                @foreach (var sNet in Model.SupportedNetwork)
+                                                                {
+                                                                    <option data-img-src="@string.Concat("/images/coin/coin/",  @sNet.NativeCurrencyCode.ToUpper(),".png")" value=" @sNet.SupportedNetworkId  ">  @sNet.Name  </option>
+                                                                }
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                }
+                                                else
+                                                {
+                                                    <div id="dNetwork" class=" d-none form-group mt-3">
+                                                        <label class="form-label">
+                                                            Network
+                                                        </label>
+                                                        <div class="form-select3">
+                                                            <select asp-for=selectedNetwork class="my-select" onchange="NetworkSelected()">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                }
+                                                <!------select network show wallet address-------->
+                                                
+                                                    @await Html.PartialAsync("partial/_NetAddress",Model)
+                                                 
+                                                <div class="amountseprate">
+                                                    <div class="form-group mt-3">
+                                                        <label class="form-label">Amount</label>
+                                                        <input type="text" class="form-control" placeholder="Enter Amount" asp-for="Amount"
+                                                               aria-describedby="spndHelp">
+                                                        @if (Model.IsToken && Model.Token != null)
+                                                        {
+                                                            <span class="sleft432 text-right width100"> Available Balance: <span id="abal">@Model.WBalance @Model.Token.Code</span></span>
+                                                        }
+                                                        else
+                                                        {
+                                                            @if (Model.IsToken){
+                                                                <span class="sleft432 text-right width100"> Available Balance: <span id="abal"></span></span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="sleft432 text-right width100"> Available Balance: <span id="abal">@Model.WBalance ₹</span></span>
+
+                                                            }
+                                                        }
+
+                                                        @if (!Model.IsFiat)
+                                                        {
+                                                            @if (Model.IB?.NetFee != null)
+                                                            {
+                                                                <span class="sleft432 text-right  width100">Network Fees: <span id="nfee">@Model.IB.NetFee.WithdrawalFee.ToString("#,##0.######") @Model.Token.Code</span></span>
+
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="sleft432 text-right  width100">Network Fees: <span id="nfee"></span></span>
+
+                                                            }
+                                                        }
+
+
+                                                    </div>
+                                                    <!-------------------------------->
+                                                    <!-------------------------------->
+
+                                                    @if (Model.IsToken && Model.AddBalance > 0)
+                                                    {
+                                                        <div id="dAddiAvaGrp" class="form-group mt-4 dflexdiv">
+                                                            <span class="csstime55-text text-left">
+                                                                You have additional <span class="orange" id="dAddi">
+                                                                    @Model.AddBalance.ToString("#0.######")
+                                                                </span> in your other wallets. Do you want to include them also?
+                                                            </span>
+                                                            <span>
+                                                                <div class="form-check form-switch">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" asp-for="IsAll">
+                                                                </div>
+                                                            </span>
+                                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <div id="dAddiAvaGrp" class="form-group mt-4 dflexdiv collapse">
+                                                            <span class="csstime55-text text-left">
+                                                                You have additional <span class="orange" id="dAddi">
+                                                                    @Model.AddBalance.ToString("#0.######")
+                                                                </span> in your other wallets. Do you want to include them also?
+                                                            </span>
+                                                            <span>
+                                                                <div class="form-check form-switch">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" asp-for="IsAll">
+                                                                </div>
+                                                            </span>
+                                                        </div>
+                                                    }
+
+                                                    <!-------------------------------->
+                                                </div>
+                                                <!--------amount div end------------------>
+
+                                            </div>
+                                            <div id="dFiat" class="row">
+                                                @await Html.PartialAsync("partial/_CurrencyTokenINRMethod",Model)
+                                            </div>
+                                            <a name="next" href="javascript:INRStep2();" class="gent-btn"> Continue</a>
+                                            @*<input type="submit"  name="next" value="Next" class=" action-button  gent-btn" />*@
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+            </div>
+        </div>
+        <!----------------------------------------------->
+    </div>
+</section>
+@section Scripts{
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/minjs/with.min.js"></script>
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/clipboard.js"></script>
+        <script src="~/js/select.js"></script>
+        <script src="~/js/with.js"></script>
+        <script src="~/js/images-select.js"></script>
+    }
+
+
+    <script type="text/javascript">
+        $(".my-select").chosen({ width: "100%" });
+    </script>
+       }

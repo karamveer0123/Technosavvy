@@ -1,0 +1,142 @@
+﻿@model vmWalletFundTransfer
+@{
+    ViewData["Title"] = "Funds Transfer";
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Internal Transfer </span>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        @if (Model.Status == false)
+                        {
+                            <div class="funding-form">
+                                <form asp-action="TransferFundInWallet" asp-controller="wallet" class="was-validated" novalidate autocomplete="off">
+                                    @Html.AntiForgeryToken()
+                                    @Html.HiddenFor(x=>x.Code)
+                                    @Html.HiddenFor(x=>x.TokenList)
+                                    @*----------------------*@
+                                    @Html.HiddenFor(x=>x._CookieConsent)
+                                    @Html.HiddenFor(x=>x._Country)
+                                    @Html.HiddenFor(x=>x._Theme)
+
+                                    @*----------------------*@
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                                    <!-------==========================================--------->
+                                    <div class="form-group">
+                                        <label class="lable-name22"> From</label>
+                                        <select asp-for=fromWalletType class="form-select2 form-select" onchange="LoadCoin()" >
+                                            <option selected="">Select Wallet</option>
+                                            <option value="1">Earn Wallet</option>
+                                            <option value="2">Spot  Wallet</option>
+                                            <option value="3">Funding  Wallet</option>
+                                        </select>
+
+                                    </div>
+                                    <!-------==========================================--------->
+                                    <div id="select100per" class="form-group mt-3">
+                                        <label  class="form-label">Select the token you would linke to transfer</label>
+                                        <div class="input-group mb-3">
+                                            <div class=" form-select3 ">
+                                                <select class="d-none" onchange="GetBalance()" asp-for=selectedCoin>
+                                                    <option>Select Token</option>
+                                                </select>
+                                            </div>
+                                            <input type="text" onchange="Check()" auto class="form-control" placeholder="Enter Amount" asp-for="Amount" aria-describedby="spndHelp">
+                                        </div>
+                                        <span id="dbal" class="sleft432 float-right"> </span>
+                                    </div>
+
+                                    <!-------==========================================--------->
+                                    <!-----------------tab div--------------------------->
+                                    <!-------==========================================--------->
+
+                                    <div class="form-group ">
+                                        <!-------==========================================--------->
+                                        <div id="widrtab44div">
+                                            <label for="exampleInputSpend" class="lable-name22"> Transfer to</label>
+                                            <!-------==========================================--------->
+                                            <div class="tab-pane active" id="imgone11">
+                                                <!-------==========================================--------->
+                                                <div class="form-group mt-4">
+                                                    <label class="lable-name22">To</label>
+                                                    <select asp-for="toWalletType"  onchange="Check()" class="form-select2 form-select" aria-label="Default select example">
+                                                        <option value="1">Earn Wallet</option>
+                                                        <option value="2">Spot  Wallet</option>
+                                                        <option value="3">Funding  Wallet</option>
+                                                    </select>
+                                                </div>
+                                                <!-------==========================================--------->
+
+                                                <!-------==========================================--------->
+                                                <button id="btnGo" disabled class="gent-btn mt-3" type="submit"> Confirm </button>
+                                                <!-------==========================================--------->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-------==========================================--------->
+                                    <!---------------------------close tab div----------------->
+
+                                </form>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="css77buy-box">
+                                <!---------confirmation on process--------------------->
+                                <div class="confpenddiv">
+                                    <div class="modegred34">
+                                        <div class="vericond432"> <i class="fa fa-check d-green" aria-hidden="true"></i></div>
+                                        <h5 class="basegreen">Transfer Successfull!</h5>
+                                       @* <div class="specdivid mt-2">
+                                            <span>Transaction ID </span>
+                                            <span><a href="transaction.html">45bghjdf2145 </a></span>
+                                        </div>*@
+                                        <!-------------------------------------------------------------------->
+                                        <div class="csstime55-dep mt-2 text-center">Transfer Confirmed for <span class="orange">@Model.Amount @Model.Code.ToUpper()</span> !</div>
+                                    </div>
+                                    <!-------------------------------------------------------------------->
+                                    <div class="dflexcenter2">
+                                        <button class="withsumm-btn  mt-4 " type="button" onclick="window.location.href='index'">Acknowledge</button>
+                                    </div>
+                                    <!-------------------------------------------------------------------->
+                                </div>
+
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+            </div>
+        </div>
+        <!----------------------------------------------->
+    </div>
+</section>
+
+@section Scripts{
+
+    @if (ConfigEx.ShouldMini)
+    {   
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/minjs/trans.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+        <script src="~/js/trans.js"></script>
+    }
+ 
+    
+
+}

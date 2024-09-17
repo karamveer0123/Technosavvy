@@ -1,0 +1,840 @@
+﻿@using TechnoApp.Ext.Web.UI.Static;
+@model vmBaseTrade
+@{
+    var vmCurrOptions = new vmCurrencyOptions { CurrencyNames = Model._CurrencyList, SelectedCurrency = Model._Curr };
+    var mktVal = $"{ConfigEx.Config.GetSection("DataStream").Value}/Stream?";
+    var mktAPI = $"{ConfigEx.Config.GetSection("DataStream").Value}/Market/";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>@ViewData["Title"] - TechnoApp</title>
+    @await RenderSectionAsync("Header",required:false)
+    <!--favicon-->
+    <link rel="icon" href="~/images/TechnoSavvy-token.png" type="image/png">
+    <!--My-Style-CSS-->
+    <link href="~/css/intlTelInput.css" rel="stylesheet">
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/fonts/fontfamilystyle.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/trade.css">
+    <link rel="stylesheet" href="~/css/css.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/dashboard.css">
+    <link rel="stylesheet" href="~/css/toastr.css">
+    <link rel="stylesheet" href="~/css/select-1.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    @*<link rel="stylesheet" href="~/css/academy-page.css">*@
+    @*<link rel="stylesheet" href="~/css/media-library.css">*@
+    <link rel="stylesheet" href="~/css/toastr.css">
+    @await RenderSectionAsync("Styles", required: false)
+
+    @*ToDo: Arjun, This should be moved to our server using npm*@
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!--My-Style-CSS-->
+    @if (Model._Theme == eThemeName.Dark.ToString())
+    {
+        <!--My-Style-CSS Light-->
+        <link rel="stylesheet" id="themeChange" href="~/css/dark-theme-root.css">
+    }
+    else
+    {
+        <!--My-Style-CSS Dark-->
+        <link rel="stylesheet" id="themeChange" href="~/css/light-theme-root.css">
+    }
+
+
+
+</head>
+<body>
+
+    @if (!Model._CookieConsent)
+    {
+
+        <div class="modal bottom token  fade show" id="TechnoSavvy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body cookie-text">
+                        <p> "TechnoApp and selected third parties use cookies or similar technologies for technical purposes, to enhance site navigation, analyze site usage, assist in all marketing efforts, and for other purposes as specified in the <a asp-controller="home" asp-action="privacy-policy"> Privacy Policy" </a>  <a class="default-btn_all-cookies forward-btn" data-ajax="true" data-ajax-method="POST" asp-action="AcceptCookie" asp-controller="Home" data-bs-dismiss="modal" aria-label="Close">Accept all cookies <i class="fa fa-arrow-circle-right"></i><span></span> </a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <section id="myHeader" class="menu-section">
+        <div class="container-fluid d-none d-lg-block">
+            <div class="row">
+                <div class="top-meu-box">
+                    <div class="top-menu-left">
+                        @if (Model._Theme == eThemeName.Light.ToString())
+                        {
+                            <div class="logo-top "> <a class="navbar-brand" href="/"><img id="mlogo" src="../images/blogo.png"></a></div>
+                        }
+                        else
+                        {
+                            <div class="logo-top "> <a class="navbar-brand" href="/"><img id="mlogo" src="../images/wlogo.png"></a></div>
+                        }
+                        <div class="menu-top">
+                            <nav class="navbar navbar-expand-lg navbar-light">
+                                <div class="menu">
+                                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse menu-collapse" id="navbarSupportedContent">
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                           
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="about-TechnoSavvy" asp-action="index">About TechnoSavvy</a>
+                                            </li>
+                                            <li class="nav-item wallet-top  dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Buy </a>
+                                                <ul class="dropdown-menu dropdown-menu-css44 top-navbar css-inline" data-popper-placement="bottom-start">
+                                                    <li><a class="dropdown-item   dropdown-item-css44" asp-controller="Buy" asp-action="Index" asp-route-code="TechnoSavvy"><img src="../images/buynav-icon1.png" class="head-icon fa"> Buy TechnoSavvy</a></li>
+                                                    <li><a class="dropdown-item" asp-controller="Buy" asp-action="Index"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy </a></li>
+                                                    <li><a class="dropdown-item" asp-controller="Convert" asp-action="Index"><i class="fa fa-exchange" aria-hidden="true"></i> Convert </a></li>
+                                                    <li><a class="dropdown-item" asp-controller="Deposit" asp-action="Index"> <i class="fa fa-briefcase" aria-hidden="true"></i> Deposit</a></li>
+                                                    <li>
+                                                        <a class="dropdown-item" asp-controller="Withdraw" asp-action="Index">
+                                                            <i class="fa fa-money" aria-hidden="true"></i>
+                                                            Withdraw
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="academy" asp-action="Index">Academy</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link " asp-controller="Market" asp-action="index">Market</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link tradeMenu" asp-controller="trade" asp-action="index">Trade</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="cashback" asp-action="index">Cashback</a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="top-menu-right">
+
+                        <div id="top-navbar" class="top-navbar">
+                            <div class="top-navbar">
+                                @if (Model._SessionHash.IsNullOrEmpty())
+                                {
+                                    <span class="login-top"><a asp-action="LogIn" asp-controller="Login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login </a></span>
+                                    <span class="login-top"><a asp-action="RegisterUser" asp-controller="Signup"><i class="fa fa-file-text-o" aria-hidden="true"></i> Signup </a></span>
+                                }
+                                else
+                                {
+                                  
+                                    <span class="wallet-top">
+                                        <div id="wallet-top" class="dropdown">
+                                            <a class="btn  dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="true">
+                                                <i class="fa fa-credit-card" aria-hidden="true"></i>    Wallet
+                                            </a>
+
+                                            <ul class="dropdown-menu dropdown-menu-css44 css-inline" data-popper-placement="bottom-end" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(-43px, 28px);">
+                                                <li><a class="dropdown-item   dropdown-item-css44" href="@Url.Action("Index","Wallet")"><i class="fa fa-search" aria-hidden="true"></i> Overview</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("SpotWallet","Wallet")"><i class="fa fa-credit-card" aria-hidden="true"></i> Spot Wallet</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("FundingWallet","Wallet")"><i class="fa fa-inbox" aria-hidden="true"></i> Funding Wallet</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("EarnWallet","Wallet")"><i class="fa fa-database" aria-hidden="true"></i> Earn Wallet</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("RequestHistory","Wallet")"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i> Request History</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("Transaction","Wallet")"><i class="fa fa-table" aria-hidden="true"></i> Transactional History</a></li>
+                                                @*<li><a class="dropdown-item" href="@Url.Action("AccountStatement","Wallet")"> <i class="fa fa-file-text-o" aria-hidden="true"></i> Account Statement</a></li>*@
+                                            </ul>
+                                        </div>
+                                    </span>
+                                    <span class="wallet-top">
+                                        <div class="dropdown">
+                                            <a class="btn  dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="true">
+                                                <i class="fa fa-first-order" aria-hidden="true"></i>  Order
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-css44 css-inline" data-popper-placement="bottom-end" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(-43px, 28px);">
+                                                <li><a class="dropdown-item" href="@Url.Action("Open-Orders","Wallet")"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> Open Orders</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("Orders-History","Wallet")"><i class="fa fa-history" aria-hidden="true"></i> Orders History</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("Trades","Wallet")"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Trades </a></li>
+                                            </ul>
+                                        </div>
+                                    </span>
+                                    <span class="wallet-top">
+                                        <div id="wallet-top" class="dropdown">
+                                            <a class="btn  dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="true">
+                                                <i class="fa fa-user-circle" aria-hidden="true"></i> @string.Concat(" ",Model._NickName)
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menuuser33  css-inline" data-popper-placement="bottom-end">
+                                                @*@Url.Action("User-Profile","kycuser")*@
+                                                <li>
+                                                    <span class="dropdown-item comsmaldiv dropdown-item-css44 orange">
+                                                        <span><i class="fa fa-user" aria-hidden="true"></i> @string.Concat($"{Model._UserName.Substring(0,2)}","***@",$"{Model._UserName.Split('@')[1]}")</span>
+
+                                                        <span class="orange comsmal33">
+                                                            <i class="fa fa-users" aria-hidden="true"></i>Community
+                                                        </span>
+
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item   userflex33    " href="@Url.Action("index","kycuser")">
+                                                        <i class="fa fa-id-card" aria-hidden="true"></i> Identification
+                                                        @if (Model._IsKYC)
+                                                        {
+                                                            <span class="css44-protic teal"> <i class="fa fa-check teal " aria-hidden="true"></i> Verified</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="css44-protic basered"><i class="fa fa-times basered" aria-hidden="true"></i> Unverified</span>
+                                                        }
+
+                                                    </a>
+                                                </li>
+
+
+                                                <li><a class="dropdown-item" href="@Url.Action("index","Settings")"> <i class="fa fa-cog" aria-hidden="true"></i> Setting & Security</a></li>
+                                                <li><a class="dropdown-item" href="@Url.Action("reward","referral")"> <i class="fa fa-gift" aria-hidden="true"></i> Reward center<span class="css44-protic"><i class="fa fa-check" aria-hidden="true"></i></span></a></li>
+                                                @* <li><a class="dropdown-item" asp-controller="policy" asp-action="referral-policy"> <i class="fa fa-user-plus" aria-hidden="true"></i> Referral</a></li>*@
+                                                <li><a class="dropdown-item" asp-action="LogOut" asp-controller="Login"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                                            </ul>
+                                        </div>
+                                    </span>
+                                    <span class="profile-top">
+                                        <div class="noti-message">
+                                            <a href="#" class="link22 noti-btn"><i class="fa fa-bell-o" aria-hidden="true"></i> <span class="btn__badge pulse-button d-none"  data-count="0" id="NotifyCount"></span></a>
+                                            <div class="popup" tabindex="-1" id="notificationMsgBody-Main">
+                                                <div class="not-title">
+                                                    <span class="placeholder" style="width:100px;height:5px;"></span> <span> <a href="javascript:void(0)" class="placeholder" style="width:80px;height:5px;"></a></span>
+                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <div class="notidiv33">
+                                                            <div class="noitileft44 w-100">
+                                                                <span class="not-head3 placeholder col-12 mb-1" style="width:100%;height:5px;"> </span>
+                                                                <span class="note-text2 placeholder col-12  mb-1" style="width:80%;height:5px;"> </span>
+                                                                <span class="note-text2 placeholder col-12 mb-1" style="width:60%;height:5px;"> </span>
+                                                            </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="notidiv33">
+                                                            <div class="noitileft44 w-100">
+                                                                <span class="not-head3 placeholder col-12 mb-1" style="width:100%;height:5px;"> </span>
+                                                                <span class="note-text2 placeholder col-12  mb-1" style="width:80%;height:5px;"> </span>
+                                                                <span class="note-text2 placeholder col-12 mb-1" style="width:60%;height:5px;"> </span>
+                                                            </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="notidiv33">
+                                                            <div class="noitileft44 w-100">
+                                                                <span class="not-head3 placeholder col-12 mb-1" style="width:100%;height:5px;"> </span>
+                                                                <span class="note-text2 placeholder col-12  mb-1" style="width:80%;height:5px;"> </span>
+                                                                <span class="note-text2 placeholder col-12 mb-1" style="width:60%;height:5px;"> </span>
+                                                            </div>
+                                                    </li>
+                                                    
+
+                                                </ul>
+                                                <div class="mesdiv43"> <span class="placeholder " style="width:150px;height:5px;"> <strong></strong> </span>  <a href="javascript:void(0)" class="btn-view23 placeholder" style="width:150px;height:5px;"> </a> </div>
+
+                                            </div>
+                                        </div>
+                                    </span>
+
+                                }
+                                <span>
+                                    <div class="dropdown" style="width:79px;">
+                                        <a class=" dropdown-toggle" type="button" id="drpCountry" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <img src="../images/coun-flags/@string.Concat(Model._Country.ToLowerCaseTrimWhiteSpace(),".png")" class="topflag"> <span id="countryTxt" class="ms-1 text-uppercase">@Model._Country</span>
+                                        </a>
+                                        @if (Model._SessionHash.IsNullOrEmpty())
+                                        {
+                                            <div id="curCuntry">
+                                            </div>
+                                        }
+                                    </div>
+                                </span>
+
+                                <span>
+                                    <div class="dropdown">
+                                        <span class=" dropdown-toggle ms-0" type="button" id="ddmbCurr" data-bs-toggle="dropdown" aria-expanded="false">
+                                            @Model._Curr
+                                        </span>
+                                        <div id="curOp">
+                                            @*@await Html.PartialAsync("_CurrOption",vmCurrOptions)*@
+                                        </div>
+                                    </div>
+                                </span>
+                                @*//------------------------- Change Menu*@
+                                <div class="trade-light-icon">
+                                    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+                                    <label for="openSidebarMenu" class="sidebarIconToggle">
+                                        <i class="fa fa-sun-o" aria-hidden="true"></i>
+                                    </label>
+                                    <div id="sidebarMenu">
+                                        <div class="tradeleftdt232-div">
+                                            <div class="thenmecs32wg">
+                                                <span>Theme </span> <span>
+                                                    <a data-ajax="true" data-ajax-method="POST" data-ajax-success="Themechange" asp-action="ThemeChange" asp-controller="Home">
+                                                        @if (Model._Theme == eThemeName.Light.ToString())
+                                                        {
+                                                            <i id="chMoon" class="fa fa-moon-o" aria-hidden="true"></i>
+                                                            <i id="chSun" class="fa fa-sun-o d-none" aria-hidden="true"></i>
+                                                        }
+                                                        @if (Model._Theme == eThemeName.Dark.ToString())
+                                                        {
+                                                            <i id="chMoon" class="fa fa-moon-o d-none" aria-hidden="true"></i>
+                                                            <i id="chSun" class="fa fa-sun-o" aria-hidden="true"></i>
+                                                        }
+
+                                                    </a>
+                                                </span>
+                                            </div>
+
+                                            <div class="thenmecs32lay">
+                                                <div class="themetitl43e">Graph Theme</div>
+                                                <div class="divthemar">
+                                                    <span><a href="javascript:void(0)" data-color="#f6465d" data-second="#328774" data-active="purple" class="themebox themebox-purple"></a></span>
+                                                    <span><a href="javascript:void(0)" data-color="#ae26e0" data-second="#95b605" data-active="red" class="themebox themebox-red"></a></span>
+                                                    <span><a href="javascript:void(0)" data-color="#f1288d" data-second="#0faaf1" data-active="blue" class="themebox themebox-blue"></a></span>
+                                                </div>
+                                            </div>
+                                            <div class="thenmecs32lay">
+                                                <div class="themetitl43e">Layout </div>
+                                                <div class="divthemar">
+                                                    <span> <a href="javascript:void(0)" class="clasicdev43ws classic"> <span class="clasdesi564"> <img src="../images/classic.png"> </span> <span> Classic </span></a> </span>
+                                                    <span> <a href="javascript:void(0)" class="clasicdev43ws advance"> <span class="clasdesi564"> <img src="../images/advance.png"> </span>  <span>  Advanced</span></a> </span>
+                                                    <span> <a href="javascript:void(0)" class="clasicdev43ws fullscreen"> <span class="clasdesi564">  <img src="../images/full.png"> </span>  <span>Fullscreen </span></a> </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @*//-------------------------- Change Ends*@
+                                <span>
+
+                                    @*<a data-ajax="true" data-ajax-method="POST" data-ajax-success="Themechange" asp-action="ThemeChange" asp-controller="Home">
+                                    @if (Model._Theme == eThemeName.Light.ToString())
+                                    {
+                                    <i id="chMoon" class="fa fa-moon-o" aria-hidden="true"></i>
+                                    <i id="chSun" class="fa fa-sun-o d-none" aria-hidden="true"></i>
+                                    }
+                                    @if (Model._Theme == eThemeName.Dark.ToString())
+                                    {
+                                    <i id="chMoon" class="fa fa-moon-o d-none" aria-hidden="true"></i>
+                                    <i id="chSun" class="fa fa-sun-o" aria-hidden="true"></i>
+                                    }
+
+                                    </a>*@
+
+                                </span>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="container-fluid d-block d-lg-none">
+            <div class="row">
+                <div class="col-4">
+                    @if (Model._Theme == eThemeName.Light.ToString())
+                    {
+                        <div class="logo-top "> <a class="navbar-brand" href="/"><img id="mlogo" src="../images/blogo.png"></a></div>
+                    }
+                    else
+                    {
+                        <div class="logo-top "> <a class="navbar-brand" href="/"><img id="mlogo" src="../images/wlogo.png"></a></div>
+                    }
+                </div>
+
+                <div class="col-8">
+                    <div class="d-flex justify-content-end authorized-user">
+                        @if (Model._SessionHash.IsNullOrEmpty())
+                        {
+                            <span class="user-mobile">
+                                <div class="d-flex gap-2 align-items-center">
+                                    <span class="login-top">
+                                        <a asp-action="LogIn" asp-controller="Login">
+                                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                            Login
+                                        </a>
+                                    </span>
+                                    <span class="login-top">
+                                        <a asp-action="RegisterUser" asp-controller="Signup">
+                                            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                            Signup
+                                        </a>
+                                    </span>
+                                    <div>
+                            </span>
+
+                        }
+                        else
+                        {
+
+                            <span class="user-mobile user-mobile-sec d-flex g-2">
+                                <div class="btn-group me-3">
+                                    <div role="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <!-- <i class="fa fa-user-circle" aria-hidden="true"></i> -->
+                                        <img src="~/images/user.png" alt="" width="27" height="27" class="rounded-circle">
+                                    </div>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li>
+                                            <span class="dropdown-item" href="javascript:void(0)">
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                                @string.Concat($"{Model._UserName.Substring(0,2)}","***@",$"{Model._UserName.Split('@')[1]}")
+                                            </span>
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item  kyc-menu" href="@Url.Action("index","kycuser")">
+                                                <i class="fa fa-id-card" aria-hidden="true"></i>
+                                                Identification
+                                                @if (Model._IsKYC)
+                                                {
+                                                    <span class="css44-protic teal"> <i class="fa fa-check teal " aria-hidden="true"></i> Verified</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="css44-protic basered"><i class="fa fa-times basered" aria-hidden="true"></i> Unverified</span>
+                                                }
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("index","Settings")">
+                                                <i class="fa fa-lock" aria-hidden="true"></i>
+                                                Settings &amp; Security
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("reward","referral")">
+                                                <i class="fa fa-user-plus"
+                                               aria-hidden="true"></i> Referral
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-action="LogOut" asp-controller="Login"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                @*<div class="btn-group">
+                            <div class="mobile-notify dropListMob"  data-country="NotificationMobile"  data-bs-toggle="modal" data-bs-target="#currencyMobileList">
+                            <i class="fa fa-bell-o" aria-hidden="true"></i>
+                            <span class="notify-count d-none"></span>
+                            </div>
+                            </div>*@
+                            </span>
+                        }
+                        <div class="nav-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="d-block d-lg-none">
+            <div id="mobile-blkdrop">
+                <div class="TechnoSavvy-mobile-menu">
+                    <div class="nav-icon mb-3">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="row g-2">
+                        @if (Model._SessionHash.IsNullOrEmpty())
+                        {
+
+                            <div class="col-6">
+                                <span class="login-top">
+                                    <a asp-action="LogIn" asp-controller="Login">
+                                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                        Login
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="col-6">
+                                <span class="login-top">
+                                    <a asp-action="RegisterUser" asp-controller="Signup">
+                                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                        Signup
+                                    </a>
+                                </span>
+                            </div>
+                        }
+                        else
+                        {
+                        }
+                    </div>
+                    <nav id="menu-mobile" class="left">
+                        <ul>
+                            <li>
+                                <a asp-controller="about-TechnoSavvy" asp-action="index">
+                                    About TechnoSavvy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Buy <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a asp-controller="Buy" asp-action="Index" asp-route-token="TechnoSavvy">
+                                            <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                            Buy
+                                            TechnoSavvy
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Buy" asp-action="Index">
+                                            <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                            Buy
+                                        </a>
+                                    </li>
+                                    <li><a class="dropdown-item" asp-controller="Convert" asp-action="Index"><i class="fa fa-exchange" aria-hidden="true"></i> Convert </a></li>
+                                    <li>
+                                        <a asp-controller="Deposit" asp-action="Index">
+                                            <i class="fa fa-search" aria-hidden="true"></i> Deposit
+                                                                           </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Withdraw" asp-action="Index">
+                                            <i class="fa fa-money" aria-hidden="true"></i>
+                                            Withdraw
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li><a asp-controller="academy" asp-action="Index">Academy</a></li>
+                            <li><a asp-controller="Market" asp-action="index">Market</a></li>
+                            <li><a asp-controller="trade" asp-action="index">Trade</a></li>
+                            <li><a asp-controller="cashback" asp-action="index">Cashback</a></li>
+                            @if (Model._SessionHash.IsNullOrEmpty())
+                            {
+
+                            }
+                            else
+                            {
+
+
+
+
+                                <li>
+                                    <a href="#">
+                                        Wallet <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    </a>
+
+                                    <ul>
+                                        <li>
+                                            <a href="@Url.Action("Index","Wallet")">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                                Overview
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("SpotWallet","Wallet")">
+                                                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                                Spot
+                                                Wallet
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("FundingWallet","Wallet")">
+                                                <i class="fa fa-money" aria-hidden="true"></i>
+                                                Funding
+                                                Wallet
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("EarnWallet","Wallet")">
+                                                <i class="fa fa-folder-open" aria-hidden="true"></i>
+                                                Earn
+                                                Wallet
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Transaction","Wallet")">
+                                                <i class="fa fa-table" aria-hidden="true"></i>
+                                                Transaction
+                                                History
+                                            </a>
+                                        </li>
+                                        @*<li><a href="@Url.Action("AccountStatement","Wallet")"> <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                    Account
+                                    Statement</a></li>*@
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Order <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    </a>
+                                    <ul>
+                                        <li><a href="@Url.Action("Open-Orders","Wallet")"><i class="fa fa-envelope-open-o" aria-hidden="true"></i> Open Order</a></li>
+                                        <li><a href="@Url.Action("Orders-History","Wallet")"><i class="fa fa-history" aria-hidden="true"></i> Order History</a></li>
+                                        <li><a href="@Url.Action("Trades","Wallet")"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Trade History</a></li>
+
+                                    </ul>
+                                </li>
+                            }
+
+                            <li>
+
+                                <a href="javascript:void(0)" class="dropListMob d-flex align-items-center justify-content-between" id="ThemeMobileRes" data-country="TradeTheme" data-bs-toggle="modal" data-bs-target="#currencyMobileList">
+                                    Theme
+
+                                    <i class="fa fa-sun-o" aria-hidden="true"></i>
+
+
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="dropListMob" id="CountryMobileRes" data-country="Country" data-bs-toggle="modal" data-bs-target="#currencyMobileList">
+                                    <img src="../images/coun-flags/@string.Concat(Model._Country.ToLowerCaseTrimWhiteSpace(),".png")" class="topflag"> <span id="countryTxt2" class="ms-1 text-uppercase">@Model._Country</span>
+                                </a>
+                            </li>
+
+                            <li><a href="javascript:void(0)" class="dropListMob" data-country="Currency" data-bs-toggle="modal" data-bs-target="#currencyMobileList" id="CurrMobileRes">Currency (@Model._Curr)</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="TechnoSavvy-mobile-blkdrop"></div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+    </section>
+
+    @RenderBody()
+
+    @* <div id="backdrop" class="d-none">
+    <div class="load-center loading">
+    <div class="spinner-border" role="status">
+    <span class="sr-only"></span>
+    </div>
+    </div>
+    </div>*@
+    <div id="backdrop" class="d-none">
+        <div class="ring">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+            <div class="loadlogo">
+                <img src="../images/b-logo.png" width="60px">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal usddiv23 right fade modelRightToLeft" id="currencyMobileList" tabindex="-1" aria-labelledby="currencyMobileListLabel" aria-hidden="true">
+        <div class="modal-dialog messagediv34">
+            <div class="modal-content ">
+                <div class="modal-head">
+                    <button type="button" class="btn-close close32bt" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-0">
+                    <div id="currMob">
+                    </div>
+                    <div id="countryMob">
+                        <div class="white">Country</div>
+                    </div>
+                    <div id="NotificationMobileList" class="top-navbar">
+                        <div class="noti-message w-100">
+                            <div class="not-title px-0">
+                                <span class="placeholder" style="width:100px;height:5px;"></span> <span> <a href="javascript:void(0)" class="placeholder" style="width:80px;height:5px;"></a></span>
+                            </div>
+                            <ul>
+                                <li class="px-0">
+                                    <div class="notidiv33">
+                                        <div class="noitileft44 w-100">
+                                            <span class="not-head3 placeholder col-12 mb-1" style="width:100%;height:5px;"> </span>
+                                            <span class="note-text2 placeholder col-12  mb-1" style="width:80%;height:5px;"> </span>
+                                            <span class="note-text2 placeholder col-12 mb-1" style="width:60%;height:5px;"> </span>
+                                        </div>
+                                </li>
+                                <li class="px-0">
+                                    <div class="notidiv33">
+                                        <div class="noitileft44 w-100">
+                                            <span class="not-head3 placeholder col-12 mb-1" style="width:100%;height:5px;"> </span>
+                                            <span class="note-text2 placeholder col-12  mb-1" style="width:80%;height:5px;"> </span>
+                                            <span class="note-text2 placeholder col-12 mb-1" style="width:60%;height:5px;"> </span>
+                                        </div>
+                                </li>
+                                <li class="px-0">
+                                    <div class="notidiv33">
+                                        <div class="noitileft44 w-100">
+                                            <span class="not-head3 placeholder col-12 mb-1" style="width:100%;height:5px;"> </span>
+                                            <span class="note-text2 placeholder col-12  mb-1" style="width:80%;height:5px;"> </span>
+                                            <span class="note-text2 placeholder col-12 mb-1" style="width:60%;height:5px;"> </span>
+                                        </div>
+                                </li>
+
+                            </ul>
+                            <div class="mesdiv43"> <span class="placeholder " style="width:150px;height:5px;"> <strong></strong> </span>  <a href="javascript:void(0)" class="btn-view23 placeholder" style="width:150px;height:5px;"> </a> </div>
+                            <!-- <a class="close" href="#">Close</a> -->
+                        </div>
+                    </div>
+
+                    <div id="TradeTheme" class="top-navbar">
+                        <div class="tradeleftdt232-div">
+                            <div class="thenmecs32wg">
+                                <span>Theme </span> <span>
+                                    <a data-ajax="true" data-ajax-method="POST" data-ajax-success="Themechange" asp-action="ThemeChange" asp-controller="Home">
+                                        @if (Model._Theme == eThemeName.Light.ToString())
+                                        {
+                                            <i id="chMoon2" class="fa fa-moon-o" aria-hidden="true"></i>
+                                            <i id="chSun2" class="fa fa-sun-o d-none" aria-hidden="true"></i>
+                                        }
+                                        @if (Model._Theme == eThemeName.Dark.ToString())
+                                        {
+                                            <i id="chMoon2" class="fa fa-moon-o d-none" aria-hidden="true"></i>
+                                            <i id="chSun2" class="fa fa-sun-o" aria-hidden="true"></i>
+                                        }
+
+                                    </a>
+                                </span>
+                            </div>
+
+                            <div class="thenmecs32lay">
+                                <div class="themetitl43e">Graph Theme</div>
+                                <div class="divthemar">
+                                    <span><a href="javascript:void(0)" data-color="#f6465d" data-second="#328774" data-active="purple" class="themebox themebox-purple"></a></span>
+                                    <span><a href="javascript:void(0)" data-color="#ae26e0" data-second="#95b605" data-active="red" class="themebox themebox-red"></a></span>
+                                    <span><a href="javascript:void(0)" data-color="#f1288d" data-second="#0faaf1" data-active="blue" class="themebox themebox-blue"></a></span>
+                                </div>
+                            </div>
+                            <div class="thenmecs32lay">
+                                <div class="themetitl43e">Layout </div>
+                                <div class="divthemar">
+                                    <span> <a href="javascript:void(0)" class="clasicdev43ws classic"> <span class="clasdesi564"> <img src="../images/classic.png"> </span> <span> Classic </span></a> </span>
+                                    <span> <a href="javascript:void(0)" class="clasicdev43ws advance"> <span class="clasdesi564"> <img src="../images/advance.png"> </span>  <span>  Advanced</span></a> </span>
+                                    <span> <a href="javascript:void(0)" class="clasicdev43ws fullscreen"> <span class="clasdesi564">  <img src="../images/full.png"> </span>  <span>Fullscreen </span></a> </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="~/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.unobtrusive-ajax.js"></script>
+    <script type="text/javascript" src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="~/js/signalr/dist/browser/signalr.min.js"></script>
+
+
+
+
+    <script>
+
+        @Html.Raw($"var MktStream = '{mktVal}'")
+        @Html.Raw($"var _fsl = 6")
+
+        @Html.Raw($"var MktAPI = '{mktAPI}'")
+        @Html.Raw($"var selCur='{Model._Curr}'")
+        @Html.Raw($"var _selCountry='{Model._Country}'")
+        @Html.Raw($"var _selLang='{Model._LangShort}'")
+        @Html.Raw($"var favList={Model._favList}")
+    </script>
+    <script>
+        @Html.Raw($"var __q = '{Model.q}';")
+        @Html.Raw($"var __b = '{Model.b}';")
+        @Html.Raw($"var __mCode = '{Model.mCode}';")
+        @Html.Raw($"var __qf = '{Model.qf}';")
+        @Html.Raw($"var __bf = '{Model.bf}';")
+        @Html.Raw($"var __nf = '{Model.nf}';")
+        @Html.Raw($"var __uf = '{Model.uf}';")
+
+        @if (Model.IsUserAuth)
+        {
+            @Html.Raw($" var _qTag = '{Model.QuoteTokenId}';")
+            @Html.Raw($" var _bTag = '{Model.BaseTokenId}';")
+            @Html.Raw($" var _mqt = '{Model.MinQToken}';")
+            @Html.Raw($" var _mbt = '{Model.MinBToken}';")
+            @Html.Raw($" var _mtv = '{Model.MinTradeValue}';")
+            @Html.Raw($" var _ba = '{Model.AvailableBase}';")
+            @Html.Raw($" var _qa = '{Model.AvailableQuote}';")
+            @Html.Raw($" var _bsr = '{Model.Bid_SwapRate}';")
+            @Html.Raw($" var _asr = '{Model.Ask_SwapRate}';")
+            @Html.Raw($" var _cbt = '{Model.CBthreashold}';")
+        }
+        else
+        {
+            @Html.Raw($" var _ba = '0';")
+            @Html.Raw($" var _qa = '0';")
+        }
+
+    </script>
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/owl.carousel.min.js"></script>
+        <script src="~/minjs/marge-all-script.min.js"></script>
+        <script src="~/minjs/moment.min.js"></script>
+        <script src="~/minjs/GeneralConfig.min.js"></script>
+        <script src="~/minjs/tab.min.js"></script>
+        <script src="~/minjs/timmer.min.js"></script>
+        <script src="~/minjs/graph-tv.min.js"></script>
+        <script src="~/js/toastr.js"></script>
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+        <script src="~/minjs/Graph/src/GraphMain.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/moment.js"></script>
+        <script src="~/js/tooltip.js"></script>
+        <script src="~/js/GeneralConfig.js"></script>
+        <script src="~/js/header-fixed.js"></script>
+        <script src="~/js/toastr.js"></script>
+        <script src="~/js/tab.js"></script>
+        <script src="~/js/timmer.js"></script>
+        <script src="~/js/graph-tv.js"></script>
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+        <script src="~/js/Graph/src/GraphMain.js"></script>
+    }
+    @if (TempData["ToastMsg"] != null)
+    {
+        <script>
+                        var success = @((TempData["ToastMsg"] != null).ToString().ToLower());
+            if (success == true) {
+                var jsonToast = JSON.parse(decodeHtml('@TempData["ToastMsg"]'));
+                CreateToasterMessage(jsonToast.MsgTitle, jsonToast.MsgBody, jsonToast.MsgType);
+            }
+        </script>
+    }
+    @if (!Model._CookieConsent)
+    {
+        <script src="~/js/cookie.js"></script>
+    }
+    <script type="text/javascript">$(".my-select").chosen({ width: "100%" });</script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

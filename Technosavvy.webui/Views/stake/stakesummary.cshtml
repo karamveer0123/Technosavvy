@@ -1,0 +1,148 @@
+﻿@model vmMyStaking
+@{
+    ViewData["Title"] = "Optimize Your Returns with Transparent Stake Management";
+}
+@section Header {
+    <meta name="description" content="Explore the summary of your TechnoApp  Stakes for a transparent and optimized staking experience." />
+
+}
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+
+                <span>Staking</span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <form novalidate class="was-validated" autocomplete="off" asp-action="Confirmation" asp-controller="Stake" id="frmStaking" enctype="multipart/form-data">
+                            @Html.AntiForgeryToken()
+                            @Html.HiddenFor(x=>x.Amount)
+                            @Html.HiddenFor(x=>x.selectedStakingSlot.StakingOpportunityId)
+                            @Html.HiddenFor(x=>x.AutoRenew)
+                            @Html.HiddenFor(x=>x.IsIncludeOtherBalance)
+                            @Html.HiddenFor(x=>x.otherBalance)
+                            @Html.HiddenFor(x=>x.Token.TokenId)
+                            <div asp-validation-summary=All class="text-danger"></div>
+                            <!--==============================================-->
+                            <div class="summarydiv">
+                                <!--==============================================-->
+                                <h5>Staking Summary</h5>
+                                <!--==============================================-->
+                                <div class="vericond432"> <img src="@string.Concat("../../images/coin/coin/",Model.Token.Code.ToUpper(),".png")"></div>
+                                <!--==============================================-->
+                                <div class="css77-withdrawlS">
+                                    <div class="csssum-title55"> Subscription Amount</div>
+                                    <div class="csssum-detail55 orange"> @(Model.Amount.ToString("#,##0.###")) @Model.Token.Code</div>
+                                </div>
+                                <!--==============================================-->
+                                <div class="css77-withdrawlS">
+                                    <div class="csssum-title55"> Subscription Date</div>
+                                    <div class="csssum-detail55">@(DateTime.UtcNow.ToString("dd-MMM-yyyy"))</div>
+                                </div>
+                                <!--==============================================-->
+
+                                <div class="css77-withdrawlS">
+                                    <div class="csssum-title55">Value Date</div>
+                                    <div class="csssum-detail55">@(DateTime.UtcNow.AddDays(Model.selectedStakingSlot.Duration + 1).ToString("dd-MMM-yyyy"))</div>
+                                </div>
+                                <!--==============================================-->
+                                <div class="css77-withdrawlS">
+                                    <div class="csssum-title55">Interest End Date</div>
+                                    <div class="csssum-detail55">@(DateTime.UtcNow.AddDays(Model.selectedStakingSlot.Duration).ToString("dd-MMM-yyyy"))</div>
+                                </div>
+                                <!--==============================================-->
+                                <div class="css77-withdrawlS">
+                                    <div class="csssum-title55">Redemption Date</div>
+                                    <div class="csssum-detail55">@(DateTime.UtcNow.AddDays(Model.selectedStakingSlot.Duration + 1).ToString("dd-MMM-yyyy"))</div>
+                                </div>
+                                <!--==============================================-->
+                                <div class="css77-withdrawlS">
+                                    <div class="csssum-title55">Auto-Subscribe</div>
+                                    <div class="csssum-detail55">@(Model.AutoRenew ? "Yes" : "No")</div>
+                                </div>
+                                <!--==============================================-->
+                                <div class="css77-withdrawlS">
+                                    <div class="csssum-title55">Est. APR</div>
+                                    <div class="csssum-detail55">
+                                        <img src="@string.Concat("../../images/coin/coin/",Model.Token.Code.ToUpper(),".png")"> @(Model.selectedStakingSlot.AYPOffered)%
+                                        </div>
+                                    </div>
+                                    <!--==============================================-->
+                                    @if (Model.selectedStakingSlot.Community == eCommunityCategory.Community)
+                                    {
+
+                                        <div class="css77-withdrawlS">
+                                            <div class="csssum-title55">Community Status</div>
+                                            <div class="csssum-detail55 orange">
+                                                @(Model.selectedStakingSlot.Community.ToString())
+                                            </div>
+                                        </div>
+                                    }
+                                @if (Model.selectedStakingSlot.Community == eCommunityCategory.Premimum)
+                                {
+
+                                    <div class="css77-withdrawlS">
+                                        <div class="csssum-title55">Community Status</div>
+                                        <div class="csssum-detail55 teal">
+                                            @(Model.selectedStakingSlot.Community.ToString())
+                                        </div>
+                                    </div>
+                                }
+                                @if (Model.selectedStakingSlot.Community == eCommunityCategory.Standard)
+                                {
+
+                                    <div class="css77-withdrawlS">
+                                        <div class="csssum-title55">Community Status</div>
+                                        <div class="csssum-detail55 blue">
+                                            @(Model.selectedStakingSlot.Community.ToString())
+                                        </div>
+                                    </div>
+                                }
+                                    <!--==============================================-->
+                                    <div class="form-check mt-2 mb-2">
+                                        <input class="form-check-input" type="checkbox" asp-for="IsAgree">
+                                    <label class="lable-name22" for="agreement">
+                                            I have read and agree to <a asp-controller="policy" asp-action="stakingpolicy" class="url-1"> TechnoApp Staking Services Agreement</a>
+                                        </label>
+                                    </div>
+
+                                    <!--==============================================-->
+                                    <div class="dflexdiv">
+                                        <a class=" d-dark action-button" type="button" href="javascript:back();"> Previous</a>
+                                        <input class=" d-orange action-button float-right" type="submit" value="Confirm">
+                                    </div>
+
+                                    <!--==============================================-->
+
+                                </div>
+                        </form>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+
+            </div>
+        </div>
+
+        <!----------------------------------------------->
+
+    </div>
+</section>
+@section Scripts{
+    <script>
+        function back() {
+            $('#frmStaking').prop('action', '/stake');
+            $('#frmStaking').submit();
+        }
+    </script>
+    }

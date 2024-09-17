@@ -1,0 +1,73 @@
+﻿@model vmDeposit
+@{
+    ViewData["Title"] = "Deposit Request Submitted ";
+}
+@section Header {
+    <meta name="description" content="Your deposit request has been successfully submitted through TechnoApp. Track your transaction status and manage deposits seamlessly." />
+
+}
+<section class="section-upload bg2">
+<div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Deposit </span>
+            </span>
+            <!-- <span><a href="#" class="market-title-h4"></a> <i class="fa fa-pie-chart" aria-hidden="true"></i>  Market Overview </span> -->
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">
+                            <!-- progressbar -->
+                          
+<div class="form-card">
+    <div class="confpenddiv">
+        <div class="modegred34">
+            <div class="vericond432"> <i class="fa fa-check d-green" aria-hidden="true"></i></div>
+        </div>
+        <h5 class="green"> Request Submitted</h5>
+        <div class="specdivid mb-3">
+            <span>Request ID </span>
+   <span><a asp-controller="wallet" asp-action="RequestDetail">@Model.ActionMethod </a></span>
+        </div>
+        <div class="csstime55-text mt-3">
+            Your request for <span class="orange"> @Model.Amount INR </span> is submitted.<br>
+            It may take upto 24hrs to reflect in your wallet.
+        </div>
+    </div>
+
+    <div class="dflexcenter2">
+        <a class=" withsumm-btn  mt-2 " type="button" asp-controller="Wallet" asp-action="Index">Acknowledge</a>
+    </div>
+
+</div>
+</div></div></div></div>
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+            </div>
+            </div>
+</div>
+</section>
+@section Scripts{
+
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/clipboard.min.js"></script>
+        <script src="~/minjs/qrcode.min.js"></script>
+        <script src="~/minjs/dep.min.js"></script>
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/clipboard.js"></script>
+        <script src="~/js/qrcode.min.js"></script>
+        <script src="~/js/dep.js"></script>
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+    }
+
+
+}

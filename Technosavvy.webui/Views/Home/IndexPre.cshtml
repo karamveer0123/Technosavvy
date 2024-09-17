@@ -1,0 +1,435 @@
+@model vmBase
+@{
+    Layout = "_LayoutPre";
+
+    var isLogin = Model._SessionHash.IsNOT_NullorEmpty();
+}
+
+
+<section class="banner-section bg1">
+    <div class="container ">
+        <div class="row ">
+
+            <div class="col-lg-8 col-md-6 col-12">
+                <div class="css566-banner-box banner-text">
+                    <h1>TechnoApp Beta <span class="highlight44 orange text-uppercase"> Ready  </span>  </h1>
+                    <h2 class="live-text">Join us as <span class="highlight44 teal">Beta User  </span> now     </h2>
+                    <h4 class="text44">Don't miss out on the opportunity to register and explore the advantages of harnessing the rapid growth of TechnoSavvy Token. Those who join during the launch will be entitled to additional benefits . </h4>
+                    @if(Model._SessionHash.IsNullOrEmpty())
+                    {
+                        <a asp-action="RegisterUser" asp-controller="Signup" class="css566-btn my-3">Join Beta Community</a>
+                    }
+                    else
+                    {
+                        <a asp-action="index" asp-controller="my-TechnoSavvy" class="css566-btn my-3">Join Beta Community</a>
+                    }
+
+
+
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="css566-banner-box banner-text"></div>
+                <div class="stagetop-one">Limited Time <p class="mb-0"> Secure Your Community Token</p></div>
+                <div class="sale-div44">
+                    <div class="nav-price44">Only Limited Token Left </div>
+                    <h3> Claim Up to 50% Bonus in Beta User Invitation.   </h3>
+                    <div class="userdiv34">
+                        <div class="usercount44">
+                            <h2>Last 24hrs Users joined </h2>
+                            <h4>@Model.PrebetaBase.User24Hrs.ToString("#,##0")</h2>
+                        </div>
+                        <div class="usercount44">
+                            <h2>Total Users joined </h2>
+                            <h4>@Model.PrebetaBase.UserTotal.ToString("#,##0")</h2>
+                        </div>
+                        <div class="usercount44">
+                            <h2>TechnoSavvy Tokens Secured in last 24 Hrs </h2>
+                            <h4>@string.Concat(@Model.PrebetaBase.Token24Hrs.ToString("#,##0.00").Split(".")[0].Trim(),".")<small>@string.Concat(Model.PrebetaBase.Token24Hrs.ToString("0.00").Split('.')[1])</small> </h2>
+                        </div>
+
+
+
+                        <div class="usercount44">
+                            <h2>Total TechnoSavvy Token Secured</h2>
+                            <h4>@string.Concat(@Model.PrebetaBase.TokenTotal.ToString("#,##0.00").Split(".")[0]).<small>@string.Concat(@Model.PrebetaBase.TokenTotal.ToString("0.00").Split(".")[1])</small> </h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+  
+</section>
+
+<!---------------------------------------------------------------------->
+<section class="what-TechnoSavvy-section bg2">
+    <div class="container">
+        <div class="row">
+            <div class="css566-heading mb-3">
+                <h2 class="text-center ">Why Join as a Beta User?</h2>
+                <span class="text-center ">
+                    <div class="divider"></div>
+                </span>
+            </div>
+        </div>
+        <div class="row benifit-div33   mt-3">
+            <div class="benefit-box">
+                <span class="ben-img55"> <img src="~/pr/images/Early-Access-Advantage.png"></span>
+                <span class="ben-text55">
+                    <h2> Early Access Advantage</h2>
+                    <p> Gain exclusive entry to our trading platform ahead of the public launch. </p>
+                </span>
+            </div>
+
+
+            <div class="benefit-box">
+                <span class="ben-img55"> <img src="~/pr/images/Earn-Cashback.png"></span>
+                <span class="ben-text55">
+                    <h2> Earn Cashback</h2>
+                    <p> Trade on TechnoApp and enjoy cashback rewards with every transaction.  </p>
+                </span>
+            </div>
+
+            <div class="benefit-box">
+                <span class="ben-img55"><img src="~/pr/images/Performance-Testing.png"></span>
+                <span class="ben-text55">
+                    <h2>Performance Testing</h2>
+                    <p>  Contribute to enhancing the platform's stability and performance through rigorous testing.  </p>
+                </span>
+            </div>
+
+            <div class="benefit-box">
+                <span class="ben-img55"><img src="~/pr/images/Enhanced-Trading-Strategies.png"></span>
+                <span class="ben-text55">
+                    <h2> Enhanced Trading Strategies</h2>
+                    <p>     Develop and refine your trading strategies in a controlled environment.  </p>
+                </span>
+            </div>
+
+            <div class="benefit-box">
+                <span class="ben-img55"> <img src="~/pr/images/Explore-Cutting-Edge Features.png"> </span>
+                <span class="ben-text55">
+                    <h2>Explore Cutting-Edge Features</h2>
+                    <p>  Discover and experience innovative functionalities before anyone else.  </p>
+                </span>
+            </div>
+            <div class="benefit-box">
+                <span class="ben-img55"><img src="~/pr/images/Uncover-Hidden-Gems.png"></span>
+                <span class="ben-text55">
+                    <h2>Explore TechnoSavvy's Benefits </h2>
+                    <p> Discover Prospects and Potential enhancements.  </p>
+                </span>
+            </div>
+
+            <div class="benefit-box">
+                <span class="ben-img55">  <img src="~/pr/images/Influence-Evolution.png"></span>
+                <span class="ben-text55">
+                    <h2>Influence Evolution</h2>
+                    <p> Your insights will directly contribute to refining and enhancing the platform. </p>
+                </span>
+            </div>
+
+
+            <div class="benefit-box">
+                <span class="ben-img55"> <img src="~/pr/images/join-community.png"></span>
+                <span class="ben-text55">
+                    <h2>Join a Community</h2>
+                    <p> Collaborate with fellow beta users, sharing ideas and experiences.  </p>
+                </span>
+            </div>
+
+
+            <div class="benefit-box">
+                <span class="ben-img55"><img src="~/pr/images/Networking-Opportunities.png"></span>
+                <span class="ben-text55">
+                    <h2>Networking Opportunities</h2>
+                    <p>    Connect with like-minded individuals, building valuable professional relationships.  </p>
+                </span>
+            </div>
+
+            <div class="benefit-box">
+                <span class="ben-img55"><img src="~/pr/images/Be-Trendsetter.png"></span>
+                <span class="ben-text55">
+                    <h2>Be a Trendsetter</h2>
+                    <p>Shape the platform's future, setting trends that will influence the trading landscape.  </p>
+                </span>
+            </div>
+
+        </div>
+
+
+    </div>
+</section>
+<!--  -->
+<!--  -->
+
+<section class="what-TechnoSavvy-section bg2">
+    <div class="container">
+        <div class="row">
+            <div class="why-div55 col-md-5">
+
+                <div class="css566-heading w-100">
+
+                    <h2 class="mb-3">What is TechnoApp?  </h2>
+
+                    <div class="divider"></div>
+
+                </div>
+
+                <div class="buy-nav44">
+
+                    <img src="~/pr/images/TechnoApp-icon.png">
+
+                </div>
+
+            </div>
+            <div class="why-div55 col-md-7">
+
+                <h4 class="text44">TechnoApp is the Next-Generation crypto exchange that offers cashback on cryptocurrency trading to all traders. It aims to change the contemporary approach to cryptocurrency trading by incentivizing each trade with cashbacks, rather than transaction fees. </h4>
+                <h4 class="text44"> TechnoApp aims to ensure a consistent growth of the TechnoSavvy token's Price and Trader's wealth growth with every trade. </h4>
+                <ul class="beta-list44">
+                    <li><span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span> <span>Higher capital appreciation benefits on holding TechnoSavvy Tokens  </span></li>
+                    <li><span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span> <span> Trades with low Impact Cost   </span> </li>
+                    <li><span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span> <span>Cashback Benefits  </span> </li>
+                    <li><span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span> <span>Assured profit on each trade  </span> </li>
+                    <li><span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span> <span>Minimize The Risk of Volatility  </span> </li>
+                </ul>
+                @if(Model._SessionHash.IsNullOrEmpty())
+                {
+                    <a asp-action="RegisterUser" asp-controller="Signup" class="css566-btn my-3">Signup Now </a>
+
+                }
+                else
+
+                {
+                    <a asp-action="index" asp-controller="Secure-TechnoSavvy" class="css566-btn my-3">Secure TechnoSavvy </a>
+
+                }
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--  -->
+
+
+<section class="what-TechnoSavvy-section bg2">
+    <div class="container">
+        <div class="row">
+            <div class="why-div55 col-md-7">
+                <div class="css566-heading w-100">
+                    <h2 class="mb-3">What is TechnoSavvy ? </h2>
+                    <div class="divider"></div>
+                </div>
+                <h4 class="text44">
+                    TechnoSavvy Token is the native utility token of the TechnoApp exchange built on ERC- 20 standard.
+                    All the transactions on the exchange route through TechnoSavvy token itself which means it acts as the underlying
+                    currency of the exchange. Further, by holding the minimum 500 TechnoSavvy tokens, you become eligible for a
+                    cashback of up to 0.1% of the transaction value on the platform.
+                </h4>
+                <ul class="beta-list44">
+                    <li>
+                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span> <span>
+                            Claim up to 50% bonus on securing TechnoSavvy Token.
+                        </span>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span> <span>
+                            Earn rewards every time you
+                            trade on TechnoApp.
+                        </span>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span> <span>
+                            Fixed Supply Value Variance
+                            Inflationary Token.
+                        </span>
+                    </li>
+                    <li>
+                        <span> <i class="fa fa-dot-circle-o" aria-hidden="true"></i> </span> <span>
+                            TechnoSavvy Price will be
+                            appreciated with every trade of any currency or coin in TechnoApp exchange.
+
+                        </span>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-md-5">
+                <div class="buy-nav44">
+                    <img src="~/pr/images/why-nav.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!---------------------------------------------------------------------->
+<section class="get-tade-section bg1">
+    <div class="container">
+        <div class="row">
+            <div class="css566-heading mb-3">
+                <h2 class="text-center ">TechnoSavvy Token Featured In  </h2>
+                <span class="text-center ">
+                    <div class="divider"></div>
+                </span>
+                <p class="text-center ">TechnoSavvy Token is the native utility token of TechnoApp Crypto Exchange, distinguished from typical utility tokens, TechnoSavvy holds a tangible use-case within the TechnoApp platform.    </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="featured44-box">
+                <div class="featured44"><img src="~/pr/images/coin-alpha.png"></div>
+
+                <div class="featured44"><img src="~/pr/images/coin-discovery.png"></div>
+
+                <div class="featured44"><img src="~/pr/images/coin-mooner.png"></div>
+
+                <div class="featured44"><img src="~/pr/images/coin-sniper.png"></div>
+
+                <div class="featured44"><img src="~/pr/images/coin-space.png"></div>
+
+                <div class="featured44"><img src="~/pr/images/coin-vote.png"></div>
+
+                <div class="featured44"><img src="~/pr/images/fresh-coin.png"></div>
+
+                <div class="featured44"><img src="~/pr/images/top-10-token.png"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+</section>
+
+<section class="get-tade-section bg1">
+    <div class="container">
+        <div class="row">
+            <div class="css566-heading mb-3">
+                <h2 class="text-center ">
+                    What We Expect? <br>
+                </h2>
+                <span class="text-center ">
+                    <div class="divider"></div>
+                </span>
+                <p class="text-center ">Your Feedback is Important to us! </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="css566-slide">
+                <div class="owl-slider">
+                    <div id="carousel" class="owl-carousel">
+                        <div class="item">
+                            <div class="css566-slide-box ">
+                                <div class="css566-slide-img"> <img src="~/pr/images/Feedback.png"> </div>
+                                <div class="css566-slide-text">
+                                    <h2 class="orange">Feedback Oriented</h2>
+                                    <p>
+                                        Your Feedback originating from diverse perspectives, will offer us a deeper understanding of how users will interact with our TechnoApp Website.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="css566-slide-box ">
+                                <div class="css566-slide-img"> <img src="~/pr/images/Suggestion-UI.png"> </div>
+                                <div class="css566-slide-text">
+                                    <h2 class="orange">Suggestions on UI</h2>
+                                    <p> Enlighten us about design elements that enhance your interaction. Your suggestions will guide us in creating an intuitive and visually appealing interface. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="css566-slide-box">
+                                <div class="css566-slide-img"> <img src="~/pr/images/testing.png"> </div>
+                                <div class="css566-slide-text">
+                                    <h2 class="orange">Specific Feature Testing </h2>
+                                    <p>
+                                        Dive into features deeply. Test their functionality, ease of use, and stability. Identify any 		unanticipated behaviour, enabling us to fine-tune for seamless usage.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="css566-slide-box">
+                                <div class="css566-slide-img"> <img src="~/pr/images/suggestion-on-feature.png"> </div>
+                                <div class="css566-slide-text">
+                                    <h2 class="orange">Suggestions on Feature Addition</h2>
+                                    <p>Suggest additional features that would elevate your experience. Your creativity sparks innovation and shapes the platform's evolution.</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="item">
+                            <div class="css566-slide-box">
+                                <div class="css566-slide-img"> <img src="~/pr/images/usability.png"> </div>
+                                <div class="css566-slide-text">
+                                    <h2 class="orange">Usability and Frequency of Usage </h2>
+                                    <p>Your insights into how easy or challenging TechnoApp is to navigate, and use will guide us in enhancing the platform's user-friendliness. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+<!--  -->
+<section class="banner-section bg1 py-5">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <div class="css566-register-left">
+                    <div class="css566-heading">
+                        <h2>How do I join?</h2>
+                        <div class="divider float-left"></div>
+                        <p>Welcome to the TechnoApp beta program! By accepting our Terms of Service, you can start sharing your feedback with us on the TechnoApp beta Telegram community. Engage, share, and contribute to refining the experience your insights drive our success.  </p>
+                    </div>
+                    <div class="css566-register-img  "> <img src="~/pr/images/how-do.png"> </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="workdiv55 mt-5">
+                    <div class="workproces55">
+                        <span class="worknu-div">1 </span>
+                        <span>
+                            <h2>Sign Up   </h2>
+                            <p>
+                                a. Use your email address for Signup. <br>
+                                b. Complete verification as part of the sign-up.
+                            </p>
+                        </span>
+                    </div>
+
+                    <div class="workproces55">
+                        <span class="worknu-div">2 </span>
+                        <span>
+                            <h2>Create Password </h2>
+                            <p> Create a strong and secure password after signing up.  </p>
+                        </span>
+                    </div>
+                    <div class="workproces55">
+                        <span class="worknu-div">3 </span>
+                        <span>
+                            <h2>Join TechnoApp Community  </h2>
+                            <p>Secure a minimum of 500 TechnoSavvy tokens to become a part of the TechnoApp community and earn cashback rewards and capital appreciation on TechnoSavvy holdings. </p>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+

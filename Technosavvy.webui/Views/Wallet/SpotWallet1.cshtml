@@ -1,0 +1,355 @@
+﻿@model vmSpotWallet
+@{
+    ViewData["Title"] = "Navigate the Crypto Universe: Explore Your SpotWallet on TechnoApp  ";
+}
+@section Header {
+    <meta name="description" content="Take control of your digital assets with TechnoApp  SpotWallet. Explore advanced features and streamline your cryptocurrency management for a seamless financial journey." />
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/responsive-wattet.css">
+}
+<section class="section-wallet bg2">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            @await Html.PartialAsync("Partial/_WalletLeftMenu","index")
+            <div class="col-lg-10 col-xxl-10">
+                <div id="walletdiv801" class="wallet-right33 wallet-maindiv4 ">
+                   @await Html.PartialAsync("Partial/_TopUserDetails",Model.UserDetails)
+                    @await Html.PartialAsync("Partial/_TopMenu","Spot Wallet")
+                    <div class="wallet-sectdiv33">
+                        <div id="wallet-tabdiv" class="wallet-tabdiv">
+                            <div class="css77-wall-acc ">
+                                <span class="css77-abal">Account Balance </span>
+                                <span class="csss77-walinp">
+                                    <span class="css77-baldiv" id="id_sport">
+                                        <span id="id_password" class=" dyCryo" data-dval="@Model.Details[0].tokenPrecision" data-oval="@Model.AccountBalance_baseV">@Model.AccountBalance_CryotoV @Model.selectedCryptoCoin  </span><small class="dyCur" data-dval="@Model.Details[0].tokenPrecision" data-oval="@Model.AccountBalance_baseV"> -- </small>
+                                    </span>
+                                    @*<span><i class="fa fa-eye" id="togglePassword" aria-hidden="true"></i> </span>*@
+                                </span>
+                            </div>
+                            <div class="css77-sel">
+                                <div class=" form-select2 form444">
+                                    <select asp-for="selectedCryptoCoin" onchange="CryptoValMatrxChange(this)" class="my-select">
+                                        
+                                        @foreach (var tk in Model.TokenList)
+                                        {
+                                            if (tk.token.Code == Model.selectedCryptoCoin)
+                                            {
+                                                <option data-bval="@tk.basePrice" selected data-img-src="/images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")">@tk.token.Code </option>
+
+                                            }
+                                            else
+                                            {
+                                                <option data-bval="@tk.basePrice" data-img-src="/images/coin/coin/@string.Concat(tk.token.Code.ToUpper(),".png")">@tk.token.Code </option>
+
+                                            }
+                                        }
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---------------------------------------->
+
+                    <div class="wallet-sectdiv33 d-none d-lg-block">
+                        <div id="wallet-tabdiv" class="tab-content css77earn-estimate">
+                            <div class="css77asses-table mt-1" id="sportWalletTable-main">
+                                <div id="comunity-css566-box" class="comunity-css566-box">
+                                     <div class="sell-right-but p-0">
+                                    <div class="css33-leftpan">   
+                                        <span class="sell-btn-22">                                                  
+                                            <lable class="label857"> No. of rows</lable>
+                                            <select class="form-select simple-pagination-items-per-page" ></select>
+                                        </span>                                                 
+                                    </div>
+                                    <div class="css33-rightpan">
+                                        <form  class="positionrelative">
+                                            <input type="search" autocomplete="off"  class="market-search" placeholder="Search.." name="search" data-tab="myMktTaball-566">
+                                            <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                        </form>
+                                    </div>
+                                    </div>
+                                    <div id="sportWalletTable">
+                                        <div id="overdiv443 ">
+                                            <div  class=" table-responsive">
+                                                <table class="table table-sortable  mt-2">
+                                                    <thead class="trasaction-table-title">
+                                                        <tr>
+                                                            <th nowrap="nowrap" class="css566-table-text">
+                                                                <div class="name-css46"> <span>Coin</span> </div>
+                                                            </th>
+                                                            <th nowrap="nowrap" class="css566-table-text">
+                                                                <div class="price-css46"><span>Total Balance</span> </div>
+                                                            </th>
+                                                            <th nowrap="nowrap" class="css566-table-text">
+                                                                <div class="change24-css46"><span>Available Balance</span> </div>
+                                                            </th>
+                                                            <th nowrap="nowrap" class="css566-table-text">
+                                                                <div class="volume-css46"><span>Action</span> </div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="myMktTaball-566" class="trasaction-table">
+                                                        @foreach (var tk in Model.Details)
+                                                        {
+                                                            <tr>
+                                                                <td>
+                                                                    @if(tk.Code == "TechnoSavvy"){
+                                                                        <a href="/about-TechnoSavvy">
+                                                                            <div class="coin-name-css46 ">
+                                                                            <span><img src="/images/coin/coin/@string.Concat(tk.Code.ToUpper(),".png")"></span>
+                                                                            <span>@tk.Code </span> <small> @tk.ShortName</small>
+                                                                        </div>
+                                                                    </a>
+                                                                    }else {
+                                                                        <a href="/token/?tname=@string.Concat(tk.Code.ToLower())">                                                                   
+                                                                            <div class="coin-name-css46 ">
+                                                                                <span><img src="/images/coin/coin/@string.Concat(tk.Code.ToUpper(),".png")"></span>
+                                                                                <span>@tk.Code </span> <small> @tk.ShortName</small>
+                                                                            </div>
+                                                                        </a>
+                                                                    }
+                                                                </td>
+                                                                <td>
+                                                                    <div class="coin-24change-css46 dyVal" data-dval="@tk.tokenPrecision" data-oval="@tk.TotalAmount">@tk.TotalAmount</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="coin-24change-css46 dyVal" data-dval="@tk.tokenPrecision" data-oval="@tk.AvailableAmount">@tk.AvailableAmount</div>
+                                                                </td>
+
+                                                                <td class="linkoverflow">
+                                                                    <div class="tablediv432">
+                                                                        <div class="spot-trade-css44">
+                                                                            <span> <a href="/trade?cat=trade&t=@string.Concat(tk.Code.ToLower())&q=usdt"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Swap your cryptocurrencies effortlessly using our advanced trading tool." data-bs-original-title="" title="" aria-describedby="popover531066">Trade</span></a></span>
+                                                                            <span> <a href="/wallet/inter-wallet-transfer?code=@string.Concat(tk.Code.ToLower())"><span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Transfers crypto Internal wallet. Internal transfers are free on TechnoApp." data-bs-original-title="" title="" aria-describedby="popover531066">Transfer</span></a></span>
+                                                                        </div>
+                                                                            @*<span class="smalldevice332">
+                                                                            <div id="market-more" class="market-more-css45">
+                                                                                <div class="dropdowndiv togglenone">
+                                                                                    <button type="button" class="btn btn-more-css44 dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">
+                                                                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                                                    </button>
+                                                                                    <ul class="dropdown-menu dropdown-menu-css44" data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 25px);">
+                                                                                        <li><a class="dropdown-item" href="index1.html">Trade</a></li>
+                                                                                        <li><a class="dropdown-item" href="internaltransfer.html">Transfer</a></li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </span> *@
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                    <tfoot >
+                                                        <tr>
+                                                            <td colspan="4">
+                                                                <div class="noheight54">
+                                                                    <div class="norecord-div44">
+                                                                        <span><img src="../images/no-data.png"></span>
+                                                                        <span> No records found</span>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>                                         
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                  <div class="my-navigation">
+                                                     <div class="simple-pagination-first"></div>
+                                                     <div class="simple-pagination-previous"></div>
+                                                     <div class="simple-pagination-page-numbers"></div>
+                                                     <div class="simple-pagination-next"></div>
+                                                     <div class="simple-pagination-last"></div>
+                                                  </div>
+                                             </div>
+                                        </div>                                
+                                    </div>
+                                </div>                               
+                            </div>                                                        
+                        </div>
+                    </div>
+                
+                
+                    <div class="d-block d-lg-none">
+                       
+                  <div class="col-md-12 col-12">
+                    <div   class="py-3 width100">
+                      <!-- <div class="heading">My Assets </div> -->
+                       <!-- Search Box -->
+                      <form class="position-relative pt-2">
+                        <input type="search"  class="market-search" autocomplete="off" placeholder="Search.." name="search" data-search>
+                        <span class="searchbtn22"><i class="fa fa-search" aria-hidden="true"></i></span>
+                      </form>                          
+                      <!-- Search Box -->
+                      <div id="mobileMyAssets">
+                      <!-- wallet Assets List -->
+                      <div class="wallet__assets">
+                          <div class="wallet__assets--heading">
+                            <div class="wallet__assets--item-top">
+                              <div class="wallet__assets--item-top-name">
+                                Coin
+                              </div>
+                              <div class="wallet__assets--item-top-amount">
+                                Total Balance	
+                              </div>
+                              <div class="wallet__assets--item-top-action">
+                                Action
+                              </div>                              
+                            </div>
+                          </div>
+                           <div id="myMktTaball-m-566">
+                          
+                           @foreach (var tk2 in Model.Details){
+                              <div class="wallet__assets--items" data-filter-item data-filter-name="@tk2.Code.ToLower()">
+                                  <div class="wallet__assets--item-top">
+                                    <div class="wallet__assets--item-top-name">
+                                        <span class="image">
+                                          <img src="/images/coin/coin/@string.Concat(tk2.Code.ToUpper(),".png")">
+                                        </span>
+                                        <span class="assets__name">
+                                          @tk2.Code 
+                                          <small>@tk2.ShortName </small>
+                                        </span>
+                                    </div>
+                        
+                                    <div class="wallet__assets--item-top-amount">
+                                        <span class="dyVal" data-dval="@tk2.tokenPrecision" data-oval="@tk2.TotalAmount">
+                                      @tk2.TotalAmount</span> <span class="amountToggle">
+                                          <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <div class="wallet__assets--item-top-action">                                 
+                                      <div class="dropdown walletDropdown dropstart">
+                                        <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                        </a>                                  
+                                        <ul class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
+                                      
+                                          <li><a class="dropdown-item" asp-controller="trade" asp-action="index">Trade</a></li>
+                                          <li><a class="dropdown-item" asp-controller="wallet" asp-action="inter-wallet-transfer">Transfer</a>
+                                          </li>                                      
+                                        </ul>
+                                      </div>
+                                    </div>                                
+                                  </div>
+                                  <div class="wallet__assets--item-bottom">
+                                    <div class="wallet__assets--item--bottom-item">
+                                      <span class="wallet__assets--item--bottom-text">Available Balance</span>
+                                      <span class="wallet__assets--item--bottom-data">
+                                          <span class="dyVal" data-dval="@tk2.tokenPrecision" data-oval="@tk2.AvailableAmount">@tk2.AvailableAmount</span>
+                                          </span>
+                                    </div>
+                                  </div>
+                              </div>
+                              }
+                          
+                          </div>
+                            <div id="myAssetNoRecodes4" class="trasaction-table" style="display:none">
+                                <div class="noheight54">
+                                    <div class="norecord-div44">
+                                        <span><img src="~/images/no-data.png"></span>
+                                        <span> No records found</span>
+                                    </div>
+                                </div>
+                            </div>
+                          @*<!-- Assets List items -->
+                          <div class="wallet__assets--items">
+                            <div class="wallet__assets--item-top">
+                              <div class="wallet__assets--item-top-name">
+                                  <span class="image">
+                                    <img src="images/coin/ETH.png">
+                                  </span>
+                                  <span class="assets__name">
+                                    ETH 
+                                    <small>Ethereum </small>
+                                  </span>
+                              </div>
+                              <div class="wallet__assets--item-top-amount">
+                                100.58 <span class="amountToggle">
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                  </span>
+                              </div>
+                              <div class="wallet__assets--item-top-action">                                 
+                                <div class="dropdown walletDropdown dropstart">
+                                  <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                  </a>                                  
+                                  <ul class="dropdown-menu"  aria-labelledby="dropdownMenuLink2">
+                                   
+                                    <li><a class="dropdown-item" href="index1.html">Trade</a></li>
+                                    <li><a class="dropdown-item" href="internaltransfer.html">Transfer</a>
+                                    </li>
+                                   
+                                  </ul>
+                                </div>
+                              </div>                                
+                            </div>
+                            <div class="wallet__assets--item-bottom">
+                             
+                              <div class="wallet__assets--item--bottom-item">
+                                <span class="wallet__assets--item--bottom-text">Available Balance</span>
+                                <span class="wallet__assets--item--bottom-data">1.58</span>
+                              </div>
+                            </div>
+                        </div>*@
+                       
+                        
+                      </div>
+                      <!-- ./ wallet Assets List -->
+                        <div class="my-navigation">
+                            <div class="simple-pagination-first"></div>
+                            <div class="simple-pagination-previous"></div>
+                            <div class="simple-pagination-page-numbers"></div>
+                            <div class="simple-pagination-next"></div>
+                            <div class="simple-pagination-last"></div>
+                        </div> 
+                      
+                    </div>
+                  
+             
+
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+@section Scripts{
+     @if (ConfigEx.ShouldMini)
+    {   
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script> 
+        <script src="~/minjs/sorting.min.js"></script>
+        <script src="~/minjs/SpotWallet.min.js"></script>
+    }
+    else
+    {    
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>        
+        <script src="~/js/sorting.js"></script>
+        <script src="~/js/SpotWallet.js"></script>
+    }
+    
+     
+    <script type="text/javascript">
+        $(document).ready(function () {
+            LoadCurrIfNot();
+            formateAll();
+            $(".my-select").chosen({ width: "100%" });           
+        
+
+      $('.amountToggle').on('click', function () {
+        $(this).closest('.wallet__assets--items').children('.wallet__assets--item-bottom').slideToggle();
+      });
+    });
+        </script>
+       
+}

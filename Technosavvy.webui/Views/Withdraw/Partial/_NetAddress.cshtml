@@ -1,0 +1,31 @@
+﻿@model vmWithdraw
+<div id="dWallet" class="walletseprate @(Model.IsFiat ||( Model.ReceiverAddr.IsNullOrEmpty()&& Model.selectedNetwork.IsGuidNullorEmpty())||!Model.IsToken?"d-none":"")">
+    <div class="form-group mt-4">
+        <label class="form-label">Wallet Address</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" asp-for="ReceiverAddr" placeholder="Select address from address book"
+                   aria-describedby="button-addon2">
+            <button type="button" class="btn book44cs"
+                    onclick="javascript:GetAddressBook();" aria-expanded="true">
+                <i class="fa fa-book"
+                   aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+    <div id="AddressBook" class="collapse">
+        <div id="widrtab44div " class="form-group">
+            <div id="multisediv" class="input-group mb-3">
+                <div id="ddlAddBook" class="dropdown-list">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dAddTo" class="form-check collapse">
+        <input class="form-check-input" type="checkbox" asp-for="AddToAddressBook">
+        <label class="form-check-label orange">
+            Add this address to whitelist
+        </label>
+    </div>
+</div>
+
+

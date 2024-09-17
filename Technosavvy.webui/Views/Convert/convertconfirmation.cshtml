@@ -1,0 +1,87 @@
+﻿@model vmConvert
+<section class="section-upload bg2">
+    <div class="container">
+        <div class="wallet-userdiv33">
+            <span class="market-title-h2 headcss33">
+                <span>Convert Confirmation</span>
+            </span>
+
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="css77-buyc-outer">
+
+                    <div id="deposit-tabdiv" class="css77-buyc-div mt-4 mb-4">
+                        <div class="css77buy-box">                 
+                                <form id="msform">
+                                    <!-- -->
+                                    <!-- fieldsets -->
+                                    <div class="row">                                      
+                                        <div class="form-card">
+                                            <div class="css77buy-box">
+                                                <div class="css77withdrawl-box">
+                                                    <div class="css77buy-box">
+                                                        <!-- confirmation on process -->
+                                                        <!-- why Deposit success show this div -->
+                                                        <div class="confpenddiv">
+                                                            <div class="modegred34">
+                                                                <div class="vericond432"> <i class="fa fa-check d-green" aria-hidden="true"></i></div>
+
+                                                                <h5 class="basegreen">Convert Confirmed !</h5>
+                                                                <div class="text-div44">
+                                                                    <div class="csstime55-dep mt-2 text-center">
+                                                                    You have Successfully converted <span class="orange"> @(Model.PayAmount.ToString("#,###.######")) @Model.PayToken.Code </span> to <span class="orange"> @(Model.BuyAmount.ToString("#,###.######")) @Model.Token.Code </span></a>.
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+
+                                                    <!-- -->
+                                                </div>
+                                            </div>
+                                            <!-- -->
+                                        <div class="w-100">                                           
+                                            <a class="withsumm-btn  mt-3 " type="button" asp-controller="wallet" asp-action="Index">Acknowledge </a>
+                                        </div>
+                                            
+                                        </div>                                       
+                                    </div>
+                                </form>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                @await Html.PartialAsync("partial/_RightFAQ")
+            </div>
+        </div>
+        <!----------------------------------------------->
+
+    </div>
+</section>
+@section Scripts{
+
+    @if (ConfigEx.ShouldMini)
+    {
+        <script src="~/minjs/select.min.js"></script>
+        <script src="~/minjs/images-select.min.js"></script>
+    }
+    else
+    {
+        <script src="~/js/select.js"></script>
+        <script src="~/js/images-select.js"></script>
+    }
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            LoadCurrIfNot();
+            formateAll();
+            $(".my-select").chosen({ width: "100%" });
+        });
+    </script>
+}
