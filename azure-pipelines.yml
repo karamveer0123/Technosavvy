@@ -1,4 +1,3 @@
-
 trigger:
 - main
 
@@ -8,23 +7,33 @@ variables:
   RestoreBuildProjects: '**/*.csproj'
 
 steps:
+- script: |
+    echo "Current directory: $(Build.SourcesDirectory)"
+    ls -R $(Build.SourcesDirectory)
+  displayName: 'List directory contents'
+
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '6.x' # Set to a version suitable for your projects
+
 - task: DotNetCoreCLI@2
   displayName: Restore
   inputs:
     command: restore
-    projects: '$(Parameters.RestoreBuildProjects)'
+    projects: '$(RestoreBuildProjects)'
 
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
-    projects: '$(Parameters.RestoreBuildProjects)'
+    projects: '$(RestoreBuildProjects)'
     arguments: '--configuration $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: Test
   inputs:
     command: test
-    projects: '$(Parameters.TestProjects)'
+    projects: '$(TestProjects)' # Ensure this variable is also set properly
     arguments: '--configuration $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
