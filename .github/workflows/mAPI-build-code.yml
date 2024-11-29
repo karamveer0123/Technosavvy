@@ -1,4 +1,4 @@
-name: Build MAPI 
+name: Build and Test .NET Project
 on: [ push ]
 jobs: 
     build_mapi: 
@@ -12,5 +12,11 @@ jobs:
               uses: actions/setup-dotnet@v4
               with: 
                 dotnet-version: 6.0
+
+            - name: Restore the Dependencies 
+              run: dotnet restore "Technosavvy.mAPI/NavExM.Int.Maintenance.APIs.csproj"
             - name: build the code
-              run: dotnet build "./Technosavvy.mAPI/NavExM.Int.Maintenance.APIs.csproj" -c Release -o /app/build
+              run: dotnet build "Technosavvy.mAPI/NavExM.Int.Maintenance.APIs.csproj" -c Release -o /app/build
+
+            - name: run Tests
+              run: dotnet test "Technosavvy.mAPI/NavExM.Int.Maintenance.APIs.csproj" -c Release -o /app/build
