@@ -1,0 +1,16 @@
+name: Build MAPI 
+on: [ push ]
+jobs: 
+    build_mapi: 
+        name: build_mapi
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Get the Code
+              uses: actions/checkout@v4
+
+            - name: Install Dotnet 6
+              uses: actions/setup-dotnet@v4
+              with: 
+                dotnet-version: 6.0
+            - name: build the code
+              run: dotnet build "/Technosavvy/Technosavvy.mAPI/NavExM.Int.Maintenance.APIs.csproj" -c Release -o /app/build
