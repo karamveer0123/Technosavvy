@@ -39,6 +39,5 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                 name: Technosavvy.mAPI
-              
             - name: show the downloades files
-              run: ls Technosavvy.mAPI
+              run: ls 
