@@ -38,6 +38,7 @@ jobs:
             - name: Download the Project
               uses: artifacts/download-artifact@v4
               with:
-                path: /tmp/build
+                name: Technosavvy.mAPI
+              
             - name: show the downloades files
               run: ls /tmp/build
