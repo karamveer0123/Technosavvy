@@ -17,10 +17,16 @@ jobs:
               run: dotnet restore "Technosavvy.mAPI/technosavvy.mAPI.csproj"
            
             - name: build the code
-              run: dotnet build "Technosavvy.mAPI/technosavvy.mAPI.csproj" -c Release
+              run: dotnet build "Technosavvy.mAPI/technosavvy.mAPI.csproj" -c Release -o /bin/build
 
             - name: show the built files and folders
               run: ls 
 
             - name: run Tests
-              run: dotnet test "Technosavvy.mAPI/technosavvy.mAPI.csproj" -c Release
+              run: dotnet test "Technosavvy.mAPI/technosavvy.mAPI.csproj" -c Release -o /bin/build
+
+            - name: publish the code
+              uses: actions/upload-artifacts@v4
+              with:
+                name: Technosavvy.mAPI
+                path: Technosavvy.mAPI
