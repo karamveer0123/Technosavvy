@@ -13,4 +13,4 @@ jobs:
               with: 
                 dotnet-version: 6.0
             - name: build the code
-              run: dotnet build "/Technosavvy/Technosavvy.mAPI/NavExM.Int.Maintenance.APIs.csproj" -c Release -o /app/build
+              run: dotnet build "./Technosavvy.mAPI/NavExM.Int.Maintenance.APIs.csproj" -c Release -o /app/build
