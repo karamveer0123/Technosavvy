@@ -1,32 +1,32 @@
 name: Build and Test .NET Project
-on: [ push ]
-jobs: 
-    build_mapi: 
-        name: build_mapi
-        runs-on: ubuntu-latest
-        steps: 
-            - name: Get the Code
-              uses: actions/checkout@v4
+on: [push]
+jobs:
+  build_mapi:
+    name: build_mapi
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the Code
+        uses: actions/checkout@v4
 
-            - name: Install Dotnet 6
-              uses: actions/setup-dotnet@v4
-              with: 
-                dotnet-version: 6.0
+      - name: Install Dotnet 6
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0
 
-            - name: Restore the Dependencies 
-              run: dotnet restore "Technosavvy.mAPI/technosavvy.mAPI.csproj"
-           
-            - name: build the code
-              run: dotnet build "Technosavvy.mAPI/technosavvy.mAPI.csproj" -c Release -o /bin/build
+      - name: Restore the Dependencies
+        run: dotnet restore "Technosavvy.mAPI/technosavvy.mAPI.csproj"
+      
+      - name: Build the code
+        run: dotnet build "Technosavvy.mAPI/technosavvy.mAPI.csproj" -c Release -o /tmp/build
 
-            - name: show the built files and folders
-              run: ls 
+      - name: Show the built files and folders
+        run: ls /tmp/build
 
-            - name: run Tests
-              run: dotnet test "Technosavvy.mAPI/technosavvy.mAPI.csproj" -c Release -o /bin/build
+      - name: Run Tests
+        run: dotnet test "Technosavvy.mAPI/technosavvy.mAPI.csproj" -c Release -o /tmp/test-results
 
-            - name: publish the code
-              uses: actions/upload-artifact@v4
-              with:
-                name: Technosavvy.mAPI
-                path: /bin/build
+      - name: Publish the code
+        uses: actions/upload-artifact@v4
+        with:
+          name: Technosavvy.mAPI
+          path: /tmp/build
