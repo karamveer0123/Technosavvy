@@ -41,4 +41,4 @@ jobs:
                 name: Technosavvy.mAPI
               
             - name: show the downloades files
-              run: ls /tmp/build
+              run: ls Technosavvy.mAPI
